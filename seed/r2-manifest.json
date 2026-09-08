@@ -1,0 +1,3164 @@
+[
+  {
+    "key": "brand/hightac-logo.png",
+    "localPath": "r2-assets/brand/hightac-logo.png",
+    "sha256": "1b19bac8d3c2c615d8445778bedd43a29fedc4d8ae7f8ffca61ce8726ab8e59f",
+    "contentType": "image/png"
+  },
+  {
+    "key": "brand/sidi-achour-logo.png",
+    "localPath": "r2-assets/brand/sidi-achour-logo.png",
+    "sha256": "9ac24f436143b2a9c6d55fac0b0529f37d9dcd0427f85591694c857f0061fdbc",
+    "contentType": "image/png"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-0052c6ea2d630076ff.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-0052c6ea2d630076ff.webp",
+    "sha256": "12086016a26173bbf8d79c2ae89dd4f7bf1c541778b242966c57d572ed0c5c32",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-00c176b4a58b660d7e.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-00c176b4a58b660d7e.webp",
+    "sha256": "eaeb67c435c3b921b6eb9896e22425083d6ae9f07be913ca2c91b6bb04c65825",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-00cf168442ddf3406c.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-00cf168442ddf3406c.webp",
+    "sha256": "e75a000da66feda2e4dde674f9fb3b6ed61dfd3f56cb8bf12bba945413dcb5b9",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-017247a52a94ee7795.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-017247a52a94ee7795.webp",
+    "sha256": "84192c88dad6b182295aad7d48b95dbc987b571cee47788a639443a0fc3ccece",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-0328ef8632318392d9.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-0328ef8632318392d9.webp",
+    "sha256": "9a9f4f7015f932428d5d309bf1f13bcdcaed214b3e0547fe1eb65445c5fd5ea8",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-038eaf25ad189d18a0.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-038eaf25ad189d18a0.webp",
+    "sha256": "651d03dc5a32ae432e49c4c964f8be7a00087dcb2975aa3bba6edc9540bacc47",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-03b161cfdd2439763b.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-03b161cfdd2439763b.webp",
+    "sha256": "1a06c11b40f934b153744f8651f2fee2b780950170997dd4125c066fe3d6c8ac",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-0489d21348624f432a.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-0489d21348624f432a.webp",
+    "sha256": "bcd3ee99510af0810a60324ecd4033b075b366b725e98cf9e84032fb92c537ed",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-056ea2ae7f97282e47.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-056ea2ae7f97282e47.webp",
+    "sha256": "7d090c80c08512ea53742f495c3be981b4ab2c6c87941f772f0b8344ff826ecd",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-05a132ab341eacab4a.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-05a132ab341eacab4a.webp",
+    "sha256": "12d18e004293ef2639548ab0963e32d8bd553bc1ba7b7b59c41a6777d2fdb1a2",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-05e22cd6449a62c737.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-05e22cd6449a62c737.webp",
+    "sha256": "4669467beeac13f52b268bed47752de2a59f3d003e99faa1dd4c659e887003e8",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-060cac48ff72b971d8.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-060cac48ff72b971d8.webp",
+    "sha256": "79cf247530f46ee110e2100ae80e689612b57e3f15796279daf7a91adf1af045",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-064435455b5873a9de.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-064435455b5873a9de.webp",
+    "sha256": "1357480239fbaf524641b8247e577e9187df10682a5f9e3ddbe0464d0c45ad9d",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-0711b1dc8e76b3c6ba.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-0711b1dc8e76b3c6ba.webp",
+    "sha256": "ee4e95a45912958ed4ddf24a44a5363eb6b3933dc22c4eef5178a7a4c220c1fc",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-0771a4bb8f87a19701.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-0771a4bb8f87a19701.webp",
+    "sha256": "3f7a3659737dfca2c783e2561b8bcfbdd13b69cc110769c4ecc25a3831f50edd",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-0821a4b451ddd43995.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-0821a4b451ddd43995.webp",
+    "sha256": "124b5dfc470bf1bc2e9ee789841f7fb655435205a4b846edc8ae7b3c82f2cdf1",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-0854a156c8ddaf6f23.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-0854a156c8ddaf6f23.webp",
+    "sha256": "eb3d0cc369ab3c0aadcda14a099eaedbc9a95583099babb7265f4be72fe5f378",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-08ef507f17463216aa.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-08ef507f17463216aa.webp",
+    "sha256": "5d51f88dea4db9942648ec835bbbda26da6f2ba0252ea0b53da819e7261cd900",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-08ff0e905b68f01d7e.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-08ff0e905b68f01d7e.webp",
+    "sha256": "ab6536a2e227dd6d5bac20c4fb2e7aa0e1aed54cef606888f31979b5e501113d",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-09edea288594d183c2.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-09edea288594d183c2.webp",
+    "sha256": "f8849d9aa585179c4e79e8f14c37983688445842ece3a598c96d261dfcd78590",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-0a61cf7296a717f18d.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-0a61cf7296a717f18d.webp",
+    "sha256": "4a6436c38a4397692b7c4c174929ee65fe71e2de624ebd74fe9dedae88b680c1",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-0a77c565631a8855ee.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-0a77c565631a8855ee.webp",
+    "sha256": "3eea8497fddf6a5067c3fdeb8be0ef9c98fb730bbb8575cc2d6b44103bbd9316",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-0a8926b3726f9d3cbf.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-0a8926b3726f9d3cbf.webp",
+    "sha256": "2796f8f48a76b63f93d10d929d40162867952e837ef50a27a3ba5cbda054d5c8",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-0bf1053c788a487312.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-0bf1053c788a487312.webp",
+    "sha256": "c84af2a5022157034e15b1e0495ac5a28a6248cb21aee1a1b72ec4869954b1af",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-0c33ffbd2537ee01ac.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-0c33ffbd2537ee01ac.webp",
+    "sha256": "1429a5d11bc9285b36663bd1e2e4b5a323d5f6344634c94815eadd81e7773cee",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-0d33722a8f68fa5ab9.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-0d33722a8f68fa5ab9.webp",
+    "sha256": "fe0b81d6dab7d8c4ba954b60e30f34c9384dc3fa46c44b5b8f4769ab5883e7fa",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-0d446d64951755764f.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-0d446d64951755764f.webp",
+    "sha256": "004fcb33c6797f3471dbfc3d5a8e8c3238e064f9f48d56f6f054757b33ca5826",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-0d4fd0d92c3045ee05.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-0d4fd0d92c3045ee05.webp",
+    "sha256": "ba3affe953d900873b3d74e1614dde5b30875f580fe4bf13d3cd5c7c6d7b60fd",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-0e526b8afcddab0b9c.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-0e526b8afcddab0b9c.webp",
+    "sha256": "f9757a9bbdc3433829edac4f1a52d5bac85f4efb1549da52e05e3008854d1947",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-0eef74d92f84bc2a8d.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-0eef74d92f84bc2a8d.webp",
+    "sha256": "6ad5470c43eef11169e0f0eadb77d2147b7881dd25b8a59e58e4651014efeea6",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-0f00f8d3952fbb4d96.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-0f00f8d3952fbb4d96.webp",
+    "sha256": "e0f5e3c69f4a06082985b87a69561205284eddf35e982ee741026c43e5ce082b",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-0f2a50de964762c24a.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-0f2a50de964762c24a.webp",
+    "sha256": "1e0e02ea5b7266fdf27299419f466878a9edc9618e12d9e6140a84e2da671b53",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-0fde7e0c95535f95ed.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-0fde7e0c95535f95ed.webp",
+    "sha256": "c0867220d277ffa25c47490ba0dd961a34943beda1279e38a12d86aaa21bf379",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-1013731e2c34bd6e25.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-1013731e2c34bd6e25.webp",
+    "sha256": "70dd090f5dff4592b0f1e54888a80bc26e06391fbfe1f9015193d6df25d5a5bf",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-1041cb6ae3fbd37c83.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-1041cb6ae3fbd37c83.webp",
+    "sha256": "6c8d2bfcbc20b1bbb3190156a7415313d08a488a66703e6a541cb2b9a01507d1",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-1157f79ca26ab8dd7c.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-1157f79ca26ab8dd7c.webp",
+    "sha256": "49d6e1fa81f5dee04d6031e32038075925289932eafdf7dffbda34d930f1dffe",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-117216037a86accc9c.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-117216037a86accc9c.webp",
+    "sha256": "f82581662821a5d4bda664691a34b1ef76c9ff112c196a4da0c5240537347a12",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-1176c97cf7d77705ca.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-1176c97cf7d77705ca.webp",
+    "sha256": "c47cad9719a1944a6b7768b56cf0df074cfd49dd5ae2f6acefbd021ac0f15ef1",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-1221bc9e49cd23b971.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-1221bc9e49cd23b971.webp",
+    "sha256": "6aeb4416f4d617a9738dbc76069e102da5353d8e430924606e2860ecd09da064",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-1282379b5c43675ec8.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-1282379b5c43675ec8.webp",
+    "sha256": "a937ea6c31b9f223e8eb54a7b04129ca3b16b40a9366abeeb0af88741d4ce40a",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-12ff0d9c7239ae3c65.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-12ff0d9c7239ae3c65.webp",
+    "sha256": "99841d453fa5215a796229a98857fa1afae71575a66c858aa08414dd2607651a",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-136555e27ff8702de0.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-136555e27ff8702de0.webp",
+    "sha256": "e6f17be871225cf44a8fd317918f0117822a8f6f7c5d64d2c8dfe52dbedd71e6",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-13c0c6bd4299bef1c8.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-13c0c6bd4299bef1c8.webp",
+    "sha256": "5555337b3931c77d15203b119e624d8b2a18d7ac2e3a7da1206e8358ce7b4a3a",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-13d0eb10cfce99fba9.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-13d0eb10cfce99fba9.webp",
+    "sha256": "2c92fc26632bcca5bc0ff3ebd37ee1da48fc4fb64c7c6d6f054fa108e6424252",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-141b676bd915810e91.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-141b676bd915810e91.webp",
+    "sha256": "4571f4d02326d629e6c17e98f9215cbd01bd1c48bfe5110976c159a2d27178b8",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-1439f49245df9b24f2.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-1439f49245df9b24f2.webp",
+    "sha256": "475c1d295e6e2ffc45f471c9b581ec11854dcfb6e451c02d3fee99e81126d16a",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-154ddac9a8f8d26e74.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-154ddac9a8f8d26e74.webp",
+    "sha256": "0635af9626b66c866049895d585d424e5dff69dcfad2ff46e2d5f25521bb17a0",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-1576e90ab9347b7b9d.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-1576e90ab9347b7b9d.webp",
+    "sha256": "99a58bc75821c226054b0a47621ec27d73632faa66fdcebb90435da7e7a7e72b",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-15ddd1a97bf89cf748.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-15ddd1a97bf89cf748.webp",
+    "sha256": "89d35de8f27979c8d16d71f8df3d01ca21c4905188091c62854a3511f2874408",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-16801e0b4aa5715ef8.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-16801e0b4aa5715ef8.webp",
+    "sha256": "d035e549fdeec70a4f2d5661448549438046b93c46e89ffe3c4517b08afa21de",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-169ef12f2b1c8005ae.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-169ef12f2b1c8005ae.webp",
+    "sha256": "351a92ecb1e32b70e106531230204f35f1f639826d87602ed8444b56b9325f69",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-16d10d195db1d6fe7d.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-16d10d195db1d6fe7d.webp",
+    "sha256": "16590d678e0f68a4a348d997720c2ca1e9325aa88cc245a7a325fd88d4ddb6b2",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-175f73fe0a7a627cee.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-175f73fe0a7a627cee.webp",
+    "sha256": "75195ede9876c7672a206d546e467e1c26b2734fd0acb676668633dabc3fe3fe",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-175fe9dd779fe40de3.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-175fe9dd779fe40de3.webp",
+    "sha256": "5042dc60e853af4cf3236f71fc9e17c37929134aaf7fc4c37aa7082afb07867e",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-17ca23a72c31e9371b.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-17ca23a72c31e9371b.webp",
+    "sha256": "11a0fe4d6e1923df8609f18b0afde3db75674e91793a2c06ff698f70a7193f39",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-17f093df8c22f3d5fd.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-17f093df8c22f3d5fd.webp",
+    "sha256": "1f0f346e1895ee526289047098683fa786570733944f038b741b260557168f86",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-1972b62d6c049d3e7e.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-1972b62d6c049d3e7e.webp",
+    "sha256": "189c1e9610f46bb1863e107b9dbd44159b5a2ea2bd4a66d9846622fe5c3b12f0",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-199cf5ede530f8b6a2.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-199cf5ede530f8b6a2.webp",
+    "sha256": "5a0fcac22fcb21ce6669256e28bfa3afb3fc441e3ed86bf2bf27acda7e6a1494",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-19b23a99764091b98e.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-19b23a99764091b98e.webp",
+    "sha256": "fd5d6f3083e270d69c9063216d69f1f3b379bd6fd2de09f2ed2eecb0235fa129",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-19d89cdd9cb4d1e247.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-19d89cdd9cb4d1e247.webp",
+    "sha256": "672665cc5e8ac3dba5746a471bf436f40faa3059f800862d107b5fa789e5d410",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-1a35f5c2eb4eef6c18.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-1a35f5c2eb4eef6c18.webp",
+    "sha256": "efe38c84b65b19ad0ca58f6e3fdf820023b1bee299471942cab352c51ad81ac2",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-1b962e492493b771d5.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-1b962e492493b771d5.webp",
+    "sha256": "c8adccaf2e91c8b7c91297d7836a537776295a44d3200b28e8d7952fff2f010e",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-1c003005329293efcb.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-1c003005329293efcb.webp",
+    "sha256": "bb256646f73c36b7e3516987d3fdd327c7455cd33937561a692fa086321e89f4",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-1c5370a5a3d43cef85.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-1c5370a5a3d43cef85.webp",
+    "sha256": "6c5d6f03864ee1ce35dc6afc7733fdab42e75f42a29276bd0bab2a3f565f689c",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-1d17aa3b8ebe58cac5.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-1d17aa3b8ebe58cac5.webp",
+    "sha256": "1d1d0909863bdc5aa8874d73921c96bfdd11eb7d48fc35894d82a01fb12d97f8",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-1d7c17a2d1ed62c52e.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-1d7c17a2d1ed62c52e.webp",
+    "sha256": "7d052bfef1de822f7faafea0d3997dc7b57d0a58bd4c8a82389924f7526d39a3",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-1f036bd63c2fd785ad.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-1f036bd63c2fd785ad.webp",
+    "sha256": "9f53cb41ab24001aa47f7313ff742f4a4a8b28ef3917f0e5b429b9ecb29b183d",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-1f0433e3678a8b2418.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-1f0433e3678a8b2418.webp",
+    "sha256": "8e7733aa2205552fab0d1c028b6ffd2a6c138826ff76ed7110f9bcfdde37c260",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-1f2df22dc0e0b53131.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-1f2df22dc0e0b53131.webp",
+    "sha256": "378015cfef806b2f3542cf8d8c595d875b6bf3fe08d421aede2c86c233eca53e",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-1f8904f37977a2372e.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-1f8904f37977a2372e.webp",
+    "sha256": "2650ecbc7665526a2b3c293b3c21cc0f35e9393eebbf229735a3824e4e5fc3f9",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-2060ec6f42ea7cdae9.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-2060ec6f42ea7cdae9.webp",
+    "sha256": "9fadd0e3c3859a780b9b2efa28166cd4dae615ada6103efa6e38848d378a10bb",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-20c6fd36c80b47054a.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-20c6fd36c80b47054a.webp",
+    "sha256": "aaa79a275a675981d6854ec3313670b473a364bb9c73317ad8fc4497ebfdde6a",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-20f00c70a0efd83a7f.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-20f00c70a0efd83a7f.webp",
+    "sha256": "0efa02732564cfc3b876ddfd633e63fb8bcbeccc73e96425569455a4cab1cc38",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-210520eb8b14c7c76f.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-210520eb8b14c7c76f.webp",
+    "sha256": "4d25058e9ddc33d96579f4340d4188138c43bba7f8c4a9c30084a67fa01e4d93",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-2216e2326dab5ae8e3.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-2216e2326dab5ae8e3.webp",
+    "sha256": "6280909177e821de3a2c604fb0f97aa4ccb6abd9bad12ba7d27d02b393859132",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-22fb4f4aae7b9d1931.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-22fb4f4aae7b9d1931.webp",
+    "sha256": "19704d13b24bf0247dca0d17f21f2e9accc146a231e9aa40020db4dce3c8ce16",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-2316dab2a5b2ce4d1d.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-2316dab2a5b2ce4d1d.webp",
+    "sha256": "adc897d31523d1105d6561832d7ccac2a173bf53369b190bcfbe9616749737ef",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-23711a8a4c7afe75eb.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-23711a8a4c7afe75eb.webp",
+    "sha256": "3e7e2b76b41889d1f6d4ddb19782452500532eae9636deddcbf5b06805358cf0",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-2372629862572b4e23.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-2372629862572b4e23.webp",
+    "sha256": "1f339d400c05b4562d2263067c6afa7dac1e42b8ef8e7c3ac5977f315492152a",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-23d20a556892ec1ffd.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-23d20a556892ec1ffd.webp",
+    "sha256": "7720f3ac52ced27ddb0074d951c5c28dd712cce4384314902e6b1251eeeedc0f",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-23fdfdf2b65f3b244a.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-23fdfdf2b65f3b244a.webp",
+    "sha256": "99c149ee4915ee01a0a06a5f57e00fddc329d44254bf17a44b300317647e7e9e",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-248f7e2e6fe697095e.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-248f7e2e6fe697095e.webp",
+    "sha256": "a6a3c72d979255c913cbf68387cc11bf58a748d4bc5f58e563e406c1c502506b",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-24f03fcc335f54e3ec.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-24f03fcc335f54e3ec.webp",
+    "sha256": "9a2bd3dda58a9514a8ba060732c32ee942b25e69e82a184b0e2b9d40080a583b",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-2520838b908f6df38f.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-2520838b908f6df38f.webp",
+    "sha256": "871c43fb2a944055e6747b07429c5b6f3c17697be7c1350fd1c0245568d98fb1",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-2536283867f0514687.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-2536283867f0514687.webp",
+    "sha256": "e351fef12f91c5e5f3bae756f607fdb9d03b50ea16ab167a9fa1cf464c746838",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-257e6ef254ff868092.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-257e6ef254ff868092.webp",
+    "sha256": "9e327ec12486da46a57ddae40d0daff455f8afee7baeb0c0c0935299b4262ce6",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-2614bf32f617e87df5.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-2614bf32f617e87df5.webp",
+    "sha256": "0737cfa13bbee8c99963052be43537e0fd7cd1eaa220c97f4d1214d69d993d6a",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-26880b50726ad16e07.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-26880b50726ad16e07.webp",
+    "sha256": "be3c624c11746dd0f56ff4030ffc6243127e8c6443ba6c252755d20409a98dc5",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-26b87160599d137b95.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-26b87160599d137b95.webp",
+    "sha256": "30a661a73c92e0c198316e7f60f53619833127619a998541641c6b5a4ce2eb85",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-2767a1a8da5af82df0.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-2767a1a8da5af82df0.webp",
+    "sha256": "442851f9bc521e43e0b764cd6a2e705235634e79530fd1b1711046f4de1e1c6c",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-27fdc311d1649abbca.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-27fdc311d1649abbca.webp",
+    "sha256": "4291a83a3a43c61f57ec2bbf3fbd23f8f3c6ff7c316334f16f28db5c4189430c",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-281fcbcfd18fb7268c.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-281fcbcfd18fb7268c.webp",
+    "sha256": "de274a5a6439e436ef26e6cfdfd9eddc9c3df405249d0e527e14eb863f6122f3",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-28eadcd66e9de34fd7.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-28eadcd66e9de34fd7.webp",
+    "sha256": "86d39c33235aca9fa8a5e09e65272ec2eac9afee0f95f35a3dc1f8f450e39681",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-290f4d4ddcec0a2039.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-290f4d4ddcec0a2039.webp",
+    "sha256": "9fe5668798697b1e04404d1a710e61b4646aea28d11a7fa80b428738c47c1e8b",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-29228fee71fe0ae898.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-29228fee71fe0ae898.webp",
+    "sha256": "10de5bef1f2398af8010d9f6d83712d785c744c441e2fccb27aef629fec4a1c8",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-29cf847a8c6c877c9a.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-29cf847a8c6c877c9a.webp",
+    "sha256": "333ae20d42db605f11d6e90dc937bdee638c60cb164912f5242524f2f7da338e",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-2b045cc2c4bbb7caf7.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-2b045cc2c4bbb7caf7.webp",
+    "sha256": "0f08c8f6f2a2fd708208fb65d1d154b8c457a91949c60b0e0d2e224d43cb14cd",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-2be86e722d5c21c1e9.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-2be86e722d5c21c1e9.webp",
+    "sha256": "587aa074ba6ee1e1c9625885508a4767ef0044d7b890cddf6157435e83d5fd4e",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-2bf532f0fbeb1f2f57.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-2bf532f0fbeb1f2f57.webp",
+    "sha256": "ec8e27829129c409e4c51de46ca43884317d74d249072cb2a3b2b0558a1058c2",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-2c79a61f2761a8bb29.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-2c79a61f2761a8bb29.webp",
+    "sha256": "297c3d2efea47873f89450af597cbaa120f260172dc3face551f9ec5cfb26c48",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-2c8d897cb9c38a2cf3.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-2c8d897cb9c38a2cf3.webp",
+    "sha256": "25c5ce368ca079bea6a8137c479dd5ef5dd7935419defe054d85fe5791a682d1",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-2c8fd2f94976419167.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-2c8fd2f94976419167.webp",
+    "sha256": "9670c56914d3c32a120e56840b83af24bcce9692b311b37d569557af1524bba7",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-2d91d5e81a3869b547.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-2d91d5e81a3869b547.webp",
+    "sha256": "5853eb54e08971cc43457f28073983c384a6e65874068cb9a32ad1b1ea552c97",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-2e6052371a390f5d58.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-2e6052371a390f5d58.webp",
+    "sha256": "a44f58ea917c9cdeeb91023792b73026ab73cab9310a9039d9757da0d32f4ca9",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-2e6cc4d2a8b9b4080d.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-2e6cc4d2a8b9b4080d.webp",
+    "sha256": "67ff553a1a617c6fdf89b982a1cbfb1db3125cc647becd3b9ae902405f67ca77",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-2f9d8e6914e46fd1d2.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-2f9d8e6914e46fd1d2.webp",
+    "sha256": "1e9b5eb9d85cad84a351ba7067e0d87ed2278cf0cf04467665d5a4d2f6d6379c",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-2ff074139c9e8110c9.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-2ff074139c9e8110c9.webp",
+    "sha256": "a9e87425a098e4908f1ec37e84b36c9f4c520d6de06e2fc8bdc61123b87fe1db",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-304772f65757b069b2.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-304772f65757b069b2.webp",
+    "sha256": "7fef08d9c3e9c0d559761df4a3ccea3a59965713dac8c1b5efdd468826a1ba03",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-30dd8f1d17e378edc2.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-30dd8f1d17e378edc2.webp",
+    "sha256": "05471527603848bdf2bfc1baba4efa6ba0b795562f23ef02acb569629a7a9692",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-310435b7d7f161c16b.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-310435b7d7f161c16b.webp",
+    "sha256": "0b2aed13e32da6a931e8bc9c1d058e76b1bf759a8f6df48d1710e9ae02522b41",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-31acc3cbb1fba4c700.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-31acc3cbb1fba4c700.webp",
+    "sha256": "b1c69ffece2e73df8c64f209d4e2c3cf0514d893947e5c3b75726166afafcd93",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-323e68ed6285249a42.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-323e68ed6285249a42.webp",
+    "sha256": "9480024687ae544720e9c172965c758dab9c787b3aca61bc00dbd5a04f4382ae",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-327c7db78c260059e8.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-327c7db78c260059e8.webp",
+    "sha256": "24e7d85ed53b91c90353dbdb6e7465162d961310a180969fd3f0122ffcbcea43",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-32dc033507953c6802.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-32dc033507953c6802.webp",
+    "sha256": "67326dc8a147caf719e442e87a4b5f8b19c014756b1eff68ca06d16dbf208c69",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-331d404d9b46192ff5.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-331d404d9b46192ff5.webp",
+    "sha256": "944222ca64cbec01ab8d0ec5d5e9c6518d3df0b56ba6df6e7f352e1ae456e2fc",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-343dfdcd180c8def2d.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-343dfdcd180c8def2d.webp",
+    "sha256": "718ed2523a4793b55916616e5426625936b14536b0064aca9ad638e73c7a95ab",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-35509d89d47026bf94.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-35509d89d47026bf94.webp",
+    "sha256": "18e09c0dc0293774472fc85eddb3d158e81e9b2f539454fb513a33f3524e18e4",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-35a8ce6f0beb99cbc2.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-35a8ce6f0beb99cbc2.webp",
+    "sha256": "412e4841d3dc314a4c14c661b7c6c6ae301873544393a310e09383e4adb4a745",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-35f2c4b9b915893ead.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-35f2c4b9b915893ead.webp",
+    "sha256": "b678a658895c80ba1f7dba18453f81b5a81c0ab1ddac11ec9c34abf07fed6929",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-3616df4b8c0f32eca0.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-3616df4b8c0f32eca0.webp",
+    "sha256": "1563dd84c5c202d1202321228176883b72e13a3c204cc5bfa0b8a229f9dc4f02",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-36c279e25b240eb075.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-36c279e25b240eb075.webp",
+    "sha256": "e3fa1c28356879e21e84b4734e37d2b52d0df771f4fcbb7f78405414b5382370",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-36f1e0e4a3cc50ae46.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-36f1e0e4a3cc50ae46.webp",
+    "sha256": "1958f4af1f2471234091069b8efde286ac5e1edb8b34cf52b5b6b46149238406",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-37074ad200fee3e330.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-37074ad200fee3e330.webp",
+    "sha256": "7ea49292b835b6443ccc39e57985fcd3bd0eaf1ab3765cdceae2791196faf0fa",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-373b1dbad077dd0c68.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-373b1dbad077dd0c68.webp",
+    "sha256": "52366e81d0747321ee052ac34d1adb243f2308ee8d4cdeb80b89a504c901e354",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-37422cfb9b6f74a371.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-37422cfb9b6f74a371.webp",
+    "sha256": "3a7ab737a151e506ad46f721298ee186a4ec015d3ffefdecc5295475ba4e86d3",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-3784741475f955304a.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-3784741475f955304a.webp",
+    "sha256": "2a45961cf959e52665f4f43f2fdf8e79e5d102e892323d33c76d641e54d42641",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-37c51fd619943f5468.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-37c51fd619943f5468.webp",
+    "sha256": "58d9a979e25d05b7d00537d9fef911e3a2f9f7ea8ad386b55bf04298567f2ba4",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-38494cf5a918a174e4.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-38494cf5a918a174e4.webp",
+    "sha256": "1551f470d5037464680cae1a447dbce38e84eb7844dc2b4eefdba51373b89f13",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-38b4682ee43a35ef0d.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-38b4682ee43a35ef0d.webp",
+    "sha256": "216d2a3bf0a64acc513ccffc73c2448a845bc6a7cbd73cc8fe52ee2fd4b9da3f",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-3a311d9319512fc642.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-3a311d9319512fc642.webp",
+    "sha256": "146f6aa78399a614120200ed4d6eb073f0c7a6148e6d55213662ed2fb7a2eac4",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-3a37b80700903f0be4.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-3a37b80700903f0be4.webp",
+    "sha256": "7efb564942aa43f89caec0cafa5edb7a7efec024d1afa5366f405c9d72ebe274",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-3a61de89b17df8bc51.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-3a61de89b17df8bc51.webp",
+    "sha256": "8414e4a6c0108c8804ced711d96e4bb7461fdbd7345e43e3013d62cea4f2e1bb",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-3af754a356434a3e39.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-3af754a356434a3e39.webp",
+    "sha256": "f38dac2c2d00110bce44d31971debb4af3501d4217d48a2f6f3719e9bb6e001e",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-3b666fe3be251b7dd2.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-3b666fe3be251b7dd2.webp",
+    "sha256": "4a3b13874c91de79f203143ac18fa4bff507403ec6549292bf62101a510d5378",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-3c3e76f0127de1f909.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-3c3e76f0127de1f909.webp",
+    "sha256": "201d2d64aa5a1c3531d5ea44c27e306cf3d1d3f30882c4236c9808d494e980b7",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-3cbe54219f6edd641c.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-3cbe54219f6edd641c.webp",
+    "sha256": "45ee1b233359714a6cac520018ba7e6135998ee721adf9afd4575f8da4c47eb5",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-3d1572c1e9de04c9b0.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-3d1572c1e9de04c9b0.webp",
+    "sha256": "085e6e90f848be4e8bdc209376d7826d5bfcb08db87600b60ffb77bb52e13695",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-3d261e2a3df30b5b85.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-3d261e2a3df30b5b85.webp",
+    "sha256": "b6cd32b9bd4854132352d48adafed92da594d18695f45fd184953685eb491ec7",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-3efba3aa20db1ca035.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-3efba3aa20db1ca035.webp",
+    "sha256": "f6a0da50cb39efc1a6668be97540ad946a4d89a86754cc47b261e302620b225e",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-3f19682afaa3904cc5.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-3f19682afaa3904cc5.webp",
+    "sha256": "1aa4bb20b52468e510dd3d3da4118c2140d8d416f4e96d1bff9922c7c0dc054a",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-3f4635c70400174b70.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-3f4635c70400174b70.webp",
+    "sha256": "8f91d39a6fa92ee8b15da0beba25a6de58626cfb143b5bfa4267366f80055f40",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-3f6bf45977cbaa14bc.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-3f6bf45977cbaa14bc.webp",
+    "sha256": "15aaeaffa64b5edcdfeb561ccd317d9f8cef25ce20a1a4ba6abd6c306ebf74e7",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-3f8953850cc1b120e9.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-3f8953850cc1b120e9.webp",
+    "sha256": "c70dff511ebab8a3d8f5541e10ae79b35a8796e7e35a0dba158af5b2328bed28",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-3f8d0a5f510ac42310.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-3f8d0a5f510ac42310.webp",
+    "sha256": "d9f0530626b1d58c376e0a6095f4a5b8bcdc5bcb3d1a9afdec4437fd6de8e1ca",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-3fc2117da9a9d10905.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-3fc2117da9a9d10905.webp",
+    "sha256": "8d6dd454fd8272e647e44cd34ea5bbb361f8cbc6ad7bad767e2a8d2c09ce0b13",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-3fce5c602924396935.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-3fce5c602924396935.webp",
+    "sha256": "3f397a402520896620d7b3e5c143ebfbb0726601444332ca27fa7bae9830bfb2",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-4062c283af36567d79.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-4062c283af36567d79.webp",
+    "sha256": "2e2c06486b1628c092377beea3fbb0adadfc4682ebed0f91a3fd1dc9eb1da6ae",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-433f7300719d20bc93.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-433f7300719d20bc93.webp",
+    "sha256": "88c4c4d74a639ce9b0a16a623f46454f408f5ddd593b98902417ea08e39142af",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-438ce89e02dc11927c.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-438ce89e02dc11927c.webp",
+    "sha256": "fba608632a803bd10af53b0c761da798b5acf01269d870d7c7bfef0b800c5791",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-43e9d62bfb65523e86.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-43e9d62bfb65523e86.webp",
+    "sha256": "af760b95ac76d0c302052b8f381f2c5aef9345007d89f61d3ee9fb4ee08854d0",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-4411c7a8ae8e64cc32.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-4411c7a8ae8e64cc32.webp",
+    "sha256": "709d310f3c910fdc62f845c46da1d6885dde34d2d4569830ce96771df17347e3",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-447bf64f55efc3d68e.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-447bf64f55efc3d68e.webp",
+    "sha256": "f84cda08551f13fb2cc52abaec1004f78a09c55b3c3d260838ba04edcdcc8843",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-44b138cc1d6eab9758.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-44b138cc1d6eab9758.webp",
+    "sha256": "3772a2417f1ba225f63ec8b3c51c9847044f559c5ffb79d57d6af69a52d89444",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-45d3218e6e9654b3c4.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-45d3218e6e9654b3c4.webp",
+    "sha256": "a7c662e4cbe4971f2f22908963da532faadf6409704a79c3ab8a4bf31192301c",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-46cd23ea6c1b350af1.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-46cd23ea6c1b350af1.webp",
+    "sha256": "dbd5aa5d9c7a228d22eeba8a76b1b4f31d3adaa19f8c465e6e0dcbc81660ae7a",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-49495958764d8b8ac4.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-49495958764d8b8ac4.webp",
+    "sha256": "210618688873bdc5d925fb7f85252da7f55235065016371a68fe91a2bb0c90b8",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-495604f6e36b8dc7a4.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-495604f6e36b8dc7a4.webp",
+    "sha256": "3e6466eaa40ba607cdab91b974d0516e88e350724f20f1c804cb619c22ef5c37",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-4976b55c693df4107f.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-4976b55c693df4107f.webp",
+    "sha256": "d883e99c7935d3c8fe1ccb79168870955f41e301f3509e7485bd5d2ecbd18dfe",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-4a13acc1fab66970b0.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-4a13acc1fab66970b0.webp",
+    "sha256": "a5df40845a19694d0681f9b91e697d2da5fe92fd55cd21c2d44c358529191e65",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-4a3eb3c65074230181.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-4a3eb3c65074230181.webp",
+    "sha256": "12ddeecf931b9dcf8af3ee4f4d765fda30d7dac695b0c319e030cf5a85dd46c3",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-4aa0e207592270fd27.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-4aa0e207592270fd27.webp",
+    "sha256": "e2cb044c07a0571078a5c0ff227e19dfaefd218e77c5fbdd2376ce388f802843",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-4adf39a4d0b64591f1.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-4adf39a4d0b64591f1.webp",
+    "sha256": "74d722c8b88d2b97af1fe18099b5e664ed5697389b1d0a904c9e9a6a8a59193a",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-4b1c5458ddbef9e2e9.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-4b1c5458ddbef9e2e9.webp",
+    "sha256": "2f2051e8a4a045e3cf8d2bbd398f91063c77bb4741225d088e65b7b6a6052e84",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-4b30c9e42792410c87.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-4b30c9e42792410c87.webp",
+    "sha256": "47d46cc7bb0905b9f9da482d01eeacdeaabcc1aa82e27ab0103ffa437f7af3bb",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-4b93389626f709c3a1.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-4b93389626f709c3a1.webp",
+    "sha256": "5d51f88dea4db9942648ec835bbbda26da6f2ba0252ea0b53da819e7261cd900",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-4bc3581375d267dc5b.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-4bc3581375d267dc5b.webp",
+    "sha256": "f1670d510db709bf666b0bbe71d1c23e8612aa9813479e1737b6209bf8e70b25",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-4c3b96142d128aa8e4.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-4c3b96142d128aa8e4.webp",
+    "sha256": "c0dc28cb1961b30e1944b1e1fa4f0f012f7195bc3990770d844957bc59699730",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-4c6570028ff2853cc3.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-4c6570028ff2853cc3.webp",
+    "sha256": "edd02bb41b0a6241380904db22684e960510abb7bf076941f60e571f287fdd16",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-4ce9f2a9215b6d7100.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-4ce9f2a9215b6d7100.webp",
+    "sha256": "eb678ccb3c55c188e9dad8617ec3cb601eed24b4caa8d6c89d66d23d4f8e26be",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-4e1114edc552acf339.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-4e1114edc552acf339.webp",
+    "sha256": "a3aae74acdd721cccd099a369b993652d6257fe0252d1bd046fcb946b6a751e3",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-4e295df488a27984f6.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-4e295df488a27984f6.webp",
+    "sha256": "9e5cc8a53ae4eca66f62a062350c8b6578132245b93c150e35e99ce60d33f99a",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-4edf48f5c0dcc09841.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-4edf48f5c0dcc09841.webp",
+    "sha256": "652ad1cdb4d0bc385f4db4668fcaf0fa24112f7ad19f7e910c1c72978f991078",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-4fc6bfaeea9dab2ff0.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-4fc6bfaeea9dab2ff0.webp",
+    "sha256": "c633ba701529874592c7a326ec7fd6e050db8d3d9c4936a511a4bd403fde1a33",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-500ae56ffa1848c6e7.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-500ae56ffa1848c6e7.webp",
+    "sha256": "83c145f5da12be31b279430c8e1a4adb85b237640de382ea3879cbeb2e108ae0",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-50db7c40cd1665b845.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-50db7c40cd1665b845.webp",
+    "sha256": "3e27f611f552ea698eef2accca55095a6439b23c1eaf5679356fe771a9de56f9",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-50dd46e563b9bd6c8e.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-50dd46e563b9bd6c8e.webp",
+    "sha256": "5e32cfefb134686d9c14eb48f678ea62cc0bcd0326cc9b87f6df326ef6b39406",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-50ea31e7958b4244e4.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-50ea31e7958b4244e4.webp",
+    "sha256": "04088ecec85cec83706b404ed2916264ff1d2181f797b6eb401488e746ab4c36",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-5102d1f0ee9504ef43.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-5102d1f0ee9504ef43.webp",
+    "sha256": "55fd62d71f6d8ff32b495d7b66460590a4a3e90f78180c5d70ce180d8f96c40c",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-51430bb2c54554ddab.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-51430bb2c54554ddab.webp",
+    "sha256": "30b66170d9cbfc5d36a3bc34bb6da36708fc754f8e83003f4c36405bd83d3fae",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-5153a971fb80bde621.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-5153a971fb80bde621.webp",
+    "sha256": "76340f732bfa6a19223cd8a2351321516d3cc2e81bb5284e1edb5a6820371abf",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-52500ec8e175a12dee.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-52500ec8e175a12dee.webp",
+    "sha256": "66f12b53d06e5f4f2aebe0b1e3576eff56e7f0ec942e906cf1057a61fc6b421b",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-530c92fe38c30e466c.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-530c92fe38c30e466c.webp",
+    "sha256": "f3230c0d95fa8dcc3413edfc93ee465d609badb63119540a578fe08f7454c65a",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-5320b7abf417a0600c.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-5320b7abf417a0600c.webp",
+    "sha256": "4fba60b29820492197de6c24d458df09f706093829cf8e908b5354af14dfd94a",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-53aef061f2e6fa6de8.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-53aef061f2e6fa6de8.webp",
+    "sha256": "415b03109aa1883917347173c2eb8a3af44bdec99f55b0a9f4c509ab4562828a",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-546d24827838103659.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-546d24827838103659.webp",
+    "sha256": "e59955b00a3cb5aa927bb96e39f2fbd29954c9f4f3049fd7bf37bc08469e5cdd",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-54bd5abcbb3672ff1d.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-54bd5abcbb3672ff1d.webp",
+    "sha256": "f857560ff13e24156e7f0c555f3dffa14bb33bdb4d798653236edfb84afea551",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-553e657602c9d4c2f0.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-553e657602c9d4c2f0.webp",
+    "sha256": "ad44bd9c093360c379bba0f8b8b283d779da7ca93b07c29717f8192b43ea824c",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-55c8b51e943fb2b210.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-55c8b51e943fb2b210.webp",
+    "sha256": "ae72dee453efb7cff813ffffdbd416554270a3809dd33829fa0572f8183d33f5",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-55cdfad40a9326a59c.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-55cdfad40a9326a59c.webp",
+    "sha256": "c230643937cb9c694a126a0618a149d3433376b3d861664ce35ca8214e38e288",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-564c8097aefd70710d.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-564c8097aefd70710d.webp",
+    "sha256": "3962af33d2f0ecc1e0792fe4f98f990f6cb68623489946a78e6c748d4e8cef2d",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-5726b286f6abcffe26.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-5726b286f6abcffe26.webp",
+    "sha256": "00143a8591ae96d11fa2dca77992bb42d793a097e8f06a49a85a0f38324b1a11",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-58575702ae47c3dc08.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-58575702ae47c3dc08.webp",
+    "sha256": "3eb57337ecfd995b02b310833c3e69d559f78f4af9e783bdc2a42c9f8c28e44d",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-58fd123699c6219024.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-58fd123699c6219024.webp",
+    "sha256": "fce746b447ab3eb4a19cdc0be927f37fec16cf9f59dafaed2e25031cea0a4639",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-596d630f50854cb7e2.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-596d630f50854cb7e2.webp",
+    "sha256": "0743c6f8547ce67b81767752302324ec92efb61f3d225bd2ae63679e7f9c42cf",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-5a14a7ce9fda5f6442.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-5a14a7ce9fda5f6442.webp",
+    "sha256": "6af1401a438370258dc8409c2c35588d9ed1ecce778db0f45d96d9f0fed142ba",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-5a23db2110b10b8fac.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-5a23db2110b10b8fac.webp",
+    "sha256": "8f8e96069fbcb0147b36e49e0f05c6192ebea810138299b468387690f995b80e",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-5a83c989583b55c8cc.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-5a83c989583b55c8cc.webp",
+    "sha256": "52bda640138cad9373a8b84308f175847531b6852dd86b5fc0e48c18cca1d3ea",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-5acff4d78d6580c05b.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-5acff4d78d6580c05b.webp",
+    "sha256": "ece7a09145a34517d6e05058b675e277e845c428c00dd480cc9bc496e58551dd",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-5b20493111c36d2a68.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-5b20493111c36d2a68.webp",
+    "sha256": "5d123a8d55231fcd9dfa78c5f1960c9c86294117f0148492c229db0cd8fcd18b",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-5cd81993b66987aa1b.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-5cd81993b66987aa1b.webp",
+    "sha256": "9008f794d5b6ed18698238a72833584beac10155320d6d932ec3c928d44b6960",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-5cefed272f3f51b2b6.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-5cefed272f3f51b2b6.webp",
+    "sha256": "63f6236646d4b2c1e5d04ac8a67accd5db6ee158b034bbd55a575de3753caa5c",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-5d1dfcc1105b58d00c.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-5d1dfcc1105b58d00c.webp",
+    "sha256": "713b9bdec6de710ded61549fa63c68bf485017df79295ac18a236942442c4d1c",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-5d7d3cc60328dd26ba.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-5d7d3cc60328dd26ba.webp",
+    "sha256": "6e858f249a6eef05cf09e66d652a02b6ed9dd308fbc58f1db626ffee0a4574ac",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-5dc5359eda62a76afa.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-5dc5359eda62a76afa.webp",
+    "sha256": "19c88ddcf0a0e0f519fa3c70eae4dfba1d2550569d58916e0efee46a8d98f658",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-5dcedba4a8e54d02d6.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-5dcedba4a8e54d02d6.webp",
+    "sha256": "4feebccbe800d2484c58daabce93e48d32d05c2a5115f1dc739cae3aafe5111b",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-5e7b9b899e2c00495d.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-5e7b9b899e2c00495d.webp",
+    "sha256": "1c3ab82b96c2498788ffa8e9b3261fd413573c8e81f84c82dfd290991980b697",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-5e96c4a224b81207fa.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-5e96c4a224b81207fa.webp",
+    "sha256": "492051c097fafc03377414ae7d4ef81c27abdff1fddd7b67e54a50ca05b8b46a",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-5ee8e47b400c3749ea.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-5ee8e47b400c3749ea.webp",
+    "sha256": "15e0c3ea5f51bdb438bb511578a2afd698c2f0f5d015bce3e0ed4bd618bac6c6",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-5f08e9b7ece5444871.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-5f08e9b7ece5444871.webp",
+    "sha256": "9b572b1f34bfd59ebd17fb46360e98a9affa7fe98e9f872ba7c7abfdf1757fb5",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-5f0bc5e6ef40a68712.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-5f0bc5e6ef40a68712.webp",
+    "sha256": "f1af25f46f33720d4f03bb887371b0ad4e3f0aaf2f34fb81d6fa21ef853894ea",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-5f20023fc41b268840.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-5f20023fc41b268840.webp",
+    "sha256": "4a20fb177821966e02112776492b5d38f9916cd2274ef3157d19b3e81b534294",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-5f6236894b92958c00.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-5f6236894b92958c00.webp",
+    "sha256": "d3ae538bc71f28bdc36643f3e541934ee4b6cece4df2bec7f11f457c06e74580",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-5fbd185bfc4d3a9520.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-5fbd185bfc4d3a9520.webp",
+    "sha256": "a3b241db2f07a6008c59cb62c94056379c0e0fc4a69e437c1c09dd7b061fe2aa",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-60e7acf97b970451e0.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-60e7acf97b970451e0.webp",
+    "sha256": "e5884e8c906898b053e352ebf3d5ac76524456ffeef928087d0fb58fa3043ec8",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-61144e3ff6af640c8a.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-61144e3ff6af640c8a.webp",
+    "sha256": "1509a5899e01bd44b91d31d0d259471cc1e4f8a4f677f6ad6ba358e2a0a33361",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-617877af637bb563a6.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-617877af637bb563a6.webp",
+    "sha256": "eb3b509b542914ebbe590e62d4963eb242eccb9df318d770cf8a92f3a1ae0e04",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-61eee7960f96b81484.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-61eee7960f96b81484.webp",
+    "sha256": "d6001541aaf1d28dfbf768c8d31b57749f04cd1fb8265136b61fc825229c0df9",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-623d967175be426580.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-623d967175be426580.webp",
+    "sha256": "0ba21ac4f96183992497d506d641eb0d501165bd467c3054dd0dd67424109c7a",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-631a7ca48f4f7935e6.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-631a7ca48f4f7935e6.webp",
+    "sha256": "bef2eaa1dd4b6587eece39937444bf6e294faeb7b72bbcd3f0e270b8c78a9165",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-6369d31bce509afb13.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-6369d31bce509afb13.webp",
+    "sha256": "c12d0c62de7bc06feab4b0bf54c7c46a0f11804a25db2bd87e19377179258fa6",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-645648e2a3b8bc4e67.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-645648e2a3b8bc4e67.webp",
+    "sha256": "e3a034ff0c9d237743c6d91e8a686a21d059f2d4fd301f27c624793cc4da30a2",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-647052c11e5e1b3417.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-647052c11e5e1b3417.webp",
+    "sha256": "83aba47862d92f2cfd2da011b9d031581da3d327ca818191694c6d83606ecf98",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-64b00922b250a7e941.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-64b00922b250a7e941.webp",
+    "sha256": "7608718716fecf54e1cc321cd80f2d7ef59c668a148e0923de882bb24bbae456",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-64e861fa75baaad0ea.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-64e861fa75baaad0ea.webp",
+    "sha256": "d53a76e833aafa53be35ab5f1dd1ca56ca5b7041dc03705b3650a1018fc1735c",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-6538072d932c7dd4e3.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-6538072d932c7dd4e3.webp",
+    "sha256": "19cfd28e1514b0a19f3364ccb7344c46115378bfa4a8c1fffb7c99278be0cc5c",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-65844903c3c3d3947e.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-65844903c3c3d3947e.webp",
+    "sha256": "b6d071f1ec70d4183080cb4d2c6c5eba6b7ff8ca990506e2e28f605cd5986849",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-670cd77406feaf1fd7.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-670cd77406feaf1fd7.webp",
+    "sha256": "a8f3b4972f03aa69ef93bb0cfc6b51b9bb3cf6aad71be21229b14ec3456d04a8",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-6973a2f61c7980bba1.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-6973a2f61c7980bba1.webp",
+    "sha256": "09ab0a4a41caa6acfb49de76e68156147d60f58f2c7a78cd8edac1554d1cb297",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-69824ee16740eab7b1.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-69824ee16740eab7b1.webp",
+    "sha256": "8cbaa8473289456565a2c7acbc5c5b541d99180cf576a7bc87dd4ba6fbe0af6e",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-6af08de20cc569e5f9.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-6af08de20cc569e5f9.webp",
+    "sha256": "aa1a839ccafc0ab60e1a95280c76a91ec9cbdbacc80849dd0785ed0ca77f0aaf",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-6b52f3a0e91165a06d.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-6b52f3a0e91165a06d.webp",
+    "sha256": "559e80d59ec589cd0582ff49cae2c9eb7aa097937d82ec05c372e7c8b0988016",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-6be47b85b76254f53b.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-6be47b85b76254f53b.webp",
+    "sha256": "35180b0aac77a84bf60094e465b9b96c074d412b005c1b2202995c66325e41dc",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-6bee7b3a47e55c68f7.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-6bee7b3a47e55c68f7.webp",
+    "sha256": "e2e23b04e8615e3bc64a493415b4b41e186cea1de2b950ae57706119d154b126",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-6c2e08ae8da9e1dd88.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-6c2e08ae8da9e1dd88.webp",
+    "sha256": "6d48cc37848074e7c097752dff8ad429f75d94a1508522469971fbe46782669e",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-6cf5781cae29b7e8d7.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-6cf5781cae29b7e8d7.webp",
+    "sha256": "ac3e0f52dcd59d84d314d1dbea93565ece066e8ae926cc3f40cb45c23fcdb40b",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-6d0433b567c2eb4ea1.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-6d0433b567c2eb4ea1.webp",
+    "sha256": "4e46a8f5c242dc4d61d881155c9b283e542700616c1e6779dc21d57ebd81d7b7",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-6d0990cae59da66fae.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-6d0990cae59da66fae.webp",
+    "sha256": "be4850194b9d266dc71a1a55231e8cef5de45be76cd0aa506c0326447a1bd357",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-6d9e5b63f3e0d7ba50.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-6d9e5b63f3e0d7ba50.webp",
+    "sha256": "b8fa351b5c8bd06ed66fab5d25429168b79d9ef740cfaefe10ce038ebe9dbd50",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-6e1beb6d17b9bfcb31.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-6e1beb6d17b9bfcb31.webp",
+    "sha256": "3285482b359da3430fcacbd76a32a796f65d491a8169020f3ea2b2eb58040a03",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-6ee19317ce1d343c72.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-6ee19317ce1d343c72.webp",
+    "sha256": "751f26c601a0359957118b0c11b1ba3cd90d9a59ccdfbb1cae7a86d5e6fd8f98",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-6ef39bea95821a814f.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-6ef39bea95821a814f.webp",
+    "sha256": "24dc9d98b56603de500a3a68b54e4196325ac50bff8191fc25fc5f76ed4b6e12",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-6f9c4416465502b071.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-6f9c4416465502b071.webp",
+    "sha256": "fca6a2ca21813ff59af100779b244b181baeccc7c7cde1c3cf6b2ce5897e9619",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-7112a96054b6f120a1.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-7112a96054b6f120a1.webp",
+    "sha256": "ed81daf031e3b99e81fb948b4957b40072d31aff15fc59e18cae704412eb063c",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-7148d240a20cc4c99b.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-7148d240a20cc4c99b.webp",
+    "sha256": "822983d8389d06e946c97cd00ca692c5aa93e3adcb8af45e914d5de22c9b37a7",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-717c6764501046265e.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-717c6764501046265e.webp",
+    "sha256": "1c7cde02b6b1b256ccc6d0f70288cab869f32d476c56be3edd86e244eec1dceb",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-718e01a0623781abe0.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-718e01a0623781abe0.webp",
+    "sha256": "08fe121b7f3714ddead3b38c5af15cd5a85cf654ee215c3d853a0e7e1aff4c38",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-739426b01136f942b7.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-739426b01136f942b7.webp",
+    "sha256": "e56c3e4cee7cc22d6f9b664430dd5d30b275cbbf664634d9bb7fdab539af1a8b",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-7453557cfc46facc70.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-7453557cfc46facc70.webp",
+    "sha256": "4e40e9a972319f0fe75d77834661b12023d9ca8c3c291abd707351b9d10dcc0b",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-75812d74bf44fa2876.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-75812d74bf44fa2876.webp",
+    "sha256": "f87c5d49b16f8eef540909adb4b865105d8c22d3294056183f03b87a151a9e9f",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-75c8496e2ce6ddd7b3.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-75c8496e2ce6ddd7b3.webp",
+    "sha256": "2ef24f9250693bcee6472d129c679795fa6946153828c2e11a5764acfa00ff23",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-75ecff62f3efbb24c6.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-75ecff62f3efbb24c6.webp",
+    "sha256": "512e67ea4a1894e263c0d91044981ea8649e90c4d783402ffc712c5f2c9e8fd9",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-76ab746727c76e677f.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-76ab746727c76e677f.webp",
+    "sha256": "adf40bbd8b307ad1b7eae32cdf8ef192f4f08c7abdae55ce5ccf782e0b451ef9",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-76eab77bb3db1186cb.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-76eab77bb3db1186cb.webp",
+    "sha256": "53814710b85dd35540bb164a1e4cbd37d479689eb495d902996b48a6e25dc6ac",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-77066b7b32941823a6.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-77066b7b32941823a6.webp",
+    "sha256": "ff2542fe1748695feebfc9f512e1529f1997027c339f79e10b1cd8bd2c1c437f",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-770a54a06c5851ba62.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-770a54a06c5851ba62.webp",
+    "sha256": "d4d276a7062be9f8228eaffdf80a307d25c20cd3703e0b61d4d64b3cb8f49d5c",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-7765d644a115d990b5.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-7765d644a115d990b5.webp",
+    "sha256": "10b447bb7f382c370244e616e745d2fbe946d3fb5bf73477b3a097bd0b9ddfea",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-77dc6564cefe343b9c.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-77dc6564cefe343b9c.webp",
+    "sha256": "8478a8cf6a2ac2816cc6007754c5604d7cab1695637e0af32d2d24e03e9b5250",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-7847802e2254d1f9a3.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-7847802e2254d1f9a3.webp",
+    "sha256": "94e2562688f4fe047cba0888084ae310e9e5db20039ba93450feb2cd7b4d6399",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-788ecabefeaadd4d04.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-788ecabefeaadd4d04.webp",
+    "sha256": "0a293216858cc55f18e7255e1b53972d1d6847933f4514cbb502c6666424062e",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-7933fe7d2ad66d495a.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-7933fe7d2ad66d495a.webp",
+    "sha256": "2804a062aede676a74a497b7d92aa0325fb0be0aef9c6d768da4c5268af1c1b0",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-7a86b3773c2bfb66e9.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-7a86b3773c2bfb66e9.webp",
+    "sha256": "83b2f9b9897f015c658689c1a0230c961212f8c028ba6e6988f25fda8fe143a5",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-7aa39e416f318e7cc6.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-7aa39e416f318e7cc6.webp",
+    "sha256": "b81c43dd459b7d8bbe6a84cc2fef39c1fe1965a1af0be296a88e930f624c8261",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-7ad0fcc670f4b78297.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-7ad0fcc670f4b78297.webp",
+    "sha256": "4c762623aad5ace68494ab5a41fb605c1c12e5d4a5b26e7e597c908600b73823",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-7b651f7f535a9eb513.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-7b651f7f535a9eb513.webp",
+    "sha256": "fe75cee97cdc837a3730e23e464ab477538a6c3a80e97369c3b5b6341fc3b839",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-7bbc8838305ae38291.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-7bbc8838305ae38291.webp",
+    "sha256": "a0746fed13492ee1595e7188414d2c843515edd163943270bf5c70700cf06775",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-7bcd4102d7e14a443a.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-7bcd4102d7e14a443a.webp",
+    "sha256": "f249b36fb3231a7d457c9db95a2067a9456ac2a39002686f577c281f0336dc22",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-7d01a841e8a022c4b6.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-7d01a841e8a022c4b6.webp",
+    "sha256": "064cf3650c716b6d81a28bbbde7d60a9ecfe262362da93dcae14d2869ba37770",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-7df099015cd8f76a2e.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-7df099015cd8f76a2e.webp",
+    "sha256": "c01842ed856e42e5cfbe5205accfd445ad280a65fd8a79695efd0af61f765ac7",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-7dff51f87bae37adef.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-7dff51f87bae37adef.webp",
+    "sha256": "7d052bfef1de822f7faafea0d3997dc7b57d0a58bd4c8a82389924f7526d39a3",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-8008268cb7420e59ba.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-8008268cb7420e59ba.webp",
+    "sha256": "4819230b431fafc1764b9b37cfa585eb54cd5116cd503dca862a59bc019935ba",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-806fe38e5519999c6a.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-806fe38e5519999c6a.webp",
+    "sha256": "a50f31a53abd8d9c71933102ea099428a62b1d417253f6a5e58c22a2fd8491b7",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-80be0f93d3d2aaceaf.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-80be0f93d3d2aaceaf.webp",
+    "sha256": "46387c845d1018d135e68aec62e148e02914b698aa9882a407054695f834dff2",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-80c2b0357331a67d37.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-80c2b0357331a67d37.webp",
+    "sha256": "e70efdcac9d165ddc42b4efdbfcac39157e835ff9e16c6600f043ad82a023a7f",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-8116ae072576078c24.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-8116ae072576078c24.webp",
+    "sha256": "b3fa72ea67867e51333fb57d395ff446cd5c4847f8dc9a9175bbab8148885a97",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-81f292968c06001db7.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-81f292968c06001db7.webp",
+    "sha256": "d8a4fe3627081e758af1d8b13f9516c561d6c73c88c1cc43c932e5cae39d4e76",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-8259948801934dd457.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-8259948801934dd457.webp",
+    "sha256": "6575b5b67295268c41c9b240526db1f9684d0a00cb8eb8fad9f8764a1b1240a4",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-829cdffb9d0c5a8c5d.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-829cdffb9d0c5a8c5d.webp",
+    "sha256": "e5a5e469bf2a83994e3204be06df4803c13850fc7c0ce911c87c5630843a48af",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-8387c256b98e2bb704.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-8387c256b98e2bb704.webp",
+    "sha256": "9db957696656b550de9fd3d7e7c7fb8fe2ba3c25682baff0cf6f24e396dd2a5f",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-841a07d00aed1409c0.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-841a07d00aed1409c0.webp",
+    "sha256": "70b0bbe666cf5ddabfadba472071c860f1112c708261bc10811175c4aafbd491",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-8476b20c5a2e865ef2.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-8476b20c5a2e865ef2.webp",
+    "sha256": "fba608632a803bd10af53b0c761da798b5acf01269d870d7c7bfef0b800c5791",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-8520e5c824c447070b.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-8520e5c824c447070b.webp",
+    "sha256": "857726d95b8cf97d6806af0676cec06dd521037152ae818b020d343ab995061a",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-855e7a0f58c1cb0f45.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-855e7a0f58c1cb0f45.webp",
+    "sha256": "f49149dbd5dcaea203502cda68fd4f2c33d0f275ff94bdde564394ec9527b32c",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-86b712e9eef90266c9.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-86b712e9eef90266c9.webp",
+    "sha256": "494b24d44914244b7b13951dea9578b305960327699fb2acbedae09b9e5c6dd4",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-87466eb9bf965b8536.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-87466eb9bf965b8536.webp",
+    "sha256": "276a3623a99b9d997eca771fbd87c39ec79b75fbc99b5aea0e06d56b59bd2fab",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-8914caf81b0605ff3e.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-8914caf81b0605ff3e.webp",
+    "sha256": "e46f6bfebba2b2633bc8cbcfef1a0ceb4768daf7f184deb79d455e7d2c1198b5",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-8ad6e068f752bfb338.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-8ad6e068f752bfb338.webp",
+    "sha256": "d4e289120e6f56b817d3eef360e0b1543d3bbf4b9edfc086a2c1d9488c573000",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-8b9ea228dfd0a9f94c.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-8b9ea228dfd0a9f94c.webp",
+    "sha256": "9d20e1c37af5649d221b48f40e37a437f59fe360af4d174f930758de9829d109",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-8ba32ab93b719d3611.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-8ba32ab93b719d3611.webp",
+    "sha256": "4951e3430244858475bd6edfad565baf9215decb5f4041827ff531ebabe06426",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-8d7765bacb4404810b.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-8d7765bacb4404810b.webp",
+    "sha256": "3f62ceb8d06ff8c5f664c5330fa44619cac941688cf4f3d0c48f12d9b2befcfe",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-8dc514ce275517ae2c.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-8dc514ce275517ae2c.webp",
+    "sha256": "fba608632a803bd10af53b0c761da798b5acf01269d870d7c7bfef0b800c5791",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-8e14172fe5e791d3d4.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-8e14172fe5e791d3d4.webp",
+    "sha256": "7bd76fdd0240462a6e3bef51c975dc46fede280274eae72c2483c7b514ef69c8",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-8fd2b91f075d504a2b.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-8fd2b91f075d504a2b.webp",
+    "sha256": "66eeed74540ce1f342e5d495c1b2718cfe35f3a0eb2b287bc579d8db2831e0af",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-90da5f48072e3b0890.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-90da5f48072e3b0890.webp",
+    "sha256": "caa8ad8facab06de76d9db13ccb8eb143a20d2e865aa6f195f5629b56b82f441",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-9164c84c66c78d7acc.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-9164c84c66c78d7acc.webp",
+    "sha256": "761eba42c095dd581e5665f228da9e8a6d0e284d25488e836f43090bcb778b0d",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-916843955ce2ebc6ab.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-916843955ce2ebc6ab.webp",
+    "sha256": "9b1c544815ea99c6d88c71f232b08dba936caa2780cd6c71f35613db5a51f4b2",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-9190ccf07181e744fa.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-9190ccf07181e744fa.webp",
+    "sha256": "1a5d34c7169870e6f7da7599d83ad842d76d3361082c5e47901c912d93be596e",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-91a150e8911e54a093.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-91a150e8911e54a093.webp",
+    "sha256": "4522819197fb619dbf84781f5aa0642ffcd5ff41d233107050fa01cc02dc8123",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-929a19b220b0e62629.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-929a19b220b0e62629.webp",
+    "sha256": "d66c89d0ebb823b7a1338df1455ab6bba2ba9b60504b59f785175189f1e77046",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-92e805c60a1fa1b418.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-92e805c60a1fa1b418.webp",
+    "sha256": "404bce14047351efeb6c82e65ac9e364739f7f447dc3160fa20b81336770e141",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-9370cab07106b2381e.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-9370cab07106b2381e.webp",
+    "sha256": "19cfddb3bb73d16ce1648f6b15b83602fc80657adfb9cac12fe7e1bc1a16709e",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-93ef27c7c0f80e05a4.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-93ef27c7c0f80e05a4.webp",
+    "sha256": "777783060c2e8e786afec610234c4a459beef19a2c6448fb94619fe694afba54",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-93fca7868d840f3b65.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-93fca7868d840f3b65.webp",
+    "sha256": "74a6fbbb77a976f47e7dbe8cddd93c7c298f00bd1cb6508f94ccb0250f58959e",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-955d2200d9da5c2c35.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-955d2200d9da5c2c35.webp",
+    "sha256": "24be625faefa75ace9cce4cfe7de022fd8bb1d238eb0f89b7eece30c52b590d1",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-957214f69c00724c82.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-957214f69c00724c82.webp",
+    "sha256": "4a14d32df2e1b36e1ca8c7765ee24cb422d85dbe484e0af426292436293431e3",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-97003928ee9e8f6cc0.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-97003928ee9e8f6cc0.webp",
+    "sha256": "f848cb68d0b3d7a7dbfc5d572a2e0ef6a7b198f947a48e1ffcc62f3a2c656e57",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-978e64295896f666e1.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-978e64295896f666e1.webp",
+    "sha256": "ae47976245e9f5041cc95cb45b41a76dfd33b8a97ff621846eeae2240146e199",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-9825ce67122ae6cc99.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-9825ce67122ae6cc99.webp",
+    "sha256": "fb3f222403e2551fbc9cf38325e315f3d72fd6d1ba57abba5e5b14131fcfd908",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-98b54bb37e0efa76d8.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-98b54bb37e0efa76d8.webp",
+    "sha256": "2f10e920fa02440b7e387a7629b14de0f7fbf2aed02cdb22158ea1916eae36a6",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-99443360f5c36df76b.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-99443360f5c36df76b.webp",
+    "sha256": "792447217be951956484ba24f2014bd4a81084c1dc57000ba2a834d574a9e9cb",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-996413826f202e5171.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-996413826f202e5171.webp",
+    "sha256": "06ff9a7b07d6a5de43644afcc6737f43f6748640e325f7557ade04202948ac4d",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-9a7cd94966bb789866.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-9a7cd94966bb789866.webp",
+    "sha256": "b9a2bb55dbf7e54359c0b38474e2e5eeec48e9ee425c14dc5ef2c92c83a0d71a",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-9b6237e5635b509bcf.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-9b6237e5635b509bcf.webp",
+    "sha256": "b2f04210c363df3be535718ef64c6c711366e8a638cf92a01b1107c847ed2373",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-9be9f630cd0db847fc.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-9be9f630cd0db847fc.webp",
+    "sha256": "3e7ca57fcdcff61610ae0ebaf26ce5de3ef5e146de9a75b89984c59a3067d1c4",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-9d5bd7483d3ba3b615.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-9d5bd7483d3ba3b615.webp",
+    "sha256": "1e5dec941c3fc5b0d7545f850cf56a51f169002fb06ebee50c655eb45415d641",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-9eb6ae71429872baa4.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-9eb6ae71429872baa4.webp",
+    "sha256": "ef7ad0272a98856cddd5c004edb0fcc655b95bfb7d4eacf9fd7c4774bd058be1",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-9ed5ffb29ef8f0ad12.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-9ed5ffb29ef8f0ad12.webp",
+    "sha256": "dbcd42bdf77b2357e03a5920795fd1ef455480b8cd0cc37420625d6b185f1faa",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-9fd017b94f71bd68f1.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-9fd017b94f71bd68f1.webp",
+    "sha256": "8e8081ffed495b1a7ea0983e175e9437274ba362fee195a94ca9d4e17868948d",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-9ff0c174fcfb151edf.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-9ff0c174fcfb151edf.webp",
+    "sha256": "589613f8d36d34fbb5805f439c1eaa50bc679ba6fddbfcbcebd65a0ec4fe0eb9",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-a120dd125370f056f2.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-a120dd125370f056f2.webp",
+    "sha256": "7bbb63ffebb6585844487f1df79c6991edccde100a4e026d7e440bcb38f1d6dd",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-a1d81221799342ceac.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-a1d81221799342ceac.webp",
+    "sha256": "8d7a671633498e4bafe93e2e9225dce8a4b686c4eff9e76256b341f9cc94df98",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-a1eac43f4f68e104c6.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-a1eac43f4f68e104c6.webp",
+    "sha256": "afe9e4b48087d81350dbdd43a380f6707977e070310dcba21a4f68650e5a5539",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-a1fd16c383d8c7abd5.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-a1fd16c383d8c7abd5.webp",
+    "sha256": "f6e98e08acc681000a356d7173f61f17b253be8ade096aab73756546a84632bf",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-a2786c9ab3e39c5c03.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-a2786c9ab3e39c5c03.webp",
+    "sha256": "4fafaf134f8e9a0b66b64698dc1bb9f854a3fa228e3d6bd76a75ed63309b128c",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-a3a85bc3f19dfbc30e.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-a3a85bc3f19dfbc30e.webp",
+    "sha256": "b81bb95acbc83b491ad6b111869eed4ae6a8b5777e4ec4d8298f879c8581c614",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-a49d1d174d41a03fe8.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-a49d1d174d41a03fe8.webp",
+    "sha256": "03b9a7b3803d3d18a70ad253ec368b6bcebfb66c2c265d897d63d83f66968870",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-a4df0b0c0cacf26612.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-a4df0b0c0cacf26612.webp",
+    "sha256": "841885d38d155146c1e31629509aaeae0f8f35d0cfa5fcf5bb18f2356df31471",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-a4ff4f870a08dfe09d.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-a4ff4f870a08dfe09d.webp",
+    "sha256": "651d03dc5a32ae432e49c4c964f8be7a00087dcb2975aa3bba6edc9540bacc47",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-a50f85b326ed95dd0f.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-a50f85b326ed95dd0f.webp",
+    "sha256": "af0206e36aefd7a613f2034240a236c462871599ee9a04de908c6523007b1278",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-a59024fb03b7193274.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-a59024fb03b7193274.webp",
+    "sha256": "7cc0a34ebe8c568df877d278cf8225652309c91bf18b1323c60d086451f46960",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-a5f47403af09089ed6.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-a5f47403af09089ed6.webp",
+    "sha256": "ea1b54eaccf01ffa7d6473f99e1c78fe2f2ae7a87b56de8925f91375d981c608",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-a5f96da72e79078c4c.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-a5f96da72e79078c4c.webp",
+    "sha256": "e3da6a3a15caee916a1d6ea3e15f186ed90102f7990ad3d7b22142f2e8568b02",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-a5feed15b3fc9e324f.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-a5feed15b3fc9e324f.webp",
+    "sha256": "2c4bc9ecb5593f50aab61b0095196e5bc16bd5d908fa09cf7d909bf3e1b5cddf",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-a700cbc1c564fc4e86.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-a700cbc1c564fc4e86.webp",
+    "sha256": "4a8d16803333ee73a7a3816ebc089b2fb7322585f61c5a7c674eae4bfebdf41d",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-a76269ccfd1482188f.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-a76269ccfd1482188f.webp",
+    "sha256": "552df26ac4264a0ef0b8074ff2d985faff4733111af0916fb5faeb5c5a44be5c",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-a7ea0103d5efd9ef01.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-a7ea0103d5efd9ef01.webp",
+    "sha256": "e6f7c65c1058674aaa5697a6ce0178f30b55f2eb4045951cb2521159641a0679",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-a8d4a20d764f276865.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-a8d4a20d764f276865.webp",
+    "sha256": "a79d9ceaa9167d6be4af6817f04b3c1c60ff73e32936cd20ac5fa612a504c01f",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-a8e073e1d3969c7e82.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-a8e073e1d3969c7e82.webp",
+    "sha256": "b1682407183a240f1a0ac46341b3564b978d32d5647dcdaad4d5437ff252ee8f",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-a998d230d5fc71b4d1.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-a998d230d5fc71b4d1.webp",
+    "sha256": "dca19ed9b2b993a43a97d372bd977f770a699a793655daa8fd56850b80a67967",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-aad0765dd4f8252537.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-aad0765dd4f8252537.webp",
+    "sha256": "db0bd998ea69111b2fbad9d1bdf8a8bc97e4ba7378b9ec050d5d8df7c8339e0a",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-abe95ef254ae87b45e.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-abe95ef254ae87b45e.webp",
+    "sha256": "5c43131921695a817a28697622a1917d4550a22d8d8ef612ad31e6e1e1ecc1ee",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-aceb3f58449b615c1e.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-aceb3f58449b615c1e.webp",
+    "sha256": "a885bf6467790abf2059c6a38e9300d46664978c00dc43d8f1386344c5451aad",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-ad4be49c6416e1efc8.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-ad4be49c6416e1efc8.webp",
+    "sha256": "a03afab4cfd67cb558dd4b6083d5db29f7964d3399135938493d70444317a919",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-adfe42d7daeef4aace.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-adfe42d7daeef4aace.webp",
+    "sha256": "4f56fd417f418704f88fef39ddb43f83cbece2338e38287d2cde89a431ab9dc6",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-ae0b92ca4118869c87.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-ae0b92ca4118869c87.webp",
+    "sha256": "9c5f3ba8ab129dba85184b24019eedc7ec65836f0c51a5d1d4680739faf1fd23",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-b0496bb212f7ac8803.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-b0496bb212f7ac8803.webp",
+    "sha256": "ad1906b3c9a8eec90fcfbd899037763c9ca636ade3ac12106735a8fae4536c4d",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-b08aaa5f477cd75e0f.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-b08aaa5f477cd75e0f.webp",
+    "sha256": "5c9fec267bd0bdc17165a304f5abb1509dba533bc6df30bb5eac1517bbee0de9",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-b254e1527e3406ab3b.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-b254e1527e3406ab3b.webp",
+    "sha256": "ce997734f0c389fa7daf4739c87b2b1a7784aec664334fa2b49586fa2ccb9496",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-b2aa401782c04351f9.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-b2aa401782c04351f9.webp",
+    "sha256": "4620c04cf77efe866f3ea3de63fe591396b311f4b3560b90970a97597199fd1c",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-b4cb043742c3da735f.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-b4cb043742c3da735f.webp",
+    "sha256": "bd8e17118c573ee9b6315637431e7bdc9fb900ffe01c02dad6858c7608715796",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-b4ee26289e080f8922.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-b4ee26289e080f8922.webp",
+    "sha256": "5241b2bd2a09ab85cf27f6ef2e3b9484015a58bbd054499907e6a62207ac2f89",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-b5077a95952d406258.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-b5077a95952d406258.webp",
+    "sha256": "30e30d247ef5595966a638ba427b389f443e7fff5cada477bd5f008d86f03ec9",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-b5b8910d45bc6d300c.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-b5b8910d45bc6d300c.webp",
+    "sha256": "792447217be951956484ba24f2014bd4a81084c1dc57000ba2a834d574a9e9cb",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-b6ffa25d7e217a0827.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-b6ffa25d7e217a0827.webp",
+    "sha256": "e31fb120ae961d516001ba78505f1a43b6e28933472c48735faf5ac9198e29e3",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-b7665b344588fa59df.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-b7665b344588fa59df.webp",
+    "sha256": "ae7d885e4b6ed33cb97a05ccf3a01e3c0bb5671272fc9791ed5f769397d0432f",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-b911971b9cb5e09a6f.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-b911971b9cb5e09a6f.webp",
+    "sha256": "e9cc38d7261275794c891c4f8b6f1268745698dfa7f05cd7dabf94e0528988a6",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-b9287037a854c1804d.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-b9287037a854c1804d.webp",
+    "sha256": "327207720fe1271f2b5b576f3ba4ea4330ece1dc8ff3924265d4428f60789e47",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-b94cd88a9805d5e397.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-b94cd88a9805d5e397.webp",
+    "sha256": "d4960f6e64ba48eb1ce4f427a855d60f9ba25278d92be484cd4aa09ebc835d03",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-b972a8f0cb54cecd61.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-b972a8f0cb54cecd61.webp",
+    "sha256": "20a1a553a5577172e758f0b6904ea5874f511fba5d78e6687c366524eb8f2ca9",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-ba3d4f1bf9d20cf49b.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-ba3d4f1bf9d20cf49b.webp",
+    "sha256": "c58671308703ac1a7ff5eb027ea98744b73eb41511ba4f3ad4aa4c082440d23f",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-ba884f0a529486ae00.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-ba884f0a529486ae00.webp",
+    "sha256": "89d3e37027161250f4608add16879fd0749a10b3df1265788bc7a3a7ad60dddb",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-bb8a844272fce91cf2.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-bb8a844272fce91cf2.webp",
+    "sha256": "3ff7ddfefc6f4bb835a1b640155147e2533e8b76747bdd2cf85bead09b513f4e",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-bbcfcfedd9fca4019b.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-bbcfcfedd9fca4019b.webp",
+    "sha256": "84b92ac1a2959c811ef3148fd41c24e65041a64015186617f6ed0436b33a7520",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-bc8fce794707cd8bad.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-bc8fce794707cd8bad.webp",
+    "sha256": "5d51f88dea4db9942648ec835bbbda26da6f2ba0252ea0b53da819e7261cd900",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-bcd56d044cb24f28f1.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-bcd56d044cb24f28f1.webp",
+    "sha256": "ddf27bdeed339b20b884de67fc89e6836c2d2062034120d0052779f947835bad",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-bf61f04dff6cf0e720.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-bf61f04dff6cf0e720.webp",
+    "sha256": "b058ae8c5400beee8bb2527c94de1b5fabfb4993fd3baccfacbb8fbb840d180c",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-c02375e488b990627d.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-c02375e488b990627d.webp",
+    "sha256": "ed4186cad3dcf6788cc3977b9717240be864a629253fc50f2fac896e4b33579e",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-c07fd0b2c66e3dcd02.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-c07fd0b2c66e3dcd02.webp",
+    "sha256": "2210fbf36e28147da536fb0db17cc9410ae0ed2aa34b263827c3ad32e8973ed2",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-c0ab4626b0f4f563a3.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-c0ab4626b0f4f563a3.webp",
+    "sha256": "0a598d4ea5141529b29a2e12965ed0056cd2892f4c22c24bce809946ba49c629",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-c19bcc448b719f2ff4.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-c19bcc448b719f2ff4.webp",
+    "sha256": "e0ca1bfc9d5f8f802fe51d1a4da22a5397ff6523019f1ccfbed474c23fc4dd2a",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-c1b9a37127a4daa577.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-c1b9a37127a4daa577.webp",
+    "sha256": "ae31a95742c5eb0d92e14b221fd3f18a2b191c7da70bb9a29a5d7143c2601e0f",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-c24a3354cf9abdf2d1.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-c24a3354cf9abdf2d1.webp",
+    "sha256": "5693c73ae3f89c4a5094d44effd4d576f43fb9e3057eca8c8b01d10fea31a965",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-c29052a7e92ade487f.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-c29052a7e92ade487f.webp",
+    "sha256": "8d2d659730579f808e6b4eaf6d8371d3202c208af971ad8b45f4300b945014dd",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-c2de829f95d5083dce.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-c2de829f95d5083dce.webp",
+    "sha256": "fac4121a612df319222e84483f9efb83db61bd449d14cd074ac5114d71abf933",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-c2e1b57792675bde4a.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-c2e1b57792675bde4a.webp",
+    "sha256": "a868a4a985250be476b8e8a50693215749b145c776dae1b4cd9fc4ff0fb0f8a2",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-c2e3a9276b4408f9d6.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-c2e3a9276b4408f9d6.webp",
+    "sha256": "9f86ad888e4e43a14eb9041aa30aacb30e1063536d96aab52eb4b2298992a746",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-c31cfece9326970aaf.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-c31cfece9326970aaf.webp",
+    "sha256": "73367d11be05dc45dfce30b9af7c0455753a90fda179ecf2ce4c756f72054a54",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-c55ccce91357d78aee.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-c55ccce91357d78aee.webp",
+    "sha256": "18bf1d4f7e09dd49ef45ff75178e95934a6944f2d992ac9c46966791f6b898f3",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-c5e0fdfcd6d7328c3c.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-c5e0fdfcd6d7328c3c.webp",
+    "sha256": "f2fc476bf798b4852d83e4060d541d3b0052e6f273c782307e3672e0ae680add",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-c610d0db191cfe0335.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-c610d0db191cfe0335.webp",
+    "sha256": "2f7ba3cf04af00661f0a358c709458d919d9171efd975508840a5e52d1270d7a",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-c71a763ddc1d40fab6.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-c71a763ddc1d40fab6.webp",
+    "sha256": "4fdcef39c4f3782b98d542d350de56cfe0934549a58c7edf890507ccaffeae98",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-c80fb2d58cfcc69ab8.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-c80fb2d58cfcc69ab8.webp",
+    "sha256": "d8aaf61ec6bf4911e24d84b6e3a36451e23cb6f4bbaaba539e721a39c726fd60",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-c820d706bb52d36404.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-c820d706bb52d36404.webp",
+    "sha256": "276fab8b155daa58a83e0db9543623415a7e821b14482e8febbb4f423ec18239",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-ca14e35b90709fc9fe.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-ca14e35b90709fc9fe.webp",
+    "sha256": "c64e1ec04fa854c1c15226be672cfaa96259a8341c1495caec0d8eec3794e31b",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-cbc17f8f9bd1e3f68c.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-cbc17f8f9bd1e3f68c.webp",
+    "sha256": "9fa4944b7e1e7f0293ba5d170d714979097da09951493fd206090b717205108b",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-cc34c9261e6d290fb3.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-cc34c9261e6d290fb3.webp",
+    "sha256": "f1831ea258a1f0eebe702d8108e55c7696a322e06f022fba012b3f6f3017f4bc",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-ccdfeac3d7611a0d08.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-ccdfeac3d7611a0d08.webp",
+    "sha256": "3661e9e9257a3a9261d31cb4a71ce927a5138b5d65c917033df06067c59661eb",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-cd605d8537d7c96a11.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-cd605d8537d7c96a11.webp",
+    "sha256": "bb5937f0b3297e380e42bbeda7a7f13aaa79055b146e41f21b7e1335ecc13890",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-ce330aee37fc3645a9.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-ce330aee37fc3645a9.webp",
+    "sha256": "b695651fe1e8c92b32f3e2217c49528206df434b7ce8ab7d29aefe07ce78a482",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-ce491ba3337698ff33.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-ce491ba3337698ff33.webp",
+    "sha256": "65ab085bee6f3f05992674290297aa80800254c09edcaa57bb30fe7c5faa8260",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-ce7269e72149161f15.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-ce7269e72149161f15.webp",
+    "sha256": "3a14cbee7c66df618e5c8c406331b90716896655db2abfab3bf6f2047fe23f46",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-cec098e4906dfb074f.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-cec098e4906dfb074f.webp",
+    "sha256": "f4041b3624edd6bdae9059122c9658ef9ddf4bf55064436066300105c7ca9119",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-ceebfcebf1ff5202dd.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-ceebfcebf1ff5202dd.webp",
+    "sha256": "9cd04604ac71c9fefd1c429a5ed91007800a4d2d22512f4fd95620da0b0424e9",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-cf5ce88cf9fe8c5ecd.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-cf5ce88cf9fe8c5ecd.webp",
+    "sha256": "d126ba1ce4731c803c5027d580e77f6de6afd9bfdbc9669640ec6ea63ef7f70b",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-cfd518fa45090e1488.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-cfd518fa45090e1488.webp",
+    "sha256": "aa12317828a43edbbf58a90352d41e465e795fd6f1459480c06b1be0ec727fde",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-cfd75a961fbbdcea9d.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-cfd75a961fbbdcea9d.webp",
+    "sha256": "1b402c0749d3fad9969f9cba8e9ef57289cd6c202bf21690c756848e584766c7",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-d036518668d930908a.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-d036518668d930908a.webp",
+    "sha256": "907b9366d1a5ac1aef95e71784c4ff809c338fbdbb7e5c8dbde1ed51e3b725ad",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-d05d0ecca84a7fcd16.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-d05d0ecca84a7fcd16.webp",
+    "sha256": "2c5ecb35b6fadb78da57125cfa1c2dc28157a0f59093f0817081cf804f0f01fb",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-d05ea63df4e2cf7a15.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-d05ea63df4e2cf7a15.webp",
+    "sha256": "fc0cb3d45afa55f4c822ec0fdeefc247a1d780584b933bf159ad7a876133e528",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-d0a3c60c3c30857aaa.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-d0a3c60c3c30857aaa.webp",
+    "sha256": "4e19d849f11e0c1b487d354d6b1a18c7c78570b25c78c7dc2b22a07e12420dc2",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-d0b0f83784f20b2f2d.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-d0b0f83784f20b2f2d.webp",
+    "sha256": "b0397bf5fab94bd6d871bbe2cba7d0e6096c1b4ce168510eaef12e6bbba1c43f",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-d0e60f73f0e23a257c.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-d0e60f73f0e23a257c.webp",
+    "sha256": "21420bbd612d4e126e940abc67028d13528243ff2ac012a1c5d7b94b12df33d9",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-d0ff94bcfa1d7b2a97.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-d0ff94bcfa1d7b2a97.webp",
+    "sha256": "5f7db0d96a0356fcf8292880eacdcfe5d6cd46b06fbc888c2da4f6fb52aeec90",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-d136fed1c91a6be9bf.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-d136fed1c91a6be9bf.webp",
+    "sha256": "00ab9da145db2da504251af0c20578ec0c0de11f02213f39c634ec3fdeea396a",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-d1b4864b75d797ff54.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-d1b4864b75d797ff54.webp",
+    "sha256": "838a03daa2bd5b3b7b920a7b115b10d8d2dfc4838a4e7edd6379bd8f1278fee3",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-d2148c8c947daec52c.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-d2148c8c947daec52c.webp",
+    "sha256": "19cfddb3bb73d16ce1648f6b15b83602fc80657adfb9cac12fe7e1bc1a16709e",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-d2b79cb092cfe0d8f1.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-d2b79cb092cfe0d8f1.webp",
+    "sha256": "a55dc65bb7ada3776afc0f1c0d8925d59b4817f417afcf372fd1b1cb5d3acf88",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-d45821d871851c2d29.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-d45821d871851c2d29.webp",
+    "sha256": "56d842ec7d4c60bd6b59dfe0b269954291cebe59573214a76207f12d12f32e22",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-d463f8534d5fb31684.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-d463f8534d5fb31684.webp",
+    "sha256": "5b47a43801a69475a8b2365d4807106415208cd0a633d1cea8b5aafd184157be",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-d4bfa8ec3861300126.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-d4bfa8ec3861300126.webp",
+    "sha256": "ef8ad43db100262857f97ebf2524162ebf5f7732960a8769e850d5227b94959b",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-d5452a628d23f95637.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-d5452a628d23f95637.webp",
+    "sha256": "301c8a28f3c4efeb6f5f09115109a806390d2f278d539586b8d03f0fb5cfd51f",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-d5f5ea244b3c18b297.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-d5f5ea244b3c18b297.webp",
+    "sha256": "d13e330d97e4b86d71bad0ffb896c42b2f6c6f5296e7c4b04b57471d4eaac9b4",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-d5fffd7fc18baf0fc0.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-d5fffd7fc18baf0fc0.webp",
+    "sha256": "dda4c297c373f738f7272f80d0fd9396a379070d6c22395dbfa87211d3fb8828",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-d600e055206cda1b8a.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-d600e055206cda1b8a.webp",
+    "sha256": "d53a76e833aafa53be35ab5f1dd1ca56ca5b7041dc03705b3650a1018fc1735c",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-d638e0c01c05e04112.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-d638e0c01c05e04112.webp",
+    "sha256": "9008f794d5b6ed18698238a72833584beac10155320d6d932ec3c928d44b6960",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-d6ee3320b00406670b.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-d6ee3320b00406670b.webp",
+    "sha256": "606e24c1a78b313074ae9153189cd21aed19b318a230c853fc728b98e1b538c1",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-d7070ad7722ea0a763.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-d7070ad7722ea0a763.webp",
+    "sha256": "655f136a9b579cd90b355bc11e7dcce23c4956239d1d35cd3f8dd7b5ae7e9812",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-d87caf3b35c2291e2c.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-d87caf3b35c2291e2c.webp",
+    "sha256": "a49fabe15e27b06dd8769d3f3c70f1d3e5faf6623fde035f7b1fcf0a9d960c38",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-d908f4a957fa4da9c5.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-d908f4a957fa4da9c5.webp",
+    "sha256": "ec0b12520aec33c694ada9a3448f6d11cf9f8e09df44d9c73ec142c0fc20b450",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-da01628d0ce6777fd9.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-da01628d0ce6777fd9.webp",
+    "sha256": "6ef22d2d5e7af834fd9e6117ef2a8ba5c05c10dd40cab4006a601a40776d95c2",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-da1aa390fed16dbf3c.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-da1aa390fed16dbf3c.webp",
+    "sha256": "7b9759a733c1e7ae4117e0868f108ee22cacc97dfd28f712883a0fcbbe41082b",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-db0912d8d15b2698e2.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-db0912d8d15b2698e2.webp",
+    "sha256": "08ffd699ee4e1761e2033c0730309db91324d6cba892269fa170e8db57338f73",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-db35f5f646bf4a15c7.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-db35f5f646bf4a15c7.webp",
+    "sha256": "ff323688266c8707ee46a670078e5045df1088e18ae32c26dbe2a741b245b9fe",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-dbceb1cef083ebc726.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-dbceb1cef083ebc726.webp",
+    "sha256": "460c3badd8a2ba53dd4cbfd8366c7d5156efc98efa8319446ebeef22794551ce",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-dc9d496a886f3d80c3.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-dc9d496a886f3d80c3.webp",
+    "sha256": "24440b9a49b61985435ae3c49c29d39c2018a23b46a62861b0d52b3bd40c493c",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-dcdd74963c2b8c46aa.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-dcdd74963c2b8c46aa.webp",
+    "sha256": "eca68ddc89671ddca3a9817814d3256fd9bac8d5ffa9284f8fa2a86317480881",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-dd52238b315877d33f.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-dd52238b315877d33f.webp",
+    "sha256": "b3c0a60df1a33b55365e6342061884e583caa399d5d5a22626ddabb67cead189",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-ddd9ba8be1f4d3fd2c.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-ddd9ba8be1f4d3fd2c.webp",
+    "sha256": "162ef81a1c13623b222e79040ba8b978a2eebe57fd41f098308b4b8af1fbfd79",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-df99ad2db5150bf560.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-df99ad2db5150bf560.webp",
+    "sha256": "3d9328d4c536ea5d2ff045471af028a3b0b245c8fd920d1fb1dca39b99a63f6e",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-e0200d08b0dfdc3c23.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-e0200d08b0dfdc3c23.webp",
+    "sha256": "bde16e6b9b58b7f7a18c08aed6cae80af4a7976979433a6b8661bd14349246e0",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-e10924ce12c7f8051e.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-e10924ce12c7f8051e.webp",
+    "sha256": "763d972eee798211f39587175534c6f2ed5735999bc06a287224130105218a0e",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-e18d2d488945f6abbc.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-e18d2d488945f6abbc.webp",
+    "sha256": "73a7b4c8fe58ffd54ae8581b855a618e3704f6e9a9607b85fbec2827401571bf",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-e22c7f5837df985fdf.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-e22c7f5837df985fdf.webp",
+    "sha256": "a804bff3437427a63a8000d98685e2064ea033178b9bccc3de02c123e887f5f8",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-e27ff2e81025bab062.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-e27ff2e81025bab062.webp",
+    "sha256": "3448f50c5a9fc5140369dcb8035292d45f6fef642123543c6d24051d0fb5be78",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-e282cf46ceefa46338.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-e282cf46ceefa46338.webp",
+    "sha256": "00078e5648d8999ea252a39eb6f5e6ba0a0b1cafb68dbbccd4d338c856f5ecf7",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-e28b17453cabd9d7ac.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-e28b17453cabd9d7ac.webp",
+    "sha256": "d6505568dff70cef20899f0fffca5c65b143bb3b80b004f7a4355c4f3cf02085",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-e2d0e51b27ee7dbfca.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-e2d0e51b27ee7dbfca.webp",
+    "sha256": "135da1a31f0080956cb05ce8ec5019bc1a2d11e547ea0321aa3a0468ad0ce8f6",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-e2f36a2abc40d8513b.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-e2f36a2abc40d8513b.webp",
+    "sha256": "f992e73b3abf9beafe6ba7f44ef8daec96c150e96534faafef5ac300423c2c3c",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-e344c866cb75fbc1d0.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-e344c866cb75fbc1d0.webp",
+    "sha256": "88c42a38dfe2fbd00e0dc24378cb33fa2a059e6f64db223643703f2101609557",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-e3c93e82ac3eea166e.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-e3c93e82ac3eea166e.webp",
+    "sha256": "5d71f83a160bc2cd9d313ac4cf0fddad9f9b8fa0977bb26fa77dcdba82e79ab0",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-e3dda914a0b4b6402d.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-e3dda914a0b4b6402d.webp",
+    "sha256": "2d0bcac02a4e02d8ba6be2a2704b57a5da0046fd1a6fc17aa96eec78d09d2919",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-e5c54e820af93b0c98.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-e5c54e820af93b0c98.webp",
+    "sha256": "c086014801a73c23aa27d1b41d388d6d91a3d9a0c650da64b279a1f2eeff9e10",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-e5e34f67155f42daf9.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-e5e34f67155f42daf9.webp",
+    "sha256": "c51cd0b23ba0aeadbb0f711d591acf8b66738b2fabbe14b1b80edc73dfd24f52",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-e60b4a10bb8efe0b07.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-e60b4a10bb8efe0b07.webp",
+    "sha256": "4e2b748dd1e2579bdb11110e0870590fce8e117a6e7166a652428140aa64f85f",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-e76b8240cb6bf24bf5.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-e76b8240cb6bf24bf5.webp",
+    "sha256": "3f7a3659737dfca2c783e2561b8bcfbdd13b69cc110769c4ecc25a3831f50edd",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-e7f469d01ae1e137e8.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-e7f469d01ae1e137e8.webp",
+    "sha256": "2b622394d36141ffa64e5e11a345b8c0e6d0960f3a7acf6ac93b8ec0adc09825",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-e811f8a25777b1a326.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-e811f8a25777b1a326.webp",
+    "sha256": "0fd555fbd24956e44141f16aa9f5b73c36a855bff2460af38d0ddfbac71a33bd",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-e832b9e58d8c803691.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-e832b9e58d8c803691.webp",
+    "sha256": "6783f8fa024124353aa22076328a5204d6920ce033cf249fcbee18185f6f7691",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-e9666444d0a5259c3f.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-e9666444d0a5259c3f.webp",
+    "sha256": "fba608632a803bd10af53b0c761da798b5acf01269d870d7c7bfef0b800c5791",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-e998f402a06a740205.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-e998f402a06a740205.webp",
+    "sha256": "d458c1a4cd04e3d253e8fcc91fa04e37fa74a849d21152384ff4ee3ca9c56956",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-e9e421a1fda37df477.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-e9e421a1fda37df477.webp",
+    "sha256": "d0fc3501f4b68890cb464979c821f61061624fec1586de98aeee416ec247f8a2",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-ea0441ac3a1cf57465.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-ea0441ac3a1cf57465.webp",
+    "sha256": "75238048bb2604f8af8b9fa53729f5dee562cf64d8fefed0d3fcb9925f322f18",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-ea36c497b6d660b448.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-ea36c497b6d660b448.webp",
+    "sha256": "feaddb32dd9875c6460a37ea690e8991c1d0f781e80b9c543a74873fa11acd21",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-ec47b69344845f96db.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-ec47b69344845f96db.webp",
+    "sha256": "b5cfdb2c3dca577641a24ddcf35ddbaa3817c24ed924dae92b4f5cf654273aa4",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-ec9afd29895cb6d22b.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-ec9afd29895cb6d22b.webp",
+    "sha256": "6e0e501a1c3989e64a0a87c056307cd166c3ca48abece64b06aeb5c27685bb37",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-ecd9beea1313c73fd7.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-ecd9beea1313c73fd7.webp",
+    "sha256": "1882a229c109da428a0008c2e574d2180ef1e359a4c08756cd4438454592bfe1",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-edd0f22d717d06496b.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-edd0f22d717d06496b.webp",
+    "sha256": "306a771856f7e2cc112b6fbbca07438fe1c3ecfee71738ce5846a0c786e1d0c3",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-ee0c7f175036bdaa95.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-ee0c7f175036bdaa95.webp",
+    "sha256": "83e28df2d8e3cfe93845743e8aa7d0bfd0b73b8a80c147177c0183496efe7798",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-ee1c45ba826dd18298.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-ee1c45ba826dd18298.webp",
+    "sha256": "fce746b447ab3eb4a19cdc0be927f37fec16cf9f59dafaed2e25031cea0a4639",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-ee87ea2f26297fff00.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-ee87ea2f26297fff00.webp",
+    "sha256": "61792a890a6b4d2fd4b48059b93cd5a0c420e4212e98e4451f629ab915555f4b",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-eefdd21caca39c8a85.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-eefdd21caca39c8a85.webp",
+    "sha256": "e075350cb968e8a6bf6aa76e90ab566b73c7fe77de0abfc8fd5d817c3b6b9f5a",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-ef028a990d4378cbbd.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-ef028a990d4378cbbd.webp",
+    "sha256": "726b6ef01aa02372fdeb23d15613fda2168360dd42ad8e066d570ca6e143b62a",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-efa5a4bd960ab3b4b5.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-efa5a4bd960ab3b4b5.webp",
+    "sha256": "a2f32e3e04ebd0a817b60b5f3aa743b562d1a2bc8d95229c92c6550503905189",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-efc5cc97c6acfaa803.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-efc5cc97c6acfaa803.webp",
+    "sha256": "4d87560feee32c1a3b5fc7db9d7b0e721c5ecdfac2d273458bc9a453fa26b556",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-efea6e5612468ae206.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-efea6e5612468ae206.webp",
+    "sha256": "a6c08bdc819f2ec73ae267918ae4700e3fdb2a65866f07625ac53b8493c7ace9",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-f0eb2d7ad96dfc0620.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-f0eb2d7ad96dfc0620.webp",
+    "sha256": "0eb1a8eaf90d33259e5774665a6a562c97c2e9147433e1b1158ee79b5204f65a",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-f18cb410a29f11e518.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-f18cb410a29f11e518.webp",
+    "sha256": "fde80a55160ebaaf9dd4d8c5efbb25164534a18cb533a11807b82a9b9aa6cf5f",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-f2c3f30851225b61af.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-f2c3f30851225b61af.webp",
+    "sha256": "b77b7445561b47fd2f3b4f050adcfd35829611f86ac767e454ae8aee05b4d32e",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-f34f6632d8d7f14a3a.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-f34f6632d8d7f14a3a.webp",
+    "sha256": "6ba8fdc70637b8a7de291b2bd5214b506ba59333355ddab2f43f70569f2ad28e",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-f34feac3f155e41212.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-f34feac3f155e41212.webp",
+    "sha256": "df7ad124c900e16f6e638bebe10a2ee64f284575f09d9c26cd195fcb18a95a4d",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-f3b5c8f1d01cfe2171.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-f3b5c8f1d01cfe2171.webp",
+    "sha256": "e49234aef414411768ae2d8c1870db2ceb76647eed76a550002d8319ebcd5d32",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-f3de24336de39ebed0.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-f3de24336de39ebed0.webp",
+    "sha256": "5a85d10a36291891eefbdbad8607ea45edd95e9bf22a12aeb96565511f6e11fd",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-f410c3f962cd96b932.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-f410c3f962cd96b932.webp",
+    "sha256": "8f70e3fdc76cced81c32143266b20bda1b1b9442ea43679bb0762f2ebdcf479d",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-f488437ef9491d4a65.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-f488437ef9491d4a65.webp",
+    "sha256": "c0e667e297ffabd17a1b2dc31f726621c2fb764da528f49add436ebd096d45c9",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-f4a867e8cec2412c90.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-f4a867e8cec2412c90.webp",
+    "sha256": "30d841992e05b8a4fb0f9874a1b269fd35f639490256efa439ef5252b8505e18",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-f5d18f9f1cf8c7ee0c.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-f5d18f9f1cf8c7ee0c.webp",
+    "sha256": "d798fca6d2f9059a517a2eb0ef8e22c80ae4cfcb3c9a86c5cccde7ed34a6ebce",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-f6bf343760ce66d52a.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-f6bf343760ce66d52a.webp",
+    "sha256": "31d8847abbeaaeca47ea3659aba46414ad271c07c0266dce02c43d88bcd29b35",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-f6f938404f8f10209f.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-f6f938404f8f10209f.webp",
+    "sha256": "f11ad38fc1ea9bf62c724d34b7e742d2c066c48dafdff5130b025bf48a20d7fd",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-f758ec196c36d1d8c7.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-f758ec196c36d1d8c7.webp",
+    "sha256": "1e5bfb606c3a08be8bd5785728aa7f62da82240a86397201fd99edc45450845d",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-f87327e2ab4463f357.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-f87327e2ab4463f357.webp",
+    "sha256": "1ba8f4e170934f4685d592406e028d0bdc82aa40f1310a61b8cd442aa72e615c",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-f9c370bbcff6dd6155.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-f9c370bbcff6dd6155.webp",
+    "sha256": "660ee0080ea8cad7f0134c30ddc8cb32409909ade5e53c5ebaf744b883cc5e64",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-f9f311def8a41ddcb3.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-f9f311def8a41ddcb3.webp",
+    "sha256": "c48b17712069e15290e785dadbfbabee21d7aeb0baecfaa25f540232450e5ed8",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-fa0df79c59d566f3aa.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-fa0df79c59d566f3aa.webp",
+    "sha256": "2c976b816f7d6ca7ff7815c2e674c0c4a6e9d9c5c0cd1ab7266cad315efb87e0",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-faed242c2e7b783845.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-faed242c2e7b783845.webp",
+    "sha256": "d9c9a5911fad2fa0d35aa298a8f9b988fe7504e28815e986c2e3471ffa01e5e1",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-faee846132c736988d.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-faee846132c736988d.webp",
+    "sha256": "903ee40d6e3417b12710ca5b15340d01b7e50c67d8f57e3c9d43bbd65bfe9a4e",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-fb38e596a1a26b866d.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-fb38e596a1a26b866d.webp",
+    "sha256": "3db12600c421838725314d4ee8cc3fc63e667e2df3b3fd2763cbd3e0be2d3b6f",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-fb8b7712bc0a350b95.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-fb8b7712bc0a350b95.webp",
+    "sha256": "7f451b13e39bbcb933994e5f4903ed3be98bc96fb495998279c4e4af09b10321",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-fc5262e4342fb24b05.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-fc5262e4342fb24b05.webp",
+    "sha256": "3adbc5dc22cf2065b67759c7e51daf547d1bb768e028e2880c64365f0fce5396",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-fcd51b8f3d254add91.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-fcd51b8f3d254add91.webp",
+    "sha256": "a92d2a113ae298b215beb375ab04d5653d2ec7cbcacc591fe91c489c3d4c22e4",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-fcfebb6540048bf60e.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-fcfebb6540048bf60e.webp",
+    "sha256": "07c117dac7876c8ea40d474102f21ccd5005378079c2529654cd843c777a8a80",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-fde63a9880bad98104.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-fde63a9880bad98104.webp",
+    "sha256": "fca6fab98af1b095e17d02abb34b696dea515fbe4c55917b06354be588d6fb25",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-fe8253cef865795e8b.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-fe8253cef865795e8b.webp",
+    "sha256": "ba5a17828fff9ae90447ddc988a4ab0e9003f893bed9d03077558b956ef24959",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-fea8e3329d40d8b67e.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-fea8e3329d40d8b67e.webp",
+    "sha256": "bb662cd1d1cd8f262d321268e1c51c5fcaa2e746ee890bc231ceccc33f5a4fc1",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-ff1443048b8f2b50c5.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-ff1443048b8f2b50c5.webp",
+    "sha256": "e52d0018101f15b6ceaf3e75cd15641575faaf8b294dd8d6a8ccdf193eb87c45",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-ff4758e9eb85172a0b.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-ff4758e9eb85172a0b.webp",
+    "sha256": "f23bec61b5ac4a90774d15661837990a2d7cce56154a17e00255d40af15129b1",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/jiandaoyun/jdy-ffad148ec148263402.webp",
+    "localPath": "r2-assets/catalog/v1/jiandaoyun/jdy-ffad148ec148263402.webp",
+    "sha256": "9a9f4f7015f932428d5d309bf1f13bcdcaed214b3e0547fe1eb65445c5fd5ea8",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/products/image35.webp",
+    "localPath": "r2-assets/catalog/v1/products/image35.webp",
+    "sha256": "216a332caf1de4b2821faf74cea99ab07fb44ea3e1a6209064d7b04d7ae9d761",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/products/image36.webp",
+    "localPath": "r2-assets/catalog/v1/products/image36.webp",
+    "sha256": "85132e39edb09c9e82d105e18de885d346b1816083f7d163260c4a8a77eb31e1",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/products/image37.webp",
+    "localPath": "r2-assets/catalog/v1/products/image37.webp",
+    "sha256": "2ba99b158820d323fe84c991e1bdf30a596c6b67ad83f65d07862d5a8bcaea25",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/products/image38.webp",
+    "localPath": "r2-assets/catalog/v1/products/image38.webp",
+    "sha256": "7f47076f9b679a9d27de6297a1d8f11932183908f0980629b1cd800e46c48ab3",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/products/image39.webp",
+    "localPath": "r2-assets/catalog/v1/products/image39.webp",
+    "sha256": "7171a433ce9f9b5298fc965ca6dbcf4cdf6beb35536db3c3e2e88d84ce9161bd",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/products/image40.webp",
+    "localPath": "r2-assets/catalog/v1/products/image40.webp",
+    "sha256": "629fbe21a4b85dc4d74b5015f63ce6c6c32ec7b5cb9284c1c2fb9c41d6224b7f",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/products/image41.webp",
+    "localPath": "r2-assets/catalog/v1/products/image41.webp",
+    "sha256": "1afb27d68a4c24754c4c2b849d8dba65e0bc15966565f04e850bffb43438de16",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/products/image42.webp",
+    "localPath": "r2-assets/catalog/v1/products/image42.webp",
+    "sha256": "9a73e8852b6ba5559d9515f997677986c364f5204e5c40cfd50cb2180774cc28",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/products/image43.webp",
+    "localPath": "r2-assets/catalog/v1/products/image43.webp",
+    "sha256": "b8437254aaa4a7dda4153a740f476b0a1cb2865491ad3342d138f89cbf341da0",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/products/image44.webp",
+    "localPath": "r2-assets/catalog/v1/products/image44.webp",
+    "sha256": "32a7e24c6911a80c857b1f73be305043ab34a9ea4719234f62a908529a580abf",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/products/image45.webp",
+    "localPath": "r2-assets/catalog/v1/products/image45.webp",
+    "sha256": "94e88323c17f9d719402b5141fff90142064781e045085ddf10b8b4e84e048e4",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/products/image46.webp",
+    "localPath": "r2-assets/catalog/v1/products/image46.webp",
+    "sha256": "546abae01af391ff00afee71381869dcb9c7863f535e2e0b55a8c2f79111b195",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/products/image47.webp",
+    "localPath": "r2-assets/catalog/v1/products/image47.webp",
+    "sha256": "a8bb63482c705d6fc47d553b5712694c2b49cb6f2fdd2e4096e2758a2e6809e6",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/products/image48.webp",
+    "localPath": "r2-assets/catalog/v1/products/image48.webp",
+    "sha256": "2876b939b39625e0ad0b7da2ecca3b5539e9f5b62edeb6d7fcae1459ed0de3be",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/products/image49.webp",
+    "localPath": "r2-assets/catalog/v1/products/image49.webp",
+    "sha256": "b4b9f77cdec58f906330ede256bccaf9a2b9f5f549803458b61ade7903139ee4",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/products/image50.webp",
+    "localPath": "r2-assets/catalog/v1/products/image50.webp",
+    "sha256": "e27135cd8a36358bb2dad76e8f02b9096ce202d42825151de877945de0e3df0c",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/products/image51.webp",
+    "localPath": "r2-assets/catalog/v1/products/image51.webp",
+    "sha256": "74e32dd9cfa1de85626a656300dce16e0243e9a2e4d6e2d5a51e73540fb36694",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/products/image52.webp",
+    "localPath": "r2-assets/catalog/v1/products/image52.webp",
+    "sha256": "085e6766e9e63688b8051daf457a7d895fcb8f66e975b0a7bd804d7d393aae0b",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/products/image53.webp",
+    "localPath": "r2-assets/catalog/v1/products/image53.webp",
+    "sha256": "ad38f638b1d483a836de2ba1d6e8c772bfea5d140bac560011504192a72c44a6",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/products/image54.webp",
+    "localPath": "r2-assets/catalog/v1/products/image54.webp",
+    "sha256": "d6073f27aab8214f12164f2dfb9a0264752d21f3b6e41774a546b7f118d8ade3",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/products/image55.webp",
+    "localPath": "r2-assets/catalog/v1/products/image55.webp",
+    "sha256": "f11527930a4fa4e95192bc3b0f956790c2b1a4025c871ad8e4a1bf26059ccbf5",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/products/image56.webp",
+    "localPath": "r2-assets/catalog/v1/products/image56.webp",
+    "sha256": "15eb39c1d32275aae3dad98c76f8e0b01e78e9e28eef3f336493f7f165bee930",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/products/image57.webp",
+    "localPath": "r2-assets/catalog/v1/products/image57.webp",
+    "sha256": "d5ff85b759225e81e03df6f2778376d2395fb4edc5717ddee8f717dc02fb6e57",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/products/image58.webp",
+    "localPath": "r2-assets/catalog/v1/products/image58.webp",
+    "sha256": "c25b7121b9c39361d3fbd8e1801d5e58fe6c0b45858c47506d4b9a23bc8f812a",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/products/image59.webp",
+    "localPath": "r2-assets/catalog/v1/products/image59.webp",
+    "sha256": "d5cb2f68cec3e51d4bc8d1707cee53e61aab300464e76be4577588b066ffd526",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/products/image60.webp",
+    "localPath": "r2-assets/catalog/v1/products/image60.webp",
+    "sha256": "0c349835bf4502e18ee35f6f33699d275aac592f325886bb1e38044d3bb0e361",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/products/image61.webp",
+    "localPath": "r2-assets/catalog/v1/products/image61.webp",
+    "sha256": "7dc505a0cc3ed0d43da2fdcddeaf3c2f2c72f4133d435df59a1a2aec183cb5a3",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/products/image62.webp",
+    "localPath": "r2-assets/catalog/v1/products/image62.webp",
+    "sha256": "d42946c15e91435e65e059a0dc6762a34a825591cb9d76e611de446fb880884b",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/products/image63.webp",
+    "localPath": "r2-assets/catalog/v1/products/image63.webp",
+    "sha256": "7161f1b7c036b314d3274d05df1e09b18ea9e694edd54cf5220f31bebdd6d806",
+    "contentType": "image/webp"
+  },
+  {
+    "key": "catalog/v1/products/image64.webp",
+    "localPath": "r2-assets/catalog/v1/products/image64.webp",
+    "sha256": "0ca7231cfb7013a41ce83d34ea626e0487b894cf6cb249c0a0d09fd6d3394d67",
+    "contentType": "image/webp"
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "sidi-achour-crm",
+  "pages_build_output_dir": "./public",
+  "compatibility_date": "2026-09-08",
+  "compatibility_flags": ["nodejs_compat"],
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "sidi-achour-orders",
+      "database_id": "36a123f5-7509-41d8-a690-13be0ec02524",
+      "migrations_dir": "./migrations"
+    }
+  ]
+}

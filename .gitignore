@@ -1,0 +1,13 @@
+.wrangler/
+.playwright-cli/
+output/
+r2-assets/
+assets/
+data/
+/app.js
+/index.html
+/styles.css
+/worker-configuration.d.ts
+.env
+.env.*
+*.log
