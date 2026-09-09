@@ -29,7 +29,7 @@ Image updates belong in `public/media/` and require a Pages deployment. New pric
 
 The initial schema and data are already present in D1 and migration `0001_initial.sql` is recorded. Do not re-import the initial seed into the live database. Future schema changes belong in new migrations.
 
-- 35 categories, 613 independently editable product rows, 541 image relationships, 42 import quota rows.
+- 35 categories, 615 independently editable product rows, 543 image relationships, 42 import quota rows.
 - Order state is keyed by `record_id`; duplicate product codes remain independent rows.
 - Rightmost frozen columns: new price, quantity, remark.
 - Amount numerator: ordered quantity × new CNY price when filled; otherwise the original CNY unit price. A new price of zero is valid; an empty value is stored as NULL.
@@ -41,6 +41,7 @@ The initial schema and data are already present in D1 and migration `0001_initia
 - Migration `0003_weight_basis.sql` snapshots the previous 384 product weights and 21 category modes before switching kg categories to weight calculations. It never writes `product_order_state`.
 - Migration `0004_tire_remarks.sql` maps 71 tire records to the `Quotation` sheet's `Remarks` cells using TL/TT, original number and A/B/C tier. It snapshots both localized row JSON values before updating them and never writes `product_order_state`.
 - Migration `0005_category_titles.sql` maps all 35 categories to every distinct value in `Sidi.xlsx` `Licence!D5:D46`; French uses the source text verbatim and Chinese stores a segment-by-segment translation. Previous titles are retained in a rollback table.
+- Migration `0006_sidi_priority_and_inner_tubes.sql` adds two exact-code inner-tube products from `产品编码转录.xlsx` and `产品数据库.xlsx`, updates the `TL-16-C` catalog Remarks value, and creates `sidi_priority_order_state` plus its independent category-stat view. It never writes `product_order_state`.
 - The production backup and exact order-state snapshot are kept in the locally ignored `backups/` directory. Targeted rollback is documented in `rollback/README.md`.
 
 ## Verified online
@@ -57,6 +58,7 @@ The initial schema and data are already present in D1 and migration `0001_initia
 - The Sidi Achour Logo uses the transparent RGBA source and a SHA-256 fingerprinted filename; the splash renders it directly over a white-to-red-and-black gradient without a separate carrier surface.
 - French hides the product-code column at every breakpoint; Chinese retains it.
 - `/` is the French entry point. `/Adam` is served by the generated `public/Adam.html` clean URL and selects Chinese from the path. The language-switch buttons have been removed.
+- `/Sidi` is a French clean URL backed by `public/Sidi.html`; it reads and writes the separate customer priority quantity/remark table while continuing to display prices from the primary price state.
 - Chinese-only header actions export all positive-quantity orders through the read-only `/api/export/orders` endpoint. The standard workbook embeds product images and codes; the redacted workbook omits both.
 - Excel exports contain one filtered `订单` sheet with Microsoft YaHei, black headers, a red total rule, frozen headings, CNY number formats and readable column widths. The vendored ExcelJS browser bundle uses a content-fingerprinted filename.
 - Export requests execute SELECT statements only and never write D1.

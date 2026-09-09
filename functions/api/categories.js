@@ -1,5 +1,7 @@
 export async function onRequestGet(context) {
-  const locale = new URL(context.request.url).searchParams.get("locale") === "fr" ? "fr" : "zh";
+  const url = new URL(context.request.url);
+  const locale = url.searchParams.get("locale") === "fr" ? "fr" : "zh";
+  const statsView = url.searchParams.get("workspace") === "sidi" ? "v_sidi_priority_category_stats" : "v_category_stats";
   const titleColumn = locale === "fr" ? "c.title_fr" : "c.title_zh";
   const unitColumn = locale === "fr" ? "c.quantity_display_unit_fr" : "c.quantity_display_unit_zh";
 
@@ -21,7 +23,7 @@ export async function onRequestGet(context) {
         s.usd_cny_rate
       FROM categories c
       LEFT JOIN category_products cp ON cp.category_id = c.id
-      LEFT JOIN v_category_stats s ON s.category_id = c.id
+      LEFT JOIN ${statsView} s ON s.category_id = c.id
       WHERE c.active = 1
       GROUP BY c.id
       ORDER BY c.sort_order, c.id

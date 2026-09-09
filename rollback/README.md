@@ -32,6 +32,20 @@ Production backup: `backups/sidi-achour-orders-pre-tire-remarks-20260909-120637.
 
 The immediate pre/post order-state exports both have SHA-256 `6e45e4e6ccc9b5b0f732fdb483bdf3407ed7126c40748fb9caa853d1e414cd56`.
 
+## Sidi priority workspace and catalog additions
+
+Migration `0006_sidi_priority_and_inner_tubes.sql` creates a separate customer-priority state table, adds two inner-tube products and updates the `TL-16-C` catalog Remarks value. It does not write `product_order_state`.
+
+To restore only the previous `TL-16-C` catalog fields while preserving all original and customer-priority user data:
+
+```powershell
+npx --yes wrangler@4.129.1 d1 execute sidi-achour-orders --remote --file rollback/0006_catalog_changes.rollback.sql
+```
+
+Production backup: `backups/pre-sidi-priority-20260909-151042.sql`, SHA-256 `bbbcaf20540084ed37d05a38ec5eb4d18cba456c24dafebf45a478f0001857d3`.
+
+The additive product rows and `sidi_priority_order_state` intentionally remain during the targeted rollback so data entered after release is never deleted. The full pre-migration export supports complete disaster recovery when explicitly required.
+
 ## Category title rollback
 
 Migration `0005_category_titles.sql` snapshots all 35 previous French and Chinese category titles. To restore them without changing products or order state:

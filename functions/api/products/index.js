@@ -8,14 +8,16 @@ const SORTS = {
 export async function onRequestGet(context) {
   const url = new URL(context.request.url);
   const locale = url.searchParams.get("locale") === "fr" ? "fr" : "zh";
+  const workspace = url.searchParams.get("workspace") === "sidi" ? "sidi" : "default";
+  const stateAlias = workspace === "sidi" ? "priority_state" : "primary_state";
   const category = url.searchParams.get("category") ?? "all";
   const query = (url.searchParams.get("q") ?? "").trim();
   const page = Math.max(1, Number(url.searchParams.get("page") ?? 1));
   const requestedSort = url.searchParams.get("sort");
   const sort = locale === "fr" && requestedSort === "price-asc"
-    ? "COALESCE(os.new_price_cny, p.unit_price_cny) IS NULL, COALESCE(os.new_price_cny, p.unit_price_cny) ASC, c.sort_order, cp.sort_order"
+    ? "COALESCE(primary_state.new_price_cny, p.unit_price_cny) IS NULL, COALESCE(primary_state.new_price_cny, p.unit_price_cny) ASC, c.sort_order, cp.sort_order"
     : locale === "fr" && requestedSort === "price-desc"
-      ? "COALESCE(os.new_price_cny, p.unit_price_cny) IS NULL, COALESCE(os.new_price_cny, p.unit_price_cny) DESC, c.sort_order, cp.sort_order"
+      ? "COALESCE(primary_state.new_price_cny, p.unit_price_cny) IS NULL, COALESCE(primary_state.new_price_cny, p.unit_price_cny) DESC, c.sort_order, cp.sort_order"
       : SORTS[requestedSort] ?? SORTS.source;
   const pageSize = 50;
   const offset = (page - 1) * pageSize;
@@ -39,7 +41,8 @@ export async function onRequestGet(context) {
     FROM category_products cp
     JOIN categories c ON c.id = cp.category_id
     JOIN products p ON p.record_id = cp.record_id
-    LEFT JOIN product_order_state os ON os.record_id = p.record_id
+    LEFT JOIN product_order_state primary_state ON primary_state.record_id = p.record_id
+    LEFT JOIN sidi_priority_order_state priority_state ON priority_state.record_id = p.record_id
     LEFT JOIN product_images pi ON pi.id = (
       SELECT x.id
       FROM product_images x
@@ -59,11 +62,11 @@ export async function onRequestGet(context) {
         p.product_code,
         p.unit_price_cny,
         p.unit_weight_kg,
-        os.new_price_cny,
+        primary_state.new_price_cny,
         ${titleColumn} AS category_title,
         ${fieldsColumn} AS fields_json,
-        COALESCE(os.ordered_quantity, 0) AS ordered_quantity,
-        COALESCE(os.remark, '') AS remark,
+        COALESCE(${stateAlias}.ordered_quantity, 0) AS ordered_quantity,
+        COALESCE(${stateAlias}.remark, '') AS remark,
         pi.r2_key,
         pi.width AS image_width,
         pi.height AS image_height

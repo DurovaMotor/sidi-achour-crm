@@ -30,6 +30,7 @@ $html = [regex]::Replace($html, '(<link rel="stylesheet" href=")[^"]*styles(?:\.
 $html = [regex]::Replace($html, '(<script src=")[^"]*app(?:\.[0-9a-f]{16})?\.js(?:\?v=[^"]*)?(" defer></script>)', { param($match) $match.Groups[1].Value + $appUrl + $match.Groups[2].Value })
 [IO.File]::WriteAllText($indexPath, $html, $utf8)
 [IO.File]::WriteAllText((Join-Path $PSScriptRoot 'public\Adam.html'), $html, $utf8)
+[IO.File]::WriteAllText((Join-Path $PSScriptRoot 'public\Sidi.html'), $html, $utf8)
 
 $manifest = [ordered]@{
   schemaVersion = 1
