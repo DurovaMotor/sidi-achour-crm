@@ -1,0 +1,36 @@
+﻿category_id,sort_order,current_title_fr,recommended_title_fr,current_title_zh,recommended_title_zh,source_rows,source_row_count,distinct_designation_count,mapping_status,fr_change_required,zh_change_required
+plaquettes-de-frein,0,Plaquettes de frein,Freins et dispositifs de freinage pour motocycles,刹车片,摩托车用制动器及制动装置,5,1,1,one_to_one,True,True
+pneumatiques,1,Pneumatiques,"Pneumatiques en caoutchouc pour motocycles / Pneumatiques à chambre à air, en caoutchouc, pour motocycles",轮胎,摩托车用橡胶轮胎 / 摩托车用充气橡胶轮胎（有内胎）,"6,19",2,2,one_to_many,True,True
+filtres-a-huile,2,Filtres à huile,Filtres à huile pour motocycles,机油滤清器,摩托车用机油滤清器,7,1,1,one_to_one,True,True
+batteries,3,Batteries,Batteries pour motocycles,蓄电池,摩托车用蓄电池,8,1,1,one_to_one,True,True
+radiateurs,4,Radiateurs,Radiateurs pour motocycles,散热器,摩托车用散热器,9,1,1,one_to_one,True,True
+vilebrequins,5,Vilebrequins,Vilebrequins,曲轴,曲轴,10,1,1,one_to_one,False,False
+embrayages,6,Embrayages,Disques d’embrayage pour motocycles,离合器,摩托车用离合器片,11,1,1,one_to_one,True,True
+bougies,7,Bougies,Bougies d’allumage pour motocycles,火花塞,摩托车用点火火花塞,13,1,1,one_to_one,True,True
+chambres-a-air,8,Chambres à air,Chambres à air pour motocycles,内胎,摩托车用内胎,14,1,1,one_to_one,True,True
+moteurs,9,Moteurs,Moteurs pour motocycles,发动机,摩托车用发动机,15,1,1,one_to_one,True,True
+carburateurs,10,Carburateurs,Carburateurs,化油器,化油器,16,1,1,one_to_one,False,False
+cylindres-et-carters,11,Cylindres et carters,"Blocs-cylindres, cylindres, carters de vilebrequin et culasses",气缸及曲轴箱,气缸体、气缸、曲轴箱及气缸盖,17,1,1,one_to_one,True,True
+filtres-a-air,12,Filtres à air,Filtres à air pour motocycles,空气滤清器,摩托车用空气滤清器,18,1,1,one_to_one,True,True
+chaines-de-distribution,13,Chaînes de distribution,Chaînes de distribution pour motocycles,正时链条,摩托车用正时链条,22,1,1,one_to_one,True,True
+pare-brise-et-deflecteurs,14,Pare-brise et déflecteurs,Pare-brise pour motocycles — PUIG / Pare-brise pour motocycles / Pare-brise pour motocycles — GIVI,风挡及导流罩,摩托车用挡风玻璃 — PUIG / 摩托车用挡风玻璃 / 摩托车用挡风玻璃 — GIVI,"20,23,28",3,3,one_to_many,True,True
+eclairage,15,Éclairage,Lampes pour motocycles / Lampes pour motocycles — PUIG,灯具,摩托车用灯具 / 摩托车用灯具 — PUIG,"24,43",2,2,one_to_many,True,True
+pignons-et-chaines,16,Pignons et chaînes,Pignons et couronnes pour motocycles,链轮及链条,摩托车用小齿轮及齿圈,25,1,1,one_to_one,True,True
+fourches-avant,17,Fourches avant,Fourches avant pour motocycles,前叉,摩托车用前叉,26,1,1,one_to_one,True,True
+jantes,18,Jantes,Jantes pour motocycles,轮辋,摩托车用轮辋,27,1,1,one_to_one,True,True
+demarreurs,19,Démarreurs,Démarreurs électriques,启动机,电动起动机,29,1,1,one_to_one,True,True
+amortisseurs,20,Amortisseurs,Amortisseurs pour motocycles,减震器,摩托车用减震器,30,1,1,one_to_one,True,True
+galets-et-rouleaux,21,Galets et rouleaux,Rouleaux et galets pour motocycles,滚子及滚轮,摩托车用滚子及滚轮,31,1,1,one_to_one,True,True
+cables-et-durites,22,Câbles et durites,"Câbles d’embrayage, de frein et d’accélérateur",拉索及软管,离合器、制动器及油门拉索,32,1,1,one_to_one,True,True
+guidons,23,Guidons,Guidons pour motocycles,车把,摩托车用车把,33,1,1,one_to_one,True,True
+bobines-et-allumage,24,Bobines et allumage,Bobines et composants d’allumage pour motocycles,点火线圈及点火系统,摩托车用点火线圈及点火部件,34,1,1,one_to_one,True,True
+bielles,25,Bielles,Bielles pour motocycles,连杆,摩托车用连杆,35,1,1,one_to_one,True,True
+vis-boulons-et-bagues,26,"Vis, boulons et bagues","Vis, boulons et anneaux métalliques",螺钉、螺栓及衬套,螺钉、螺栓及金属环,"36,37",2,1,one_to_one,True,True
+pompes-a-huile,27,Pompes à huile,Pompes à huile pour motocycles,机油泵,摩托车用机油泵,38,1,1,one_to_one,True,True
+filtres-a-carburant,28,Filtres à carburant,Filtres à carburant pour motocycles,燃油滤清器,摩托车用燃油滤清器,39,1,1,one_to_one,True,True
+pistons,29,Pistons,Pistons,活塞,活塞,40,1,1,one_to_one,False,False
+roulements-a-billes,30,Roulements à billes,Roulements à billes pour motocycles,滚珠轴承,摩托车用滚珠轴承,41,1,1,one_to_one,True,True
+joints-et-rondelles,31,Joints et rondelles,Anneaux et rondelles pour motocycles,密封垫及垫圈,摩托车用环及垫圈,42,1,1,one_to_one,True,True
+soupapes-et-valves,32,Soupapes et valves,Soupapes et valves pour motocycles,气门及阀门,摩托车用气门及阀门,44,1,1,one_to_one,True,True
+cles-et-serrures,33,Clés et serrures,Clés et serrures / Clés et serrures — GIVI,钥匙及锁具,钥匙及锁具 / 钥匙及锁具 — GIVI,"45,46",2,2,one_to_many,True,True
+devis-sur-demande,34,Devis sur demande,"Pneumatiques à chambre à air, en caoutchouc, pour bicyclettes / Pneumatiques en caoutchouc pour bicyclettes",按需报价,自行车用充气橡胶轮胎（有内胎） / 自行车用橡胶轮胎,"12,21",2,2,one_to_many,True,True

@@ -4,6 +4,9 @@ HighTac 为 Sidi Achour 使用的内部摩托车配件目录、报价与进口�
 
 线上地址：https://sidi-achour-crm.pages.dev/
 
+- 法语入口：https://sidi-achour-crm.pages.dev/
+- 中文入口：https://sidi-achour-crm.pages.dev/Adam
+
 ## 架构
 
 - Cloudflare Pages：网页、产品图片和品牌 Logo
@@ -12,6 +15,9 @@ HighTac 为 Sidi Achour 使用的内部摩托车配件目录、报价与进口�
 - 固定汇率：`1 USD = 6.67 CNY`
 - 千克额度：下单数量 × `产品数据库.xlsx` 中的毛重 ÷ 每箱数量
 - 轮胎分类：规格列切换为 `Remarks`，内容来自客户版英文轮胎报价表
+- 分类名称：法语严格使用 `Sidi.xlsx` 的 `Licence!D5:D46`，中文逐项对应翻译
+- 品牌界面：仅显示 Sidi Achour Logo，并使用约 1 秒的深红黑开屏
+- 中文导出：普通版包含配件图片和编码；脱敏版移除图片和编码
 
 项目不使用 R2。`public/` 是唯一部署目录；右侧可编辑状态按 `record_id` 保存。
 

@@ -31,3 +31,15 @@ npx --yes wrangler@4.129.1 d1 execute sidi-achour-orders --remote --file rollbac
 Production backup: `backups/sidi-achour-orders-pre-tire-remarks-20260909-120637.sql`, SHA-256 `e34e18d42c9bd8e4776f9d09d6b6b0af63717b7516a75ee2c992ff2ac4ffa04c`.
 
 The immediate pre/post order-state exports both have SHA-256 `6e45e4e6ccc9b5b0f732fdb483bdf3407ed7126c40748fb9caa853d1e414cd56`.
+
+## Category title rollback
+
+Migration `0005_category_titles.sql` snapshots all 35 previous French and Chinese category titles. To restore them without changing products or order state:
+
+```powershell
+npx --yes wrangler@4.129.1 d1 execute sidi-achour-orders --remote --file rollback/0005_category_titles.rollback.sql
+```
+
+Production backup: `backups/sidi-achour-orders-pre-category-titles-20260909-123538.sql`, SHA-256 `74000f5a58f40734c05d42feaa51827eedd9ce1394e492d9489a611f01a143e9`.
+
+The immediate pre/post order-state exports both have SHA-256 `6e45e4e6ccc9b5b0f732fdb483bdf3407ed7126c40748fb9caa853d1e414cd56`.

@@ -1,6 +1,6 @@
 const copy = {
   zh: {
-    skip: "跳到内容", brandFlow: "HighTac 向 Sidi Achour 供应", businessPages: "业务页面", languageLabel: "语言",
+    skip: "跳到内容", brandFlow: "Sidi Achour", businessPages: "业务页面", languageLabel: "语言",
     catalogNav: "产品目录", licenceNav: "进口申报", categories: "产品分类", allProducts: "全部产品",
     searchLabel: "搜索产品", searchPlaceholder: "搜索产品编码、名称或规格", sortLabel: "排序",
     sortSource: "原表顺序", sortPriceAsc: "价格从低到高", sortPriceDesc: "价格从高到低", sortCode: "产品编码 A–Z",
@@ -13,7 +13,7 @@ const copy = {
     unitPrice: "申报单价", value: "申报价值", offers: "报价", viewOffers: "查看",
   },
   fr: {
-    skip: "Aller au contenu", brandFlow: "HighTac fournit Sidi Achour", businessPages: "Pages métier", languageLabel: "Langue",
+    skip: "Aller au contenu", brandFlow: "Sidi Achour", businessPages: "Pages métier", languageLabel: "Langue",
     catalogNav: "Catalogue", licenceNav: "Déclaration", categories: "Catégories", allProducts: "Tous les produits",
     searchLabel: "Rechercher un produit", searchPlaceholder: "Rechercher un nom ou une spécification", sortLabel: "Trier",
     sortSource: "Ordre du classeur", sortPriceAsc: "Prix croissant", sortPriceDesc: "Prix décroissant", sortCode: "Code produit A–Z",
@@ -28,7 +28,7 @@ const copy = {
 };
 
 const state = {
-  language: "zh",
+  language: window.location.pathname === "/Adam" || window.location.pathname === "/Adam/" ? "zh" : "fr",
   activeTab: "catalog",
   category: "all",
   query: "",
@@ -56,6 +56,10 @@ const release = {
 };
 
 const elements = {
+  splashScreen: document.querySelector("#splashScreen"),
+  adminActions: document.querySelector("#adminActions"),
+  exportOrdersButton: document.querySelector("#exportOrdersButton"),
+  exportRedactedButton: document.querySelector("#exportRedactedButton"),
   catalogTab: document.querySelector("#catalogTab"), licenceTab: document.querySelector("#licenceTab"),
   catalogPanel: document.querySelector("#catalogPanel"), licencePanel: document.querySelector("#licencePanel"),
   categoryCount: document.querySelector("#categoryCount"), categoryList: document.querySelector("#categoryList"),
@@ -152,7 +156,7 @@ function productRow(product) {
 
 function renderProducts() {
   elements.specColumnHeader.textContent = state.category === "pneumatiques" ? t("remarksHeader") : t("specModel");
-  elements.productTableBody.innerHTML = state.products.length ? state.products.map(productRow).join("") : `<tr><td colspan="${state.language === "fr" ? 7 : 8}">${t("noResults")}</td></tr>`;
+  elements.productTableBody.innerHTML = state.products.length ? state.products.map(productRow).join("") : `<tr><td colspan="${state.language === "fr" ? 6 : 8}">${t("noResults")}</td></tr>`;
   const active = state.categories.find((category) => category.id === state.category);
   elements.activeCategoryTitle.textContent = active ? active.title : t("allProducts");
   const start = state.total === 0 ? 0 : (state.page - 1) * state.pageSize + 1;
@@ -280,31 +284,192 @@ function renderLicence() {
   elements.declarationSummary.textContent = state.language === "zh" ? `${entries.length} 条` : `${entries.length} position(s)`;
 }
 
+async function imageAsPngDataUrl(url) {
+  const blob = await (await fetch(url)).blob();
+  const bitmap = await createImageBitmap(blob);
+  const canvas = document.createElement("canvas");
+  canvas.width = 160;
+  canvas.height = 160;
+  const context = canvas.getContext("2d");
+  context.fillStyle = "#ffffff";
+  context.fillRect(0, 0, 160, 160);
+  const scale = Math.min(148 / bitmap.width, 148 / bitmap.height);
+  const width = bitmap.width * scale;
+  const height = bitmap.height * scale;
+  context.drawImage(bitmap, (160 - width) / 2, (160 - height) / 2, width, height);
+  bitmap.close();
+  return canvas.toDataURL("image/png");
+}
+
+async function exportOrders(redacted) {
+  await flushOrderSaves();
+  const button = redacted ? elements.exportRedactedButton : elements.exportOrdersButton;
+  const label = button.textContent;
+  button.disabled = true;
+  button.textContent = "生成中…";
+
+  const payload = await (await fetch("/api/export/orders", { cache: "no-store" })).json();
+  const workbook = new ExcelJS.Workbook();
+  workbook.creator = "Sidi Achour";
+  workbook.created = new Date();
+  const worksheet = workbook.addWorksheet("订单", {
+    properties: { defaultRowHeight: 24 },
+    pageSetup: { orientation: "landscape", fitToPage: true, fitToWidth: 1, fitToHeight: 0 },
+    views: [{
+      state: "frozen",
+      xSplit: redacted ? 3 : 4,
+      ySplit: 5,
+      topLeftCell: redacted ? "D6" : "E6",
+      activeCell: "A6",
+      showGridLines: false,
+    }],
+  });
+
+  const columns = redacted ? [
+    { header: "序号", key: "number", width: 6 },
+    { header: "产品分类", key: "category", width: 28 },
+    { header: "产品名称", key: "name", width: 32 },
+    { header: "规格 / Remarks", key: "specification", width: 40 },
+    { header: "单位", key: "unit", width: 10 },
+    { header: "单价（CNY）", key: "price", width: 14 },
+    { header: "数量", key: "quantity", width: 12 },
+    { header: "金额（CNY）", key: "amount", width: 17 },
+    { header: "备注", key: "remark", width: 28 },
+  ] : [
+    { header: "序号", key: "number", width: 6 },
+    { header: "图片", key: "image", width: 14 },
+    { header: "配件编码", key: "code", width: 20 },
+    { header: "中文名称", key: "name", width: 28 },
+    { header: "产品分类", key: "category", width: 28 },
+    { header: "规格 / Remarks", key: "specification", width: 40 },
+    { header: "单位", key: "unit", width: 10 },
+    { header: "单价（CNY）", key: "price", width: 14 },
+    { header: "数量", key: "quantity", width: 12 },
+    { header: "金额（CNY）", key: "amount", width: 17 },
+    { header: "备注", key: "remark", width: 28 },
+  ];
+  worksheet.columns = columns.map(({ key, width }) => ({ key, width }));
+  const columnCount = columns.length;
+  worksheet.mergeCells(1, 1, 1, columnCount);
+  worksheet.getCell(1, 1).value = redacted ? "Sidi Achour 订单（脱敏）" : "Sidi Achour 摩托车配件订单";
+  worksheet.getCell(1, 1).font = { name: "Microsoft YaHei", size: 20, bold: true, color: { argb: "FF000000" } };
+  worksheet.getCell(1, 1).alignment = { vertical: "middle", horizontal: "left" };
+  worksheet.getRow(1).height = 32;
+  worksheet.mergeCells(2, 1, 2, 2);
+  worksheet.getCell(2, 1).value = "Sidi Achour";
+  worksheet.getCell(2, 1).font = { name: "Microsoft YaHei", size: 11, bold: true, color: { argb: "FF1A1A1A" } };
+  worksheet.mergeCells(2, 3, 2, columnCount);
+  worksheet.getCell(2, 3).value = `导出时间：${new Intl.DateTimeFormat("zh-CN", { dateStyle: "medium", timeStyle: "medium", hour12: false }).format(new Date())}`;
+  worksheet.getCell(2, 3).font = { name: "Microsoft YaHei", size: 11, color: { argb: "FF1A1A1A" } };
+  worksheet.getCell(2, 3).alignment = { horizontal: "right", vertical: "middle" };
+  worksheet.mergeCells(3, 1, 3, columnCount);
+  worksheet.getCell(3, 1).value = "币种：CNY；单价优先使用新价格";
+  worksheet.getCell(3, 1).font = { name: "Microsoft YaHei", size: 10, italic: true, color: { argb: "FF6B6B6B" } };
+  worksheet.getRow(4).height = 8;
+
+  const headerRow = worksheet.getRow(5);
+  headerRow.values = columns.map((column) => column.header);
+  headerRow.height = 36;
+  headerRow.eachCell((cell) => {
+    cell.font = { name: "Microsoft YaHei", size: 11, bold: true, color: { argb: "FFFFFFFF" } };
+    cell.fill = { type: "pattern", pattern: "solid", fgColor: { argb: "FF000000" } };
+    cell.alignment = { horizontal: "center", vertical: "middle", wrapText: true };
+    cell.border = { right: { style: "thin", color: { argb: "FFFFFFFF" } } };
+  });
+
+  const imageIds = new Map();
+  if (!redacted) {
+    const imageUrls = [...new Set(payload.data.map((row) => row.imageUrl).filter(Boolean))];
+    await Promise.all(imageUrls.map(async (url) => {
+      const imageId = workbook.addImage({ base64: await imageAsPngDataUrl(url), extension: "png" });
+      imageIds.set(url, imageId);
+    }));
+  }
+
+  payload.data.forEach((order, index) => {
+    const values = redacted ? [
+      index + 1,
+      order.categoryZh,
+      order.productNameZh,
+      order.specification,
+      order.salesUnitZh,
+      order.effectivePriceCny,
+      order.orderedQuantity,
+      order.orderedAmountCny,
+      order.orderRemark,
+    ] : [
+      index + 1,
+      order.imageUrl ? "" : "—",
+      order.productCode,
+      order.productNameZh,
+      order.categoryZh,
+      order.specification,
+      order.salesUnitZh,
+      order.effectivePriceCny,
+      order.orderedQuantity,
+      order.orderedAmountCny,
+      order.orderRemark,
+    ];
+    const row = worksheet.addRow(values);
+    row.height = redacted ? 42 : 56;
+    row.eachCell({ includeEmpty: true }, (cell, columnNumber) => {
+      cell.font = { name: "Microsoft YaHei", size: 11, color: { argb: "FF1A1A1A" } };
+      cell.fill = { type: "pattern", pattern: "solid", fgColor: { argb: index % 2 ? "FFF7F7F7" : "FFFFFFFF" } };
+      cell.alignment = { vertical: "middle", horizontal: "left", wrapText: true };
+      cell.border = { bottom: { style: "thin", color: { argb: "FFCCCCCC" } } };
+      const numericColumns = redacted ? [1, 6, 7, 8] : [1, 8, 9, 10];
+      if (numericColumns.includes(columnNumber)) cell.alignment = { vertical: "middle", horizontal: "right" };
+    });
+    const priceColumn = redacted ? 6 : 8;
+    const quantityColumn = redacted ? 7 : 9;
+    const amountColumn = redacted ? 8 : 10;
+    row.getCell(priceColumn).numFmt = '#,##0.00';
+    row.getCell(quantityColumn).numFmt = '#,##0.##';
+    row.getCell(amountColumn).numFmt = '#,##0.00';
+    if (!redacted && order.imageUrl) {
+      worksheet.addImage(imageIds.get(order.imageUrl), {
+        tl: { col: 1.15, row: row.number - 0.92 },
+        ext: { width: 64, height: 64 },
+        editAs: "oneCell",
+      });
+    }
+  });
+
+  worksheet.autoFilter = `A5:${worksheet.getColumn(columnCount).letter}${5 + payload.data.length}`;
+  const totalRow = worksheet.addRow(new Array(columnCount).fill(null));
+  const amountColumn = redacted ? 8 : 10;
+  worksheet.mergeCells(totalRow.number, 1, totalRow.number, amountColumn - 1);
+  totalRow.getCell(1).value = "订单总金额（CNY）";
+  totalRow.getCell(1).alignment = { horizontal: "right", vertical: "middle" };
+  totalRow.getCell(amountColumn).value = payload.data.reduce((sum, order) => sum + Number(order.orderedAmountCny ?? 0), 0);
+  totalRow.getCell(amountColumn).numFmt = '#,##0.00';
+  totalRow.height = 30;
+  totalRow.eachCell({ includeEmpty: true }, (cell) => {
+    cell.font = { name: "Microsoft YaHei", size: 11, bold: true, color: { argb: "FF000000" } };
+    cell.border = { top: { style: "medium", color: { argb: "FFD42A1D" } } };
+  });
+
+  worksheet.pageSetup.printTitlesRow = "1:5";
+  const buffer = await workbook.xlsx.writeBuffer();
+  const downloadUrl = URL.createObjectURL(new Blob([buffer], { type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" }));
+  const anchor = document.createElement("a");
+  anchor.href = downloadUrl;
+  anchor.download = `Sidi_Achour_${redacted ? "订单_脱敏" : "订单"}_${new Date().toISOString().slice(0, 10)}.xlsx`;
+  anchor.click();
+  window.setTimeout(() => { URL.revokeObjectURL(downloadUrl); }, 1000);
+  button.disabled = false;
+  button.textContent = label;
+}
+
 function applyLanguageCopy() {
   document.documentElement.lang = state.language === "zh" ? "zh-CN" : "fr";
-  document.title = `HighTac → Sidi Achour | ${state.activeTab === "catalog" ? t("catalogNav") : t("licenceTitle")}`;
+  document.title = `Sidi Achour | ${state.activeTab === "catalog" ? t("catalogNav") : t("licenceTitle")}`;
   document.querySelectorAll("[data-i18n]").forEach((node) => { node.textContent = t(node.dataset.i18n); });
   document.querySelectorAll("[data-i18n-aria-label]").forEach((node) => { node.setAttribute("aria-label", t(node.dataset.i18nAriaLabel)); });
-  document.querySelectorAll("[data-language]").forEach((button) => {
-    const active = button.dataset.language === state.language;
-    button.classList.toggle("active", active);
-    button.setAttribute("aria-pressed", String(active));
-  });
+  elements.adminActions.hidden = state.language !== "zh";
   elements.catalogSearch.placeholder = t("searchPlaceholder");
   elements.sortProducts.querySelector('option[value="code"]').hidden = state.language === "fr";
   elements.declarationSearch.placeholder = t("licenceSearchPlaceholder");
-}
-
-async function changeLanguage(language) {
-  await flushOrderSaves();
-  state.language = language;
-  if (language === "fr" && state.sort === "code") {
-    state.sort = "source";
-    elements.sortProducts.value = "source";
-  }
-  applyLanguageCopy();
-  await Promise.all([loadCategories(), loadProducts()]);
-  renderLicence();
 }
 
 function setTab(tab) {
@@ -316,7 +481,7 @@ function setTab(tab) {
   elements.licenceTab.classList.toggle("active", !catalog);
   elements.catalogTab.setAttribute("aria-selected", String(catalog));
   elements.licenceTab.setAttribute("aria-selected", String(!catalog));
-  document.title = `HighTac → Sidi Achour | ${catalog ? t("catalogNav") : t("licenceTitle")}`;
+  document.title = `Sidi Achour | ${catalog ? t("catalogNav") : t("licenceTitle")}`;
 }
 
 function wireInteractions() {
@@ -324,10 +489,8 @@ function wireInteractions() {
     const button = event.target.closest("[data-tab]");
     if (button) setTab(button.dataset.tab);
   });
-  document.querySelector(".language-switch").addEventListener("click", (event) => {
-    const button = event.target.closest("[data-language]");
-    if (button) void changeLanguage(button.dataset.language);
-  });
+  elements.exportOrdersButton.addEventListener("click", () => { void exportOrders(false); });
+  elements.exportRedactedButton.addEventListener("click", () => { void exportOrders(true); });
   elements.categoryList.addEventListener("click", (event) => {
     const button = event.target.closest("[data-category]");
     if (!button) return;
@@ -388,7 +551,7 @@ function isEditing() {
 
 function captureView() {
   return {
-    language: state.language, activeTab: state.activeTab, category: state.category,
+    activeTab: state.activeTab, category: state.category,
     query: state.query, sort: state.sort, page: state.page,
     declarationQuery: elements.declarationSearch.value,
     scrollX: window.scrollX, scrollY: window.scrollY,
@@ -458,7 +621,8 @@ async function start() {
   elements.releaseVersion.textContent = release.current;
   const resume = JSON.parse(sessionStorage.getItem('sidi-resume-view') ?? 'null');
   if (resume) {
-    for (const key of ['language', 'activeTab', 'category', 'query', 'sort', 'page']) state[key] = resume[key];
+    for (const key of ['activeTab', 'category', 'query', 'sort', 'page']) state[key] = resume[key];
+    if (state.language === "fr" && state.sort === "code") state.sort = "source";
     elements.catalogSearch.value = state.query;
     elements.sortProducts.value = state.sort;
     elements.declarationSearch.value = resume.declarationQuery;
@@ -466,7 +630,7 @@ async function start() {
   wireInteractions();
   applyLanguageCopy();
   setTab(state.activeTab);
-  const licenceResponse = await fetch("data/licence.json");
+  const licenceResponse = await fetch("/data/licence.json");
   state.licence = await licenceResponse.json();
   await Promise.all([loadCategories(), loadProducts()]);
   renderLicence();
@@ -481,4 +645,12 @@ async function start() {
   startReleaseChecks();
 }
 
-void start();
+async function boot() {
+  const minimumSplash = new Promise((resolve) => window.setTimeout(resolve, 900));
+  await Promise.all([start(), minimumSplash]);
+  elements.splashScreen.classList.add("is-leaving");
+  document.body.removeAttribute("aria-busy");
+  window.setTimeout(() => { elements.splashScreen.hidden = true; }, 180);
+}
+
+void boot();
