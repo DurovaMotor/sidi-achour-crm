@@ -39,6 +39,7 @@ The initial schema and data are already present in D1 and migration `0001_initia
 - Fixed exchange-rate notice appears in both Chinese and French.
 - For the 21 kg-quota categories, the numerator is `ordered quantity × unit weight (kg)`. Unit weight is derived from `产品数据库.xlsx` as `毛重(KG) ÷ 每箱数量(CTN)` and stored with row-level provenance.
 - Migration `0003_weight_basis.sql` snapshots the previous 384 product weights and 21 category modes before switching kg categories to weight calculations. It never writes `product_order_state`.
+- Migration `0004_tire_remarks.sql` maps 71 tire records to the `Quotation` sheet's `Remarks` cells using TL/TT, original number and A/B/C tier. It snapshots both localized row JSON values before updating them and never writes `product_order_state`.
 - The production backup and exact order-state snapshot are kept in the locally ignored `backups/` directory. Targeted rollback is documented in `rollback/README.md`.
 
 ## Verified online
@@ -50,3 +51,4 @@ The initial schema and data are already present in D1 and migration `0001_initia
 - Desktop widths from 981px show every language-appropriate column without horizontal table scrolling.
 - At mobile widths, no document overflow or clipped fraction text; the rightmost editable columns remain fixed during table scrolling.
 - Desktop and mobile support Chinese/French switching.
+- Selecting the tire category changes the specification header to `Remarks`; all 71 tire rows display the same source-cell value in Chinese and French.

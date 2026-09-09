@@ -19,3 +19,15 @@ The rollback restores the previous `products.unit_weight_kg`, `unit_weight_sourc
 - Both order-state SHA-256 values: `94fbf9b9312ea78a46124746936959da9a79bf441e86b9f3bf99f7724baddbc2`
 
 The full export was restored into an isolated local D1. Migration and rollback were both executed there; all 343 order-state rows matched the backup exactly before migration, after migration and after rollback.
+
+## Tire Remarks rollback
+
+Migration `0004_tire_remarks.sql` snapshots both localized JSON fields for all 71 tire rows. To restore those fields without changing order state:
+
+```powershell
+npx --yes wrangler@4.129.1 d1 execute sidi-achour-orders --remote --file rollback/0004_tire_remarks.rollback.sql
+```
+
+Production backup: `backups/sidi-achour-orders-pre-tire-remarks-20260909-120637.sql`, SHA-256 `e34e18d42c9bd8e4776f9d09d6b6b0af63717b7516a75ee2c992ff2ac4ffa04c`.
+
+The immediate pre/post order-state exports both have SHA-256 `6e45e4e6ccc9b5b0f732fdb483bdf3407ed7126c40748fb9caa853d1e414cd56`.
