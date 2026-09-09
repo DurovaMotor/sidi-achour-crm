@@ -1,18 +1,22 @@
 export async function onRequestGet(context) {
+  const locale = new URL(context.request.url).searchParams.get("locale") === "fr" ? "fr" : "zh";
+  const fieldsColumn = locale === "fr" ? "cp.fields_fr_json" : "cp.fields_zh_json";
+  const categoryTitleColumn = locale === "fr" ? "c.title_fr" : "c.title_zh";
+  const salesUnitColumn = locale === "fr" ? "p.sales_unit_fr" : "p.sales_unit_zh";
   const result = await context.env.DB.prepare(`
     SELECT
       os.record_id,
       p.product_code,
       p.unit_price_cny,
-      p.sales_unit_zh,
+      ${salesUnitColumn} AS sales_unit,
       p.unit_weight_kg,
       os.new_price_cny,
       os.ordered_quantity,
       os.remark AS order_remark,
       os.updated_at,
       c.id AS category_id,
-      c.title_zh AS category_title_zh,
-      cp.fields_zh_json,
+      ${categoryTitleColumn} AS category_title,
+      ${fieldsColumn} AS fields_json,
       pi.r2_key AS image_key
     FROM product_order_state os
     JOIN products p ON p.record_id = os.record_id
@@ -31,8 +35,8 @@ export async function onRequestGet(context) {
 
   const clean = (value) => value == null ? "" : String(value).trim();
   const data = result.results.map((row) => {
-    const fields = JSON.parse(row.fields_zh_json);
-    const productNameZh = clean(fields.designation || fields.suppliedModel || fields.customerSpecification || fields.reference || row.product_code);
+    const fields = JSON.parse(row.fields_json);
+    const productName = clean(fields.designation || fields.suppliedModel || fields.customerSpecification || (locale === "fr" ? row.category_title : fields.reference || row.product_code));
     const specification = row.category_id === "pneumatiques"
       ? clean(fields.remarks)
       : [...new Set([
@@ -53,11 +57,11 @@ export async function onRequestGet(context) {
       recordId: row.record_id,
       imageUrl: row.image_key ? `/media/${row.image_key.split("/").map(encodeURIComponent).join("/")}` : null,
       productCode: row.product_code ?? "",
-      productNameZh,
+      productName,
       categoryId: row.category_id,
-      categoryZh: row.category_title_zh,
+      category: row.category_title,
       specification,
-      salesUnitZh: clean(row.sales_unit_zh || fields.unit) || "个",
+      salesUnit: clean(row.sales_unit || fields.unit) || (locale === "fr" ? "pièce" : "个"),
       originalPriceCny,
       newPriceCny,
       effectivePriceCny,

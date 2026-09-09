@@ -59,6 +59,6 @@ The initial schema and data are already present in D1 and migration `0001_initia
 - French hides the product-code column at every breakpoint; Chinese retains it.
 - `/` is the French entry point. `/Adam` is served by the generated `public/Adam.html` clean URL and selects Chinese from the path. The language-switch buttons have been removed.
 - `/Sidi` is a French clean URL backed by `public/Sidi.html`; it reads and writes the separate customer priority quantity/remark table while continuing to display prices from the primary price state.
-- Chinese-only header actions export all positive-quantity orders through the read-only `/api/export/orders` endpoint. The standard workbook embeds product images and codes; the redacted workbook omits both.
-- Excel exports contain one filtered `订单` sheet with Microsoft YaHei, black headers, a red total rule, frozen headings, CNY number formats and readable column widths. The vendored ExcelJS browser bundle uses a content-fingerprinted filename.
+- Chinese-only header actions open a Chinese/French export choice and export all positive-quantity orders through the read-only `/api/export/orders` endpoint. The standard workbook embeds product images and codes; the redacted workbook omits both.
+- Excel exports contain one localized `订单` or `Commande` sheet with Microsoft YaHei, black headers, a red total rule, frozen headings, CNY number formats and readable column widths. The vendored ExcelJS browser bundle uses a content-fingerprinted filename.
 - Export requests execute SELECT statements only and never write D1.

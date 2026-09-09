@@ -18,7 +18,7 @@ HighTac 为 Sidi Achour 使用的内部摩托车配件目录、报价与进口�
 - 轮胎分类：规格列切换为 `Remarks`，内容来自客户版英文轮胎报价表
 - 分类名称：法语严格使用 `Sidi.xlsx` 的 `Licence!D5:D46`，中文逐项对应翻译
 - 品牌界面：仅显示 Sidi Achour Logo，并使用约 1 秒的白、红、黑渐变开屏
-- 中文导出：普通版包含配件图片和编码；脱敏版移除图片和编码
+- 中文页面导出：普通版包含配件图片和编码，脱敏版移除图片和编码；两种版本均可选择中文或法语 Excel
 
 项目不使用 R2。`public/` 是唯一部署目录；`/` 与 `/Adam` 的填写状态保存在 `product_order_state`，`/Sidi` 的优先出货数量与备注独立保存在 `sidi_priority_order_state`。
 

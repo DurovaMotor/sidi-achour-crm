@@ -4,14 +4,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#000000">
-    <meta name="app-version" content="v2026.09.09.075812.049-34938A51">
+    <meta name="app-version" content="v2026.09.09.090147.273-D3A93BAF">
     <meta name="description" content="Sidi Achour 摩托车配件订单与进口额度管理页面。">
     <title>Sidi Achour | 产品目录</title>
     <link rel="icon" href="/media/brand/sidi-achour-logo.f8ca917c1cb1c72a.png" type="image/png">
     <link rel="preload" href="/media/brand/sidi-achour-logo.f8ca917c1cb1c72a.png" as="image" fetchpriority="high">
-    <link rel="stylesheet" href="/build/styles.48662974f004b81d.css">
+    <link rel="stylesheet" href="/build/styles.f489f1e88fb1cf4b.css">
     <script src="/vendor/exceljs.7e49da68588e250d.min.js" defer></script>
-    <script src="/build/app.dd358395d8a9f90c.js" defer></script>
+    <script src="/build/app.8c2435e8b8f8d5bd.js" defer></script>
   </head>
   <body aria-busy="true">
     <div class="splash-screen" id="splashScreen" role="status" aria-live="polite" aria-label="Sidi Achour 正在加载">
@@ -34,8 +34,20 @@
         </nav>
 
         <div class="header-actions" id="adminActions" aria-label="数据导出" hidden>
-          <button class="export-primary" id="exportOrdersButton" type="button">导出</button>
-          <button class="export-redacted" id="exportRedactedButton" type="button">脱敏导出</button>
+          <div class="export-control">
+            <button class="export-primary" id="exportOrdersButton" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="exportOrdersMenu">导出</button>
+            <div class="export-language-menu" id="exportOrdersMenu" role="menu" hidden>
+              <button type="button" role="menuitem" data-export-language="zh" data-export-redacted="false">中文导出</button>
+              <button type="button" role="menuitem" data-export-language="fr" data-export-redacted="false">法语导出</button>
+            </div>
+          </div>
+          <div class="export-control">
+            <button class="export-redacted" id="exportRedactedButton" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="exportRedactedMenu">脱敏导出</button>
+            <div class="export-language-menu" id="exportRedactedMenu" role="menu" hidden>
+              <button type="button" role="menuitem" data-export-language="zh" data-export-redacted="true">中文导出</button>
+              <button type="button" role="menuitem" data-export-language="fr" data-export-redacted="true">法语导出</button>
+            </div>
+          </div>
         </div>
       </div>
     </header>
@@ -133,6 +145,6 @@
         </div>
       </section>
     </main>
-    <footer class="release-footer"><span class="release-version" id="releaseVersion">v2026.09.09.075812.049-34938A51</span></footer>
+    <footer class="release-footer"><span class="release-version" id="releaseVersion">v2026.09.09.090147.273-D3A93BAF</span></footer>
   </body>
 </html>
