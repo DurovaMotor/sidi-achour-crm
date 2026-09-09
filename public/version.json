@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "version": "v2026.09.09.050731.480-4575DB96",
-  "releasedAt": "2026-09-09T05:07:31.4806388+00:00",
+  "version": "v2026.09.09.053038.262-C9702EE1",
+  "releasedAt": "2026-09-09T05:30:38.2627822+00:00",
   "cloudflare": {
     "project": "sidi-achour-crm",
     "branch": "main",
-    "commitHash": "0ff099e2e63b5e4fbcb83e94c6a7b62f6193a738",
-    "commitMessage": "Release v2026.09.09.050731.480-4575DB96"
+    "commitHash": "5df07be4fbcd9424970b40dd31689d100b487b4f",
+    "commitMessage": "Release v2026.09.09.053038.262-C9702EE1"
   },
   "assets": [
     "/build/styles.b6214d60a67fc634.css",
