@@ -54,7 +54,7 @@ The initial schema and data are already present in D1 and migration `0001_initia
 - Desktop and mobile support Chinese/French switching.
 - Selecting the tire category changes the specification header to `Remarks`; all 71 tire rows display the same source-cell value in Chinese and French.
 - The header and splash use only the Sidi Achour Logo. The splash is centered at every viewport and uses the NVIDIA-derived 2px geometry, 1px gray rule, deep-red/black surface and Microsoft YaHei font stack.
-- The Sidi Achour Logo uses the transparent RGBA source and a SHA-256 fingerprinted filename; the splash renders it directly over the red-black background without a white carrier surface.
+- The Sidi Achour Logo uses the transparent RGBA source and a SHA-256 fingerprinted filename; the splash renders it directly over a white-to-red-and-black gradient without a separate carrier surface.
 - French hides the product-code column at every breakpoint; Chinese retains it.
 - `/` is the French entry point. `/Adam` is served by the generated `public/Adam.html` clean URL and selects Chinese from the path. The language-switch buttons have been removed.
 - Chinese-only header actions export all positive-quantity orders through the read-only `/api/export/orders` endpoint. The standard workbook embeds product images and codes; the redacted workbook omits both.

@@ -54,7 +54,9 @@ h1, p { margin-top: 0; }
   place-items: center;
   min-width: 100vw;
   min-height: 100dvh;
-  background: linear-gradient(135deg, #000 0%, #160000 36%, #650800 68%, #240000 84%, #000 100%);
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.98) 0%, rgba(247, 247, 247, 0.94) 24%, rgba(255, 255, 255, 0) 50%),
+    linear-gradient(135deg, #fff 0%, #ededed 32%, #9b0d06 66%, #2a0000 84%, #000 100%);
   opacity: 1;
   visibility: visible;
   transition: opacity 180ms var(--ease), visibility 0s linear 180ms;
