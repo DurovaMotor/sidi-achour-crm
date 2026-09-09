@@ -9,10 +9,25 @@ $utf8 = [Text.UTF8Encoding]::new($false)
 
 $indexPath = Join-Path $PSScriptRoot 'public\index.html'
 $html = [IO.File]::ReadAllText($indexPath)
+$previousAssetNames = [regex]::Matches($html, '/build/(?<name>(?:app|styles)\.[0-9a-f]{16}\.(?:js|css))') | ForEach-Object { $_.Groups['name'].Value }
+$buildDirectory = Join-Path $PSScriptRoot 'public\build'
+New-Item -ItemType Directory -Path $buildDirectory -Force | Out-Null
+$styleSource = Join-Path $PSScriptRoot 'public\styles.css'
+$appSource = Join-Path $PSScriptRoot 'public\app.js'
+$styleHash = (Get-FileHash -LiteralPath $styleSource -Algorithm SHA256).Hash.Substring(0, 16).ToLowerInvariant()
+$appHash = (Get-FileHash -LiteralPath $appSource -Algorithm SHA256).Hash.Substring(0, 16).ToLowerInvariant()
+$styleName = "styles.$styleHash.css"
+$appName = "app.$appHash.js"
+$styleUrl = "/build/$styleName"
+$appUrl = "/build/$appName"
+[IO.File]::WriteAllBytes((Join-Path $buildDirectory $styleName), [IO.File]::ReadAllBytes($styleSource))
+[IO.File]::WriteAllBytes((Join-Path $buildDirectory $appName), [IO.File]::ReadAllBytes($appSource))
+$keepAssetNames = @($styleName, $appName) + $previousAssetNames
+Get-ChildItem -LiteralPath $buildDirectory -File | Where-Object { $_.Name -match '^(?:app|styles)\.[0-9a-f]{16}\.(?:js|css)$' -and $_.Name -notin $keepAssetNames } | ForEach-Object { Remove-Item -LiteralPath $_.FullName }
 $html = [regex]::Replace($html, '(<meta name="app-version" content=")[^"]*(">)', { param($match) $match.Groups[1].Value + $version + $match.Groups[2].Value })
 $html = [regex]::Replace($html, '(<span class="release-version" id="releaseVersion">)[^<]*(</span>)', { param($match) $match.Groups[1].Value + $version + $match.Groups[2].Value })
-$html = [regex]::Replace($html, '(?<=href="styles\.css)(?:\?v=[^"]*)?(?=")', "?v=$version")
-$html = [regex]::Replace($html, '(?<=src="app\.js)(?:\?v=[^"]*)?(?=")', "?v=$version")
+$html = [regex]::Replace($html, '(<link rel="stylesheet" href=")[^"]*styles(?:\.[0-9a-f]{16})?\.css(?:\?v=[^"]*)?(">)', { param($match) $match.Groups[1].Value + $styleUrl + $match.Groups[2].Value })
+$html = [regex]::Replace($html, '(<script src=")[^"]*app(?:\.[0-9a-f]{16})?\.js(?:\?v=[^"]*)?(" defer></script>)', { param($match) $match.Groups[1].Value + $appUrl + $match.Groups[2].Value })
 [IO.File]::WriteAllText($indexPath, $html, $utf8)
 
 $manifest = [ordered]@{
@@ -25,7 +40,8 @@ $manifest = [ordered]@{
     commitHash = $releaseHash
     commitMessage = $message
   }
-  assets = @("/styles.css?v=$version", "/app.js?v=$version")
+  assets = @($styleUrl, $appUrl)
+  fingerprints = [ordered]@{ css = $styleHash; js = $appHash }
 }
 [IO.File]::WriteAllText((Join-Path $PSScriptRoot 'public\version.json'), ($manifest | ConvertTo-Json -Depth 4), $utf8)
 

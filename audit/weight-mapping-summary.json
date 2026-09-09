@@ -1,0 +1,41 @@
+{
+  "generated_at_utc": "2026-09-09T02:37:27.026318+00:00",
+  "source_xlsx": "产品数据库.xlsx",
+  "source_sheet_audit": [
+    "sheet1: rows=7416, columns=23, missing_headers="
+  ],
+  "source_rows_with_positive_gross_weight_and_ctn": 2001,
+  "source_unique_codes": 1999,
+  "site_record_count": 613,
+  "mapped_record_count": 613,
+  "unmapped_record_count": 0,
+  "exact_code_count": 364,
+  "fuzzy_reference_count": 249,
+  "review_status_counts": {
+    "ambiguous": 84,
+    "exact": 364,
+    "fuzzy_high": 78,
+    "fuzzy_low": 29,
+    "fuzzy_medium": 58
+  },
+  "ambiguous_count": 84,
+  "kg_quota_record_count": 384,
+  "kg_quota_exact_count": 259,
+  "kg_quota_fuzzy_count": 125,
+  "kg_quota_low_or_ambiguous_count": 52,
+  "kg_quota_review_status_counts": {
+    "ambiguous": 38,
+    "exact": 259,
+    "fuzzy_high": 39,
+    "fuzzy_low": 14,
+    "fuzzy_medium": 34
+  },
+  "records_with_current_site_weight": 398,
+  "records_where_mapping_differs_over_5pct_from_current": 53,
+  "selection_rules": [
+    "Exact product-code matches use the source row's 毛重(KG) / 每箱数量(CTN).",
+    "Rows without exact usable source data use Chinese-name similarity.",
+    "Fuzzy selection adds tie-breaking preference for the same licensed category, any licensed catalog row, and codes without SYM.",
+    "Category term agreement is used to avoid cross-part-type references."
+  ]
+}

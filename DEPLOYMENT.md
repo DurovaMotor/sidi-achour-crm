@@ -19,7 +19,7 @@ Run the release entry point from this directory:
 .\deploy.ps1
 ```
 
-The script generates a unique version, writes it to the page and `public/version.json`, and attaches the same release hash/message to the Cloudflare deployment record. It also records the returned Cloudflare deployment ID under `deployment-history/`.
+The script generates a unique version and content-fingerprinted JS/CSS files under `public/build/`, writes them to the page and `public/version.json`, and attaches the same release hash/message to the Cloudflare deployment record. Fingerprinted assets are immutable; the current and immediately previous asset pair are retained during each publication. The script also records the returned Cloudflare deployment ID under `deployment-history/`.
 
 Deploy only `public/`, with the sibling `functions/` directory. The older root-level HTML, JavaScript, CSS, `assets/`, and `data/` are not the current deployment.
 
@@ -37,7 +37,9 @@ The initial schema and data are already present in D1 and migration `0001_initia
 - Migration `0002_new_price.sql` adds the nullable new price and updates category totals. Apply it before deploying the corresponding Functions.
 - Amount denominator: import quota USD × 6.67.
 - Fixed exchange-rate notice appears in both Chinese and French.
-- Quantity fractions retain the source quota unit, including kg; no unit-weight conversion is inferred.
+- For the 21 kg-quota categories, the numerator is `ordered quantity × unit weight (kg)`. Unit weight is derived from `产品数据库.xlsx` as `毛重(KG) ÷ 每箱数量(CTN)` and stored with row-level provenance.
+- Migration `0003_weight_basis.sql` snapshots the previous 384 product weights and 21 category modes before switching kg categories to weight calculations. It never writes `product_order_state`.
+- The production backup and exact order-state snapshot are kept in the locally ignored `backups/` directory. Targeted rollback is documented in `rollback/README.md`.
 
 ## Verified online
 

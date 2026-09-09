@@ -1,6 +1,7 @@
 .wrangler/
 .playwright-cli/
 output/
+backups/
 r2-assets/
 assets/
 data/
