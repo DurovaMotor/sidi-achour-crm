@@ -27,6 +27,37 @@ const copy = {
   },
 };
 
+const exportCopy = {
+  zh: {
+    sheet: "订单",
+    title: "Sidi Achour 摩托车配件订单",
+    redactedTitle: "Sidi Achour 摩托车配件订单",
+    exportedAt: "导出时间",
+    currencyNote: "币种：CNY；单价优先使用新价格",
+    total: "订单总金额（CNY）",
+    file: "订单",
+    redactedFile: "客户订单",
+    headers: {
+      number: "序号", image: "图片", code: "配件编码", name: "中文名称", category: "产品分类",
+      specification: "规格 / Remarks", unit: "单位", price: "单价（CNY）", quantity: "数量", amount: "金额（CNY）", remark: "备注",
+    },
+  },
+  fr: {
+    sheet: "Commande",
+    title: "Commande de pièces pour motocycles — Sidi Achour",
+    redactedTitle: "Commande de pièces pour motocycles — Sidi Achour",
+    exportedAt: "Date d’exportation",
+    currencyNote: "Devise : CNY. Le nouveau prix est utilisé en priorité.",
+    total: "Montant total de la commande (CNY)",
+    file: "Commande_FR",
+    redactedFile: "Commande_Client_FR",
+    headers: {
+      number: "N°", image: "Image", code: "Code produit", name: "Désignation", category: "Catégorie",
+      specification: "Spécification / Remarks", unit: "Unité", price: "Prix (CNY)", quantity: "Quantité", amount: "Montant (CNY)", remark: "Remarque",
+    },
+  },
+};
+
 const state = {
   language: window.location.pathname === "/Adam" || window.location.pathname === "/Adam/" ? "zh" : "fr",
   workspace: window.location.pathname === "/Sidi" || window.location.pathname === "/Sidi/" ? "sidi" : "default",
@@ -61,6 +92,8 @@ const elements = {
   adminActions: document.querySelector("#adminActions"),
   exportOrdersButton: document.querySelector("#exportOrdersButton"),
   exportRedactedButton: document.querySelector("#exportRedactedButton"),
+  exportOrdersMenu: document.querySelector("#exportOrdersMenu"),
+  exportRedactedMenu: document.querySelector("#exportRedactedMenu"),
   catalogTab: document.querySelector("#catalogTab"), licenceTab: document.querySelector("#licenceTab"),
   catalogPanel: document.querySelector("#catalogPanel"), licencePanel: document.querySelector("#licencePanel"),
   categoryCount: document.querySelector("#categoryCount"), categoryList: document.querySelector("#categoryList"),
@@ -302,18 +335,19 @@ async function imageAsPngDataUrl(url) {
   return canvas.toDataURL("image/png");
 }
 
-async function exportOrders(redacted) {
+async function exportOrders(redacted, exportLanguage) {
   await flushOrderSaves();
   const button = redacted ? elements.exportRedactedButton : elements.exportOrdersButton;
   const label = button.textContent;
+  const labels = exportCopy[exportLanguage];
   button.disabled = true;
   button.textContent = "生成中…";
 
-  const payload = await (await fetch("/api/export/orders", { cache: "no-store" })).json();
+  const payload = await (await fetch(`/api/export/orders?locale=${exportLanguage}`, { cache: "no-store" })).json();
   const workbook = new ExcelJS.Workbook();
   workbook.creator = "Sidi Achour";
   workbook.created = new Date();
-  const worksheet = workbook.addWorksheet("订单", {
+  const worksheet = workbook.addWorksheet(labels.sheet, {
     properties: { defaultRowHeight: 24 },
     pageSetup: { orientation: "landscape", fitToPage: true, fitToWidth: 1, fitToHeight: 0 },
     views: [{
@@ -327,32 +361,32 @@ async function exportOrders(redacted) {
   });
 
   const columns = redacted ? [
-    { header: "序号", key: "number", width: 6 },
-    { header: "产品分类", key: "category", width: 28 },
-    { header: "产品名称", key: "name", width: 32 },
-    { header: "规格 / Remarks", key: "specification", width: 40 },
-    { header: "单位", key: "unit", width: 10 },
-    { header: "单价（CNY）", key: "price", width: 14 },
-    { header: "数量", key: "quantity", width: 12 },
-    { header: "金额（CNY）", key: "amount", width: 17 },
-    { header: "备注", key: "remark", width: 28 },
+    { header: labels.headers.number, key: "number", width: 6 },
+    { header: labels.headers.category, key: "category", width: 28 },
+    { header: labels.headers.name, key: "name", width: 32 },
+    { header: labels.headers.specification, key: "specification", width: 40 },
+    { header: labels.headers.unit, key: "unit", width: 10 },
+    { header: labels.headers.price, key: "price", width: 14 },
+    { header: labels.headers.quantity, key: "quantity", width: 12 },
+    { header: labels.headers.amount, key: "amount", width: 17 },
+    { header: labels.headers.remark, key: "remark", width: 28 },
   ] : [
-    { header: "序号", key: "number", width: 6 },
-    { header: "图片", key: "image", width: 14 },
-    { header: "配件编码", key: "code", width: 20 },
-    { header: "中文名称", key: "name", width: 28 },
-    { header: "产品分类", key: "category", width: 28 },
-    { header: "规格 / Remarks", key: "specification", width: 40 },
-    { header: "单位", key: "unit", width: 10 },
-    { header: "单价（CNY）", key: "price", width: 14 },
-    { header: "数量", key: "quantity", width: 12 },
-    { header: "金额（CNY）", key: "amount", width: 17 },
-    { header: "备注", key: "remark", width: 28 },
+    { header: labels.headers.number, key: "number", width: 6 },
+    { header: labels.headers.image, key: "image", width: 14 },
+    { header: labels.headers.code, key: "code", width: 20 },
+    { header: labels.headers.name, key: "name", width: 28 },
+    { header: labels.headers.category, key: "category", width: 28 },
+    { header: labels.headers.specification, key: "specification", width: 40 },
+    { header: labels.headers.unit, key: "unit", width: 10 },
+    { header: labels.headers.price, key: "price", width: 14 },
+    { header: labels.headers.quantity, key: "quantity", width: 12 },
+    { header: labels.headers.amount, key: "amount", width: 17 },
+    { header: labels.headers.remark, key: "remark", width: 28 },
   ];
   worksheet.columns = columns.map(({ key, width }) => ({ key, width }));
   const columnCount = columns.length;
   worksheet.mergeCells(1, 1, 1, columnCount);
-  worksheet.getCell(1, 1).value = redacted ? "Sidi Achour 订单（脱敏）" : "Sidi Achour 摩托车配件订单";
+  worksheet.getCell(1, 1).value = redacted ? labels.redactedTitle : labels.title;
   worksheet.getCell(1, 1).font = { name: "Microsoft YaHei", size: 20, bold: true, color: { argb: "FF000000" } };
   worksheet.getCell(1, 1).alignment = { vertical: "middle", horizontal: "left" };
   worksheet.getRow(1).height = 32;
@@ -360,11 +394,11 @@ async function exportOrders(redacted) {
   worksheet.getCell(2, 1).value = "Sidi Achour";
   worksheet.getCell(2, 1).font = { name: "Microsoft YaHei", size: 11, bold: true, color: { argb: "FF1A1A1A" } };
   worksheet.mergeCells(2, 3, 2, columnCount);
-  worksheet.getCell(2, 3).value = `导出时间：${new Intl.DateTimeFormat("zh-CN", { dateStyle: "medium", timeStyle: "medium", hour12: false }).format(new Date())}`;
+  worksheet.getCell(2, 3).value = `${labels.exportedAt}${exportLanguage === "fr" ? " : " : "："}${new Intl.DateTimeFormat(exportLanguage === "fr" ? "fr-FR" : "zh-CN", { dateStyle: "medium", timeStyle: "medium", hour12: false }).format(new Date())}`;
   worksheet.getCell(2, 3).font = { name: "Microsoft YaHei", size: 11, color: { argb: "FF1A1A1A" } };
   worksheet.getCell(2, 3).alignment = { horizontal: "right", vertical: "middle" };
   worksheet.mergeCells(3, 1, 3, columnCount);
-  worksheet.getCell(3, 1).value = "币种：CNY；单价优先使用新价格";
+  worksheet.getCell(3, 1).value = labels.currencyNote;
   worksheet.getCell(3, 1).font = { name: "Microsoft YaHei", size: 10, italic: true, color: { argb: "FF6B6B6B" } };
   worksheet.getRow(4).height = 8;
 
@@ -390,10 +424,10 @@ async function exportOrders(redacted) {
   payload.data.forEach((order, index) => {
     const values = redacted ? [
       index + 1,
-      order.categoryZh,
-      order.productNameZh,
+      order.category,
+      order.productName,
       order.specification,
-      order.salesUnitZh,
+      order.salesUnit,
       order.effectivePriceCny,
       order.orderedQuantity,
       order.orderedAmountCny,
@@ -402,10 +436,10 @@ async function exportOrders(redacted) {
       index + 1,
       order.imageUrl ? "" : "—",
       order.productCode,
-      order.productNameZh,
-      order.categoryZh,
+      order.productName,
+      order.category,
       order.specification,
-      order.salesUnitZh,
+      order.salesUnit,
       order.effectivePriceCny,
       order.orderedQuantity,
       order.orderedAmountCny,
@@ -440,7 +474,7 @@ async function exportOrders(redacted) {
   const totalRow = worksheet.addRow(new Array(columnCount).fill(null));
   const amountColumn = redacted ? 8 : 10;
   worksheet.mergeCells(totalRow.number, 1, totalRow.number, amountColumn - 1);
-  totalRow.getCell(1).value = "订单总金额（CNY）";
+  totalRow.getCell(1).value = labels.total;
   totalRow.getCell(1).alignment = { horizontal: "right", vertical: "middle" };
   totalRow.getCell(amountColumn).value = payload.data.reduce((sum, order) => sum + Number(order.orderedAmountCny ?? 0), 0);
   totalRow.getCell(amountColumn).numFmt = '#,##0.00';
@@ -455,7 +489,7 @@ async function exportOrders(redacted) {
   const downloadUrl = URL.createObjectURL(new Blob([buffer], { type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" }));
   const anchor = document.createElement("a");
   anchor.href = downloadUrl;
-  anchor.download = `Sidi_Achour_${redacted ? "订单_脱敏" : "订单"}_${new Date().toISOString().slice(0, 10)}.xlsx`;
+  anchor.download = `Sidi_Achour_${redacted ? labels.redactedFile : labels.file}_${new Date().toISOString().slice(0, 10)}.xlsx`;
   anchor.click();
   window.setTimeout(() => { URL.revokeObjectURL(downloadUrl); }, 1000);
   button.disabled = false;
@@ -485,13 +519,45 @@ function setTab(tab) {
   document.title = `Sidi Achour | ${catalog ? t("catalogNav") : t("licenceTitle")}`;
 }
 
+function closeExportMenus() {
+  for (const [button, menu] of [
+    [elements.exportOrdersButton, elements.exportOrdersMenu],
+    [elements.exportRedactedButton, elements.exportRedactedMenu],
+  ]) {
+    menu.hidden = true;
+    button.setAttribute("aria-expanded", "false");
+  }
+}
+
+function toggleExportMenu(button, menu) {
+  const willOpen = menu.hidden;
+  closeExportMenus();
+  if (willOpen) {
+    menu.hidden = false;
+    button.setAttribute("aria-expanded", "true");
+    menu.querySelector("button").focus();
+  }
+}
+
 function wireInteractions() {
   document.querySelector(".primary-tabs").addEventListener("click", (event) => {
     const button = event.target.closest("[data-tab]");
     if (button) setTab(button.dataset.tab);
   });
-  elements.exportOrdersButton.addEventListener("click", () => { void exportOrders(false); });
-  elements.exportRedactedButton.addEventListener("click", () => { void exportOrders(true); });
+  elements.exportOrdersButton.addEventListener("click", () => { toggleExportMenu(elements.exportOrdersButton, elements.exportOrdersMenu); });
+  elements.exportRedactedButton.addEventListener("click", () => { toggleExportMenu(elements.exportRedactedButton, elements.exportRedactedMenu); });
+  elements.adminActions.addEventListener("click", (event) => {
+    const option = event.target.closest("[data-export-language]");
+    if (!option) return;
+    closeExportMenus();
+    void exportOrders(option.dataset.exportRedacted === "true", option.dataset.exportLanguage);
+  });
+  document.addEventListener("click", (event) => {
+    if (!event.target.closest(".export-control")) closeExportMenus();
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeExportMenus();
+  });
   elements.categoryList.addEventListener("click", (event) => {
     const button = event.target.closest("[data-category]");
     if (!button) return;

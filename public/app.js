@@ -31,12 +31,12 @@ const exportCopy = {
   zh: {
     sheet: "订单",
     title: "Sidi Achour 摩托车配件订单",
-    redactedTitle: "Sidi Achour 订单（脱敏）",
+    redactedTitle: "Sidi Achour 摩托车配件订单",
     exportedAt: "导出时间",
     currencyNote: "币种：CNY；单价优先使用新价格",
     total: "订单总金额（CNY）",
     file: "订单",
-    redactedFile: "订单_脱敏",
+    redactedFile: "客户订单",
     headers: {
       number: "序号", image: "图片", code: "配件编码", name: "中文名称", category: "产品分类",
       specification: "规格 / Remarks", unit: "单位", price: "单价（CNY）", quantity: "数量", amount: "金额（CNY）", remark: "备注",
@@ -45,12 +45,12 @@ const exportCopy = {
   fr: {
     sheet: "Commande",
     title: "Commande de pièces pour motocycles — Sidi Achour",
-    redactedTitle: "Commande Sidi Achour (anonymisée)",
+    redactedTitle: "Commande de pièces pour motocycles — Sidi Achour",
     exportedAt: "Date d’exportation",
     currencyNote: "Devise : CNY. Le nouveau prix est utilisé en priorité.",
     total: "Montant total de la commande (CNY)",
     file: "Commande_FR",
-    redactedFile: "Commande_FR_Anonymisee",
+    redactedFile: "Commande_Client_FR",
     headers: {
       number: "N°", image: "Image", code: "Code produit", name: "Désignation", category: "Catégorie",
       specification: "Spécification / Remarks", unit: "Unité", price: "Prix (CNY)", quantity: "Quantité", amount: "Montant (CNY)", remark: "Remarque",
