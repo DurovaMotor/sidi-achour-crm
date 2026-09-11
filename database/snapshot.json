@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "database": {
+    "name": "sidi-achour-orders",
+    "id": "36a123f5-7509-41d8-a690-13be0ec02524",
+    "binding": "DB"
+  },
+  "exportedAt": "2026-09-11T08:24:58Z",
+  "file": "sidi-achour-orders-production.sql",
+  "bytes": 1646722,
+  "sha256": "cd3eb372b89a94889185b479a950df660c42e210a78c90566e524e71a932259f",
+  "counts": {
+    "tables": 34,
+    "categories": 35,
+    "products": 637,
+    "categoryProducts": 637,
+    "productImages": 543,
+    "primaryOrderRows": 406,
+    "priorityOrderRows": 0,
+    "bicycleRows": 24
+  },
+  "latestMigration": "0013_remove_djj_bicycle_outer_tires.sql"
+}

@@ -5,6 +5,25 @@ const SORTS = {
   code: "p.product_code_normalized IS NULL, p.product_code_normalized, c.sort_order, cp.sort_order",
 };
 
+const CUSTOMER_SENSITIVE_LINE = /(?:进价|進價|采购价|採購價|采购成本|採購成本|成本价|成本價|purchase\s+(?:price|cost)|cost\s+price|unit\s+cost|prix\s+d[’']achat|co[uû]t\s+d[’']achat|prix\s+de\s+revient)/iu;
+
+function sanitizeCustomerText(value) {
+  if (value === null || value === undefined) return value;
+  return String(value)
+    .split(/\r?\n/)
+    .filter((line) => !CUSTOMER_SENSITIVE_LINE.test(line))
+    .join("\n")
+    .trim();
+}
+
+function sanitizeCustomerFields(value) {
+  if (Array.isArray(value)) return value.map(sanitizeCustomerFields);
+  if (value && typeof value === "object") {
+    return Object.fromEntries(Object.entries(value).map(([key, entry]) => [key, sanitizeCustomerFields(entry)]));
+  }
+  return typeof value === "string" ? sanitizeCustomerText(value) : value;
+}
+
 export async function onRequestGet(context) {
   const url = new URL(context.request.url);
   const locale = url.searchParams.get("locale") === "fr" ? "fr" : "zh";
@@ -82,13 +101,13 @@ export async function onRequestGet(context) {
     categoryId: row.category_id,
     categoryTitle: row.category_title,
     productCode: row.product_code,
-    fields: JSON.parse(row.fields_json),
+    fields: sanitizeCustomerFields(JSON.parse(row.fields_json)),
     unitPriceCny: row.unit_price_cny === null ? null : Number(row.unit_price_cny),
     unitWeightKg: row.unit_weight_kg === null ? null : Number(row.unit_weight_kg),
     newPriceCny: row.new_price_cny === null ? null : Number(row.new_price_cny),
     orderedQuantity: Number(row.ordered_quantity),
     orderedAmountCny: Number(row.ordered_quantity) * Number(row.new_price_cny ?? row.unit_price_cny ?? 0),
-    remark: row.remark,
+    remark: sanitizeCustomerText(row.remark),
     image: row.r2_key ? {
       key: row.r2_key,
       url: `/media/${row.r2_key.split("/").map(encodeURIComponent).join("/")}`,

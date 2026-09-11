@@ -1,3 +1,22 @@
+const CUSTOMER_SENSITIVE_LINE = /(?:进价|進價|采购价|採購價|采购成本|採購成本|成本价|成本價|purchase\s+(?:price|cost)|cost\s+price|unit\s+cost|prix\s+d[’']achat|co[uû]t\s+d[’']achat|prix\s+de\s+revient)/iu;
+
+function sanitizeCustomerText(value) {
+  if (value === null || value === undefined) return value;
+  return String(value)
+    .split(/\r?\n/)
+    .filter((line) => !CUSTOMER_SENSITIVE_LINE.test(line))
+    .join("\n")
+    .trim();
+}
+
+function sanitizeCustomerFields(value) {
+  if (Array.isArray(value)) return value.map(sanitizeCustomerFields);
+  if (value && typeof value === "object") {
+    return Object.fromEntries(Object.entries(value).map(([key, entry]) => [key, sanitizeCustomerFields(entry)]));
+  }
+  return typeof value === "string" ? sanitizeCustomerText(value) : value;
+}
+
 export async function onRequestGet(context) {
   const locale = new URL(context.request.url).searchParams.get("locale") === "fr" ? "fr" : "zh";
   const fieldsColumn = locale === "fr" ? "cp.fields_fr_json" : "cp.fields_zh_json";
@@ -35,7 +54,7 @@ export async function onRequestGet(context) {
 
   const clean = (value) => value == null ? "" : String(value).trim();
   const data = result.results.map((row) => {
-    const fields = JSON.parse(row.fields_json);
+    const fields = sanitizeCustomerFields(JSON.parse(row.fields_json));
     const productName = clean(fields.designation || fields.suppliedModel || fields.customerSpecification || (locale === "fr" ? row.category_title : fields.reference || row.product_code));
     const specification = row.category_id === "pneumatiques"
       ? clean(fields.remarks)
@@ -69,7 +88,7 @@ export async function onRequestGet(context) {
       unitWeightKg,
       orderedWeightKg: unitWeightKg === null ? null : orderedQuantity * unitWeightKg,
       orderedAmountCny: effectivePriceCny === null ? null : orderedQuantity * effectivePriceCny,
-      orderRemark: row.order_remark,
+      orderRemark: sanitizeCustomerText(row.order_remark),
       updatedAt: row.updated_at,
     };
   });

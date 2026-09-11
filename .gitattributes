@@ -1,0 +1,2 @@
+database/*.sql text eol=lf
+database/*.json text eol=lf

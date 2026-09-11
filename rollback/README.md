@@ -46,6 +46,60 @@ Production backup: `backups/pre-sidi-priority-20260909-151042.sql`, SHA-256 `bbb
 
 The additive product rows and `sidi_priority_order_state` intentionally remain during the targeted rollback so data entered after release is never deleted. The full pre-migration export supports complete disaster recovery when explicitly required.
 
+## Bicycle tyre catalog rollback
+
+Migration `0007_bicycle_tire_catalog.sql` replaces the two bicycle-tyre quote placeholders with 27 priced product rows. The migration snapshots the replaced product rows, both order-state tables and the category metadata.
+
+Production backup: `backups/sidi-achour-orders-pre-bicycle-catalog-20260910T042207Z.sql`, SHA-256 `5e542595e0fbff874c60a2e0f75b5b9c31727f0f8945e8ff67f6ae7d609f964e`.
+
+To restore the placeholders and their saved state:
+
+```powershell
+npx --yes wrangler@4.129.1 d1 execute sidi-achour-orders --remote --file rollback/0007_bicycle_tire_catalog.rollback.sql
+```
+
+This targeted rollback deletes the 27 replacement rows. Use it only after confirming that no new order or priority quantities need to be retained.
+
+## Bicycle tyre row-order rollback
+
+Migration `0009_group_bicycle_tires_by_size.sql` snapshots the previous row order before grouping bicycle products by size and code. To restore the previous order without changing product data or order state:
+
+```powershell
+npx --yes wrangler@4.129.1 d1 execute sidi-achour-orders --remote --file rollback/0009_group_bicycle_tires_by_size.rollback.sql
+```
+
+## Bicycle product-code suffix rollback
+
+Migration `0010_bicycle_product_code_suffixes.sql` snapshots all 27 previous bicycle product codes, localized fields and search text before adding the customer-facing suffixes. To restore the previous codes without changing row order, prices or order state:
+
+```powershell
+npx --yes wrangler@4.129.1 d1 execute sidi-achour-orders --remote --file rollback/0010_bicycle_product_code_suffixes.rollback.sql
+```
+
+## Bicycle historical-sales order rollback
+
+Migration `0011_bicycle_historical_sales_sort.sql` snapshots the previous row order before applying the matching order from the historical-sales workbook. To restore the previous order without changing product codes, prices or order state:
+
+```powershell
+npx --yes wrangler@4.129.1 d1 execute sidi-achour-orders --remote --file rollback/0011_bicycle_historical_sales_sort.rollback.sql
+```
+
+## Bicycle supplier-code rollback
+
+Migration `0012_bicycle_supplier_codes.sql` snapshots both localized product-field JSON values and search text before adding supplier codes to the combined specification/model column. To restore the previous fields without changing product codes, prices, row order or order state:
+
+```powershell
+npx --yes wrangler@4.129.1 d1 execute sidi-achour-orders --remote --file rollback/0012_bicycle_supplier_codes.rollback.sql
+```
+
+## DJJ bicycle outer-tyre rollback
+
+Migration `0013_remove_djj_bicycle_outer_tires.sql` snapshots the three removed `DJJ-WT` product rows, category fields, image relationships and both order-state tables. To restore them:
+
+```powershell
+npx --yes wrangler@4.129.1 d1 execute sidi-achour-orders --remote --file rollback/0013_remove_djj_bicycle_outer_tires.rollback.sql
+```
+
 ## Category title rollback
 
 Migration `0005_category_titles.sql` snapshots all 35 previous French and Chinese category titles. To restore them without changing products or order state:

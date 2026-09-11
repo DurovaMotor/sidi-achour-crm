@@ -12,7 +12,7 @@ HighTac 为 Sidi Achour 使用的内部摩托车配件目录、报价与进口�
 
 - Cloudflare Pages：网页、产品图片和品牌 Logo
 - Pages Functions：产品、分类、数量、新价格和备注接口
-- D1：615 个产品行、原订单状态、客户优先出货状态及 35 个分类的额度统计
+- D1：637 个产品行、原订单状态、客户优先出货状态及 35 个分类的额度统计
 - 固定汇率：`1 USD = 6.67 CNY`
 - 千克额度：下单数量 × `产品数据库.xlsx` 中的毛重 ÷ 每箱数量
 - 轮胎分类：规格列切换为 `Remarks`，内容来自客户版英文轮胎报价表
@@ -33,3 +33,7 @@ HighTac 为 Sidi Achour 使用的内部摩托车配件目录、报价与进口�
 详细说明见 [DEPLOYMENT.md](DEPLOYMENT.md)。
 
 重量匹配来源和需复核的名称参考项位于 `audit/`；回滚步骤位于 `rollback/`。
+
+## 生产数据库快照
+
+最新生产 D1 完整 SQL 快照位于 `database/sidi-achour-orders-production.sql`，对应的导出时间、SHA-256 和数据行数记录在 `database/snapshot.json`。该目录包含客户订单状态，仅保存在私有 GitHub 仓库中。

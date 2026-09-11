@@ -1,0 +1,10 @@
+{
+  "version": "v2026.09.10.042910.107-560F2B2A",
+  "commitHash": "73edc7f1fbd7e9931d3c6d3fcb6d242a3e16f684",
+  "commitMessage": "Release v2026.09.10.042910.107-560F2B2A",
+  "deploymentId": "521cba26-65fd-41fc-a6ae-4bb0151f8e6d",
+  "url": "https://521cba26.sidi-achour-crm.pages.dev",
+  "environment": "production",
+  "productionBranch": "main",
+  "releasedAt": "2026-09-10T04:29:10.1079757+00:00"
+}

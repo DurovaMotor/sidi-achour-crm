@@ -29,7 +29,7 @@ Image updates belong in `public/media/` and require a Pages deployment. New pric
 
 The initial schema and data are already present in D1 and migration `0001_initial.sql` is recorded. Do not re-import the initial seed into the live database. Future schema changes belong in new migrations.
 
-- 35 categories, 615 independently editable product rows, 543 image relationships, 42 import quota rows.
+- 35 categories, 637 independently editable product rows, 543 image relationships, 42 import quota rows.
 - Order state is keyed by `record_id`; duplicate product codes remain independent rows.
 - Rightmost frozen columns: new price, quantity, remark.
 - Amount numerator: ordered quantity × new CNY price when filled; otherwise the original CNY unit price. A new price of zero is valid; an empty value is stored as NULL.
@@ -42,6 +42,13 @@ The initial schema and data are already present in D1 and migration `0001_initia
 - Migration `0004_tire_remarks.sql` maps 71 tire records to the `Quotation` sheet's `Remarks` cells using TL/TT, original number and A/B/C tier. It snapshots both localized row JSON values before updating them and never writes `product_order_state`.
 - Migration `0005_category_titles.sql` maps all 35 categories to every distinct value in `Sidi.xlsx` `Licence!D5:D46`; French uses the source text verbatim and Chinese stores a segment-by-segment translation. Previous titles are retained in a rollback table.
 - Migration `0006_sidi_priority_and_inner_tubes.sql` adds two exact-code inner-tube products from `产品编码转录.xlsx` and `产品数据库.xlsx`, updates the `TL-16-C` catalog Remarks value, and creates `sidi_priority_order_state` plus its independent category-stat view. It never writes `product_order_state`.
+- Migration `0007_bicycle_tire_catalog.sql` replaces the two bicycle-tyre quote placeholders with 27 customer-facing rows: 9 black outer tyres, 9 grade-A inner tubes and 9 grade-B inner tubes. It stores only final literal prices and no pricing formulas.
+- Migration `0008_customer_text_safety.sql` removes a legacy internal note from customer-facing catalog data. Product and export APIs also suppress any future line explicitly labeled as a purchase or cost price.
+- Migration `0009_group_bicycle_tires_by_size.sql` orders the 27 bicycle tyre rows by size, then keeps identical product codes together in outer-tyre, grade-A inner-tube and grade-B inner-tube order.
+- Migration `0010_bicycle_product_code_suffixes.sql` adds the customer-facing code suffixes `-WT`, `-A` and `-B` to bicycle outer tyres, grade-A inner tubes and grade-B inner tubes while preserving record IDs and order state.
+- Migration `0011_bicycle_historical_sales_sort.sql` follows the matching row order in `自行车轮胎历史销量_合并去售价.xlsx`; same-size codes remain adjacent and each base-code group stays in `-WT`, `-A`, `-B` order.
+- Migration `0012_bicycle_supplier_codes.sql` puts supplier code `A1154` on grade-A bicycle inner tubes and `A1155` on bicycle outer tyres and grade-B inner tubes in the combined specification/model column.
+- Migration `0013_remove_djj_bicycle_outer_tires.sql` removes the three `DJJ-WT` bicycle outer-tyre rows while retaining all `DJJ-A` and `DJJ-B` inner-tube rows. It snapshots the deleted products and dependent state for rollback.
 - The production backup and exact order-state snapshot are kept in the locally ignored `backups/` directory. Targeted rollback is documented in `rollback/README.md`.
 
 ## Verified online
