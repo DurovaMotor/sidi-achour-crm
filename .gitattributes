@@ -1,2 +1,3 @@
 database/*.sql text eol=lf
 database/*.json text eol=lf
+public/media/catalog/** -text

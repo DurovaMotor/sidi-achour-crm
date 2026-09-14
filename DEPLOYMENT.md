@@ -4,12 +4,12 @@ Production: https://sidi-achour-crm.pages.dev/
 
 ## Hosting
 
-- Cloudflare Pages serves `public/`, including the 527 original media files in `public/media/`.
-- Pages Functions handles `/api/*` only.
+- Cloudflare Pages serves `public/`. Product media under `public/media/catalog/` consists of 1,052 encrypted `.bin` files: 526 originals and 526 watermarked previews.
+- Pages Functions handles `/api/*`, including authenticated AES-GCM decryption of watermarked product previews at `/api/media/*`.
 - D1 binding `DB` uses `sidi-achour-orders` (`36a123f5-7509-41d8-a690-13be0ec02524`).
 - No R2 bucket, binding, subscription, or runtime request is required.
 
-The local `r2-assets/` staging directory is ignored by Git. `seed/r2-manifest.json` and D1 column `product_images.r2_key` retain their original names as source metadata. Their keys map directly to `/media/` static paths; they do not depend on R2. The committed `public/media/` files and the original staging files have identical SHA-256 hashes.
+The local `r2-assets/` staging directory remains ignored by Git. `seed/r2-manifest.json` and D1 column `product_images.r2_key` retain their original logical names. Product APIs map those keys to `/api/media/`; the Function fetches the corresponding `.preview.bin`, decrypts it with Pages Secret `CATALOG_MEDIA_AES_KEY`, and returns only the watermarked preview. Encrypted originals are deployed as `.original.bin` without a plaintext endpoint.
 
 ## Deploy
 
@@ -19,11 +19,20 @@ Run the release entry point from this directory:
 .\deploy.ps1
 ```
 
-The script generates a unique version and content-fingerprinted JS/CSS files under `public/build/`, writes them to the page and `public/version.json`, and attaches the same release hash/message to the Cloudflare deployment record. Fingerprinted assets are immutable; the current and immediately previous asset pair are retained during each publication. The script also records the returned Cloudflare deployment ID under `deployment-history/`.
+The script generates a unique version and random release-ID JS/CSS files under `public/build/`, writes them to the page and `public/version.json`, and attaches the same release reference/message to the Cloudflare deployment record. Release-ID assets are immutable; the current and immediately previous asset pair are retained during each publication. The script does not hash local source, resource, or build files. It also records the returned Cloudflare deployment ID under `deployment-history/`.
 
 Deploy only `public/`, with the sibling `functions/` directory. The older root-level HTML, JavaScript, CSS, `assets/`, and `data/` are not the current deployment.
 
-Image updates belong in `public/media/` and require a Pages deployment. New price, quantity and remark edits save directly to D1 through the API and need no deployment.
+Product image updates belong in the Git-ignored `private/catalog-originals/` directory. Run the in-memory key rotation and encryption workflow, then deploy:
+
+```powershell
+.\scripts\rotate_catalog_media_key.ps1 -PythonExecutable python
+.\deploy.ps1
+```
+
+`rotate_catalog_media_key.ps1` generates a fresh 32-byte key in memory, runs `scripts/encrypt_catalog_media.py`, writes the same value to the production Pages Secret, clears the process environment variable and never creates a key file. The encryption script creates a 640px-long-edge repeated-watermark preview, encrypts both original and preview with AES-256-GCM using unique IVs and path-bound additional authenticated data, verifies decryption before replacing `public/media/catalog/`, and leaves no plaintext catalog file in `public/`.
+
+New price, quantity and remark edits save directly to D1 through the API and need no deployment.
 
 ## Data
 
@@ -69,3 +78,6 @@ The initial schema and data are already present in D1 and migration `0001_initia
 - Chinese-only header actions open a Chinese/French export choice and export all positive-quantity orders through the read-only `/api/export/orders` endpoint. The standard workbook embeds product images and codes; the redacted workbook omits both.
 - Excel exports contain one localized `订单` or `Commande` sheet with Microsoft YaHei, black headers, a red total rule, frozen headings, CNY number formats and readable column widths. The vendored ExcelJS browser bundle uses a content-fingerprinted filename.
 - Export requests execute SELECT statements only and never write D1.
+- Product image URLs use `/api/media/*`; plaintext `/media/catalog/*.webp` paths return 404, and direct static catalog traversal exposes only `.bin` ciphertext.
+- Ctrl+S/Cmd+S, Ctrl+P/Cmd+P, all page context menus and image drag starts are prevented by the client interface.
+- Earlier Pages deployments that contained plaintext catalog images were deleted after the encrypted deployment passed production checks.

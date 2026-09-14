@@ -1,9 +1,9 @@
 $project = 'sidi-achour-crm'
 $branch = 'main'
 $now = [DateTimeOffset]::UtcNow
-$version = $now.ToString("'v'yyyy.MM.dd.HHmmss.fff") + '-' + [Guid]::NewGuid().ToString('N').Substring(0, 8).ToUpperInvariant()
-$hashBytes = [Text.Encoding]::UTF8.GetBytes($version)
-$releaseHash = [Convert]::ToHexString([Security.Cryptography.SHA1]::HashData($hashBytes)).ToLowerInvariant()
+$releaseId = [Guid]::NewGuid().ToString('N')
+$version = $now.ToString("'v'yyyy.MM.dd.HHmmss.fff") + '-' + $releaseId.Substring(0, 8).ToUpperInvariant()
+$releaseHash = ($releaseId + [Guid]::NewGuid().ToString('N')).Substring(0, 40)
 $message = "Release $version"
 $utf8 = [Text.UTF8Encoding]::new($false)
 
@@ -14,10 +14,10 @@ $buildDirectory = Join-Path $PSScriptRoot 'public\build'
 New-Item -ItemType Directory -Path $buildDirectory -Force | Out-Null
 $styleSource = Join-Path $PSScriptRoot 'public\styles.css'
 $appSource = Join-Path $PSScriptRoot 'public\app.js'
-$styleHash = (Get-FileHash -LiteralPath $styleSource -Algorithm SHA256).Hash.Substring(0, 16).ToLowerInvariant()
-$appHash = (Get-FileHash -LiteralPath $appSource -Algorithm SHA256).Hash.Substring(0, 16).ToLowerInvariant()
-$styleName = "styles.$styleHash.css"
-$appName = "app.$appHash.js"
+$styleAssetId = [Guid]::NewGuid().ToString('N').Substring(0, 16)
+$appAssetId = [Guid]::NewGuid().ToString('N').Substring(0, 16)
+$styleName = "styles.$styleAssetId.css"
+$appName = "app.$appAssetId.js"
 $styleUrl = "/build/$styleName"
 $appUrl = "/build/$appName"
 [IO.File]::WriteAllBytes((Join-Path $buildDirectory $styleName), [IO.File]::ReadAllBytes($styleSource))
@@ -43,7 +43,7 @@ $manifest = [ordered]@{
     commitMessage = $message
   }
   assets = @($styleUrl, $appUrl)
-  fingerprints = [ordered]@{ css = $styleHash; js = $appHash }
+  assetIds = [ordered]@{ css = $styleAssetId; js = $appAssetId }
 }
 [IO.File]::WriteAllText((Join-Path $PSScriptRoot 'public\version.json'), ($manifest | ConvertTo-Json -Depth 4), $utf8)
 

@@ -110,7 +110,7 @@ export async function onRequestGet(context) {
     remark: sanitizeCustomerText(row.remark),
     image: row.r2_key ? {
       key: row.r2_key,
-      url: `/media/${row.r2_key.split("/").map(encodeURIComponent).join("/")}`,
+      url: `/api/media/${row.r2_key.split("/").map(encodeURIComponent).join("/")}`,
       width: Number(row.image_width),
       height: Number(row.image_height),
     } : null,

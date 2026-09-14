@@ -74,7 +74,7 @@ export async function onRequestGet(context) {
 
     return {
       recordId: row.record_id,
-      imageUrl: row.image_key ? `/media/${row.image_key.split("/").map(encodeURIComponent).join("/")}` : null,
+      imageUrl: row.image_key ? `/api/media/${row.image_key.split("/").map(encodeURIComponent).join("/")}` : null,
       productCode: row.product_code ?? "",
       productName,
       categoryId: row.category_id,
