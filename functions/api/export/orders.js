@@ -1,3 +1,5 @@
+import { readAdamSession, unauthorizedResponse } from "../../_lib/adam-auth.js";
+
 const CUSTOMER_SENSITIVE_LINE = /(?:进价|進價|采购价|採購價|采购成本|採購成本|成本价|成本價|purchase\s+(?:price|cost)|cost\s+price|unit\s+cost|prix\s+d[’']achat|co[uû]t\s+d[’']achat|prix\s+de\s+revient)/iu;
 
 function sanitizeCustomerText(value) {
@@ -9,6 +11,11 @@ function sanitizeCustomerText(value) {
     .trim();
 }
 
+function sanitizeCustomerRemark(value) {
+  const sanitized = sanitizeCustomerText(value);
+  return sanitized === "OEM" && /^OEM\s+$/u.test(String(value)) ? "OEM " : sanitized;
+}
+
 function sanitizeCustomerFields(value) {
   if (Array.isArray(value)) return value.map(sanitizeCustomerFields);
   if (value && typeof value === "object") {
@@ -18,6 +25,9 @@ function sanitizeCustomerFields(value) {
 }
 
 export async function onRequestGet(context) {
+  if (!await readAdamSession(context.request, context.env.ADAM_SESSION_SECRET)) {
+    return unauthorizedResponse();
+  }
   const locale = new URL(context.request.url).searchParams.get("locale") === "fr" ? "fr" : "zh";
   const fieldsColumn = locale === "fr" ? "cp.fields_fr_json" : "cp.fields_zh_json";
   const categoryTitleColumn = locale === "fr" ? "c.title_fr" : "c.title_zh";
@@ -88,7 +98,7 @@ export async function onRequestGet(context) {
       unitWeightKg,
       orderedWeightKg: unitWeightKg === null ? null : orderedQuantity * unitWeightKg,
       orderedAmountCny: effectivePriceCny === null ? null : orderedQuantity * effectivePriceCny,
-      orderRemark: sanitizeCustomerText(row.order_remark),
+      orderRemark: sanitizeCustomerRemark(row.order_remark),
       updatedAt: row.updated_at,
     };
   });

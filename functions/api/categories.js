@@ -1,6 +1,11 @@
+import { readAdamSession, unauthorizedResponse } from "../_lib/adam-auth.js";
+
 export async function onRequestGet(context) {
   const url = new URL(context.request.url);
   const locale = url.searchParams.get("locale") === "fr" ? "fr" : "zh";
+  if (locale === "zh" && !await readAdamSession(context.request, context.env.ADAM_SESSION_SECRET)) {
+    return unauthorizedResponse();
+  }
   const statsView = url.searchParams.get("workspace") === "sidi" ? "v_sidi_priority_category_stats" : "v_category_stats";
   const titleColumn = locale === "fr" ? "c.title_fr" : "c.title_zh";
   const unitColumn = locale === "fr" ? "c.quantity_display_unit_fr" : "c.quantity_display_unit_zh";

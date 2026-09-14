@@ -4,12 +4,12 @@ Production: https://sidi-achour-crm.pages.dev/
 
 ## Hosting
 
-- Cloudflare Pages serves `public/`. Product media under `public/media/catalog/` consists of 1,052 encrypted `.bin` files: 526 originals and 526 watermarked previews.
+- Cloudflare Pages serves `public/`. Product media under `public/media/catalog/` consists of 1,578 encrypted `.bin` files: 526 originals, 526 watermarked 640px Adam previews and 526 watermarked French previews whose longest edge is at most 96px.
 - Pages Functions handles `/api/*`, including authenticated AES-GCM decryption of watermarked product previews at `/api/media/*`.
 - D1 binding `DB` uses `sidi-achour-orders` (`36a123f5-7509-41d8-a690-13be0ec02524`).
 - No R2 bucket, binding, subscription, or runtime request is required.
 
-The local `r2-assets/` staging directory remains ignored by Git. `seed/r2-manifest.json` and D1 column `product_images.r2_key` retain their original logical names. Product APIs map those keys to `/api/media/`; the Function fetches the corresponding `.preview.bin`, decrypts it with Pages Secret `CATALOG_MEDIA_AES_KEY`, and returns only the watermarked preview. Encrypted originals are deployed as `.original.bin` without a plaintext endpoint.
+The local `r2-assets/` staging directory remains ignored by Git. `seed/r2-manifest.json` and D1 column `product_images.r2_key` retain their original logical names. Product APIs map those keys to `/api/media/`; the Function fetches `.french.bin` for French pages and authenticated `.preview.bin` for Adam, then decrypts it with Pages Secret `CATALOG_MEDIA_AES_KEY`. Encrypted originals are deployed as `.original.bin` without a plaintext endpoint.
 
 ## Deploy
 
@@ -30,7 +30,7 @@ Product image updates belong in the Git-ignored `private/catalog-originals/` dir
 .\deploy.ps1
 ```
 
-`rotate_catalog_media_key.ps1` generates a fresh 32-byte key in memory, runs `scripts/encrypt_catalog_media.py`, writes the same value to the production Pages Secret, clears the process environment variable and never creates a key file. The encryption script creates a 640px-long-edge repeated-watermark preview, encrypts both original and preview with AES-256-GCM using unique IVs and path-bound additional authenticated data, verifies decryption before replacing `public/media/catalog/`, and leaves no plaintext catalog file in `public/`.
+`rotate_catalog_media_key.ps1` generates a fresh 32-byte key in memory, runs `scripts/encrypt_catalog_media.py`, writes the same value to the production Pages Secret, clears the process environment variable and never creates a key file. The encryption script creates a 640px-long-edge Adam preview and an at-most-96px-long-edge French preview with repeated watermarks, encrypts original/Adam/French variants with AES-256-GCM using unique IVs and path-bound additional authenticated data, verifies decryption before replacing `public/media/catalog/`, and leaves no plaintext catalog file in `public/`. The loading and top-left brand Logo use the original asset in every interface.
 
 New price, quantity and remark edits save directly to D1 through the API and need no deployment.
 
@@ -58,6 +58,11 @@ The initial schema and data are already present in D1 and migration `0001_initia
 - Migration `0011_bicycle_historical_sales_sort.sql` follows the matching row order in `自行车轮胎历史销量_合并去售价.xlsx`; same-size codes remain adjacent and each base-code group stays in `-WT`, `-A`, `-B` order.
 - Migration `0012_bicycle_supplier_codes.sql` puts supplier code `A1154` on grade-A bicycle inner tubes and `A1155` on bicycle outer tyres and grade-B inner tubes in the combined specification/model column.
 - Migration `0013_remove_djj_bicycle_outer_tires.sql` removes the three `DJJ-WT` bicycle outer-tyre rows while retaining all `DJJ-A` and `DJJ-B` inner-tube rows. It snapshots the deleted products and dependent state for rollback.
+- Migration `0014_adam_login.sql` creates an independent `admin_users` table and stores only Adam's salted PBKDF2 password verifier. It does not update product, category, price, image or order-state tables.
+- Migration `0015_adam_pbkdf2_runtime_limit.sql` adjusts only Adam's password verifier to Cloudflare's supported PBKDF2 iteration limit.
+- Migration `0016_customer_access_control.sql` adds an independent single-row rule table for customer-page language, timezone and IP-country blocking. It does not update product, category, price, image or order-state tables.
+- Migration `0017_mustafa_oem_and_latest_prices.sql` matches the latest Mustafa order by normalized product code, writes 106 source prices to 109 product records, and prefixes five matched OEM records in both order-state workspaces. Its rollback tables snapshot every pre-existing targeted state row.
+- Migration `0018_mustafa_reviewed_prices_and_oem.sql` applies the owner's review workbook: eight blank-change rows replace their latest prices and ten OEM-marked records receive one `OEM ` prefix in both workspaces. It snapshots all affected pre-existing order-state rows first.
 - The production backup and exact order-state snapshot are kept in the locally ignored `backups/` directory. Targeted rollback is documented in `rollback/README.md`.
 
 ## Verified online
@@ -75,6 +80,9 @@ The initial schema and data are already present in D1 and migration `0001_initia
 - French hides the product-code column at every breakpoint; Chinese retains it.
 - `/` is the French entry point. `/Adam` is served by the generated `public/Adam.html` clean URL and selects Chinese from the path. The language-switch buttons have been removed.
 - `/Sidi` is a French clean URL backed by `public/Sidi.html`; it reads and writes the separate customer priority quantity/remark table while continuing to display prices from the primary price state.
+- `/Adam` and `/Adam.html` require a signed, HTTP-only session cookie. The session signing key is stored only as Pages Secret `ADAM_SESSION_SECRET`; `/login` is the public login entry and `/api/auth/logout` clears the session.
+- `/` and `/Sidi` use the D1-backed customer access rules. `/Key` and `/Sidi/Key` set a session bypass cookie before serving the corresponding customer workspace. In Adam, `Ctrl+Shift+G` opens the otherwise hidden access-rule panel; its collapse action hides both the panel and its entry button.
+- French product responses expose one shortened model/specification fragment and a minimal field object. Chinese Adam responses retain the complete localized product fields stored in D1.
 - Chinese-only header actions open a Chinese/French export choice and export all positive-quantity orders through the read-only `/api/export/orders` endpoint. The standard workbook embeds product images and codes; the redacted workbook omits both.
 - Excel exports contain one localized `订单` or `Commande` sheet with Microsoft YaHei, black headers, a red total rule, frozen headings, CNY number formats and readable column widths. The vendored ExcelJS browser bundle uses a content-fingerprinted filename.
 - Export requests execute SELECT statements only and never write D1.

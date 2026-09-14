@@ -31,6 +31,10 @@ $html = [regex]::Replace($html, '(<script src=")[^"]*app(?:\.[0-9a-f]{16})?\.js(
 [IO.File]::WriteAllText($indexPath, $html, $utf8)
 [IO.File]::WriteAllText((Join-Path $PSScriptRoot 'public\Adam.html'), $html, $utf8)
 [IO.File]::WriteAllText((Join-Path $PSScriptRoot 'public\Sidi.html'), $html, $utf8)
+[IO.File]::WriteAllText((Join-Path $PSScriptRoot 'public\Key.html'), $html, $utf8)
+$sidiBypassDirectory = Join-Path $PSScriptRoot 'public\Sidi'
+New-Item -ItemType Directory -Path $sidiBypassDirectory -Force | Out-Null
+[IO.File]::WriteAllText((Join-Path $sidiBypassDirectory 'Key.html'), $html, $utf8)
 
 $manifest = [ordered]@{
   schemaVersion = 1

@@ -12,4 +12,4 @@ Restore the snapshot into a disposable local D1 database or an empty SQLite data
 npx --yes wrangler@4.129.1 d1 execute sidi-achour-orders --local --file database/sidi-achour-orders-production.sql
 ```
 
-The matching export time, SHA-256 digest and row counts are recorded in `snapshot.json`.
+The matching export time and row counts are recorded in `snapshot.json`. Future snapshot updates use Git diffs and row counts rather than local file hash checks.

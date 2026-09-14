@@ -1,6 +1,12 @@
+import { readAdamSession, unauthorizedResponse } from "../../../_lib/adam-auth.js";
+
 export async function onRequestPatch(context) {
   const url = new URL(context.request.url);
-  const workspace = url.searchParams.get("workspace") === "sidi" ? "sidi" : "default";
+  const requestedWorkspace = url.searchParams.get("workspace");
+  const workspace = requestedWorkspace === "sidi" ? "sidi" : requestedWorkspace === "adam" ? "adam" : "default";
+  if (workspace === "adam" && !await readAdamSession(context.request, context.env.ADAM_SESSION_SECRET)) {
+    return unauthorizedResponse();
+  }
   const recordId = context.params.recordId;
   const body = await context.request.json();
   const newPriceCny = body.newPriceCny == null ? null : Number(body.newPriceCny);
@@ -17,6 +23,7 @@ export async function onRequestPatch(context) {
         updated_at = excluded.updated_at
     `).bind(recordId, orderedQuantity, remark).run();
   } else {
+    const updateNewPrice = workspace === "adam" && Object.hasOwn(body, "newPriceCny");
     await context.env.DB.prepare(`
       INSERT INTO product_order_state(record_id, new_price_cny, ordered_quantity, remark, updated_at)
       VALUES (?, ?, ?, ?, strftime('%Y-%m-%dT%H:%M:%fZ', 'now'))
@@ -25,7 +32,7 @@ export async function onRequestPatch(context) {
         ordered_quantity = excluded.ordered_quantity,
         remark = excluded.remark,
         updated_at = excluded.updated_at
-    `).bind(recordId, newPriceCny, orderedQuantity, remark, Number(Object.hasOwn(body, "newPriceCny"))).run();
+    `).bind(recordId, newPriceCny, orderedQuantity, remark, Number(updateNewPrice)).run();
   }
 
   const stateTable = workspace === "sidi" ? "sidi_priority_order_state" : "product_order_state";

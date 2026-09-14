@@ -15,13 +15,25 @@
   X-Robots-Tag: noindex, noarchive
 
 /
-  Cache-Control: no-cache
+  Cache-Control: private, no-store
 
 /index.html
   Cache-Control: no-cache
 
 /Adam
-  Cache-Control: no-cache
+  Cache-Control: private, no-store
+
+/Adam.html
+  Cache-Control: private, no-store
+
+/login
+  Cache-Control: no-store
 
 /Sidi
-  Cache-Control: no-cache
+  Cache-Control: private, no-store
+
+/Key
+  Cache-Control: private, no-store
+
+/Sidi/Key
+  Cache-Control: private, no-store

@@ -1,3 +1,5 @@
+import { readAdamSession, unauthorizedResponse } from "../../_lib/adam-auth.js";
+
 const SORTS = {
   source: "c.sort_order, cp.sort_order, p.record_id",
   "price-asc": "p.unit_price_cny IS NULL, p.unit_price_cny ASC, c.sort_order, cp.sort_order",
@@ -16,6 +18,11 @@ function sanitizeCustomerText(value) {
     .trim();
 }
 
+function sanitizeCustomerRemark(value) {
+  const sanitized = sanitizeCustomerText(value);
+  return sanitized === "OEM" && /^OEM\s+$/u.test(String(value)) ? "OEM " : sanitized;
+}
+
 function sanitizeCustomerFields(value) {
   if (Array.isArray(value)) return value.map(sanitizeCustomerFields);
   if (value && typeof value === "object") {
@@ -24,9 +31,60 @@ function sanitizeCustomerFields(value) {
   return typeof value === "string" ? sanitizeCustomerText(value) : value;
 }
 
+function firstFrenchSpecification(fields, categoryId) {
+  const keys = categoryId === "pneumatiques"
+    ? ["remarks"]
+    : ["compatibleModels", "specification", "customerSpecification", "requestedPattern", "description", "remarks"];
+
+  for (const key of keys) {
+    const value = sanitizeCustomerText(fields[key]);
+    if (!value) continue;
+    const separators = key === "compatibleModels" ? /[,;\/\r\n]+/u : /[,;\r\n]+|\s+\/\s+/u;
+    const first = String(value).split(separators).map((part) => part.trim()).find(Boolean);
+    if (!first) continue;
+
+    const symphony = first.match(/^SYMPHONY\s+(SR|ST)\s*(\d+)?/iu);
+    if (symphony) return `${symphony[1].toUpperCase()}${symphony[2] ?? ""}`;
+
+    const withoutLabel = first.replace(/^(?:brand|marque)\s*:\s*/iu, "");
+    const supplierCode = withoutLabel.match(/^([A-Z]\d{3,})\s*:/iu);
+    if (supplierCode) return supplierCode[1].toUpperCase();
+    if (key === "compatibleModels") {
+      const tokens = withoutLabel.split(/\s+/u);
+      return tokens[1] && /^\d+(?:\.\d+)?(?:CC)?$/iu.test(tokens[1])
+        ? `${tokens[0]} ${tokens[1]}`
+        : tokens[0];
+    }
+    return withoutLabel;
+  }
+
+  return "";
+}
+
+function frenchProductName(fields, categoryTitle, productCode) {
+  return sanitizeCustomerText(
+    fields.designation
+    || fields.suppliedModel
+    || fields.customerSpecification
+    || categoryTitle
+    || productCode,
+  );
+}
+
+function imageDimensions(width, height, maxEdge) {
+  const scale = Math.min(1, maxEdge / Math.max(width, height));
+  return {
+    width: Math.max(1, Math.round(width * scale)),
+    height: Math.max(1, Math.round(height * scale)),
+  };
+}
+
 export async function onRequestGet(context) {
   const url = new URL(context.request.url);
   const locale = url.searchParams.get("locale") === "fr" ? "fr" : "zh";
+  if (locale === "zh" && !await readAdamSession(context.request, context.env.ADAM_SESSION_SECRET)) {
+    return unauthorizedResponse();
+  }
   const workspace = url.searchParams.get("workspace") === "sidi" ? "sidi" : "default";
   const stateAlias = workspace === "sidi" ? "priority_state" : "primary_state";
   const category = url.searchParams.get("category") ?? "all";
@@ -96,25 +154,34 @@ export async function onRequestGet(context) {
   ]);
 
   const total = Number(countResult.results[0].total);
-  const data = dataResult.results.map((row) => ({
-    id: row.record_id,
-    categoryId: row.category_id,
-    categoryTitle: row.category_title,
-    productCode: row.product_code,
-    fields: sanitizeCustomerFields(JSON.parse(row.fields_json)),
-    unitPriceCny: row.unit_price_cny === null ? null : Number(row.unit_price_cny),
-    unitWeightKg: row.unit_weight_kg === null ? null : Number(row.unit_weight_kg),
-    newPriceCny: row.new_price_cny === null ? null : Number(row.new_price_cny),
-    orderedQuantity: Number(row.ordered_quantity),
-    orderedAmountCny: Number(row.ordered_quantity) * Number(row.new_price_cny ?? row.unit_price_cny ?? 0),
-    remark: sanitizeCustomerText(row.remark),
-    image: row.r2_key ? {
-      key: row.r2_key,
-      url: `/api/media/${row.r2_key.split("/").map(encodeURIComponent).join("/")}`,
-      width: Number(row.image_width),
-      height: Number(row.image_height),
-    } : null,
-  }));
+  const data = dataResult.results.map((row) => {
+    const fields = sanitizeCustomerFields(JSON.parse(row.fields_json));
+    const isFrench = locale === "fr";
+    const dimensions = row.r2_key
+      ? imageDimensions(Number(row.image_width), Number(row.image_height), isFrench ? 96 : 640)
+      : null;
+    return {
+      id: row.record_id,
+      categoryId: row.category_id,
+      categoryTitle: row.category_title,
+      productCode: row.product_code,
+      displayName: isFrench ? frenchProductName(fields, row.category_title, row.product_code) : null,
+      displaySpecification: isFrench ? firstFrenchSpecification(fields, row.category_id) : null,
+      fields: isFrench ? { unit: fields.unit ?? fields.option ?? null } : fields,
+      unitPriceCny: row.unit_price_cny === null ? null : Number(row.unit_price_cny),
+      unitWeightKg: row.unit_weight_kg === null ? null : Number(row.unit_weight_kg),
+      newPriceCny: row.new_price_cny === null ? null : Number(row.new_price_cny),
+      orderedQuantity: Number(row.ordered_quantity),
+      orderedAmountCny: Number(row.ordered_quantity) * Number(row.new_price_cny ?? row.unit_price_cny ?? 0),
+      remark: sanitizeCustomerRemark(row.remark),
+      image: row.r2_key ? {
+        key: row.r2_key,
+        url: `/api/media/${row.r2_key.split("/").map(encodeURIComponent).join("/")}${isFrench ? "?variant=fr" : ""}`,
+        width: dimensions.width,
+        height: dimensions.height,
+      } : null,
+    };
+  });
 
   return Response.json({
     data,

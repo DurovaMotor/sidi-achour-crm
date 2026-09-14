@@ -1,0 +1,10 @@
+{
+  "version": "v2026.09.14.062752.373-DDA90008",
+  "commitHash": "dda90008a70246a29514030e2ecece3280b47f00",
+  "commitMessage": "Release v2026.09.14.062752.373-DDA90008",
+  "deploymentId": "d48636a1-e3c3-444c-8e3e-90bc11c0cd18",
+  "url": "https://d48636a1.sidi-achour-crm.pages.dev",
+  "environment": "production",
+  "productionBranch": "main",
+  "releasedAt": "2026-09-14T06:27:52.3738116+00:00"
+}

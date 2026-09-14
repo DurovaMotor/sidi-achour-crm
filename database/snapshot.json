@@ -5,19 +5,20 @@
     "id": "36a123f5-7509-41d8-a690-13be0ec02524",
     "binding": "DB"
   },
-  "exportedAt": "2026-09-11T08:24:58Z",
+  "exportedAt": "2026-09-14T08:42:53Z",
   "file": "sidi-achour-orders-production.sql",
-  "bytes": 1646722,
-  "sha256": "cd3eb372b89a94889185b479a950df660c42e210a78c90566e524e71a932259f",
+  "bytes": 1710281,
   "counts": {
-    "tables": 34,
+    "tables": 45,
     "categories": 35,
     "products": 637,
     "categoryProducts": 637,
     "productImages": 543,
-    "primaryOrderRows": 406,
-    "priorityOrderRows": 0,
-    "bicycleRows": 24
+    "primaryOrderRows": 427,
+    "priorityOrderRows": 30,
+    "bicycleRows": 24,
+    "adminUsers": 1,
+    "accessRuleRows": 1
   },
-  "latestMigration": "0013_remove_djj_bicycle_outer_tires.sql"
+  "latestMigration": "0018_mustafa_reviewed_prices_and_oem.sql"
 }

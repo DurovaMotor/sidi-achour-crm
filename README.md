@@ -22,7 +22,13 @@ HighTac 为 Sidi Achour 使用的内部摩托车配件目录、报价与进口�
 
 项目不使用 R2。`public/` 是唯一部署目录；`/` 与 `/Adam` 的填写状态保存在 `product_order_state`，`/Sidi` 的优先出货数量与备注独立保存在 `sidi_priority_order_state`。
 
-产品原图不进入 Pages 明文目录。客户预览图最长边约640px并带重复水印；原图和预览图均使用AES-256-GCM加密为 `.bin`，Pages Secret `CATALOG_MEDIA_AES_KEY` 仅在运行时解密预览图。密钥不写入源码、D1或GitHub。
+产品原图不进入 Pages 明文目录。每张产品图生成带重复水印的640像素 Adam 预览和最长边不超过96像素的法语预览，三者均使用AES-256-GCM加密为 `.bin`。Pages Secret `CATALOG_MEDIA_AES_KEY` 仅在运行时解密对应预览，640像素端点要求 Adam 登录。加载页和左上角品牌 Logo 在所有界面使用原图。密钥不写入源码、D1或GitHub。
+
+`/Adam` 使用 D1 账号与安全 Cookie 登录。D1 只保存带随机盐的密码派生值，登录签名密钥保存在 Pages Secret `ADAM_SESSION_SECRET`；客户入口 `/` 与 `/Sidi` 不要求 Adam 登录。
+
+客户入口支持可调的浏览器语言、设备时区和 IP 国家/地区屏蔽规则。规则保存在独立 D1 表中；Adam 后台通过 `Ctrl+Shift+G` 唤出隐藏面板。`/Key` 与 `/Sidi/Key` 可为当前浏览器会话绕过这些规则。
+
+法语客户模块仅返回一个精简的车型或规格片段；逗号、分号、换行及车型字段中的斜杠列表只保留首项，无标点的多车型内容只保留第一个车型词元，`SYMPHONY SR`/`SYMPHONY ST` 分别简写为 `SR`/`ST`。中文 Adam 后台继续读取完整产品字段。
 
 ## 发布
 

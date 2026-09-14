@@ -1930,18 +1930,18 @@ CREATE TABLE product_order_state (
   remark TEXT NOT NULL DEFAULT '',
   updated_at TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%fZ', 'now'))
 , new_price_cny REAL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('plaquettes-de-frein-6',200000,'','2026-09-09T03:19:08.391Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('plaquettes-de-frein-7',5000,'','2026-09-10T10:34:31.539Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('plaquettes-de-frein-8',200000,'','2026-09-10T10:23:29.236Z',2.3);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('plaquettes-de-frein-9',130000,'','2026-09-09T03:20:10.969Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('plaquettes-de-frein-10',180000,'','2026-09-09T03:20:06.856Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('plaquettes-de-frein-11',60000,'','2026-09-09T03:19:50.066Z',3);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('plaquettes-de-frein-12',50000,'','2026-09-09T03:17:04.321Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('plaquettes-de-frein-13',200000,'OEM','2026-09-09T03:18:34.828Z',NULL);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('plaquettes-de-frein-6',200000,'','2026-09-14T07:22:47.391Z',2.8);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('plaquettes-de-frein-7',5000,'','2026-09-14T07:22:47.391Z',5);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('plaquettes-de-frein-8',200000,'','2026-09-14T07:22:47.391Z',3);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('plaquettes-de-frein-9',130000,'','2026-09-14T07:22:47.391Z',3.2);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('plaquettes-de-frein-10',180000,'','2026-09-14T07:22:47.391Z',3);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('plaquettes-de-frein-11',60000,'','2026-09-14T07:22:47.391Z',2.7);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('plaquettes-de-frein-12',50000,'','2026-09-14T07:22:47.391Z',3);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('plaquettes-de-frein-13',200000,'OEM','2026-09-14T07:22:47.391Z',9.2);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('plaquettes-de-frein-14',50000,'','2026-09-09T03:17:02.183Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('plaquettes-de-frein-15',100000,'A 45120-CBR-FC  B  45105-FA140-PTHJ','2026-09-09T03:17:01.430Z',NULL);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('plaquettes-de-frein-15',100000,'A 45120-CBR-FC  B  45105-FA140-PTHJ','2026-09-14T07:22:47.391Z',3.65);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('plaquettes-de-frein-16',20000,'','2026-09-09T03:17:00.511Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('plaquettes-de-frein-17',20000,'','2026-09-09T03:16:56.280Z',NULL);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('plaquettes-de-frein-17',20000,'','2026-09-14T07:22:47.391Z',3.65);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('plaquettes-de-frein-18',50000,'25%铜A 45120-CBR-FC  B  45105-FA140-PTHJ','2026-09-09T03:18:24.273Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('plaquettes-de-frein-19',20000,'','2026-09-09T03:16:53.994Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('plaquettes-de-frein-20',50000,'','2026-09-09T03:16:53.156Z',NULL);
@@ -1955,7 +1955,7 @@ INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","upda
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('plaquettes-de-frein-28',50000,'','2026-09-09T03:16:44.807Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('plaquettes-de-frein-29',50000,'','2026-09-09T03:16:43.942Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('plaquettes-de-frein-30',10000,'','2026-09-09T03:16:42.557Z',6);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('plaquettes-de-frein-31',50000,'','2026-09-09T03:16:41.351Z',NULL);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('plaquettes-de-frein-31',50000,'','2026-09-14T07:22:47.391Z',3);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('plaquettes-de-frein-32',5000,'','2026-09-09T03:16:40.400Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('plaquettes-de-frein-33',10000,'','2026-09-09T03:16:38.875Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('plaquettes-de-frein-34',10000,'','2026-09-09T03:16:36.904Z',NULL);
@@ -1966,8 +1966,8 @@ INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","upda
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('plaquettes-de-frein-40',20000,'','2026-09-09T03:16:04.079Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('plaquettes-de-frein-41',20000,'','2026-09-09T03:16:05.429Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('plaquettes-de-frein-42',19000,'','2026-09-09T03:21:09.651Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('filtres-a-huile-6',200000,'','2026-09-09T05:28:44.380Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('filtres-a-huile-7',100000,'','2026-09-09T05:28:55.632Z',NULL);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('filtres-a-huile-6',200000,'','2026-09-14T07:22:47.391Z',4);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('filtres-a-huile-7',100000,'','2026-09-14T07:22:47.391Z',5);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('filtres-a-huile-8',50000,'','2026-09-09T05:29:00.596Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('filtres-a-huile-9',0,'删除 错','2026-09-08T11:25:34.844Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('batteries-12',16000,'2.42kg','2026-09-09T05:31:03.225Z',46);
@@ -2006,15 +2006,15 @@ INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","upda
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('vilebrequins-11',1000,'','2026-09-08T11:30:08.140Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('vilebrequins-12',1000,'','2026-09-08T11:30:11.542Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('vilebrequins-13',0,'','2026-09-10T11:05:54.259Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('vilebrequins-14',200,'','2026-09-10T11:06:11.595Z',NULL);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('vilebrequins-14',200,'','2026-09-14T07:22:47.391Z',90);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('vilebrequins-15',300,'','2026-09-08T11:30:19.521Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('vilebrequins-16',180,'','2026-09-08T11:30:24.486Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('vilebrequins-19',60,'','2026-09-08T11:30:34.850Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('vilebrequins-20',120,'','2026-09-08T11:30:38.163Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('embrayages-6',0,'','2026-09-09T09:00:37.805Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('embrayages-7',1000,'','2026-09-09T09:00:41.206Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('embrayages-8',1000,'常卖','2026-09-09T09:01:54.829Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('embrayages-9',400,'','2026-09-09T09:02:27.559Z',NULL);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('embrayages-8',1000,'常卖','2026-09-14T07:22:47.391Z',22);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('embrayages-9',400,'OEM ','2026-09-14T08:40:54.841Z',78);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('embrayages-10',0,'','2026-09-09T06:19:07.453Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('embrayages-11',0,'','2026-09-08T11:33:37.085Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('embrayages-12',400,'','2026-09-09T09:02:19.384Z',NULL);
@@ -2024,7 +2024,7 @@ INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","upda
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('embrayages-19',500,'','2026-09-09T09:02:09.741Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('embrayages-21',0,'','2026-09-09T09:01:23.061Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('embrayages-22',0,'','2026-09-09T09:01:25.371Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('bougies-6',60000,'','2026-09-08T11:38:18.100Z',NULL);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('bougies-6',60000,'','2026-09-14T08:40:54.841Z',1.3);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('bougies-7',20000,'','2026-09-08T11:37:23.115Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('bougies-10',2000,'','2026-09-08T11:37:35.739Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('bougies-9',8000,'仿','2026-09-08T11:38:28.756Z',NULL);
@@ -2036,29 +2036,29 @@ INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","upda
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('moteurs-6',0,'','2026-09-09T07:12:31.133Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('moteurs-7',200,'','2026-09-09T07:12:36.136Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('moteurs-8',320,'','2026-09-09T07:12:40.211Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('moteurs-9',200,'','2026-09-09T07:12:56.734Z',680);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('moteurs-9',200,'','2026-09-14T08:40:54.841Z',680);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('moteurs-10',200,'','2026-09-09T07:12:44.488Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('carburateurs-6',3000,'','2026-09-09T07:14:53.501Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('carburateurs-7',2700,'','2026-09-09T07:14:58.120Z',60);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('carburateurs-6',3000,'','2026-09-14T07:22:47.391Z',48);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('carburateurs-7',2700,'','2026-09-14T07:22:47.391Z',60.5);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('carburateurs-8',2000,'','2026-09-09T07:15:09.690Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('carburateurs-9',2000,'','2026-09-09T07:15:05.127Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('carburateurs-12',1000,'','2026-09-09T07:15:26.853Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('carburateurs-13',540,'','2026-09-09T07:15:42.132Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('carburateurs-14',2000,'','2026-09-08T11:43:17.558Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('carburateurs-16',500,'','2026-09-08T11:43:27.137Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('carburateurs-15',180,'','2026-09-08T11:43:31.012Z',NULL);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('carburateurs-15',180,'','2026-09-14T07:22:47.391Z',125);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('carburateurs-17',180,'','2026-09-08T11:43:34.012Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cylindres-et-carters-7',1000,'','2026-09-09T07:16:44.328Z',55);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cylindres-et-carters-7',1000,'','2026-09-14T07:22:47.391Z',60);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cylindres-et-carters-8',0,'','2026-09-08T11:59:25.034Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cylindres-et-carters-9',900,'','2026-09-09T07:16:48.429Z',50);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cylindres-et-carters-10',600,'','2026-09-08T11:44:05.167Z',NULL);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cylindres-et-carters-10',600,'','2026-09-14T07:22:47.391Z',80);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cylindres-et-carters-11',1200,'','2026-09-08T11:44:06.682Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cylindres-et-carters-12',0,'','2026-09-09T07:17:03.359Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cylindres-et-carters-13',600,'','2026-09-08T11:44:13.264Z',NULL);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cylindres-et-carters-12',0,'','2026-09-14T07:22:47.391Z',80);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cylindres-et-carters-13',600,'','2026-09-14T07:22:47.391Z',58);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cylindres-et-carters-14',0,'删除','2026-09-08T11:44:18.186Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cylindres-et-carters-15',1200,'','2026-09-08T11:44:21.109Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cylindres-et-carters-17',500,'','2026-09-09T07:21:55.005Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cylindres-et-carters-18',240,'','2026-09-09T07:18:55.901Z',NULL);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cylindres-et-carters-18',240,'','2026-09-14T07:22:47.391Z',100);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cylindres-et-carters-19',0,'已经有套缸  删除','2026-09-08T11:45:28.964Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cylindres-et-carters-21',0,'','2026-09-09T07:19:12.221Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cylindres-et-carters-22',0,'','2026-09-09T07:19:13.387Z',NULL);
@@ -2069,13 +2069,13 @@ INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","upda
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cylindres-et-carters-34',120,'','2026-09-09T07:19:42.737Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cylindres-et-carters-40',120,'','2026-09-09T07:19:49.736Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cylindres-et-carters-28',240,'','2026-09-08T12:00:19.230Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('filtres-a-air-6',20000,'','2026-09-09T07:22:12.178Z',3.3);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('filtres-a-air-6',20000,'OEM ','2026-09-14T08:40:54.841Z',7.5);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('filtres-a-air-7',20000,'','2026-09-08T11:50:36.152Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('filtres-a-air-8',3000,'','2026-09-08T11:50:42.711Z',NULL);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('filtres-a-air-8',3000,'','2026-09-14T07:22:47.391Z',4);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('filtres-a-air-9',1000,'','2026-09-08T11:46:52.575Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('filtres-a-air-11',0,'','2026-09-08T11:47:28.235Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('filtres-a-air-10',1000,'','2026-09-08T11:46:57.355Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('filtres-a-air-12',1000,'','2026-09-08T11:47:01.709Z',NULL);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('filtres-a-air-10',1000,'','2026-09-14T07:22:47.391Z',6);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('filtres-a-air-12',1000,'','2026-09-14T07:22:47.391Z',4.6);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('filtres-a-air-13',1100,'','2026-09-09T07:22:21.379Z',3.2);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('filtres-a-air-14',1500,'','2026-09-08T11:50:14.169Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('filtres-a-air-15',3000,'','2026-09-08T11:47:25.388Z',NULL);
@@ -2089,16 +2089,16 @@ INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","upda
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('filtres-a-air-23',300,'','2026-09-08T11:48:22.006Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('filtres-a-air-25',1000,'','2026-09-08T11:48:26.997Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('filtres-a-air-26',300,'','2026-09-08T11:50:00.271Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('chaines-de-distribution-6',1000,'B质量','2026-09-08T12:02:55.434Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('chaines-de-distribution-7',1000,'B质量','2026-09-08T12:02:56.454Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('chaines-de-distribution-8',1000,'B质量','2026-09-08T12:02:58.107Z',NULL);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('chaines-de-distribution-6',1000,'OEM B质量','2026-09-14T08:40:54.841Z',10);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('chaines-de-distribution-7',1000,'OEM B质量','2026-09-14T08:40:54.841Z',10);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('chaines-de-distribution-8',1000,'OEM B质量','2026-09-14T08:40:54.841Z',10);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('chaines-de-distribution-9',10000,'','2026-09-08T12:02:25.302Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('chaines-de-distribution-10',1000,'B质量','2026-09-08T12:03:00.734Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('chaines-de-distribution-11',14800,'','2026-09-09T07:23:45.026Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('chaines-de-distribution-13',10000,'','2026-09-09T07:23:19.908Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('chaines-de-distribution-12',4000,'','2026-09-08T12:02:29.293Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('pare-brise-et-deflecteurs-6',2000,'','2026-09-09T07:24:19.497Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('pare-brise-et-deflecteurs-7',1000,'','2026-09-09T07:25:16.548Z',NULL);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('pare-brise-et-deflecteurs-6',2000,'','2026-09-14T07:22:47.391Z',44);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('pare-brise-et-deflecteurs-7',1000,'','2026-09-14T07:22:47.391Z',40);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('pare-brise-et-deflecteurs-8',1500,'','2026-09-09T07:24:24.248Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('pare-brise-et-deflecteurs-11',1000,'','2026-09-09T07:24:57.096Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('pare-brise-et-deflecteurs-12',1000,'','2026-09-09T07:24:35.998Z',NULL);
@@ -2111,7 +2111,7 @@ INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","upda
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('eclairage-34',200,'','2026-09-08T11:54:23.726Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('eclairage-33',200,'','2026-09-08T11:54:25.000Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('eclairage-31',200,'','2026-09-08T11:54:27.225Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('eclairage-29',100,'','2026-09-08T11:54:30.404Z',NULL);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('eclairage-29',100,'','2026-09-14T07:22:47.391Z',44);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('eclairage-28',200,'','2026-09-08T11:54:31.922Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('eclairage-27',200,'','2026-09-08T11:54:33.016Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('eclairage-26',50,'','2026-09-08T11:54:59.149Z',NULL);
@@ -2130,28 +2130,28 @@ INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","upda
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('pignons-et-chaines-6',400,'','2026-09-09T07:33:12.552Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('pignons-et-chaines-7',400,'','2026-09-09T07:33:09.085Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('pignons-et-chaines-8',400,'','2026-09-09T07:33:07.253Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('fourches-avant-6',100,'','2026-09-09T09:05:06.458Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('fourches-avant-7',100,'','2026-09-09T09:07:52.323Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('fourches-avant-8',100,'','2026-09-09T09:03:22.907Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('fourches-avant-9',0,'','2026-09-09T09:05:13.482Z',NULL);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('fourches-avant-6',100,'','2026-09-14T08:40:54.841Z',61);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('fourches-avant-7',100,'','2026-09-14T07:22:47.391Z',98);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('fourches-avant-8',100,'','2026-09-14T07:22:47.391Z',85);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('fourches-avant-9',0,'','2026-09-14T07:22:47.391Z',67);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('fourches-avant-10',0,'','2026-09-09T09:05:24.181Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('fourches-avant-12',100,'','2026-09-08T11:57:08.588Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('fourches-avant-15',50,'','2026-09-09T09:08:12.995Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('fourches-avant-14',0,'','2026-09-09T09:07:39.617Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('fourches-avant-16',0,'','2026-09-09T09:08:19.916Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('fourches-avant-11',100,'','2026-09-09T09:03:28.734Z',NULL);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('fourches-avant-11',100,'','2026-09-14T07:22:47.391Z',85);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('fourches-avant-13',0,'','2026-09-09T09:03:36.310Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('pare-brise-et-deflecteurs-9',500,'','2026-09-09T07:25:10.492Z',NULL);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('pare-brise-et-deflecteurs-9',500,'','2026-09-14T07:22:47.391Z',15);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('pare-brise-et-deflecteurs-10',500,'','2026-09-09T07:25:09.101Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('pignons-et-chaines-12',0,'','2026-09-09T07:28:54.607Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('pignons-et-chaines-13',0,'','2026-09-09T07:28:56.151Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('pignons-et-chaines-14',0,'','2026-09-09T07:28:57.364Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('jantes-6',0,'','2026-09-09T09:44:10.580Z',NULL);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('jantes-6',0,'','2026-09-14T08:40:54.841Z',63);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('jantes-7',0,'','2026-09-09T09:44:11.593Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('jantes-10',0,'','2026-09-08T12:09:55.557Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('jantes-11',0,'','2026-09-08T12:10:01.874Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('jantes-12',0,'','2026-09-09T09:44:07.087Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('jantes-13',0,'','2026-09-08T12:08:38.859Z',NULL);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('jantes-10',0,'','2026-09-14T07:22:47.391Z',3.2);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('jantes-11',0,'OEM ','2026-09-14T08:40:54.841Z',1.8);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('jantes-12',0,'','2026-09-14T07:22:47.391Z',36);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('jantes-13',0,'','2026-09-14T07:22:47.391Z',1);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('jantes-14',100,'','2026-09-09T09:08:46.394Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('jantes-15',0,'','2026-09-08T12:08:33.273Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('jantes-40',0,'','2026-09-09T09:43:57.552Z',NULL);
@@ -2159,28 +2159,28 @@ INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","upda
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('jantes-37',0,'','2026-09-09T09:43:56.185Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('jantes-34',0,'','2026-09-09T09:17:51.480Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('jantes-32',0,'','2026-09-09T09:17:50.291Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('jantes-29',0,'','2026-09-09T09:43:48.490Z',NULL);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('jantes-29',0,'','2026-09-14T07:22:47.391Z',150);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('jantes-27',100,'','2026-09-09T09:09:00.466Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('jantes-26',100,'','2026-09-09T09:08:58.737Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('jantes-25',0,'','2026-09-09T09:43:45.088Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('jantes-23',100,'','2026-09-09T09:08:53.659Z',NULL);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('jantes-26',100,'','2026-09-14T07:22:47.391Z',146);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('jantes-25',0,'','2026-09-14T07:22:47.391Z',145);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('jantes-23',100,'','2026-09-14T07:22:47.391Z',34);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('jantes-22',0,'','2026-09-09T09:43:37.832Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('jantes-21',0,'','2026-09-09T09:43:36.717Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('jantes-20',0,'','2026-09-09T09:43:35.723Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('jantes-18',100,'','2026-09-09T09:08:49.686Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('demarreurs-6',2000,'','2026-09-08T12:11:18.873Z',NULL);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('jantes-18',100,'','2026-09-14T07:22:47.391Z',34);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('demarreurs-6',2000,'','2026-09-14T07:22:47.391Z',29);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('demarreurs-7',1000,'','2026-09-09T07:37:00.725Z',32);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('demarreurs-8',1000,'','2026-09-08T12:10:58.712Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('demarreurs-9',500,'','2026-09-08T12:11:00.572Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('demarreurs-11',200,'','2026-09-09T07:37:14.498Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('amortisseurs-8',380,'','2026-09-09T09:46:23.346Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('amortisseurs-9',0,'','2026-09-09T09:45:42.157Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('amortisseurs-13',500,'','2026-09-09T09:45:45.845Z',NULL);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('amortisseurs-8',380,'','2026-09-14T07:22:47.391Z',30);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('amortisseurs-9',0,'','2026-09-14T07:22:47.391Z',25);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('amortisseurs-13',500,'','2026-09-14T07:22:47.391Z',35);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('amortisseurs-14',0,'','2026-09-09T09:45:46.863Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('amortisseurs-15',0,'','2026-09-09T09:45:50.088Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('amortisseurs-6',500,'','2026-09-09T09:45:32.694Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('amortisseurs-7',0,'','2026-09-09T09:45:58.995Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('galets-et-rouleaux-8',15000,'','2026-09-09T09:48:22.647Z',NULL);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('amortisseurs-15',0,'','2026-09-14T07:22:47.391Z',19);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('amortisseurs-6',500,'','2026-09-14T08:40:54.841Z',28);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('amortisseurs-7',0,'','2026-09-14T07:22:47.391Z',26);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('galets-et-rouleaux-8',15000,'','2026-09-14T07:22:47.391Z',5);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('galets-et-rouleaux-12',0,'','2026-09-08T12:13:04.397Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('galets-et-rouleaux-13',4000,'','2026-09-09T09:47:11.452Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('galets-et-rouleaux-17',0,'','2026-09-09T09:47:18.802Z',NULL);
@@ -2188,12 +2188,12 @@ INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","upda
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('galets-et-rouleaux-20',2000,'','2026-09-09T09:47:26.473Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('galets-et-rouleaux-6',10000,'','2026-09-09T09:48:31.564Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('galets-et-rouleaux-11',0,'','2026-09-09T09:47:07.609Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('galets-et-rouleaux-14',8000,'','2026-09-09T09:48:10.473Z',NULL);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('galets-et-rouleaux-14',8000,'','2026-09-14T07:22:47.391Z',6.5);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('galets-et-rouleaux-7',15000,'','2026-09-09T09:48:35.152Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cables-et-durites-6',2000,'','2026-09-08T12:15:24.998Z',NULL);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cables-et-durites-6',2000,'','2026-09-14T07:22:47.391Z',4.5);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cables-et-durites-7',2000,'','2026-09-08T12:15:27.374Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cables-et-durites-9',1500,'','2026-09-09T08:01:50.549Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cables-et-durites-10',2000,'','2026-09-08T12:15:36.138Z',NULL);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cables-et-durites-9',1500,'','2026-09-14T07:22:47.391Z',4.5);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cables-et-durites-10',2000,'','2026-09-14T07:22:47.391Z',4.5);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cables-et-durites-11',2000,'','2026-09-09T08:01:39.975Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cables-et-durites-12',5000,'','2026-09-08T12:14:35.136Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cables-et-durites-13',2000,'','2026-09-09T08:00:38.798Z',5);
@@ -2201,19 +2201,19 @@ INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","upda
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cables-et-durites-15',2000,'','2026-09-08T12:15:46.348Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cables-et-durites-17',2000,'','2026-09-08T12:14:44.953Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cables-et-durites-18',2000,'','2026-09-08T12:15:51.836Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cables-et-durites-19',2000,'','2026-09-08T12:14:49.943Z',NULL);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cables-et-durites-19',2000,'','2026-09-14T08:40:54.841Z',8);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cables-et-durites-20',2000,'','2026-09-09T08:01:16.702Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cables-et-durites-21',1000,'','2026-09-08T12:16:01.297Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cables-et-durites-16',0,'删除jet4','2026-09-08T12:15:05.882Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cables-et-durites-22',2000,'','2026-09-08T12:16:05.430Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cables-et-durites-23',2000,'','2026-09-09T08:01:26.668Z',11);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cables-et-durites-24',1000,'','2026-09-09T07:59:16.462Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('guidons-6',400,'生产慢','2026-09-09T08:02:09.670Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('guidons-7',400,'生产慢','2026-09-09T08:02:12.507Z',NULL);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('guidons-6',400,'生产慢','2026-09-14T07:22:47.391Z',20);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('guidons-7',400,'生产慢','2026-09-14T07:22:47.391Z',23);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('guidons-8',50,'生产慢','2026-09-08T12:17:00.437Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('bobines-et-allumage-22',500,'','2026-09-08T12:17:29.222Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('bobines-et-allumage-20',200,'','2026-09-08T12:18:06.865Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('bobines-et-allumage-6',0,'','2026-09-08T12:17:54.937Z',NULL);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('bobines-et-allumage-6',0,'','2026-09-14T07:22:47.391Z',1.6);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('bobines-et-allumage-8',0,'','2026-09-08T12:17:46.891Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('bobines-et-allumage-9',500,'','2026-09-08T12:17:50.102Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('bobines-et-allumage-10',400,'','2026-09-08T12:18:11.613Z',NULL);
@@ -2228,16 +2228,16 @@ INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","upda
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('vis-boulons-et-bagues-20',5000,'','2026-09-09T09:50:52.784Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('vis-boulons-et-bagues-18',0,'','2026-09-09T09:49:57.209Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('vis-boulons-et-bagues-19',5000,'','2026-09-09T09:51:40.757Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('pompes-a-huile-7',800,'','2026-09-08T12:22:45.305Z',NULL);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('pompes-a-huile-7',800,'','2026-09-14T07:22:47.391Z',10);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('pompes-a-huile-8',800,'','2026-09-08T12:22:48.887Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('pompes-a-huile-9',200,'','2026-09-08T12:22:42.190Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('pompes-a-huile-6',200,'','2026-09-08T12:22:40.411Z',NULL);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('pompes-a-huile-9',200,'','2026-09-14T07:22:47.391Z',15);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('pompes-a-huile-6',200,'','2026-09-14T07:22:47.391Z',4.2);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('filtres-a-carburant-6',6000,'','2026-09-08T12:23:00.236Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('pistons-6',2000,'','2026-09-09T09:52:00.658Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('pistons-7',1000,'','2026-09-09T09:51:56.845Z',NULL);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('pistons-6',2000,'OEM ','2026-09-14T08:40:54.841Z',14);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('pistons-7',1000,'','2026-09-14T07:22:47.391Z',12);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('pistons-8',0,'','2026-09-09T08:14:20.644Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('pistons-10',500,'','2026-09-09T09:52:05.683Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('pistons-11',500,'','2026-09-09T09:52:07.093Z',NULL);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('pistons-10',500,'','2026-09-14T07:22:47.391Z',4);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('pistons-11',500,'','2026-09-14T07:22:47.391Z',8);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('pistons-12',1000,'','2026-09-09T09:52:12.069Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('pistons-13',1000,'','2026-09-09T09:52:13.387Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('pistons-14',0,'','2026-09-08T12:25:06.364Z',NULL);
@@ -2248,30 +2248,30 @@ INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","upda
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('pistons-19',0,'','2026-09-08T12:24:59.392Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('pistons-9',1000,'','2026-09-09T09:51:57.972Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('roulements-a-billes-8',2000,'','2026-09-09T09:55:59.444Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('roulements-a-billes-10',2000,'','2026-09-09T09:56:01.065Z',NULL);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('roulements-a-billes-10',2000,'','2026-09-14T07:22:47.391Z',2);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('roulements-a-billes-11',0,'','2026-09-09T10:00:15.885Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('roulements-a-billes-14',0,'','2026-09-09T10:00:22.723Z',NULL);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('roulements-a-billes-14',0,'','2026-09-14T07:22:47.391Z',2);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('roulements-a-billes-18',0,'','2026-09-09T10:00:24.370Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('joints-et-rondelles-6',10000,'','2026-09-08T12:26:43.499Z',NULL);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('joints-et-rondelles-6',10000,'','2026-09-14T07:22:47.391Z',0.25);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('joints-et-rondelles-8',5000,'','2026-09-09T10:03:45.174Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('joints-et-rondelles-10',3000,'','2026-09-09T10:04:04.244Z',NULL);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('joints-et-rondelles-10',3000,'','2026-09-14T07:22:47.391Z',3);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('joints-et-rondelles-13',2000,'','2026-09-09T10:00:47.041Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('joints-et-rondelles-15',2000,'','2026-09-09T10:00:50.857Z',NULL);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('joints-et-rondelles-15',2000,'','2026-09-14T07:22:47.391Z',6);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('joints-et-rondelles-17',3000,'','2026-09-09T10:00:54.878Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('joints-et-rondelles-20',2000,'','2026-09-09T10:00:58.246Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('joints-et-rondelles-22',5000,'','2026-09-09T10:01:07.075Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('joints-et-rondelles-21',2500,'','2026-09-09T10:03:11.816Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('joints-et-rondelles-23',2000,'','2026-09-09T10:01:10.388Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('soupapes-et-valves-7',3000,'','2026-09-09T10:05:09.895Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('soupapes-et-valves-8',3000,'','2026-09-09T10:05:11.442Z',NULL);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('joints-et-rondelles-23',2000,'','2026-09-14T07:22:47.391Z',10);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('soupapes-et-valves-7',3000,'','2026-09-14T07:22:47.391Z',7);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('soupapes-et-valves-8',3000,'','2026-09-14T07:22:47.391Z',6);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('soupapes-et-valves-9',2000,'','2026-09-09T10:05:14.564Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('soupapes-et-valves-10',4000,'','2026-09-09T10:05:21.754Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('soupapes-et-valves-11',1200,'','2026-09-09T10:05:33.866Z',NULL);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('soupapes-et-valves-11',1200,'','2026-09-14T07:22:47.391Z',7);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cles-et-serrures-6',400,'','2026-09-08T12:28:48.385Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cles-et-serrures-7',300,'','2026-09-08T12:29:21.526Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cles-et-serrures-8',500,'','2026-09-09T10:11:26.356Z',NULL);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cles-et-serrures-7',300,'','2026-09-14T07:22:47.391Z',16);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cles-et-serrures-8',500,'','2026-09-14T07:22:47.391Z',21);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cles-et-serrures-9',300,'','2026-09-08T12:28:57.185Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cles-et-serrures-10',500,'','2026-09-09T10:11:28.689Z',NULL);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cles-et-serrures-10',500,'','2026-09-14T07:22:47.391Z',21);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cles-et-serrures-11',300,'','2026-09-08T12:29:00.367Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('plaquettes-de-frein-36',20000,'','2026-09-09T03:15:46.129Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('pneumatiques-14',15500,'','2026-09-09T06:05:06.923Z',NULL);
@@ -2307,7 +2307,7 @@ INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","upda
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('joints-et-rondelles-35',3000,'','2026-09-09T10:01:48.387Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('joints-et-rondelles-45',5000,'','2026-09-09T10:02:16.022Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('joints-et-rondelles-46',10000,'','2026-09-09T10:02:38.133Z',NULL);
-INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('joints-et-rondelles-24',2000,'','2026-09-09T10:03:01.241Z',NULL);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('joints-et-rondelles-24',2000,'','2026-09-14T07:22:47.391Z',1.5);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('joints-et-rondelles-25',3000,'','2026-09-09T10:03:05.454Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('joints-et-rondelles-16',10000,'','2026-09-09T10:03:32.739Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('joints-et-rondelles-7',15000,'','2026-09-09T10:03:59.058Z',NULL);
@@ -2336,6 +2336,27 @@ INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","upda
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('bicycle-inner-b-42170-26-1-75-fc',0,'','2026-09-10T05:28:53.126Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('bicycle-inner-b-42170-27-5-2-125-fc',0,'','2026-09-10T05:28:53.966Z',NULL);
 INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('bicycle-inner-b-42170-700x42-fc',0,'','2026-09-10T05:28:54.657Z',NULL);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('bobines-et-allumage-15',0,'OEM ','2026-09-14T08:40:54.841Z',38);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('bobines-et-allumage-24',0,'','2026-09-14T07:22:47.391Z',35);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('bobines-et-allumage-25',0,'','2026-09-14T07:22:47.391Z',35);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cles-et-serrures-12',0,'','2026-09-14T07:22:47.391Z',8);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cles-et-serrures-13',0,'','2026-09-14T07:22:47.391Z',22);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cles-et-serrures-20',0,'','2026-09-14T07:22:47.391Z',22);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cylindres-et-carters-6',0,'OEM ','2026-09-14T08:40:54.841Z',53);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('demarreurs-15',0,'','2026-09-14T07:22:47.391Z',30);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('demarreurs-16',0,'','2026-09-14T08:40:54.841Z',27);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('demarreurs-18',0,'','2026-09-14T07:22:47.391Z',14);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('joints-et-rondelles-33',0,'','2026-09-14T07:22:47.391Z',1);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('joints-et-rondelles-34',0,'','2026-09-14T07:22:47.391Z',1);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('joints-et-rondelles-40',0,'','2026-09-14T07:22:47.391Z',7);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('roulements-a-billes-15',0,'','2026-09-14T07:22:47.391Z',3);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('roulements-a-billes-16',0,'','2026-09-14T07:22:47.391Z',3);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('roulements-a-billes-6',0,'','2026-09-14T07:22:47.391Z',1.2);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('soupapes-et-valves-12',0,'','2026-09-14T07:22:47.391Z',5);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('soupapes-et-valves-17',0,'','2026-09-14T07:22:47.391Z',5);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('vis-boulons-et-bagues-15',0,'OEM ','2026-09-14T08:40:54.841Z',1.8);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('vis-boulons-et-bagues-16',0,'','2026-09-14T07:22:47.391Z',4.5);
+INSERT INTO "product_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('vis-boulons-et-bagues-17',0,'','2026-09-14T07:22:47.391Z',1);
 CREATE TABLE category_quotas (
   id TEXT PRIMARY KEY,
   category_id TEXT NOT NULL REFERENCES categories(id) ON DELETE CASCADE,
@@ -2413,6 +2434,11 @@ INSERT INTO "d1_migrations" ("id","name","applied_at") VALUES(10,'0010_bicycle_p
 INSERT INTO "d1_migrations" ("id","name","applied_at") VALUES(11,'0011_bicycle_historical_sales_sort.sql','2026-09-10 05:54:05');
 INSERT INTO "d1_migrations" ("id","name","applied_at") VALUES(12,'0012_bicycle_supplier_codes.sql','2026-09-10 06:12:43');
 INSERT INTO "d1_migrations" ("id","name","applied_at") VALUES(13,'0013_remove_djj_bicycle_outer_tires.sql','2026-09-10 06:29:20');
+INSERT INTO "d1_migrations" ("id","name","applied_at") VALUES(14,'0014_adam_login.sql','2026-09-14 05:58:36');
+INSERT INTO "d1_migrations" ("id","name","applied_at") VALUES(15,'0015_adam_pbkdf2_runtime_limit.sql','2026-09-14 06:02:23');
+INSERT INTO "d1_migrations" ("id","name","applied_at") VALUES(16,'0016_customer_access_control.sql','2026-09-14 06:27:19');
+INSERT INTO "d1_migrations" ("id","name","applied_at") VALUES(17,'0017_mustafa_oem_and_latest_prices.sql','2026-09-14 07:22:47');
+INSERT INTO "d1_migrations" ("id","name","applied_at") VALUES(18,'0018_mustafa_reviewed_prices_and_oem.sql','2026-09-14 08:40:54');
 CREATE TABLE product_weight_provenance (
   record_id TEXT PRIMARY KEY REFERENCES products(record_id) ON DELETE CASCADE,
   match_method TEXT NOT NULL CHECK (match_method IN ('exact_code', 'name_similarity')),
@@ -3476,6 +3502,36 @@ CREATE TABLE sidi_priority_order_state (
   remark TEXT NOT NULL DEFAULT '',
   updated_at TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%fZ', 'now'))
 );
+INSERT INTO "sidi_priority_order_state" ("record_id","ordered_quantity","remark","updated_at") VALUES('plaquettes-de-frein-6',0,'','2026-09-11T08:34:25.705Z');
+INSERT INTO "sidi_priority_order_state" ("record_id","ordered_quantity","remark","updated_at") VALUES('plaquettes-de-frein-7',0,'','2026-09-11T08:34:26.782Z');
+INSERT INTO "sidi_priority_order_state" ("record_id","ordered_quantity","remark","updated_at") VALUES('plaquettes-de-frein-8',0,'','2026-09-11T08:34:27.616Z');
+INSERT INTO "sidi_priority_order_state" ("record_id","ordered_quantity","remark","updated_at") VALUES('plaquettes-de-frein-9',0,'','2026-09-11T08:34:28.295Z');
+INSERT INTO "sidi_priority_order_state" ("record_id","ordered_quantity","remark","updated_at") VALUES('plaquettes-de-frein-10',0,'','2026-09-11T08:34:29.666Z');
+INSERT INTO "sidi_priority_order_state" ("record_id","ordered_quantity","remark","updated_at") VALUES('plaquettes-de-frein-11',0,'','2026-09-11T08:34:30.618Z');
+INSERT INTO "sidi_priority_order_state" ("record_id","ordered_quantity","remark","updated_at") VALUES('plaquettes-de-frein-12',0,'','2026-09-11T08:34:32.028Z');
+INSERT INTO "sidi_priority_order_state" ("record_id","ordered_quantity","remark","updated_at") VALUES('plaquettes-de-frein-13',0,'','2026-09-11T08:34:34.052Z');
+INSERT INTO "sidi_priority_order_state" ("record_id","ordered_quantity","remark","updated_at") VALUES('plaquettes-de-frein-14',0,'','2026-09-11T08:34:35.217Z');
+INSERT INTO "sidi_priority_order_state" ("record_id","ordered_quantity","remark","updated_at") VALUES('plaquettes-de-frein-15',0,'','2026-09-11T08:34:36.804Z');
+INSERT INTO "sidi_priority_order_state" ("record_id","ordered_quantity","remark","updated_at") VALUES('plaquettes-de-frein-16',0,'','2026-09-11T08:34:38.078Z');
+INSERT INTO "sidi_priority_order_state" ("record_id","ordered_quantity","remark","updated_at") VALUES('plaquettes-de-frein-17',0,'','2026-09-11T08:34:40.366Z');
+INSERT INTO "sidi_priority_order_state" ("record_id","ordered_quantity","remark","updated_at") VALUES('plaquettes-de-frein-18',0,'','2026-09-11T08:34:41.086Z');
+INSERT INTO "sidi_priority_order_state" ("record_id","ordered_quantity","remark","updated_at") VALUES('plaquettes-de-frein-19',0,'','2026-09-11T08:34:42.323Z');
+INSERT INTO "sidi_priority_order_state" ("record_id","ordered_quantity","remark","updated_at") VALUES('plaquettes-de-frein-20',0,'','2026-09-11T08:34:44.729Z');
+INSERT INTO "sidi_priority_order_state" ("record_id","ordered_quantity","remark","updated_at") VALUES('plaquettes-de-frein-21',0,'','2026-09-11T08:34:45.778Z');
+INSERT INTO "sidi_priority_order_state" ("record_id","ordered_quantity","remark","updated_at") VALUES('plaquettes-de-frein-22',0,'','2026-09-11T08:34:46.867Z');
+INSERT INTO "sidi_priority_order_state" ("record_id","ordered_quantity","remark","updated_at") VALUES('plaquettes-de-frein-23',0,'','2026-09-11T08:34:47.653Z');
+INSERT INTO "sidi_priority_order_state" ("record_id","ordered_quantity","remark","updated_at") VALUES('plaquettes-de-frein-24',0,'','2026-09-11T08:34:48.709Z');
+INSERT INTO "sidi_priority_order_state" ("record_id","ordered_quantity","remark","updated_at") VALUES('plaquettes-de-frein-25',0,'','2026-09-11T08:34:49.633Z');
+INSERT INTO "sidi_priority_order_state" ("record_id","ordered_quantity","remark","updated_at") VALUES('bobines-et-allumage-15',0,'OEM ','2026-09-14T08:40:54.841Z');
+INSERT INTO "sidi_priority_order_state" ("record_id","ordered_quantity","remark","updated_at") VALUES('cylindres-et-carters-6',0,'OEM ','2026-09-14T08:40:54.841Z');
+INSERT INTO "sidi_priority_order_state" ("record_id","ordered_quantity","remark","updated_at") VALUES('embrayages-9',0,'OEM ','2026-09-14T08:40:54.841Z');
+INSERT INTO "sidi_priority_order_state" ("record_id","ordered_quantity","remark","updated_at") VALUES('jantes-11',0,'OEM ','2026-09-14T08:40:54.841Z');
+INSERT INTO "sidi_priority_order_state" ("record_id","ordered_quantity","remark","updated_at") VALUES('vis-boulons-et-bagues-15',0,'OEM ','2026-09-14T08:40:54.841Z');
+INSERT INTO "sidi_priority_order_state" ("record_id","ordered_quantity","remark","updated_at") VALUES('chaines-de-distribution-6',0,'OEM ','2026-09-14T08:40:54.841Z');
+INSERT INTO "sidi_priority_order_state" ("record_id","ordered_quantity","remark","updated_at") VALUES('chaines-de-distribution-7',0,'OEM ','2026-09-14T08:40:54.841Z');
+INSERT INTO "sidi_priority_order_state" ("record_id","ordered_quantity","remark","updated_at") VALUES('chaines-de-distribution-8',0,'OEM ','2026-09-14T08:40:54.841Z');
+INSERT INTO "sidi_priority_order_state" ("record_id","ordered_quantity","remark","updated_at") VALUES('filtres-a-air-6',0,'OEM ','2026-09-14T08:40:54.841Z');
+INSERT INTO "sidi_priority_order_state" ("record_id","ordered_quantity","remark","updated_at") VALUES('pistons-6',0,'OEM ','2026-09-14T08:40:54.841Z');
 CREATE TABLE rollback_0006_tire_fields (
   record_id TEXT PRIMARY KEY,
   fields_fr_json TEXT NOT NULL,
@@ -3762,8 +3818,425 @@ CREATE TABLE rollback_0013_djj_outer_priority_state(
   remark TEXT,
   updated_at TEXT
 );
+CREATE TABLE admin_users (
+  username TEXT PRIMARY KEY,
+  password_salt TEXT NOT NULL,
+  password_hash TEXT NOT NULL,
+  password_iterations INTEGER NOT NULL CHECK (password_iterations >= 100000),
+  active INTEGER NOT NULL DEFAULT 1 CHECK (active IN (0, 1)),
+  created_at TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%fZ', 'now')),
+  updated_at TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%fZ', 'now'))
+);
+INSERT INTO "admin_users" ("username","password_salt","password_hash","password_iterations","active","created_at","updated_at") VALUES('Adam','LjsXDwLsnKxmSN8MDYr3cg==','p8Hv6akKau8jZkfjNmqBu1izM3r9sv5QdZBgU4H6Ixo=',100000,1,'2026-09-14T05:58:36.768Z','2026-09-14T06:02:23.520Z');
+CREATE TABLE access_control_settings (
+  id INTEGER PRIMARY KEY CHECK (id = 1),
+  enabled INTEGER NOT NULL CHECK (enabled IN (0, 1)),
+  block_chinese_language INTEGER NOT NULL CHECK (block_chinese_language IN (0, 1)),
+  block_china_timezone INTEGER NOT NULL CHECK (block_china_timezone IN (0, 1)),
+  block_china_ip INTEGER NOT NULL CHECK (block_china_ip IN (0, 1)),
+  updated_at TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%fZ', 'now'))
+);
+INSERT INTO "access_control_settings" ("id","enabled","block_chinese_language","block_china_timezone","block_china_ip","updated_at") VALUES(1,0,1,0,0,'2026-09-14T06:40:41.069Z');
+CREATE TABLE rollback_0017_oem_codes (
+  product_code TEXT PRIMARY KEY
+);
+INSERT INTO "rollback_0017_oem_codes" ("product_code") VALUES('12100-A61-PTSY-A');
+INSERT INTO "rollback_0017_oem_codes" ("product_code") VALUES('22300-F6A-XS-SYM');
+INSERT INTO "rollback_0017_oem_codes" ("product_code") VALUES('31120-F8-HCE-8');
+INSERT INTO "rollback_0017_oem_codes" ("product_code") VALUES('42611-3J3-PT');
+CREATE TABLE rollback_0017_price_map (
+  product_code TEXT PRIMARY KEY,
+  new_price_cny REAL NOT NULL,
+  source_row INTEGER NOT NULL
+);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('11100-ARA-PT',80,6);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('11210-FID150-PT',7,271);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('11210-VMS-PT',10,270);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('12100-A61-PTSY-A',53,15);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('12100-YMH100-51-PT',60,21);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('1210A-3K3-PT',80,8);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('1210A-ZF150-WYZC',58,7);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('12200-ANL-PT',100,22);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('12209-H6B-FC',0.25,256);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('1225A-A31-PT',1.5,24);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('1225A-GR150-PT',3,19);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('13000-HHA-PT',90,26);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('13010-A6A-PTSY',14,29);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('13011-FID150-PT',4,31);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('13101-A61-PT',12,28);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('13101-FID150-FC',8,32);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('14401-F6C-HJ',10,34);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('14401-KV7-HJ',10,35);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('14401-V02-HJ',10,36);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('14711-ADB-PT',7,41);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('14711-F8A-PT',7,42);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('1471A-F6A-PT',6,43);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('14721-GY6-FC',5,44);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('15100-ATA-PT',15,46);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('15100-F6C-PT',10,45);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('15100-KUDU-FC',4.2,47);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('1610K-ASC-PT',125,50);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('1610K-FID150-FC',48,51);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('1610K-YMH100-FTK',60.5,52);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('16510-PAG-AF',5,55);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('16510-RK2-PT',4,57);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('17211-CJY-PT',4,59);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('17211-GEM-PT',4.6,58);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('17211-H6B-PTDC',7.5,60);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('17211-TMAX500-ZT',6,61);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('17910-ABA-PT',4.5,65);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('17910-FY100-ZC',4.5,66);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('17910-SM-F8-PT',4.5,67);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('22121-FIDDLE-HM-SQ',6.5,77);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('22121-YMH100-SQ',5,79);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('22300-F6A-XS-SYM',78,85);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('22300-FY100-FYMH-NW',22,83);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('30700-SPN-PT',1.6,100);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('31120-F6N-XD',35,103);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('31120-F8-HCE-8',34,101);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('31120-X1A-XD',35,102);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('31209-KCW100-FC',14,113);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('3120A-ARA-PT',30,104);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('31210-FX100-ZF',29,106);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('3121A-FID-ZF',25,105);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('33100-APA-PT',44,114);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('35010-CRL-PT',22,126);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('35010-F6C-PT',22,124);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('35010-XRA-PT',21,127);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('3501A-ABA-PT',21,128);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('35100-GH-HT-YA',16,125);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('42601-ASC-PT',60,133);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('42601-X3A-PT',145,135);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('42601-X9A-PT',150,136);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('42611-3J3-PT',1.8,137);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('42650-FX100-LMP-18T',34,138);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('42650-FX100-LMP19T',34,145);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('42650-N10-PT',146,134);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('43105-6-ARB-XS-SYM',9.2,285);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('43105-ARB-ZFZK',2.8,164);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('43120-ZY-FYMH',5,146);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('44301-AAA-PT',3.2,156);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('44650-FX100-L-LMP',36,144);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('45105-FA140-PTHJ',3.65,163);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('45105-LFC2-FA305-PTA',3,171);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('45120-CM125-FC',3.65,165);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('45120-FKCW-FA888',2.7,166);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('45120-GS125-FC-YS',3,172);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('45126-93-PT',10,155);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('45150-APA-ZFZK',3,168);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('45150-FA298-FC',3.2,169);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('45150-L9H-FCYS3007',3,170);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('50110-GY6-FC-A',655,187);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('51350-FX100-ZF',55,202);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('51400-ALA-PTZC',85,203);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('51400-APA-PT-BL',85,204);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('51400-F8-XH',98,205);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('51400-JOG-JC',67,206);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('52400-ABA-PT',30,210);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('52400-AR1-PT-BL',25,207);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('52400-D340-PT',25,212);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('52400-N9-PT',35,209);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('52400-S6-PT',19,211);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('52400-VMS-PT-B',26,208);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('53100-S5-PT',20,231);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('53100-S9-PT',23,232);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('53270-ALA-34CM-PT',15,234);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('53270-XPA-PT',44,239);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('53270-XPA-PT50CM',40,237);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('83710-VMAX-PT',8,249);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('90304-XJA-PT',1,251);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('90911-6200-FC',3,276);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('90912-6201-FC',1.2,260);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('91201-HHA-FC',6,255);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('91205-FX100-ZC',1,277);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('91206-26_48_7-FC',1,278);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('9580A-06095-06100-06030',4.5,254);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('96100-62030-AOF',2,279);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('96100-62040-AOF',2,280);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('96100-6303-AOF',3,259);
+INSERT INTO "rollback_0017_price_map" ("product_code","new_price_cny","source_row") VALUES('98056-10MM-HONDA',1.9,258);
+CREATE TABLE rollback_0017_target_records(
+  record_id TEXT,
+  product_code TEXT,
+  is_oem,
+  new_price_cny REAL
+);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('amortisseurs-13','52400-N9-PT',0,35);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('amortisseurs-15','52400-S6-PT',0,19);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('amortisseurs-6','52400-AR1-PT-BL',0,25);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('amortisseurs-7','52400-VMS-PT-B',0,26);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('amortisseurs-8','52400-ABA-PT',0,30);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('amortisseurs-9','52400-D340-PT',0,25);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('bobines-et-allumage-15','31120-F8-HCE-8',1,34);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('bobines-et-allumage-24','31120-X1A-XD',0,35);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('bobines-et-allumage-25','31120-F6N-XD',0,35);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('bobines-et-allumage-6','30700-SPN-PT',0,1.6);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('bougies-6','98056-10MM-HONDA',0,1.9);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('cables-et-durites-10','17910-ABA-PT',0,4.5);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('cables-et-durites-19','45126-93-PT',0,10);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('cables-et-durites-6','17910-FY100-ZC',0,4.5);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('cables-et-durites-9','17910-SM-F8-PT',0,4.5);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('carburateurs-15','1610K-ASC-PT',0,125);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('carburateurs-6','1610K-FID150-FC',0,48);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('carburateurs-7','1610K-YMH100-FTK',0,60.5);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('chaines-de-distribution-6','14401-V02-HJ',0,10);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('chaines-de-distribution-7','14401-KV7-HJ',0,10);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('chaines-de-distribution-8','14401-F6C-HJ',0,10);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('cles-et-serrures-10','35010-XRA-PT',0,21);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('cles-et-serrures-12','83710-VMAX-PT',0,8);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('cles-et-serrures-13','35010-CRL-PT',0,22);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('cles-et-serrures-20','35010-F6C-PT',0,22);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('cles-et-serrures-7','35100-GH-HT-YA',0,16);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('cles-et-serrures-8','3501A-ABA-PT',0,21);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('cylindres-et-carters-10','1210A-3K3-PT',0,80);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('cylindres-et-carters-12','11100-ARA-PT',0,80);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('cylindres-et-carters-13','1210A-ZF150-WYZC',0,58);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('cylindres-et-carters-18','12200-ANL-PT',0,100);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('cylindres-et-carters-6','12100-A61-PTSY-A',1,53);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('cylindres-et-carters-7','12100-YMH100-51-PT',0,60);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('demarreurs-15','3120A-ARA-PT',0,30);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('demarreurs-16','3121A-FID-ZF',0,25);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('demarreurs-18','31209-KCW100-FC',0,14);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('demarreurs-6','31210-FX100-ZF',0,29);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('eclairage-29','33100-APA-PT',0,44);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('embrayages-8','22300-FY100-FYMH-NW',0,22);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('embrayages-9','22300-F6A-XS-SYM',1,78);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('filtres-a-air-10','17211-TMAX500-ZT',0,6);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('filtres-a-air-12','17211-GEM-PT',0,4.6);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('filtres-a-air-6','17211-H6B-PTDC',0,7.5);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('filtres-a-air-8','17211-CJY-PT',0,4);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('filtres-a-huile-6','16510-RK2-PT',0,4);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('filtres-a-huile-7','16510-PAG-AF',0,5);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('fourches-avant-11','51400-ALA-PTZC',0,85);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('fourches-avant-6','51350-FX100-ZF',0,55);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('fourches-avant-7','51400-F8-XH',0,98);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('fourches-avant-8','51400-APA-PT-BL',0,85);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('fourches-avant-9','51400-JOG-JC',0,67);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('galets-et-rouleaux-14','22121-FIDDLE-HM-SQ',0,6.5);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('galets-et-rouleaux-8','22121-YMH100-SQ',0,5);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('guidons-6','53100-S5-PT',0,20);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('guidons-7','53100-S9-PT',0,23);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('jantes-10','44301-AAA-PT',0,3.2);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('jantes-11','42611-3J3-PT',1,1.8);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('jantes-12','44650-FX100-L-LMP',0,36);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('jantes-13','90304-XJA-PT',0,1);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('jantes-18','42650-FX100-LMP-18T',0,34);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('jantes-23','42650-FX100-LMP19T',0,34);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('jantes-25','42601-X3A-PT',0,145);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('jantes-26','42650-N10-PT',0,146);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('jantes-29','42601-X9A-PT',0,150);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('jantes-6','42601-ASC-PT',0,60);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('joints-et-rondelles-10','1225A-GR150-PT',0,3);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('joints-et-rondelles-15','91201-HHA-FC',0,6);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('joints-et-rondelles-23','11210-VMS-PT',0,10);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('joints-et-rondelles-24','1225A-A31-PT',0,1.5);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('joints-et-rondelles-33','91205-FX100-ZC',0,1);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('joints-et-rondelles-34','91206-26_48_7-FC',0,1);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('joints-et-rondelles-40','11210-FID150-PT',0,7);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('joints-et-rondelles-6','12209-H6B-FC',0,0.25);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('moteurs-9','50110-GY6-FC-A',0,655);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('pare-brise-et-deflecteurs-6','53270-XPA-PT',0,44);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('pare-brise-et-deflecteurs-7','53270-XPA-PT50CM',0,40);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('pare-brise-et-deflecteurs-9','53270-ALA-34CM-PT',0,15);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('pistons-10','13011-FID150-PT',0,4);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('pistons-11','13101-FID150-FC',0,8);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('pistons-6','13010-A6A-PTSY',0,14);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('pistons-7','13101-A61-PT',0,12);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('plaquettes-de-frein-10','45150-APA-ZFZK',0,3);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('plaquettes-de-frein-11','45120-FKCW-FA888',0,2.7);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('plaquettes-de-frein-12','45120-GS125-FC-YS',0,3);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('plaquettes-de-frein-13','43105-6-ARB-XS-SYM',0,9.2);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('plaquettes-de-frein-15','45105-FA140-PTHJ',0,3.65);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('plaquettes-de-frein-17','45120-CM125-FC',0,3.65);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('plaquettes-de-frein-31','45105-LFC2-FA305-PTA',0,3);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('plaquettes-de-frein-6','43105-ARB-ZFZK',0,2.8);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('plaquettes-de-frein-7','43120-ZY-FYMH',0,5);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('plaquettes-de-frein-8','45150-L9H-FCYS3007',0,3);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('plaquettes-de-frein-9','45150-FA298-FC',0,3.2);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('pompes-a-huile-6','15100-KUDU-FC',0,4.2);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('pompes-a-huile-7','15100-F6C-PT',0,10);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('pompes-a-huile-9','15100-ATA-PT',0,15);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('roulements-a-billes-10','96100-62030-AOF',0,2);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('roulements-a-billes-14','96100-62040-AOF',0,2);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('roulements-a-billes-15','96100-6303-AOF',0,3);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('roulements-a-billes-16','90911-6200-FC',0,3);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('roulements-a-billes-6','90912-6201-FC',0,1.2);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('soupapes-et-valves-11','14711-ADB-PT',0,7);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('soupapes-et-valves-12','14721-GY6-FC',0,5);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('soupapes-et-valves-17','14721-GY6-FC',0,5);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('soupapes-et-valves-7','14711-F8A-PT',0,7);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('soupapes-et-valves-8','1471A-F6A-PT',0,6);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('vilebrequins-14','13000-HHA-PT',0,90);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('vis-boulons-et-bagues-15','42611-3J3-PT',1,1.8);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('vis-boulons-et-bagues-16','9580A-06095-06100-06030',0,4.5);
+INSERT INTO "rollback_0017_target_records" ("record_id","product_code","is_oem","new_price_cny") VALUES('vis-boulons-et-bagues-17','90304-XJA-PT',0,1);
+CREATE TABLE rollback_0017_primary_order_state(
+  record_id TEXT,
+  ordered_quantity REAL,
+  remark TEXT,
+  updated_at TEXT,
+  new_price_cny REAL
+);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('amortisseurs-13',500,'','2026-09-09T09:45:45.845Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('amortisseurs-15',0,'','2026-09-09T09:45:50.088Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('amortisseurs-6',500,'','2026-09-09T09:45:32.694Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('amortisseurs-7',0,'','2026-09-09T09:45:58.995Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('amortisseurs-8',380,'','2026-09-09T09:46:23.346Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('amortisseurs-9',0,'','2026-09-09T09:45:42.157Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('bobines-et-allumage-6',0,'','2026-09-08T12:17:54.937Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('bougies-6',60000,'','2026-09-08T11:38:18.100Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cables-et-durites-10',2000,'','2026-09-08T12:15:36.138Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cables-et-durites-19',2000,'','2026-09-08T12:14:49.943Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cables-et-durites-6',2000,'','2026-09-08T12:15:24.998Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cables-et-durites-9',1500,'','2026-09-09T08:01:50.549Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('carburateurs-15',180,'','2026-09-08T11:43:31.012Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('carburateurs-6',3000,'','2026-09-09T07:14:53.501Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('carburateurs-7',2700,'','2026-09-09T07:14:58.120Z',60);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('chaines-de-distribution-6',1000,'B质量','2026-09-08T12:02:55.434Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('chaines-de-distribution-7',1000,'B质量','2026-09-08T12:02:56.454Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('chaines-de-distribution-8',1000,'B质量','2026-09-08T12:02:58.107Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cles-et-serrures-10',500,'','2026-09-09T10:11:28.689Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cles-et-serrures-7',300,'','2026-09-08T12:29:21.526Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cles-et-serrures-8',500,'','2026-09-09T10:11:26.356Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cylindres-et-carters-10',600,'','2026-09-08T11:44:05.167Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cylindres-et-carters-12',0,'','2026-09-09T07:17:03.359Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cylindres-et-carters-13',600,'','2026-09-08T11:44:13.264Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cylindres-et-carters-18',240,'','2026-09-09T07:18:55.901Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cylindres-et-carters-7',1000,'','2026-09-09T07:16:44.328Z',55);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('demarreurs-6',2000,'','2026-09-08T12:11:18.873Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('eclairage-29',100,'','2026-09-08T11:54:30.404Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('embrayages-8',1000,'常卖','2026-09-09T09:01:54.829Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('embrayages-9',400,'','2026-09-09T09:02:27.559Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('filtres-a-air-10',1000,'','2026-09-08T11:46:57.355Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('filtres-a-air-12',1000,'','2026-09-08T11:47:01.709Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('filtres-a-air-6',20000,'','2026-09-09T07:22:12.178Z',3.3);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('filtres-a-air-8',3000,'','2026-09-08T11:50:42.711Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('filtres-a-huile-6',200000,'','2026-09-09T05:28:44.380Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('filtres-a-huile-7',100000,'','2026-09-09T05:28:55.632Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('fourches-avant-11',100,'','2026-09-09T09:03:28.734Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('fourches-avant-6',100,'','2026-09-09T09:05:06.458Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('fourches-avant-7',100,'','2026-09-09T09:07:52.323Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('fourches-avant-8',100,'','2026-09-09T09:03:22.907Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('fourches-avant-9',0,'','2026-09-09T09:05:13.482Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('galets-et-rouleaux-14',8000,'','2026-09-09T09:48:10.473Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('galets-et-rouleaux-8',15000,'','2026-09-09T09:48:22.647Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('guidons-6',400,'生产慢','2026-09-09T08:02:09.670Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('guidons-7',400,'生产慢','2026-09-09T08:02:12.507Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('jantes-10',0,'','2026-09-08T12:09:55.557Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('jantes-11',0,'','2026-09-08T12:10:01.874Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('jantes-12',0,'','2026-09-09T09:44:07.087Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('jantes-13',0,'','2026-09-08T12:08:38.859Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('jantes-18',100,'','2026-09-09T09:08:49.686Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('jantes-23',100,'','2026-09-09T09:08:53.659Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('jantes-25',0,'','2026-09-09T09:43:45.088Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('jantes-26',100,'','2026-09-09T09:08:58.737Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('jantes-29',0,'','2026-09-09T09:43:48.490Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('jantes-6',0,'','2026-09-09T09:44:10.580Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('joints-et-rondelles-10',3000,'','2026-09-09T10:04:04.244Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('joints-et-rondelles-15',2000,'','2026-09-09T10:00:50.857Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('joints-et-rondelles-23',2000,'','2026-09-09T10:01:10.388Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('joints-et-rondelles-24',2000,'','2026-09-09T10:03:01.241Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('joints-et-rondelles-6',10000,'','2026-09-08T12:26:43.499Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('moteurs-9',200,'','2026-09-09T07:12:56.734Z',680);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('pare-brise-et-deflecteurs-6',2000,'','2026-09-09T07:24:19.497Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('pare-brise-et-deflecteurs-7',1000,'','2026-09-09T07:25:16.548Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('pare-brise-et-deflecteurs-9',500,'','2026-09-09T07:25:10.492Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('pistons-10',500,'','2026-09-09T09:52:05.683Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('pistons-11',500,'','2026-09-09T09:52:07.093Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('pistons-6',2000,'','2026-09-09T09:52:00.658Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('pistons-7',1000,'','2026-09-09T09:51:56.845Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('plaquettes-de-frein-10',180000,'','2026-09-09T03:20:06.856Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('plaquettes-de-frein-11',60000,'','2026-09-09T03:19:50.066Z',3);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('plaquettes-de-frein-12',50000,'','2026-09-09T03:17:04.321Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('plaquettes-de-frein-13',200000,'OEM','2026-09-09T03:18:34.828Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('plaquettes-de-frein-15',100000,'A 45120-CBR-FC  B  45105-FA140-PTHJ','2026-09-09T03:17:01.430Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('plaquettes-de-frein-17',20000,'','2026-09-09T03:16:56.280Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('plaquettes-de-frein-31',50000,'','2026-09-09T03:16:41.351Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('plaquettes-de-frein-6',200000,'','2026-09-09T03:19:08.391Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('plaquettes-de-frein-7',5000,'','2026-09-10T10:34:31.539Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('plaquettes-de-frein-8',200000,'','2026-09-10T10:23:29.236Z',2.3);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('plaquettes-de-frein-9',130000,'','2026-09-09T03:20:10.969Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('pompes-a-huile-6',200,'','2026-09-08T12:22:40.411Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('pompes-a-huile-7',800,'','2026-09-08T12:22:45.305Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('pompes-a-huile-9',200,'','2026-09-08T12:22:42.190Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('roulements-a-billes-10',2000,'','2026-09-09T09:56:01.065Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('roulements-a-billes-14',0,'','2026-09-09T10:00:22.723Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('soupapes-et-valves-11',1200,'','2026-09-09T10:05:33.866Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('soupapes-et-valves-7',3000,'','2026-09-09T10:05:09.895Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('soupapes-et-valves-8',3000,'','2026-09-09T10:05:11.442Z',NULL);
+INSERT INTO "rollback_0017_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('vilebrequins-14',200,'','2026-09-10T11:06:11.595Z',NULL);
+CREATE TABLE rollback_0017_priority_order_state(
+  record_id TEXT,
+  ordered_quantity REAL,
+  remark TEXT,
+  updated_at TEXT
+);
+CREATE TABLE rollback_0018_reviewed_price_updates (
+  record_id TEXT PRIMARY KEY,
+  product_code TEXT NOT NULL,
+  reviewed_new_price_cny REAL NOT NULL,
+  source_row INTEGER NOT NULL
+);
+INSERT INTO "rollback_0018_reviewed_price_updates" ("record_id","product_code","reviewed_new_price_cny","source_row") VALUES('bobines-et-allumage-15','31120-F8-HCE-8',38,50);
+INSERT INTO "rollback_0018_reviewed_price_updates" ("record_id","product_code","reviewed_new_price_cny","source_row") VALUES('demarreurs-16','3121A-FID-ZF',27,54);
+INSERT INTO "rollback_0018_reviewed_price_updates" ("record_id","product_code","reviewed_new_price_cny","source_row") VALUES('jantes-6','42601-ASC-PT',63,63);
+INSERT INTO "rollback_0018_reviewed_price_updates" ("record_id","product_code","reviewed_new_price_cny","source_row") VALUES('cables-et-durites-19','45126-93-PT',8,73);
+INSERT INTO "rollback_0018_reviewed_price_updates" ("record_id","product_code","reviewed_new_price_cny","source_row") VALUES('moteurs-9','50110-GY6-FC-A',680,84);
+INSERT INTO "rollback_0018_reviewed_price_updates" ("record_id","product_code","reviewed_new_price_cny","source_row") VALUES('fourches-avant-6','51350-FX100-ZF',61,85);
+INSERT INTO "rollback_0018_reviewed_price_updates" ("record_id","product_code","reviewed_new_price_cny","source_row") VALUES('amortisseurs-6','52400-AR1-PT-BL',28,90);
+INSERT INTO "rollback_0018_reviewed_price_updates" ("record_id","product_code","reviewed_new_price_cny","source_row") VALUES('bougies-6','98056-10MM-HONDA',1.3,107);
+CREATE TABLE rollback_0018_oem_targets (
+  record_id TEXT PRIMARY KEY,
+  product_code TEXT NOT NULL,
+  source_row INTEGER NOT NULL
+);
+INSERT INTO "rollback_0018_oem_targets" ("record_id","product_code","source_row") VALUES('cylindres-et-carters-6','12100-A61-PTSY-A',12);
+INSERT INTO "rollback_0018_oem_targets" ("record_id","product_code","source_row") VALUES('pistons-6','13010-A6A-PTSY',19);
+INSERT INTO "rollback_0018_oem_targets" ("record_id","product_code","source_row") VALUES('chaines-de-distribution-8','14401-F6C-HJ',22);
+INSERT INTO "rollback_0018_oem_targets" ("record_id","product_code","source_row") VALUES('chaines-de-distribution-7','14401-KV7-HJ',23);
+INSERT INTO "rollback_0018_oem_targets" ("record_id","product_code","source_row") VALUES('chaines-de-distribution-6','14401-V02-HJ',24);
+INSERT INTO "rollback_0018_oem_targets" ("record_id","product_code","source_row") VALUES('filtres-a-air-6','17211-H6B-PTDC',40);
+INSERT INTO "rollback_0018_oem_targets" ("record_id","product_code","source_row") VALUES('embrayages-9','22300-F6A-XS-SYM',48);
+INSERT INTO "rollback_0018_oem_targets" ("record_id","product_code","source_row") VALUES('bobines-et-allumage-15','31120-F8-HCE-8',50);
+INSERT INTO "rollback_0018_oem_targets" ("record_id","product_code","source_row") VALUES('jantes-11','42611-3J3-PT',67);
+INSERT INTO "rollback_0018_oem_targets" ("record_id","product_code","source_row") VALUES('vis-boulons-et-bagues-15','42611-3J3-PT',68);
+CREATE TABLE rollback_0018_primary_order_state(
+  record_id TEXT,
+  ordered_quantity REAL,
+  remark TEXT,
+  updated_at TEXT,
+  new_price_cny REAL
+);
+INSERT INTO "rollback_0018_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('amortisseurs-6',500,'','2026-09-14T07:22:47.391Z',25);
+INSERT INTO "rollback_0018_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('bobines-et-allumage-15',0,'OEM ','2026-09-14T07:22:47.391Z',34);
+INSERT INTO "rollback_0018_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('bougies-6',60000,'','2026-09-14T07:22:47.391Z',1.9);
+INSERT INTO "rollback_0018_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cables-et-durites-19',2000,'','2026-09-14T07:22:47.391Z',10);
+INSERT INTO "rollback_0018_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('chaines-de-distribution-6',1000,'B质量','2026-09-14T07:22:47.391Z',10);
+INSERT INTO "rollback_0018_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('chaines-de-distribution-7',1000,'B质量','2026-09-14T07:22:47.391Z',10);
+INSERT INTO "rollback_0018_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('chaines-de-distribution-8',1000,'B质量','2026-09-14T07:22:47.391Z',10);
+INSERT INTO "rollback_0018_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('cylindres-et-carters-6',0,'OEM ','2026-09-14T07:22:47.391Z',53);
+INSERT INTO "rollback_0018_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('demarreurs-16',0,'','2026-09-14T07:22:47.391Z',25);
+INSERT INTO "rollback_0018_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('embrayages-9',400,'OEM ','2026-09-14T07:22:47.391Z',78);
+INSERT INTO "rollback_0018_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('filtres-a-air-6',20000,'','2026-09-14T07:22:47.391Z',7.5);
+INSERT INTO "rollback_0018_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('fourches-avant-6',100,'','2026-09-14T07:22:47.391Z',55);
+INSERT INTO "rollback_0018_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('jantes-11',0,'OEM ','2026-09-14T07:22:47.391Z',1.8);
+INSERT INTO "rollback_0018_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('jantes-6',0,'','2026-09-14T07:22:47.391Z',60);
+INSERT INTO "rollback_0018_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('moteurs-9',200,'','2026-09-14T07:22:47.391Z',655);
+INSERT INTO "rollback_0018_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('pistons-6',2000,'','2026-09-14T07:22:47.391Z',14);
+INSERT INTO "rollback_0018_primary_order_state" ("record_id","ordered_quantity","remark","updated_at","new_price_cny") VALUES('vis-boulons-et-bagues-15',0,'OEM ','2026-09-14T07:22:47.391Z',1.8);
+CREATE TABLE rollback_0018_priority_order_state(
+  record_id TEXT,
+  ordered_quantity REAL,
+  remark TEXT,
+  updated_at TEXT
+);
+INSERT INTO "rollback_0018_priority_order_state" ("record_id","ordered_quantity","remark","updated_at") VALUES('bobines-et-allumage-15',0,'OEM ','2026-09-14T07:22:47.391Z');
+INSERT INTO "rollback_0018_priority_order_state" ("record_id","ordered_quantity","remark","updated_at") VALUES('cylindres-et-carters-6',0,'OEM ','2026-09-14T07:22:47.391Z');
+INSERT INTO "rollback_0018_priority_order_state" ("record_id","ordered_quantity","remark","updated_at") VALUES('embrayages-9',0,'OEM ','2026-09-14T07:22:47.391Z');
+INSERT INTO "rollback_0018_priority_order_state" ("record_id","ordered_quantity","remark","updated_at") VALUES('jantes-11',0,'OEM ','2026-09-14T07:22:47.391Z');
+INSERT INTO "rollback_0018_priority_order_state" ("record_id","ordered_quantity","remark","updated_at") VALUES('vis-boulons-et-bagues-15',0,'OEM ','2026-09-14T07:22:47.391Z');
 DELETE FROM sqlite_sequence;
-INSERT INTO "sqlite_sequence" ("name","seq") VALUES('d1_migrations',13);
+INSERT INTO "sqlite_sequence" ("name","seq") VALUES('d1_migrations',18);
 CREATE INDEX idx_products_product_code
   ON products(product_code_normalized)
   WHERE product_code_normalized IS NOT NULL;

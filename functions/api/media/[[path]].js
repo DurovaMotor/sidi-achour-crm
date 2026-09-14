@@ -1,4 +1,5 @@
 import { contentTypeForMediaKey, decryptCatalogMedia } from "../../_lib/catalog-media.js";
+import { readAdamSession, unauthorizedResponse } from "../../_lib/adam-auth.js";
 
 const MAX_ENCRYPTED_PREVIEW_BYTES = 3 * 1024 * 1024;
 const SAFE_SEGMENT = /^[A-Za-z0-9._*-]+$/;
@@ -17,7 +18,12 @@ export async function onRequestGet(context) {
   let mediaKey;
   try {
     mediaKey = mediaKeyFromParams(context.params.path);
-    const staticPath = `/media/${mediaKey.split("/").map(encodeURIComponent).join("/")}.preview.bin`;
+    const isFrench = new URL(context.request.url).searchParams.get("variant") === "fr";
+    if (!isFrench && !await readAdamSession(context.request, context.env.ADAM_SESSION_SECRET)) {
+      return unauthorizedResponse();
+    }
+    const kind = isFrench ? "french" : "preview";
+    const staticPath = `/media/${mediaKey.split("/").map(encodeURIComponent).join("/")}.${kind}.bin`;
     const encryptedResponse = await fetch(new URL(staticPath, context.request.url), {
       headers: { Accept: "application/octet-stream" },
     });
@@ -28,7 +34,7 @@ export async function onRequestGet(context) {
     const encrypted = await encryptedResponse.arrayBuffer();
     if (encrypted.byteLength > MAX_ENCRYPTED_PREVIEW_BYTES) throw new Error("Encrypted preview exceeds the size limit");
 
-    const decrypted = await decryptCatalogMedia(encrypted, context.env.CATALOG_MEDIA_AES_KEY, mediaKey, "preview");
+    const decrypted = await decryptCatalogMedia(encrypted, context.env.CATALOG_MEDIA_AES_KEY, mediaKey, kind);
     return new Response(decrypted, {
       headers: {
         "Cache-Control": "public, max-age=3600",

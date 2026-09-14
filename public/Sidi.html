@@ -4,14 +4,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#000000">
-    <meta name="app-version" content="v2026.09.14.043954.057-81BAF9B9">
+    <meta name="app-version" content="v2026.09.14.102609.058-D94EF8A8">
     <meta name="description" content="Sidi Achour 摩托车配件订单与进口额度管理页面。">
     <title>Sidi Achour | 产品目录</title>
     <link rel="icon" href="/media/brand/sidi-achour-logo.f8ca917c1cb1c72a.png" type="image/png">
     <link rel="preload" href="/media/brand/sidi-achour-logo.f8ca917c1cb1c72a.png" as="image" fetchpriority="high">
-    <link rel="stylesheet" href="/build/styles.87f8b95ce94d4074.css">
+    <link rel="stylesheet" href="/build/styles.5275430d025841f9.css">
     <script src="/vendor/exceljs.7e49da68588e250d.min.js" defer></script>
-    <script src="/build/app.e85bf88e46fa4ab3.js" defer></script>
+    <script src="/build/app.973371de59f1407c.js" defer></script>
   </head>
   <body aria-busy="true">
     <div class="splash-screen" id="splashScreen" role="status" aria-live="polite" aria-label="Sidi Achour 正在加载">
@@ -48,9 +48,29 @@
               <button type="button" role="menuitem" data-export-language="fr" data-export-redacted="true">法语导出</button>
             </div>
           </div>
+          <button class="access-control-button" id="accessControlButton" type="button" hidden>访问规则</button>
+          <button class="logout-button" id="logoutButton" type="button">退出</button>
         </div>
       </div>
     </header>
+
+    <aside class="access-control-panel" id="accessControlPanel" role="dialog" aria-labelledby="accessControlTitle" hidden>
+      <div class="access-control-head">
+        <div>
+          <span>客户页面</span>
+          <h2 id="accessControlTitle">访问屏蔽规则</h2>
+        </div>
+        <button id="hideAccessControlButton" type="button">收起并隐藏入口</button>
+      </div>
+      <form id="accessControlForm">
+        <label><input id="accessEnabled" type="checkbox">启用整套屏蔽规则</label>
+        <label><input id="blockChineseLanguage" type="checkbox">浏览器语言为中文时屏蔽</label>
+        <label><input id="blockChinaTimezone" type="checkbox">设备时区为中国时屏蔽</label>
+        <label><input id="blockChinaIp" type="checkbox">访问 IP 位于中国时屏蔽</label>
+        <button class="access-control-save" id="saveAccessControlButton" type="submit">保存规则</button>
+        <p id="accessControlStatus" role="status" aria-live="polite"></p>
+      </form>
+    </aside>
 
     <main id="workspace">
       <section class="workspace-panel" id="catalogPanel" role="tabpanel" aria-labelledby="catalogTab">
@@ -145,6 +165,6 @@
         </div>
       </section>
     </main>
-    <footer class="release-footer"><span class="release-version" id="releaseVersion">v2026.09.14.043954.057-81BAF9B9</span></footer>
+    <footer class="release-footer"><span class="release-version" id="releaseVersion">v2026.09.14.102609.058-D94EF8A8</span></footer>
   </body>
 </html>
