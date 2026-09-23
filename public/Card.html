@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="fr" data-catalog-layout="cards">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#000000">
+    <meta name="app-version" content="v2026.09.17.093454.679-E98E9C3D">
+    <meta name="description" content="Sidi Achour 摩托车配件订单与进口额度管理页面。">
+    <title>Sidi Achour | 产品目录</title>
+    <link rel="icon" href="/media/brand/sidi-achour-logo.f8ca917c1cb1c72a.png" type="image/png">
+    <link rel="preload" href="/media/brand/sidi-achour-logo.f8ca917c1cb1c72a.png" as="image" fetchpriority="high">
+    <link rel="stylesheet" href="/build/styles.9f2e901e902543bb.css">
+    <script src="/vendor/exceljs.7e49da68588e250d.min.js" defer></script>
+    <script src="/build/app.a1c6fa64abd546fa.js" defer></script>
+  </head>
+  <body aria-busy="true">
+    <div class="splash-screen" id="splashScreen" role="status" aria-live="polite" aria-label="Sidi Achour 正在加载">
+      <div class="splash-logo-frame">
+        <img src="/media/brand/sidi-achour-logo.f8ca917c1cb1c72a.png" alt="Sidi Achour" width="1254" height="1254">
+      </div>
+    </div>
+
+    <a class="skip-link" href="#workspace" data-i18n="skip">跳到内容</a>
+
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a class="brand-flow" href="#workspace" data-i18n-aria-label="brandFlow" aria-label="Sidi Achour">
+          <span class="logo-box sidi-logo"><img src="/media/brand/sidi-achour-logo.f8ca917c1cb1c72a.png" alt="Sidi Achour" width="1254" height="1254"></span>
+        </a>
+
+        <nav class="primary-tabs" role="tablist" data-i18n-aria-label="businessPages" aria-label="业务页面">
+          <button class="active" id="catalogTab" type="button" role="tab" aria-selected="true" aria-controls="catalogPanel" data-tab="catalog" data-i18n="catalogNav">产品目录</button>
+          <button id="licenceTab" type="button" role="tab" aria-selected="false" aria-controls="licencePanel" data-tab="licence" data-i18n="licenceNav">进口申报</button>
+        </nav>
+
+        <div class="header-actions" id="adminActions" aria-label="数据导出" hidden>
+          <div class="export-control">
+            <button class="export-primary" id="exportOrdersButton" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="exportOrdersMenu">导出</button>
+            <div class="export-language-menu" id="exportOrdersMenu" role="menu" hidden>
+              <button type="button" role="menuitem" data-export-language="zh" data-export-redacted="false">中文导出</button>
+              <button type="button" role="menuitem" data-export-language="fr" data-export-redacted="false">法语导出</button>
+            </div>
+          </div>
+          <div class="export-control">
+            <button class="export-redacted" id="exportRedactedButton" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="exportRedactedMenu">脱敏导出</button>
+            <div class="export-language-menu" id="exportRedactedMenu" role="menu" hidden>
+              <button type="button" role="menuitem" data-export-language="zh" data-export-redacted="true">中文导出</button>
+              <button type="button" role="menuitem" data-export-language="fr" data-export-redacted="true">法语导出</button>
+            </div>
+          </div>
+          <button class="access-control-button" id="accessControlButton" type="button" hidden>客户设置</button>
+          <button class="logout-button" id="logoutButton" type="button">退出</button>
+        </div>
+      </div>
+    </header>
+
+    <div class="shell read-only-notice" id="readOnlyNotice" role="status" data-i18n="readOnlyNotice" hidden>只读模式</div>
+
+    <aside class="access-control-panel" id="accessControlPanel" role="dialog" aria-labelledby="accessControlTitle" hidden>
+      <div class="access-control-head">
+        <div>
+          <span>客户页面</span>
+          <h2 id="accessControlTitle">客户页面设置</h2>
+        </div>
+        <button id="hideAccessControlButton" type="button">收起并隐藏入口</button>
+      </div>
+      <form id="accessControlForm">
+        <label><input id="accessEnabled" type="checkbox">启用整套屏蔽规则</label>
+        <label><input id="blockChineseLanguage" type="checkbox">浏览器语言为中文时屏蔽</label>
+        <label><input id="blockChinaTimezone" type="checkbox">设备时区为中国时屏蔽</label>
+        <label><input id="blockChinaIp" type="checkbox">访问 IP 位于中国时屏蔽</label>
+        <label class="select-setting"><span>法语端规格 / 车型</span><select id="frenchSpecificationMode"><option value="one">仅显示一个（默认）</option><option value="all">显示全部</option></select></label>
+        <label class="blur-setting"><span>Blur</span><span><input class="blur-input" id="productImageBlurPx" type="number" min="0" max="20" step="0.1" value="2.0"> px</span></label>
+        <button class="access-control-save" id="saveAccessControlButton" type="submit">保存规则</button>
+        <p id="accessControlStatus" role="status" aria-live="polite"></p>
+      </form>
+    </aside>
+
+    <main id="workspace">
+      <section class="workspace-panel" id="catalogPanel" role="tabpanel" aria-labelledby="catalogTab">
+        <div class="shell catalogue-layout">
+          <aside class="category-rail" data-i18n-aria-label="categories" aria-label="产品分类">
+            <div class="rail-head"><strong data-i18n="categories">产品分类</strong><span id="categoryCount">35</span></div>
+            <div class="category-list" id="categoryList"></div>
+          </aside>
+
+          <div class="catalogue-content">
+            <div class="fx-notice"><span aria-hidden="true"></span><p id="fxNotice">金额按固定汇率 1 USD = 6.67 CNY 换算</p></div>
+
+            <div class="filter-bar">
+              <label class="search-field">
+                <span class="sr-only" data-i18n="searchLabel">搜索产品</span>
+                <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z"/></svg>
+                <input id="catalogSearch" type="search" placeholder="搜索产品编码、名称或规格" autocomplete="off">
+              </label>
+              <label class="select-field">
+                <span class="sr-only" data-i18n="sortLabel">排序</span>
+                <select id="sortProducts">
+                  <option value="source" data-i18n="sortSource">原表顺序</option>
+                  <option value="price-asc" data-i18n="sortPriceAsc">价格从低到高</option>
+                  <option value="price-desc" data-i18n="sortPriceDesc">价格从高到低</option>
+                  <option value="code" data-i18n="sortCode">产品编码 A–Z</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="results-head">
+              <h1 id="activeCategoryTitle">全部产品</h1>
+              <p id="resultsSummary" aria-live="polite"></p>
+            </div>
+
+            <div class="product-table-wrap" tabindex="0" data-i18n-aria-label="productTableLabel" aria-label="产品列表">
+              <table class="product-table">
+                <thead>
+                  <tr>
+                    <th class="image-column" data-i18n="image">图片</th>
+                    <th class="code-column" data-i18n="productCode">产品编码</th>
+                    <th class="name-column" data-i18n="productName">产品名称</th>
+                    <th class="spec-column" id="specColumnHeader" data-i18n="specModel">规格 / 适配车型</th>
+                    <th class="price-column" data-i18n="price">单价</th>
+                    <th class="usd-price-column" data-i18n="priceUsd">美元价格</th>
+                    <th class="dzd-price-column" data-i18n="priceDzd">Dinars</th>
+                    <th class="new-price-column" data-i18n="newPrice">新价格</th>
+                    <th class="quantity-column" data-i18n="quantity">数量</th>
+                    <th class="remark-column" data-i18n="remark">备注</th>
+                  </tr>
+                </thead>
+                <tbody id="productTableBody"></tbody>
+              </table>
+            </div>
+
+            <nav class="pagination" id="pagination" data-i18n-aria-label="paginationLabel" aria-label="分页">
+              <p id="pageSummary"></p>
+              <div class="pagination-controls">
+                <button id="previousPage" type="button" data-i18n="previous">上一页</button>
+                <div class="page-buttons" id="pageButtons"></div>
+                <span class="mobile-page" id="mobilePage"></span>
+                <button id="nextPage" type="button" data-i18n="next">下一页</button>
+              </div>
+              <form class="page-jump" id="pageJumpForm">
+                <label for="pageJump" data-i18n="goToPage">跳至页</label>
+                <input id="pageJump" type="number" min="1" inputmode="numeric">
+                <button type="submit" data-i18n="go">跳转</button>
+              </form>
+            </nav>
+          </div>
+        </div>
+      </section>
+
+      <section class="workspace-panel" id="licencePanel" role="tabpanel" aria-labelledby="licenceTab" hidden>
+        <div class="shell licence-content">
+          <div class="licence-toolbar">
+            <h1 data-i18n="licenceTitle">进口申报</h1>
+            <label class="search-field">
+              <span class="sr-only" data-i18n="licenceSearchLabel">搜索进口申报</span>
+              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z"/></svg>
+              <input id="declarationSearch" type="search" placeholder="搜索 HS 编码或产品名称" autocomplete="off">
+            </label>
+            <p id="declarationSummary"></p>
+          </div>
+          <div class="declaration-table-wrap" tabindex="0">
+            <table class="declaration-table">
+              <thead><tr>
+                <th data-i18n="number">序号</th><th data-i18n="hsCode">HS 编码</th><th data-i18n="designation">商品名称</th>
+                <th data-i18n="brand">品牌 / 关键词</th><th data-i18n="origin">原产国</th><th data-i18n="supplierCountry">供应国</th>
+                <th data-i18n="quotaQuantity">进口额度数量</th><th data-i18n="unitPrice">申报单价</th><th data-i18n="value">申报价值</th><th data-i18n="offers">报价</th>
+              </tr></thead>
+              <tbody id="declarationBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="release-footer"><span class="release-version" id="releaseVersion">v2026.09.17.093454.679-E98E9C3D</span></footer>
+  </body>
+</html>

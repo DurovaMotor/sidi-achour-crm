@@ -9,9 +9,16 @@ import {
   timezoneProbeResponse,
 } from "./_lib/access-control.js";
 
-const ADAM_PATHS = new Set(["/adam", "/adam/", "/adam.html"]);
-const CUSTOMER_PATHS = new Set(["/", "/index.html", "/sidi", "/sidi/", "/sidi.html"]);
-const BYPASS_PATHS = new Set(["/key", "/key/", "/key.html", "/sidi/key", "/sidi/key/", "/sidi/key.html"]);
+const ADAM_PATHS = new Set(["/adam", "/adam/", "/adam.html", "/adam/read", "/adam/read/", "/adam/read.html"]);
+const CUSTOMER_PATHS = new Set([
+  "/", "/index.html", "/read", "/read/", "/read.html",
+  "/sidi", "/sidi/", "/sidi.html", "/sidi/read", "/sidi/read/", "/sidi/read.html",
+  "/card", "/card/", "/card.html", "/card/read", "/card/read/", "/card/read.html",
+]);
+const BYPASS_PATHS = new Set([
+  "/key", "/key/", "/key.html", "/key/read", "/key/read/", "/key/read.html",
+  "/sidi/key", "/sidi/key/", "/sidi/key.html", "/sidi/key/read", "/sidi/key/read/", "/sidi/key/read.html",
+]);
 
 export async function onRequest(context) {
   const url = new URL(context.request.url);
@@ -29,19 +36,20 @@ export async function onRequest(context) {
   if (ADAM_PATHS.has(path)) {
     const session = await readAdamSession(context.request, context.env.ADAM_SESSION_SECRET);
     if (!session) {
+      const nextPath = path.startsWith("/adam/read") ? "/Adam/Read" : "/Adam";
       return new Response(null, {
         status: 302,
         headers: {
-          Location: "/login?next=%2FAdam",
+          Location: `/login?next=${encodeURIComponent(nextPath)}`,
           "Cache-Control": "no-store",
         },
       });
     }
 
-    if (path === "/adam.html") {
+    if (path === "/adam.html" || path === "/adam/read.html") {
       return new Response(null, {
         status: 302,
-        headers: { Location: "/Adam", "Cache-Control": "no-store" },
+        headers: { Location: path === "/adam/read.html" ? "/Adam/Read" : "/Adam", "Cache-Control": "no-store" },
       });
     }
 

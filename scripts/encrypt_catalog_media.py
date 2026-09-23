@@ -7,12 +7,13 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 from cryptography.hazmat.primitives.ciphers.aead import AESGCM
-from PIL import Image, ImageDraw, ImageFont, ImageOps
+from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageOps
 
 
 MAGIC = b"SIDIIMG1"
-PREVIEW_LONG_EDGE = 640
-FRENCH_PREVIEW_LONG_EDGE = 96
+PREVIEW_SIZE = 128
+PREVIEW_QUALITY = 20
+PREVIEW_BLUR_RADIUS = 1.2
 SUPPORTED_EXTENSIONS = {".webp", ".png", ".jpg", ".jpeg"}
 WATERMARK_TEXT = "SIDI ACHOUR  HIGHTAC"
 
@@ -75,20 +76,20 @@ def create_watermark_tile(font, long_edge: int) -> Image.Image:
     return tile.rotate(28, expand=True, resample=Image.Resampling.BICUBIC)
 
 
-def watermark_preview(source_path: Path, long_edge: int, quality: int, allow_upscale: bool) -> bytes:
+def watermark_preview(source_path: Path) -> bytes:
     with Image.open(source_path) as opened:
         image = ImageOps.exif_transpose(opened).convert("RGBA")
-        scale = long_edge / max(image.width, image.height)
-        if not allow_upscale:
-            scale = min(1, scale)
+        scale = min(1, PREVIEW_SIZE / max(image.width, image.height))
         target_size = (max(1, round(image.width * scale)), max(1, round(image.height * scale)))
         image = image.resize(target_size, Image.Resampling.LANCZOS)
+    canvas = Image.new("RGBA", (PREVIEW_SIZE, PREVIEW_SIZE), (255, 255, 255, 0))
+    canvas.alpha_composite(image, ((PREVIEW_SIZE - image.width) // 2, (PREVIEW_SIZE - image.height) // 2))
+    image = canvas.filter(ImageFilter.GaussianBlur(radius=PREVIEW_BLUR_RADIUS))
 
     overlay = Image.new("RGBA", image.size, (0, 0, 0, 0))
-    minimum_font = 18 if long_edge >= 320 else 7
-    tile = create_watermark_tile(find_font(max(minimum_font, round(long_edge * 0.035))), long_edge)
-    step_x = max(round(long_edge * 0.28), tile.width - max(8, round(long_edge * 0.044)))
-    step_y = max(round(long_edge * 0.15), tile.height - max(6, round(long_edge * 0.019)))
+    tile = create_watermark_tile(find_font(7), PREVIEW_SIZE)
+    step_x = max(round(PREVIEW_SIZE * 0.28), tile.width - max(8, round(PREVIEW_SIZE * 0.044)))
+    step_y = max(round(PREVIEW_SIZE * 0.15), tile.height - max(6, round(PREVIEW_SIZE * 0.019)))
     for row, y in enumerate(range(-tile.height, image.height + tile.height, step_y)):
         offset = -step_x // 2 if row % 2 else 0
         for x in range(-tile.width + offset, image.width + tile.width, step_x):
@@ -98,13 +99,13 @@ def watermark_preview(source_path: Path, long_edge: int, quality: int, allow_ups
     output = io.BytesIO()
     extension = source_path.suffix.lower()
     if extension == ".webp":
-        preview.save(output, format="WEBP", quality=quality, method=6)
+        preview.save(output, format="WEBP", quality=PREVIEW_QUALITY, method=6)
     elif extension == ".png":
         preview.save(output, format="PNG", optimize=True)
     else:
         background = Image.new("RGB", preview.size, "white")
         background.paste(preview, mask=preview.getchannel("A"))
-        background.save(output, format="JPEG", quality=quality, optimize=True, progressive=True)
+        background.save(output, format="JPEG", quality=PREVIEW_QUALITY, optimize=True, progressive=True)
     return output.getvalue()
 
 
@@ -149,8 +150,8 @@ def process_source(source: Path, key: bytes) -> dict:
     relative = source.relative_to(PRIVATE_CATALOG)
     media_key = (Path("catalog") / relative).as_posix()
     original = source.read_bytes()
-    preview = watermark_preview(source, PREVIEW_LONG_EDGE, 82, True)
-    french_preview = watermark_preview(source, FRENCH_PREVIEW_LONG_EDGE, 68, False)
+    preview = watermark_preview(source)
+    french_preview = preview
 
     original_target = STAGING_CATALOG / Path(f"{relative.as_posix()}.original.bin")
     preview_target = STAGING_CATALOG / Path(f"{relative.as_posix()}.preview.bin")
@@ -222,17 +223,18 @@ def main() -> None:
         "encryptedPreviews": len(sources),
         "encryptedFrenchPreviews": len(sources),
         "plaintextCatalogFiles": 0,
-        "previewLongEdge": PREVIEW_LONG_EDGE,
-        "frenchPreviewLongEdge": FRENCH_PREVIEW_LONG_EDGE,
+        "previewSize": [PREVIEW_SIZE, PREVIEW_SIZE],
+        "previewQuality": PREVIEW_QUALITY,
+        "previewBlurRadius": PREVIEW_BLUR_RADIUS,
         "originalBytes": sum(item["originalBytes"] for item in results),
         "previewBytes": sum(item["previewBytes"] for item in results),
         "frenchPreviewBytes": sum(item["frenchBytes"] for item in results),
         "previewDimensionsValid": all(
-            max(item["previewWidth"], item["previewHeight"]) == PREVIEW_LONG_EDGE
+            (item["previewWidth"], item["previewHeight"]) == (PREVIEW_SIZE, PREVIEW_SIZE)
             for item in results
         ),
         "frenchPreviewDimensionsValid": all(
-            max(item["frenchWidth"], item["frenchHeight"]) <= FRENCH_PREVIEW_LONG_EDGE
+            (item["frenchWidth"], item["frenchHeight"]) == (PREVIEW_SIZE, PREVIEW_SIZE)
             for item in results
         ),
     }, ensure_ascii=False))

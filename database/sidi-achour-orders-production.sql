@@ -2439,6 +2439,7 @@ INSERT INTO "d1_migrations" ("id","name","applied_at") VALUES(15,'0015_adam_pbkd
 INSERT INTO "d1_migrations" ("id","name","applied_at") VALUES(16,'0016_customer_access_control.sql','2026-09-14 06:27:19');
 INSERT INTO "d1_migrations" ("id","name","applied_at") VALUES(17,'0017_mustafa_oem_and_latest_prices.sql','2026-09-14 07:22:47');
 INSERT INTO "d1_migrations" ("id","name","applied_at") VALUES(18,'0018_mustafa_reviewed_prices_and_oem.sql','2026-09-14 08:40:54');
+INSERT INTO "d1_migrations" ("id","name","applied_at") VALUES(19,'0019_product_image_blur_setting.sql','2026-09-14 11:28:38');
 CREATE TABLE product_weight_provenance (
   record_id TEXT PRIMARY KEY REFERENCES products(record_id) ON DELETE CASCADE,
   match_method TEXT NOT NULL CHECK (match_method IN ('exact_code', 'name_similarity')),
@@ -3835,8 +3836,8 @@ CREATE TABLE access_control_settings (
   block_china_timezone INTEGER NOT NULL CHECK (block_china_timezone IN (0, 1)),
   block_china_ip INTEGER NOT NULL CHECK (block_china_ip IN (0, 1)),
   updated_at TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%fZ', 'now'))
-);
-INSERT INTO "access_control_settings" ("id","enabled","block_chinese_language","block_china_timezone","block_china_ip","updated_at") VALUES(1,0,1,0,0,'2026-09-14T06:40:41.069Z');
+, product_image_blur_px REAL NOT NULL DEFAULT 2.0);
+INSERT INTO "access_control_settings" ("id","enabled","block_chinese_language","block_china_timezone","block_china_ip","updated_at","product_image_blur_px") VALUES(1,0,1,0,0,'2026-09-14T11:31:29.481Z',2);
 CREATE TABLE rollback_0017_oem_codes (
   product_code TEXT PRIMARY KEY
 );
@@ -4236,7 +4237,7 @@ INSERT INTO "rollback_0018_priority_order_state" ("record_id","ordered_quantity"
 INSERT INTO "rollback_0018_priority_order_state" ("record_id","ordered_quantity","remark","updated_at") VALUES('jantes-11',0,'OEM ','2026-09-14T07:22:47.391Z');
 INSERT INTO "rollback_0018_priority_order_state" ("record_id","ordered_quantity","remark","updated_at") VALUES('vis-boulons-et-bagues-15',0,'OEM ','2026-09-14T07:22:47.391Z');
 DELETE FROM sqlite_sequence;
-INSERT INTO "sqlite_sequence" ("name","seq") VALUES('d1_migrations',18);
+INSERT INTO "sqlite_sequence" ("name","seq") VALUES('d1_migrations',19);
 CREATE INDEX idx_products_product_code
   ON products(product_code_normalized)
   WHERE product_code_normalized IS NOT NULL;

@@ -10,7 +10,7 @@ export async function onRequestGet(context) {
   const titleColumn = locale === "fr" ? "c.title_fr" : "c.title_zh";
   const unitColumn = locale === "fr" ? "c.quantity_display_unit_fr" : "c.quantity_display_unit_zh";
 
-  const [categoriesResult, settingsResult] = await context.env.DB.batch([
+  const [categoriesResult, settingsResult, accessSettingsResult] = await context.env.DB.batch([
     context.env.DB.prepare(`
       SELECT
         c.id,
@@ -36,7 +36,12 @@ export async function onRequestGet(context) {
     context.env.DB.prepare(`
       SELECT key, value
       FROM app_settings
-      WHERE key IN ('fx_notice_zh', 'fx_notice_fr', 'catalog_page_size')
+      WHERE key IN ('usd_cny_rate', 'fx_notice_zh', 'fx_notice_fr', 'catalog_page_size')
+    `),
+    context.env.DB.prepare(`
+      SELECT product_image_blur_px
+      FROM access_control_settings
+      WHERE id = 1
     `),
   ]);
 
@@ -63,5 +68,7 @@ export async function onRequestGet(context) {
     data,
     pageSize: Number(settings.catalog_page_size),
     fxNotice: settings[locale === "fr" ? "fx_notice_fr" : "fx_notice_zh"],
+    usdCnyRate: Number(settings.usd_cny_rate),
+    productImageBlurPx: Number(accessSettingsResult.results[0].product_image_blur_px),
   }, { headers: { "Cache-Control": "no-store" } });
 }

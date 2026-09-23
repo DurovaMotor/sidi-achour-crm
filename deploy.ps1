@@ -29,12 +29,34 @@ $html = [regex]::Replace($html, '(<span class="release-version" id="releaseVersi
 $html = [regex]::Replace($html, '(<link rel="stylesheet" href=")[^"]*styles(?:\.[0-9a-f]{16})?\.css(?:\?v=[^"]*)?(">)', { param($match) $match.Groups[1].Value + $styleUrl + $match.Groups[2].Value })
 $html = [regex]::Replace($html, '(<script src=")[^"]*app(?:\.[0-9a-f]{16})?\.js(?:\?v=[^"]*)?(" defer></script>)', { param($match) $match.Groups[1].Value + $appUrl + $match.Groups[2].Value })
 [IO.File]::WriteAllText($indexPath, $html, $utf8)
-[IO.File]::WriteAllText((Join-Path $PSScriptRoot 'public\Adam.html'), $html, $utf8)
+$adamHtml = $html.Replace('<html lang="fr">', '<html lang="fr" data-allow-zoom="true">').Replace(
+  'width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no',
+  'width=device-width, initial-scale=1'
+)
+[IO.File]::WriteAllText((Join-Path $PSScriptRoot 'public\Adam.html'), $adamHtml, $utf8)
 [IO.File]::WriteAllText((Join-Path $PSScriptRoot 'public\Sidi.html'), $html, $utf8)
 [IO.File]::WriteAllText((Join-Path $PSScriptRoot 'public\Key.html'), $html, $utf8)
+$cardHtml = $html.Replace('<html lang="fr">', '<html lang="fr" data-catalog-layout="cards">')
+[IO.File]::WriteAllText((Join-Path $PSScriptRoot 'public\Card.html'), $cardHtml, $utf8)
 $sidiBypassDirectory = Join-Path $PSScriptRoot 'public\Sidi'
 New-Item -ItemType Directory -Path $sidiBypassDirectory -Force | Out-Null
 [IO.File]::WriteAllText((Join-Path $sidiBypassDirectory 'Key.html'), $html, $utf8)
+
+$readOnlyHtml = $html.Replace('<html lang="fr">', '<html lang="fr" data-read-only="true">')
+$readOnlyAdamHtml = $adamHtml.Replace('data-allow-zoom="true"', 'data-allow-zoom="true" data-read-only="true"')
+$readOnlyCardHtml = $cardHtml.Replace('data-catalog-layout="cards"', 'data-catalog-layout="cards" data-read-only="true"')
+[IO.File]::WriteAllText((Join-Path $PSScriptRoot 'public\Read.html'), $readOnlyHtml, $utf8)
+foreach ($readOnlyPage in @(
+  @{ Path = 'public\Key\Read.html'; Content = $readOnlyHtml },
+  @{ Path = 'public\Sidi\Read.html'; Content = $readOnlyHtml },
+  @{ Path = 'public\Sidi\Key\Read.html'; Content = $readOnlyHtml },
+  @{ Path = 'public\Adam\Read.html'; Content = $readOnlyAdamHtml },
+  @{ Path = 'public\Card\Read.html'; Content = $readOnlyCardHtml }
+)) {
+  $readOnlyPath = Join-Path $PSScriptRoot $readOnlyPage.Path
+  New-Item -ItemType Directory -Path (Split-Path -Parent $readOnlyPath) -Force | Out-Null
+  [IO.File]::WriteAllText($readOnlyPath, $readOnlyPage.Content, $utf8)
+}
 
 $manifest = [ordered]@{
   schemaVersion = 1

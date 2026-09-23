@@ -5,9 +5,9 @@
     "id": "36a123f5-7509-41d8-a690-13be0ec02524",
     "binding": "DB"
   },
-  "exportedAt": "2026-09-14T08:42:53Z",
+  "exportedAt": "2026-09-14T11:32:33Z",
   "file": "sidi-achour-orders-production.sql",
-  "bytes": 1710281,
+  "bytes": 1710483,
   "counts": {
     "tables": 45,
     "categories": 35,
@@ -20,5 +20,5 @@
     "adminUsers": 1,
     "accessRuleRows": 1
   },
-  "latestMigration": "0018_mustafa_reviewed_prices_and_oem.sql"
+  "latestMigration": "0019_product_image_blur_setting.sql"
 }

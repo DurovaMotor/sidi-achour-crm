@@ -1,0 +1,10 @@
+{
+  "version": "v2026.09.16.091747.147-0DABE099",
+  "commitHash": "0dabe0991e1b49d9bba9d14932a35a0859577bb6",
+  "commitMessage": "Release v2026.09.16.091747.147-0DABE099",
+  "deploymentId": "969d1cc5-6b0e-4693-aa9e-ed6d94bf60ee",
+  "url": "https://969d1cc5.sidi-achour-crm.pages.dev",
+  "environment": "production",
+  "productionBranch": "main",
+  "releasedAt": "2026-09-16T09:17:47.1472128+00:00"
+}

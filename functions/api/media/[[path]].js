@@ -22,7 +22,7 @@ export async function onRequestGet(context) {
     if (!isFrench && !await readAdamSession(context.request, context.env.ADAM_SESSION_SECRET)) {
       return unauthorizedResponse();
     }
-    const kind = isFrench ? "french" : "preview";
+    const kind = isFrench ? "french" : "original";
     const staticPath = `/media/${mediaKey.split("/").map(encodeURIComponent).join("/")}.${kind}.bin`;
     const encryptedResponse = await fetch(new URL(staticPath, context.request.url), {
       headers: { Accept: "application/octet-stream" },

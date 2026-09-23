@@ -1,10 +1,10 @@
 const copy = {
   zh: {
-    skip: "跳到内容", brandFlow: "Sidi Achour", businessPages: "业务页面", languageLabel: "语言",
+    skip: "跳到内容", brandFlow: "Sidi Achour", businessPages: "业务页面", languageLabel: "语言", readOnlyNotice: "只读模式：可查看、搜索、筛选和导出，但不能修改价格、数量、备注或客户设置。",
     catalogNav: "产品目录", licenceNav: "进口申报", categories: "产品分类", allProducts: "全部产品",
     searchLabel: "搜索产品", searchPlaceholder: "搜索产品编码、名称或规格", sortLabel: "排序",
     sortSource: "原表顺序", sortPriceAsc: "价格从低到高", sortPriceDesc: "价格从高到低", sortCode: "产品编码 A–Z",
-    image: "图片", productCode: "产品编码", productName: "产品名称", specModel: "规格 / 适配车型", remarksHeader: "Remarks", price: "单价",
+    image: "图片", productCode: "产品编码", productName: "产品名称", specModel: "规格 / 适配车型", remarksHeader: "Remarks", price: "单价", priceUsd: "美元价格", priceDzd: "第纳尔价格",
     newPrice: "新价格", quantity: "数量", remark: "备注", productTableLabel: "产品列表", noResults: "没有匹配的产品", quote: "询价",
     quantityScore: "数量", amountScore: "金额", previous: "上一页", next: "下一页", goToPage: "跳至页", go: "跳转",
     paginationLabel: "分页", licenceTitle: "进口申报", licenceSearchLabel: "搜索进口申报",
@@ -13,11 +13,11 @@ const copy = {
     unitPrice: "申报单价", value: "申报价值", offers: "报价", viewOffers: "查看",
   },
   fr: {
-    skip: "Aller au contenu", brandFlow: "Sidi Achour", businessPages: "Pages métier", languageLabel: "Langue",
+    skip: "Aller au contenu", brandFlow: "Sidi Achour", businessPages: "Pages métier", languageLabel: "Langue", readOnlyNotice: "Mode lecture seule : consultation, recherche et filtres disponibles. Les prix, quantités et remarques ne peuvent pas être modifiés.",
     catalogNav: "Catalogue", licenceNav: "Déclaration", categories: "Catégories", allProducts: "Tous les produits",
     searchLabel: "Rechercher un produit", searchPlaceholder: "Rechercher un nom ou une spécification", sortLabel: "Trier",
     sortSource: "Ordre du classeur", sortPriceAsc: "Prix croissant", sortPriceDesc: "Prix décroissant", sortCode: "Code produit A–Z",
-    image: "Image", productCode: "Code produit", productName: "Désignation", specModel: "Spécification / modèles", remarksHeader: "Remarks", price: "Prix",
+    image: "Image", productCode: "Code produit", productName: "Désignation", specModel: "Spécification / modèles", remarksHeader: "Remarks", price: "Prix CNY", priceUsd: "Prix USD", priceDzd: "Dinars",
     newPrice: "Nouveau prix", quantity: "Quantité", remark: "Remarque", productTableLabel: "Liste des produits", noResults: "Aucun produit correspondant", quote: "Sur demande",
     quantityScore: "Qté", amountScore: "Montant", previous: "Précédent", next: "Suivant", goToPage: "Aller à la page", go: "Aller",
     paginationLabel: "Pagination", licenceTitle: "Déclaration d'importation", licenceSearchLabel: "Rechercher dans la déclaration",
@@ -59,14 +59,20 @@ const exportCopy = {
 };
 
 const pagePath = window.location.pathname.replace(/\/+$/u, "") || "/";
-const effectivePagePath = pagePath === "/Sidi/Key" || pagePath === "/Sidi/Key.html"
+const isReadOnlyPath = /\/Read(?:\.html)?$/u.test(pagePath);
+const basePagePath = isReadOnlyPath ? pagePath.replace(/\/Read(?:\.html)?$/u, "") || "/" : pagePath;
+const effectivePagePath = basePagePath === "/Sidi/Key" || basePagePath === "/Sidi/Key.html"
   ? "/Sidi"
-  : pagePath === "/Key" || pagePath === "/Key.html"
+  : basePagePath === "/Key" || basePagePath === "/Key.html"
     ? "/"
-    : pagePath;
+    : basePagePath;
+
+const CNY_DZD_RATE = 36;
 
 const state = {
   isAdam: effectivePagePath === "/Adam",
+  isCard: effectivePagePath === "/Card" || effectivePagePath === "/Card.html",
+  isReadOnly: isReadOnlyPath,
   language: effectivePagePath === "/Adam" ? "zh" : "fr",
   workspace: effectivePagePath === "/Sidi" ? "sidi" : effectivePagePath === "/Adam" ? "adam" : "default",
   activeTab: "catalog",
@@ -75,6 +81,7 @@ const state = {
   sort: "source",
   page: 1,
   pageSize: 50,
+  usdCnyRate: 6.67,
   total: 0,
   totalPages: 1,
   categories: [],
@@ -87,6 +94,15 @@ const state = {
   searchTimer: null,
 };
 
+const mobileCardLayout = window.matchMedia("(max-width: 720px)");
+function syncCatalogLayout() {
+  document.documentElement.dataset.catalogLayout = state.isCard || mobileCardLayout.matches ? "cards" : "table";
+}
+syncCatalogLayout();
+mobileCardLayout.addEventListener("change", syncCatalogLayout);
+document.documentElement.dataset.readOnly = String(state.isReadOnly);
+document.documentElement.dataset.productGlass = state.isAdam ? "off" : "2";
+
 const release = {
   current: document.querySelector('meta[name="app-version"]').content,
   available: null,
@@ -94,6 +110,8 @@ const release = {
   applying: false,
   interval: null,
 };
+
+let lastTouchEnd = 0;
 
 const elements = {
   splashScreen: document.querySelector("#splashScreen"),
@@ -111,11 +129,14 @@ const elements = {
   blockChineseLanguage: document.querySelector("#blockChineseLanguage"),
   blockChinaTimezone: document.querySelector("#blockChinaTimezone"),
   blockChinaIp: document.querySelector("#blockChinaIp"),
+  productImageBlurPx: document.querySelector("#productImageBlurPx"),
+  frenchSpecificationMode: document.querySelector("#frenchSpecificationMode"),
   saveAccessControlButton: document.querySelector("#saveAccessControlButton"),
   accessControlStatus: document.querySelector("#accessControlStatus"),
   catalogTab: document.querySelector("#catalogTab"), licenceTab: document.querySelector("#licenceTab"),
   catalogPanel: document.querySelector("#catalogPanel"), licencePanel: document.querySelector("#licencePanel"),
   categoryCount: document.querySelector("#categoryCount"), categoryList: document.querySelector("#categoryList"),
+  readOnlyNotice: document.querySelector("#readOnlyNotice"),
   fxNotice: document.querySelector("#fxNotice"), catalogSearch: document.querySelector("#catalogSearch"),
   sortProducts: document.querySelector("#sortProducts"), activeCategoryTitle: document.querySelector("#activeCategoryTitle"),
   specColumnHeader: document.querySelector("#specColumnHeader"),
@@ -133,6 +154,7 @@ function locale() { return state.language === "zh" ? "zh-CN" : "fr-FR"; }
 function formatNumber(value) { return new Intl.NumberFormat(locale(), { maximumFractionDigits: 2 }).format(Number(value)); }
 function formatCny(value) { return new Intl.NumberFormat(locale(), { style: "currency", currency: "CNY", maximumFractionDigits: 2 }).format(Number(value)); }
 function formatUsd(value) { return new Intl.NumberFormat(locale(), { style: "currency", currency: "USD", maximumFractionDigits: 2 }).format(Number(value)); }
+function formatDzd(value) { return new Intl.NumberFormat(locale(), { style: "currency", currency: "DZD", maximumFractionDigits: 2 }).format(Number(value)); }
 
 function escapeHtml(value) {
   return String(value ?? "").replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;").replaceAll("'", "&#039;");
@@ -145,7 +167,7 @@ function cleanText(value) {
 
 function requireAdamSession(response) {
   if (state.isAdam && response.status === 401) {
-    window.location.replace("/login?next=%2FAdam");
+    window.location.replace(state.isReadOnly ? "/login?next=%2FAdam%2FRead" : "/login?next=%2FAdam");
     throw new Error("Adam session expired");
   }
   return response;
@@ -156,10 +178,12 @@ function fillAccessControlForm(settings) {
   elements.blockChineseLanguage.checked = settings.blockChineseLanguage;
   elements.blockChinaTimezone.checked = settings.blockChinaTimezone;
   elements.blockChinaIp.checked = settings.blockChinaIp;
+  elements.productImageBlurPx.value = settings.productImageBlurPx;
+  elements.frenchSpecificationMode.value = settings.showAllFrenchSpecifications ? "all" : "one";
 }
 
 async function openAccessControl() {
-  if (!state.isAdam) return;
+  if (!state.isAdam || state.isReadOnly) return;
   elements.accessControlButton.hidden = false;
   elements.accessControlPanel.hidden = false;
   elements.accessControlStatus.textContent = "正在读取…";
@@ -175,6 +199,7 @@ function hideAccessControl() {
 
 async function saveAccessControl(event) {
   event.preventDefault();
+  if (state.isReadOnly) return;
   elements.saveAccessControlButton.disabled = true;
   elements.accessControlStatus.textContent = "正在保存…";
   const response = requireAdamSession(await fetch("/api/admin/access-control", {
@@ -185,11 +210,13 @@ async function saveAccessControl(event) {
       blockChineseLanguage: elements.blockChineseLanguage.checked,
       blockChinaTimezone: elements.blockChinaTimezone.checked,
       blockChinaIp: elements.blockChinaIp.checked,
+      productImageBlurPx: Number(elements.productImageBlurPx.value),
+      showAllFrenchSpecifications: elements.frenchSpecificationMode.value === "all",
     }),
   }));
   fillAccessControlForm(await response.json());
   elements.saveAccessControlButton.disabled = false;
-  elements.accessControlStatus.textContent = "规则已保存";
+  elements.accessControlStatus.textContent = "客户页面设置已保存";
 }
 
 function productCode(product) {
@@ -237,30 +264,49 @@ function renderCategoryScore(categoryId) {
 function productRow(product) {
   const name = productName(product);
   const inputLabel = state.language === "fr" ? name : productCode(product);
+  const specificationLabel = state.category === "pneumatiques" ? t("remarksHeader") : t("specModel");
   const image = product.image
     ? `<span class="product-thumb"><img src="${product.image.url}" alt="${escapeHtml(name)}" width="${product.image.width}" height="${product.image.height}" loading="lazy" decoding="async" draggable="false"></span>`
     : `<span class="no-image">—</span>`;
   const displayedPriceCny = state.language === "fr" ? (product.newPriceCny ?? product.unitPriceCny) : product.unitPriceCny;
   const price = displayedPriceCny === null ? t("quote") : formatCny(displayedPriceCny);
+  const priceUsd = displayedPriceCny === null ? t("quote") : formatUsd(displayedPriceCny / state.usdCnyRate);
+  const priceDzd = displayedPriceCny === null ? t("quote") : formatDzd(displayedPriceCny * CNY_DZD_RATE);
   const unit = productUnit(product);
-  const newPriceCell = state.language === "zh"
-    ? `<td><input class="order-new-price" type="text" inputmode="decimal" autocomplete="off" value="${product.newPriceCny ?? ""}" data-order-new-price aria-label="${escapeHtml(`${t("newPrice")} CNY ${inputLabel}`)}"></td>`
+  const usdPriceCell = state.language === "fr"
+    ? `<td class="product-price usd-price-column" data-card-label="${escapeHtml(t("priceUsd"))}">${priceUsd}${unit ? `<small>/${escapeHtml(unit)}</small>` : ""}</td>`
     : "";
+  const dzdPriceCell = state.language === "fr"
+    ? `<td class="product-price dzd-price-column" data-card-label="${escapeHtml(t("priceDzd"))}">${priceDzd}${unit ? `<small>/${escapeHtml(unit)}</small>` : ""}</td>`
+    : "";
+  const newPriceCell = state.language === "zh"
+    ? `<td class="new-price-column" data-card-label="${escapeHtml(t("newPrice"))}">${state.isReadOnly
+      ? `<span class="order-readonly-value numeric-value">${product.newPriceCny === null ? "—" : formatCny(product.newPriceCny)}</span>`
+      : `<input class="order-new-price" type="text" inputmode="decimal" autocomplete="off" value="${product.newPriceCny ?? ""}" data-order-new-price aria-label="${escapeHtml(`${t("newPrice")} CNY ${inputLabel}`)}">`}</td>`
+    : "";
+  const quantityCell = state.isReadOnly
+    ? `<td class="quantity-column" data-card-label="${escapeHtml(t("quantity"))}"><span class="order-readonly-value numeric-value">${formatNumber(product.orderedQuantity)}</span></td>`
+    : `<td class="quantity-column" data-card-label="${escapeHtml(t("quantity"))}"><input class="order-quantity" type="text" inputmode="decimal" autocomplete="off" value="${product.orderedQuantity || ""}" data-order-quantity aria-label="${escapeHtml(`${t("quantity")} ${inputLabel}`)}"></td>`;
+  const remarkCell = state.isReadOnly
+    ? `<td class="remark-column" data-card-label="${escapeHtml(t("remark"))}"><span class="order-readonly-value">${escapeHtml(product.remark || "—")}</span></td>`
+    : `<td class="remark-column" data-card-label="${escapeHtml(t("remark"))}"><input class="order-remark" type="text" value="${escapeHtml(product.remark)}" data-order-remark aria-label="${escapeHtml(`${t("remark")} ${inputLabel}`)}"></td>`;
   return `<tr data-record-id="${product.id}">
-    <td>${image}</td>
-    <td class="product-code">${escapeHtml(productCode(product))}</td>
-    <td class="product-name">${escapeHtml(name)}</td>
-    <td class="product-spec">${escapeHtml(productSpecification(product) || "—")}</td>
-    <td class="product-price">${price}${unit ? `<small>/${escapeHtml(unit)}</small>` : ""}</td>
+    <td class="product-image-cell">${image}</td>
+    <td class="product-code" data-card-label="${escapeHtml(t("productCode"))}">${escapeHtml(productCode(product))}</td>
+    <td class="product-name" data-card-label="${escapeHtml(t("productName"))}">${escapeHtml(name)}</td>
+    <td class="product-spec" data-card-label="${escapeHtml(specificationLabel)}">${escapeHtml(productSpecification(product) || "—")}</td>
+    <td class="product-price price-column" data-card-label="${escapeHtml(t("price"))}">${price}${unit ? `<small>/${escapeHtml(unit)}</small>` : ""}</td>
+    ${usdPriceCell}
+    ${dzdPriceCell}
     ${newPriceCell}
-    <td><input class="order-quantity" type="text" inputmode="decimal" autocomplete="off" value="${product.orderedQuantity || ""}" data-order-quantity aria-label="${escapeHtml(`${t("quantity")} ${inputLabel}`)}"></td>
-    <td><input class="order-remark" type="text" value="${escapeHtml(product.remark)}" data-order-remark aria-label="${escapeHtml(`${t("remark")} ${inputLabel}`)}"></td>
+    ${quantityCell}
+    ${remarkCell}
   </tr>`;
 }
 
 function renderProducts() {
   elements.specColumnHeader.textContent = state.category === "pneumatiques" ? t("remarksHeader") : t("specModel");
-  elements.productTableBody.innerHTML = state.products.length ? state.products.map(productRow).join("") : `<tr><td colspan="${state.language === "fr" ? 6 : 8}">${t("noResults")}</td></tr>`;
+  elements.productTableBody.innerHTML = state.products.length ? state.products.map(productRow).join("") : `<tr class="product-card-empty"><td colspan="8">${t("noResults")}</td></tr>`;
   const active = state.categories.find((category) => category.id === state.category);
   elements.activeCategoryTitle.textContent = active ? active.title : t("allProducts");
   const start = state.total === 0 ? 0 : (state.page - 1) * state.pageSize + 1;
@@ -294,7 +340,9 @@ async function loadCategories() {
   const payload = await response.json();
   state.categories = payload.data;
   state.pageSize = payload.pageSize;
+  state.usdCnyRate = payload.usdCnyRate;
   elements.fxNotice.textContent = payload.fxNotice;
+  document.documentElement.style.setProperty("--product-glass-blur", `${payload.productImageBlurPx}px`);
   renderCategories();
 }
 
@@ -323,6 +371,7 @@ function updateLocalTotals(product, nextQuantity, nextPriceCny = product.newPric
 }
 
 function queueSave(product) {
+  if (state.isReadOnly) return;
   const revision = (state.editRevisions.get(product.id) ?? 0) + 1;
   state.editRevisions.set(product.id, revision);
   state.dirtyProducts.set(product.id, product);
@@ -575,6 +624,8 @@ function applyLanguageCopy() {
   document.querySelectorAll("[data-i18n]").forEach((node) => { node.textContent = t(node.dataset.i18n); });
   document.querySelectorAll("[data-i18n-aria-label]").forEach((node) => { node.setAttribute("aria-label", t(node.dataset.i18nAriaLabel)); });
   elements.adminActions.hidden = state.language !== "zh";
+  elements.readOnlyNotice.hidden = !state.isReadOnly;
+  if (state.isReadOnly) elements.accessControlButton.hidden = true;
   elements.catalogSearch.placeholder = t("searchPlaceholder");
   elements.sortProducts.querySelector('option[value="code"]').hidden = state.language === "fr";
   elements.declarationSearch.placeholder = t("licenceSearchPlaceholder");
@@ -616,17 +667,41 @@ function wireInteractions() {
   document.addEventListener("keydown", (event) => {
     const commandKey = event.ctrlKey || event.metaKey;
     const key = event.key.toLowerCase();
-    if (state.isAdam && commandKey && event.shiftKey && key === "g") {
+    if (state.isAdam && !state.isReadOnly && commandKey && event.shiftKey && key === "g") {
       event.preventDefault();
       event.stopPropagation();
       void openAccessControl();
       return;
     }
-    if (commandKey && (key === "s" || key === "p")) {
+    const zoomKey = ["+", "=", "-", "_", "0"].includes(key)
+      || ["Equal", "Minus", "Digit0", "NumpadAdd", "NumpadSubtract", "Numpad0"].includes(event.code);
+    if (commandKey && (key === "s" || key === "p" || (!state.isAdam && zoomKey))) {
       event.preventDefault();
       event.stopPropagation();
     }
   }, true);
+  if (!state.isAdam) {
+    document.addEventListener("wheel", (event) => {
+      if (event.ctrlKey || event.metaKey) event.preventDefault();
+    }, { capture: true, passive: false });
+    for (const eventName of ["touchstart", "touchmove"]) {
+      document.addEventListener(eventName, (event) => {
+        if (event.touches.length > 1) event.preventDefault();
+      }, { capture: true, passive: false });
+    }
+    for (const eventName of ["gesturestart", "gesturechange", "gestureend"]) {
+      document.addEventListener(eventName, (event) => event.preventDefault(), { capture: true, passive: false });
+    }
+    document.addEventListener("touchend", (event) => {
+      if (event.changedTouches.length !== 1) return;
+      const now = Date.now();
+      if (now - lastTouchEnd <= 300) event.preventDefault();
+      lastTouchEnd = now;
+    }, { capture: true, passive: false });
+    document.addEventListener("dblclick", (event) => {
+      event.preventDefault();
+    }, true);
+  }
   document.addEventListener("contextmenu", (event) => {
     event.preventDefault();
   }, true);
@@ -685,6 +760,7 @@ function wireInteractions() {
     void loadProducts();
   });
   elements.productTableBody.addEventListener("input", (event) => {
+    if (state.isReadOnly) return;
     const row = event.target.closest("[data-record-id]");
     if (!row) return;
     const product = state.products.find((item) => item.id === row.dataset.recordId);

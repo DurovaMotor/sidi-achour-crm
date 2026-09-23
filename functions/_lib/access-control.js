@@ -32,7 +32,14 @@ function browserUsesChinese(request) {
 
 export async function loadAccessControlSettings(database) {
   const row = await database.prepare(`
-    SELECT enabled, block_chinese_language, block_china_timezone, block_china_ip, updated_at
+    SELECT
+      enabled,
+      block_chinese_language,
+      block_china_timezone,
+      block_china_ip,
+      product_image_blur_px,
+      show_all_french_specifications,
+      updated_at
     FROM access_control_settings
     WHERE id = 1
   `).first();
@@ -41,6 +48,8 @@ export async function loadAccessControlSettings(database) {
     blockChineseLanguage: Boolean(row.block_chinese_language),
     blockChinaTimezone: Boolean(row.block_china_timezone),
     blockChinaIp: Boolean(row.block_china_ip),
+    productImageBlurPx: Number(row.product_image_blur_px),
+    showAllFrenchSpecifications: Boolean(row.show_all_french_specifications),
     updatedAt: row.updated_at,
   };
 }
@@ -70,7 +79,7 @@ export function timezoneProbeResponse() {
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
   <meta name="robots" content="noindex,noarchive">
   <title>Sidi Achour</title>
   <style>body{min-height:100vh;margin:0;display:grid;place-items:center;background:#f7f7f7;color:#1a1a1a;font:16px "Segoe UI",Arial,sans-serif}.mark{width:38px;height:38px;border:3px solid #ccc;border-top-color:#d42a1d;border-radius:50%;animation:r .8s linear infinite}@keyframes r{to{transform:rotate(360deg)}}</style>
@@ -96,7 +105,7 @@ export function blockedResponse(isApi) {
       headers: { "Cache-Control": "no-store" },
     });
   }
-  return new Response(`<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,noarchive"><title>Page indisponible</title><style>body{min-height:100vh;margin:0;display:grid;place-items:center;padding:24px;background:#f7f7f7;color:#1a1a1a;font:16px "Segoe UI",Arial,sans-serif;text-align:center}h1{font-size:24px}p{color:#6b6b6b}</style></head><body><main><h1>Page indisponible</h1><p>Cette page n’est pas disponible.</p></main></body></html>`, {
+  return new Response(`<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"><meta name="robots" content="noindex,noarchive"><title>Page indisponible</title><style>body{min-height:100vh;margin:0;display:grid;place-items:center;padding:24px;background:#f7f7f7;color:#1a1a1a;font:16px "Segoe UI",Arial,sans-serif;text-align:center}h1{font-size:24px}p{color:#6b6b6b}</style></head><body><main><h1>Page indisponible</h1><p>Cette page n’est pas disponible.</p></main></body></html>`, {
     status: 403,
     headers: {
       "Content-Type": "text/html; charset=utf-8",

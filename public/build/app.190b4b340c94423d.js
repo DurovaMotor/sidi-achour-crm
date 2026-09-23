@@ -4,7 +4,7 @@ const copy = {
     catalogNav: "产品目录", licenceNav: "进口申报", categories: "产品分类", allProducts: "全部产品",
     searchLabel: "搜索产品", searchPlaceholder: "搜索产品编码、名称或规格", sortLabel: "排序",
     sortSource: "原表顺序", sortPriceAsc: "价格从低到高", sortPriceDesc: "价格从高到低", sortCode: "产品编码 A–Z",
-    image: "图片", productCode: "产品编码", productName: "产品名称", specModel: "规格 / 适配车型", remarksHeader: "Remarks", price: "单价",
+    image: "图片", productCode: "产品编码", productName: "产品名称", specModel: "规格 / 适配车型", remarksHeader: "Remarks", price: "单价", priceUsd: "美元价格", priceDzd: "第纳尔价格",
     newPrice: "新价格", quantity: "数量", remark: "备注", productTableLabel: "产品列表", noResults: "没有匹配的产品", quote: "询价",
     quantityScore: "数量", amountScore: "金额", previous: "上一页", next: "下一页", goToPage: "跳至页", go: "跳转",
     paginationLabel: "分页", licenceTitle: "进口申报", licenceSearchLabel: "搜索进口申报",
@@ -17,7 +17,7 @@ const copy = {
     catalogNav: "Catalogue", licenceNav: "Déclaration", categories: "Catégories", allProducts: "Tous les produits",
     searchLabel: "Rechercher un produit", searchPlaceholder: "Rechercher un nom ou une spécification", sortLabel: "Trier",
     sortSource: "Ordre du classeur", sortPriceAsc: "Prix croissant", sortPriceDesc: "Prix décroissant", sortCode: "Code produit A–Z",
-    image: "Image", productCode: "Code produit", productName: "Désignation", specModel: "Spécification / modèles", remarksHeader: "Remarks", price: "Prix",
+    image: "Image", productCode: "Code produit", productName: "Désignation", specModel: "Spécification / modèles", remarksHeader: "Remarks", price: "Prix CNY", priceUsd: "Prix USD", priceDzd: "Dinars",
     newPrice: "Nouveau prix", quantity: "Quantité", remark: "Remarque", productTableLabel: "Liste des produits", noResults: "Aucun produit correspondant", quote: "Sur demande",
     quantityScore: "Qté", amountScore: "Montant", previous: "Précédent", next: "Suivant", goToPage: "Aller à la page", go: "Aller",
     paginationLabel: "Pagination", licenceTitle: "Déclaration d'importation", licenceSearchLabel: "Rechercher dans la déclaration",
@@ -65,8 +65,11 @@ const effectivePagePath = pagePath === "/Sidi/Key" || pagePath === "/Sidi/Key.ht
     ? "/"
     : pagePath;
 
+const CNY_DZD_RATE = 36;
+
 const state = {
   isAdam: effectivePagePath === "/Adam",
+  isCard: effectivePagePath === "/Card" || effectivePagePath === "/Card.html",
   language: effectivePagePath === "/Adam" ? "zh" : "fr",
   workspace: effectivePagePath === "/Sidi" ? "sidi" : effectivePagePath === "/Adam" ? "adam" : "default",
   activeTab: "catalog",
@@ -75,6 +78,7 @@ const state = {
   sort: "source",
   page: 1,
   pageSize: 50,
+  usdCnyRate: 6.67,
   total: 0,
   totalPages: 1,
   categories: [],
@@ -87,6 +91,14 @@ const state = {
   searchTimer: null,
 };
 
+const mobileCardLayout = window.matchMedia("(max-width: 720px)");
+function syncCatalogLayout() {
+  document.documentElement.dataset.catalogLayout = state.isCard || mobileCardLayout.matches ? "cards" : "table";
+}
+syncCatalogLayout();
+mobileCardLayout.addEventListener("change", syncCatalogLayout);
+document.documentElement.dataset.productGlass = state.isAdam ? "off" : "2";
+
 const release = {
   current: document.querySelector('meta[name="app-version"]').content,
   available: null,
@@ -94,6 +106,8 @@ const release = {
   applying: false,
   interval: null,
 };
+
+let lastTouchEnd = 0;
 
 const elements = {
   splashScreen: document.querySelector("#splashScreen"),
@@ -111,6 +125,8 @@ const elements = {
   blockChineseLanguage: document.querySelector("#blockChineseLanguage"),
   blockChinaTimezone: document.querySelector("#blockChinaTimezone"),
   blockChinaIp: document.querySelector("#blockChinaIp"),
+  productImageBlurPx: document.querySelector("#productImageBlurPx"),
+  frenchSpecificationMode: document.querySelector("#frenchSpecificationMode"),
   saveAccessControlButton: document.querySelector("#saveAccessControlButton"),
   accessControlStatus: document.querySelector("#accessControlStatus"),
   catalogTab: document.querySelector("#catalogTab"), licenceTab: document.querySelector("#licenceTab"),
@@ -133,6 +149,7 @@ function locale() { return state.language === "zh" ? "zh-CN" : "fr-FR"; }
 function formatNumber(value) { return new Intl.NumberFormat(locale(), { maximumFractionDigits: 2 }).format(Number(value)); }
 function formatCny(value) { return new Intl.NumberFormat(locale(), { style: "currency", currency: "CNY", maximumFractionDigits: 2 }).format(Number(value)); }
 function formatUsd(value) { return new Intl.NumberFormat(locale(), { style: "currency", currency: "USD", maximumFractionDigits: 2 }).format(Number(value)); }
+function formatDzd(value) { return new Intl.NumberFormat(locale(), { style: "currency", currency: "DZD", maximumFractionDigits: 2 }).format(Number(value)); }
 
 function escapeHtml(value) {
   return String(value ?? "").replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;").replaceAll("'", "&#039;");
@@ -156,6 +173,8 @@ function fillAccessControlForm(settings) {
   elements.blockChineseLanguage.checked = settings.blockChineseLanguage;
   elements.blockChinaTimezone.checked = settings.blockChinaTimezone;
   elements.blockChinaIp.checked = settings.blockChinaIp;
+  elements.productImageBlurPx.value = settings.productImageBlurPx;
+  elements.frenchSpecificationMode.value = settings.showAllFrenchSpecifications ? "all" : "one";
 }
 
 async function openAccessControl() {
@@ -185,11 +204,13 @@ async function saveAccessControl(event) {
       blockChineseLanguage: elements.blockChineseLanguage.checked,
       blockChinaTimezone: elements.blockChinaTimezone.checked,
       blockChinaIp: elements.blockChinaIp.checked,
+      productImageBlurPx: Number(elements.productImageBlurPx.value),
+      showAllFrenchSpecifications: elements.frenchSpecificationMode.value === "all",
     }),
   }));
   fillAccessControlForm(await response.json());
   elements.saveAccessControlButton.disabled = false;
-  elements.accessControlStatus.textContent = "规则已保存";
+  elements.accessControlStatus.textContent = "客户页面设置已保存";
 }
 
 function productCode(product) {
@@ -237,30 +258,41 @@ function renderCategoryScore(categoryId) {
 function productRow(product) {
   const name = productName(product);
   const inputLabel = state.language === "fr" ? name : productCode(product);
+  const specificationLabel = state.category === "pneumatiques" ? t("remarksHeader") : t("specModel");
   const image = product.image
     ? `<span class="product-thumb"><img src="${product.image.url}" alt="${escapeHtml(name)}" width="${product.image.width}" height="${product.image.height}" loading="lazy" decoding="async" draggable="false"></span>`
     : `<span class="no-image">—</span>`;
   const displayedPriceCny = state.language === "fr" ? (product.newPriceCny ?? product.unitPriceCny) : product.unitPriceCny;
   const price = displayedPriceCny === null ? t("quote") : formatCny(displayedPriceCny);
+  const priceUsd = displayedPriceCny === null ? t("quote") : formatUsd(displayedPriceCny / state.usdCnyRate);
+  const priceDzd = displayedPriceCny === null ? t("quote") : formatDzd(displayedPriceCny * CNY_DZD_RATE);
   const unit = productUnit(product);
+  const usdPriceCell = state.language === "fr"
+    ? `<td class="product-price usd-price-column" data-card-label="${escapeHtml(t("priceUsd"))}">${priceUsd}${unit ? `<small>/${escapeHtml(unit)}</small>` : ""}</td>`
+    : "";
+  const dzdPriceCell = state.language === "fr"
+    ? `<td class="product-price dzd-price-column" data-card-label="${escapeHtml(t("priceDzd"))}">${priceDzd}${unit ? `<small>/${escapeHtml(unit)}</small>` : ""}</td>`
+    : "";
   const newPriceCell = state.language === "zh"
-    ? `<td><input class="order-new-price" type="text" inputmode="decimal" autocomplete="off" value="${product.newPriceCny ?? ""}" data-order-new-price aria-label="${escapeHtml(`${t("newPrice")} CNY ${inputLabel}`)}"></td>`
+    ? `<td class="new-price-column" data-card-label="${escapeHtml(t("newPrice"))}"><input class="order-new-price" type="text" inputmode="decimal" autocomplete="off" value="${product.newPriceCny ?? ""}" data-order-new-price aria-label="${escapeHtml(`${t("newPrice")} CNY ${inputLabel}`)}"></td>`
     : "";
   return `<tr data-record-id="${product.id}">
-    <td>${image}</td>
-    <td class="product-code">${escapeHtml(productCode(product))}</td>
-    <td class="product-name">${escapeHtml(name)}</td>
-    <td class="product-spec">${escapeHtml(productSpecification(product) || "—")}</td>
-    <td class="product-price">${price}${unit ? `<small>/${escapeHtml(unit)}</small>` : ""}</td>
+    <td class="product-image-cell">${image}</td>
+    <td class="product-code" data-card-label="${escapeHtml(t("productCode"))}">${escapeHtml(productCode(product))}</td>
+    <td class="product-name" data-card-label="${escapeHtml(t("productName"))}">${escapeHtml(name)}</td>
+    <td class="product-spec" data-card-label="${escapeHtml(specificationLabel)}">${escapeHtml(productSpecification(product) || "—")}</td>
+    <td class="product-price price-column" data-card-label="${escapeHtml(t("price"))}">${price}${unit ? `<small>/${escapeHtml(unit)}</small>` : ""}</td>
+    ${usdPriceCell}
+    ${dzdPriceCell}
     ${newPriceCell}
-    <td><input class="order-quantity" type="text" inputmode="decimal" autocomplete="off" value="${product.orderedQuantity || ""}" data-order-quantity aria-label="${escapeHtml(`${t("quantity")} ${inputLabel}`)}"></td>
-    <td><input class="order-remark" type="text" value="${escapeHtml(product.remark)}" data-order-remark aria-label="${escapeHtml(`${t("remark")} ${inputLabel}`)}"></td>
+    <td class="quantity-column" data-card-label="${escapeHtml(t("quantity"))}"><input class="order-quantity" type="text" inputmode="decimal" autocomplete="off" value="${product.orderedQuantity || ""}" data-order-quantity aria-label="${escapeHtml(`${t("quantity")} ${inputLabel}`)}"></td>
+    <td class="remark-column" data-card-label="${escapeHtml(t("remark"))}"><input class="order-remark" type="text" value="${escapeHtml(product.remark)}" data-order-remark aria-label="${escapeHtml(`${t("remark")} ${inputLabel}`)}"></td>
   </tr>`;
 }
 
 function renderProducts() {
   elements.specColumnHeader.textContent = state.category === "pneumatiques" ? t("remarksHeader") : t("specModel");
-  elements.productTableBody.innerHTML = state.products.length ? state.products.map(productRow).join("") : `<tr><td colspan="${state.language === "fr" ? 6 : 8}">${t("noResults")}</td></tr>`;
+  elements.productTableBody.innerHTML = state.products.length ? state.products.map(productRow).join("") : `<tr class="product-card-empty"><td colspan="8">${t("noResults")}</td></tr>`;
   const active = state.categories.find((category) => category.id === state.category);
   elements.activeCategoryTitle.textContent = active ? active.title : t("allProducts");
   const start = state.total === 0 ? 0 : (state.page - 1) * state.pageSize + 1;
@@ -294,7 +326,9 @@ async function loadCategories() {
   const payload = await response.json();
   state.categories = payload.data;
   state.pageSize = payload.pageSize;
+  state.usdCnyRate = payload.usdCnyRate;
   elements.fxNotice.textContent = payload.fxNotice;
+  document.documentElement.style.setProperty("--product-glass-blur", `${payload.productImageBlurPx}px`);
   renderCategories();
 }
 
@@ -622,11 +656,35 @@ function wireInteractions() {
       void openAccessControl();
       return;
     }
-    if (commandKey && (key === "s" || key === "p")) {
+    const zoomKey = ["+", "=", "-", "_", "0"].includes(key)
+      || ["Equal", "Minus", "Digit0", "NumpadAdd", "NumpadSubtract", "Numpad0"].includes(event.code);
+    if (commandKey && (key === "s" || key === "p" || (!state.isAdam && zoomKey))) {
       event.preventDefault();
       event.stopPropagation();
     }
   }, true);
+  if (!state.isAdam) {
+    document.addEventListener("wheel", (event) => {
+      if (event.ctrlKey || event.metaKey) event.preventDefault();
+    }, { capture: true, passive: false });
+    for (const eventName of ["touchstart", "touchmove"]) {
+      document.addEventListener(eventName, (event) => {
+        if (event.touches.length > 1) event.preventDefault();
+      }, { capture: true, passive: false });
+    }
+    for (const eventName of ["gesturestart", "gesturechange", "gestureend"]) {
+      document.addEventListener(eventName, (event) => event.preventDefault(), { capture: true, passive: false });
+    }
+    document.addEventListener("touchend", (event) => {
+      if (event.changedTouches.length !== 1) return;
+      const now = Date.now();
+      if (now - lastTouchEnd <= 300) event.preventDefault();
+      lastTouchEnd = now;
+    }, { capture: true, passive: false });
+    document.addEventListener("dblclick", (event) => {
+      event.preventDefault();
+    }, true);
+  }
   document.addEventListener("contextmenu", (event) => {
     event.preventDefault();
   }, true);

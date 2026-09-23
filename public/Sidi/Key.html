@@ -2,16 +2,16 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="theme-color" content="#000000">
-    <meta name="app-version" content="v2026.09.14.102609.058-D94EF8A8">
+    <meta name="app-version" content="v2026.09.17.093454.679-E98E9C3D">
     <meta name="description" content="Sidi Achour 摩托车配件订单与进口额度管理页面。">
     <title>Sidi Achour | 产品目录</title>
     <link rel="icon" href="/media/brand/sidi-achour-logo.f8ca917c1cb1c72a.png" type="image/png">
     <link rel="preload" href="/media/brand/sidi-achour-logo.f8ca917c1cb1c72a.png" as="image" fetchpriority="high">
-    <link rel="stylesheet" href="/build/styles.5275430d025841f9.css">
+    <link rel="stylesheet" href="/build/styles.9f2e901e902543bb.css">
     <script src="/vendor/exceljs.7e49da68588e250d.min.js" defer></script>
-    <script src="/build/app.973371de59f1407c.js" defer></script>
+    <script src="/build/app.a1c6fa64abd546fa.js" defer></script>
   </head>
   <body aria-busy="true">
     <div class="splash-screen" id="splashScreen" role="status" aria-live="polite" aria-label="Sidi Achour 正在加载">
@@ -48,17 +48,19 @@
               <button type="button" role="menuitem" data-export-language="fr" data-export-redacted="true">法语导出</button>
             </div>
           </div>
-          <button class="access-control-button" id="accessControlButton" type="button" hidden>访问规则</button>
+          <button class="access-control-button" id="accessControlButton" type="button" hidden>客户设置</button>
           <button class="logout-button" id="logoutButton" type="button">退出</button>
         </div>
       </div>
     </header>
 
+    <div class="shell read-only-notice" id="readOnlyNotice" role="status" data-i18n="readOnlyNotice" hidden>只读模式</div>
+
     <aside class="access-control-panel" id="accessControlPanel" role="dialog" aria-labelledby="accessControlTitle" hidden>
       <div class="access-control-head">
         <div>
           <span>客户页面</span>
-          <h2 id="accessControlTitle">访问屏蔽规则</h2>
+          <h2 id="accessControlTitle">客户页面设置</h2>
         </div>
         <button id="hideAccessControlButton" type="button">收起并隐藏入口</button>
       </div>
@@ -67,6 +69,8 @@
         <label><input id="blockChineseLanguage" type="checkbox">浏览器语言为中文时屏蔽</label>
         <label><input id="blockChinaTimezone" type="checkbox">设备时区为中国时屏蔽</label>
         <label><input id="blockChinaIp" type="checkbox">访问 IP 位于中国时屏蔽</label>
+        <label class="select-setting"><span>法语端规格 / 车型</span><select id="frenchSpecificationMode"><option value="one">仅显示一个（默认）</option><option value="all">显示全部</option></select></label>
+        <label class="blur-setting"><span>Blur</span><span><input class="blur-input" id="productImageBlurPx" type="number" min="0" max="20" step="0.1" value="2.0"> px</span></label>
         <button class="access-control-save" id="saveAccessControlButton" type="submit">保存规则</button>
         <p id="accessControlStatus" role="status" aria-live="polite"></p>
       </form>
@@ -114,6 +118,8 @@
                     <th class="name-column" data-i18n="productName">产品名称</th>
                     <th class="spec-column" id="specColumnHeader" data-i18n="specModel">规格 / 适配车型</th>
                     <th class="price-column" data-i18n="price">单价</th>
+                    <th class="usd-price-column" data-i18n="priceUsd">美元价格</th>
+                    <th class="dzd-price-column" data-i18n="priceDzd">Dinars</th>
                     <th class="new-price-column" data-i18n="newPrice">新价格</th>
                     <th class="quantity-column" data-i18n="quantity">数量</th>
                     <th class="remark-column" data-i18n="remark">备注</th>
@@ -165,6 +171,6 @@
         </div>
       </section>
     </main>
-    <footer class="release-footer"><span class="release-version" id="releaseVersion">v2026.09.14.102609.058-D94EF8A8</span></footer>
+    <footer class="release-footer"><span class="release-version" id="releaseVersion">v2026.09.17.093454.679-E98E9C3D</span></footer>
   </body>
 </html>

@@ -22,6 +22,8 @@ export async function onRequestPatch(context) {
       block_chinese_language = ?,
       block_china_timezone = ?,
       block_china_ip = ?,
+      product_image_blur_px = ?,
+      show_all_french_specifications = ?,
       updated_at = strftime('%Y-%m-%dT%H:%M:%fZ', 'now')
     WHERE id = 1
   `).bind(
@@ -29,6 +31,8 @@ export async function onRequestPatch(context) {
     Number(body.blockChineseLanguage === true),
     Number(body.blockChinaTimezone === true),
     Number(body.blockChinaIp === true),
+    Number(body.productImageBlurPx),
+    Number(body.showAllFrenchSpecifications === true),
   ).run();
   return Response.json(await loadAccessControlSettings(context.env.DB), {
     headers: { "Cache-Control": "no-store" },

@@ -1,0 +1,10 @@
+{
+  "version": "v2026.09.14.104811.375-3EC84C60",
+  "commitHash": "3ec84c60bede499fb4cd3153c9b6deeda456f173",
+  "commitMessage": "Release v2026.09.14.104811.375-3EC84C60",
+  "deploymentId": "fe9adb95-8587-439c-b094-a816ef161f75",
+  "url": "https://fe9adb95.sidi-achour-crm.pages.dev",
+  "environment": "production",
+  "productionBranch": "main",
+  "releasedAt": "2026-09-14T10:48:11.3755636+00:00"
+}

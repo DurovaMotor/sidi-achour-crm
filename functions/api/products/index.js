@@ -61,6 +61,14 @@ function firstFrenchSpecification(fields, categoryId) {
   return "";
 }
 
+function allFrenchSpecifications(fields, categoryId) {
+  const keys = categoryId === "pneumatiques"
+    ? ["remarks"]
+    : ["compatibleModels", "specification", "customerSpecification", "requestedPattern", "description", "remarks"];
+  const values = keys.map((key) => sanitizeCustomerText(fields[key])).filter(Boolean);
+  return [...new Set(values)].join("\n");
+}
+
 function frenchProductName(fields, categoryTitle, productCode) {
   return sanitizeCustomerText(
     fields.designation
@@ -69,14 +77,6 @@ function frenchProductName(fields, categoryTitle, productCode) {
     || categoryTitle
     || productCode,
   );
-}
-
-function imageDimensions(width, height, maxEdge) {
-  const scale = Math.min(1, maxEdge / Math.max(width, height));
-  return {
-    width: Math.max(1, Math.round(width * scale)),
-    height: Math.max(1, Math.round(height * scale)),
-  };
 }
 
 export async function onRequestGet(context) {
@@ -130,7 +130,7 @@ export async function onRequestGet(context) {
     ${where}
   `;
 
-  const [countResult, dataResult] = await context.env.DB.batch([
+  const [countResult, dataResult, accessSettingsResult] = await context.env.DB.batch([
     context.env.DB.prepare(`SELECT COUNT(*) AS total ${base}`).bind(...params),
     context.env.DB.prepare(`
       SELECT
@@ -151,22 +151,29 @@ export async function onRequestGet(context) {
       ORDER BY ${sort}
       LIMIT ? OFFSET ?
     `).bind(...params, pageSize, offset),
+    context.env.DB.prepare(`
+      SELECT show_all_french_specifications
+      FROM access_control_settings
+      WHERE id = 1
+    `),
   ]);
 
   const total = Number(countResult.results[0].total);
+  const showAllFrenchSpecifications = Boolean(accessSettingsResult.results[0]?.show_all_french_specifications);
   const data = dataResult.results.map((row) => {
     const fields = sanitizeCustomerFields(JSON.parse(row.fields_json));
     const isFrench = locale === "fr";
-    const dimensions = row.r2_key
-      ? imageDimensions(Number(row.image_width), Number(row.image_height), isFrench ? 96 : 640)
-      : null;
     return {
       id: row.record_id,
       categoryId: row.category_id,
       categoryTitle: row.category_title,
       productCode: row.product_code,
       displayName: isFrench ? frenchProductName(fields, row.category_title, row.product_code) : null,
-      displaySpecification: isFrench ? firstFrenchSpecification(fields, row.category_id) : null,
+      displaySpecification: isFrench
+        ? showAllFrenchSpecifications
+          ? allFrenchSpecifications(fields, row.category_id)
+          : firstFrenchSpecification(fields, row.category_id)
+        : null,
       fields: isFrench ? { unit: fields.unit ?? fields.option ?? null } : fields,
       unitPriceCny: row.unit_price_cny === null ? null : Number(row.unit_price_cny),
       unitWeightKg: row.unit_weight_kg === null ? null : Number(row.unit_weight_kg),
@@ -177,8 +184,8 @@ export async function onRequestGet(context) {
       image: row.r2_key ? {
         key: row.r2_key,
         url: `/api/media/${row.r2_key.split("/").map(encodeURIComponent).join("/")}${isFrench ? "?variant=fr" : ""}`,
-        width: dimensions.width,
-        height: dimensions.height,
+        width: isFrench ? 128 : Number(row.image_width),
+        height: isFrench ? 128 : Number(row.image_height),
       } : null,
     };
   });

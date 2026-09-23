@@ -2,7 +2,7 @@
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="theme-color" content="#000000">
     <meta name="robots" content="noindex, noarchive">
     <title>Sidi Achour | Adam 登录</title>
@@ -13,6 +13,7 @@
         font-family: "Microsoft YaHei UI", "Microsoft YaHei", "Segoe UI", sans-serif;
         font-synthesis: none;
       }
+      html, body { touch-action: pan-x pan-y; }
       * { box-sizing: border-box; }
       body {
         min-height: 100dvh;
@@ -111,13 +112,37 @@
       const form = document.querySelector("#loginForm");
       const message = document.querySelector("#message");
       const submitButton = document.querySelector("#submitButton");
+      const nextPage = new URLSearchParams(window.location.search).get("next") === "/Adam/Read" ? "/Adam/Read" : "/Adam";
+      let lastTouchEnd = 0;
 
       document.addEventListener("contextmenu", (event) => event.preventDefault(), true);
+      document.addEventListener("dblclick", (event) => event.preventDefault(), true);
+      document.addEventListener("wheel", (event) => {
+        if (event.ctrlKey || event.metaKey) event.preventDefault();
+      }, { capture: true, passive: false });
+      for (const eventName of ["touchstart", "touchmove"]) {
+        document.addEventListener(eventName, (event) => {
+          if (event.touches.length > 1) event.preventDefault();
+        }, { capture: true, passive: false });
+      }
+      for (const eventName of ["gesturestart", "gesturechange", "gestureend"]) {
+        document.addEventListener(eventName, (event) => event.preventDefault(), { capture: true, passive: false });
+      }
+      document.addEventListener("touchend", (event) => {
+        if (event.changedTouches.length !== 1) return;
+        const now = Date.now();
+        if (now - lastTouchEnd <= 300) event.preventDefault();
+        lastTouchEnd = now;
+      }, { capture: true, passive: false });
       document.addEventListener("dragstart", (event) => {
         if (event.target.closest("img")) event.preventDefault();
       }, true);
       document.addEventListener("keydown", (event) => {
-        if ((event.ctrlKey || event.metaKey) && ["s", "p"].includes(event.key.toLowerCase())) {
+        const commandKey = event.ctrlKey || event.metaKey;
+        const key = event.key.toLowerCase();
+        const zoomKey = ["+", "=", "-", "_", "0"].includes(key)
+          || ["Equal", "Minus", "Digit0", "NumpadAdd", "NumpadSubtract", "Numpad0"].includes(event.code);
+        if (commandKey && (["s", "p"].includes(key) || zoomKey)) {
           event.preventDefault();
           event.stopPropagation();
         }
@@ -140,7 +165,7 @@
           });
           const result = await response.json();
           if (!response.ok) throw new Error(result.error || "登录失败");
-          window.location.replace("/Adam");
+          window.location.replace(nextPage);
         } catch (error) {
           message.textContent = error.message;
           submitButton.disabled = false;
