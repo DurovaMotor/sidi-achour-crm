@@ -1,6 +1,6 @@
 const copy = {
   zh: {
-    skip: "跳到内容", brandFlow: "Sidi Achour", businessPages: "业务页面", languageLabel: "语言",
+    skip: "跳到内容", brandFlow: "Sidi Achour", businessPages: "业务页面", languageLabel: "语言", readOnlyNotice: "只读模式：可查看、搜索、筛选和导出，但不能修改价格、数量、备注或客户设置。",
     catalogNav: "产品目录", licenceNav: "进口申报", categories: "产品分类", allProducts: "全部产品",
     searchLabel: "搜索产品", searchPlaceholder: "搜索产品编码、名称或规格", sortLabel: "排序",
     sortSource: "原表顺序", sortPriceAsc: "价格从低到高", sortPriceDesc: "价格从高到低", sortCode: "产品编码 A–Z",
@@ -13,7 +13,7 @@ const copy = {
     unitPrice: "申报单价", value: "申报价值", offers: "报价", viewOffers: "查看",
   },
   fr: {
-    skip: "Aller au contenu", brandFlow: "Sidi Achour", businessPages: "Pages métier", languageLabel: "Langue",
+    skip: "Aller au contenu", brandFlow: "Sidi Achour", businessPages: "Pages métier", languageLabel: "Langue", readOnlyNotice: "Mode lecture seule : consultation, recherche et filtres disponibles. Les prix, quantités et remarques ne peuvent pas être modifiés.",
     catalogNav: "Catalogue", licenceNav: "Déclaration", categories: "Catégories", allProducts: "Tous les produits",
     searchLabel: "Rechercher un produit", searchPlaceholder: "Rechercher un nom ou une spécification", sortLabel: "Trier",
     sortSource: "Ordre du classeur", sortPriceAsc: "Prix croissant", sortPriceDesc: "Prix décroissant", sortCode: "Code produit A–Z",
@@ -59,17 +59,20 @@ const exportCopy = {
 };
 
 const pagePath = window.location.pathname.replace(/\/+$/u, "") || "/";
-const effectivePagePath = pagePath === "/Sidi/Key" || pagePath === "/Sidi/Key.html"
+const isReadOnlyPath = /\/Read(?:\.html)?$/u.test(pagePath);
+const basePagePath = isReadOnlyPath ? pagePath.replace(/\/Read(?:\.html)?$/u, "") || "/" : pagePath;
+const effectivePagePath = basePagePath === "/Sidi/Key" || basePagePath === "/Sidi/Key.html"
   ? "/Sidi"
-  : pagePath === "/Key" || pagePath === "/Key.html"
+  : basePagePath === "/Key" || basePagePath === "/Key.html"
     ? "/"
-    : pagePath;
+    : basePagePath;
 
 const CNY_DZD_RATE = 36;
 
 const state = {
   isAdam: effectivePagePath === "/Adam",
   isCard: effectivePagePath === "/Card" || effectivePagePath === "/Card.html",
+  isReadOnly: isReadOnlyPath,
   language: effectivePagePath === "/Adam" ? "zh" : "fr",
   workspace: effectivePagePath === "/Sidi" ? "sidi" : effectivePagePath === "/Adam" ? "adam" : "default",
   activeTab: "catalog",
@@ -97,6 +100,7 @@ function syncCatalogLayout() {
 }
 syncCatalogLayout();
 mobileCardLayout.addEventListener("change", syncCatalogLayout);
+document.documentElement.dataset.readOnly = String(state.isReadOnly);
 document.documentElement.dataset.productGlass = state.isAdam ? "off" : "2";
 
 const release = {
@@ -129,9 +133,21 @@ const elements = {
   frenchSpecificationMode: document.querySelector("#frenchSpecificationMode"),
   saveAccessControlButton: document.querySelector("#saveAccessControlButton"),
   accessControlStatus: document.querySelector("#accessControlStatus"),
+  productCreateBackdrop: document.querySelector("#productCreateBackdrop"),
+  productCreateForm: document.querySelector("#productCreateForm"),
+  productCreateCategoryId: document.querySelector("#productCreateCategoryId"),
+  productCreateCategoryTitle: document.querySelector("#productCreateCategoryTitle"),
+  productCreateAddRow: document.querySelector("#productCreateAddRow"),
+  productCreateRowCount: document.querySelector("#productCreateRowCount"),
+  productCreateRows: document.querySelector("#productCreateRows"),
+  productCreateImagePicker: document.querySelector("#productCreateImagePicker"),
+  productCreateClose: document.querySelector("#productCreateClose"),
+  productCreateSave: document.querySelector("#productCreateSave"),
+  productCreateStatus: document.querySelector("#productCreateStatus"),
   catalogTab: document.querySelector("#catalogTab"), licenceTab: document.querySelector("#licenceTab"),
   catalogPanel: document.querySelector("#catalogPanel"), licencePanel: document.querySelector("#licencePanel"),
   categoryCount: document.querySelector("#categoryCount"), categoryList: document.querySelector("#categoryList"),
+  readOnlyNotice: document.querySelector("#readOnlyNotice"),
   fxNotice: document.querySelector("#fxNotice"), catalogSearch: document.querySelector("#catalogSearch"),
   sortProducts: document.querySelector("#sortProducts"), activeCategoryTitle: document.querySelector("#activeCategoryTitle"),
   specColumnHeader: document.querySelector("#specColumnHeader"),
@@ -162,7 +178,7 @@ function cleanText(value) {
 
 function requireAdamSession(response) {
   if (state.isAdam && response.status === 401) {
-    window.location.replace("/login?next=%2FAdam");
+    window.location.replace(state.isReadOnly ? "/login?next=%2FAdam%2FRead" : "/login?next=%2FAdam");
     throw new Error("Adam session expired");
   }
   return response;
@@ -178,7 +194,7 @@ function fillAccessControlForm(settings) {
 }
 
 async function openAccessControl() {
-  if (!state.isAdam) return;
+  if (!state.isAdam || state.isReadOnly) return;
   elements.accessControlButton.hidden = false;
   elements.accessControlPanel.hidden = false;
   elements.accessControlStatus.textContent = "正在读取…";
@@ -194,6 +210,7 @@ function hideAccessControl() {
 
 async function saveAccessControl(event) {
   event.preventDefault();
+  if (state.isReadOnly) return;
   elements.saveAccessControlButton.disabled = true;
   elements.accessControlStatus.textContent = "正在保存…";
   const response = requireAdamSession(await fetch("/api/admin/access-control", {
@@ -245,14 +262,197 @@ function scoreMarkup(category) {
 
 function renderCategories() {
   elements.categoryCount.textContent = state.categories.length;
-  elements.categoryList.innerHTML = `<button type="button" class="all-category ${state.category === "all" ? "active" : ""}" data-category="all"><span class="category-name">${t("allProducts")}</span></button>` +
-    state.categories.map((category) => `<button type="button" class="${state.category === category.id ? "active" : ""}" data-category="${category.id}"><span class="category-name">${escapeHtml(category.title)}</span><span class="category-score" data-score-category="${category.id}">${scoreMarkup(category)}</span></button>`).join("");
+  const canCreateProduct = state.isAdam && !state.isReadOnly;
+  elements.categoryList.innerHTML = `<button type="button" class="category-select all-category ${state.category === "all" ? "active" : ""}" data-category="all"><span class="category-name">${t("allProducts")}</span></button>` +
+    state.categories.map((category) => `<div class="category-item"><button type="button" class="category-select ${state.category === category.id ? "active" : ""}" data-category="${category.id}"><span class="category-name">${escapeHtml(category.title)}</span><span class="category-score" data-score-category="${category.id}">${scoreMarkup(category)}</span></button>${canCreateProduct ? `<button class="category-add" type="button" data-add-product="${category.id}" aria-label="在 ${escapeHtml(category.title)} 中新增产品"></button>` : ""}</div>`).join("");
 }
 
 function renderCategoryScore(categoryId) {
   const category = state.categories.find((item) => item.id === categoryId);
   const score = elements.categoryList.querySelector(`[data-score-category="${categoryId}"]`);
   if (score) score.innerHTML = scoreMarkup(category);
+}
+
+const PRODUCT_CREATE_FIELDS = [
+  "productCode", "nameZh", "nameFr", "compatibleModels", "specification",
+  "unitZh", "unitFr", "unitPriceCny", "newPriceCny", "unitWeightKg", "description",
+];
+const productCreatePreviewUrls = new Map();
+const productCreateImages = new Map();
+let pendingProductCreateImageRow = null;
+let productCreatePickerScroll = null;
+
+function restoreProductCreatePickerScroll() {
+  if (!productCreatePickerScroll) return;
+  const wrap = document.querySelector(".product-create-table-wrap");
+  wrap.scrollLeft = productCreatePickerScroll.left;
+  wrap.scrollTop = productCreatePickerScroll.top;
+}
+
+function productCreateRowMarkup(key) {
+  return `<tr data-create-row="${key}">
+    <td data-row-number></td>
+    <td data-label="产品编码"><input data-field="productCode" type="text"></td>
+    <td data-label="中文名称"><input data-field="nameZh" type="text"></td>
+    <td data-label="法语名称"><input data-field="nameFr" type="text"></td>
+    <td data-label="规格 / 适配车型"><textarea data-field="compatibleModels" rows="2"></textarea></td>
+    <td data-label="规格说明"><textarea data-field="specification" rows="2"></textarea></td>
+    <td data-label="中文单位"><input data-field="unitZh" type="text" value="个"></td>
+    <td data-label="法语单位"><input data-field="unitFr" type="text" value="pièce"></td>
+    <td data-label="原报价（CNY）"><input data-field="unitPriceCny" type="number" min="0" step="0.01" inputmode="decimal"></td>
+    <td data-label="新报价（CNY）"><input data-field="newPriceCny" type="number" min="0" step="0.01" inputmode="decimal"></td>
+    <td data-label="单件重量（kg）"><input data-field="unitWeightKg" type="number" min="0" step="0.001" inputmode="decimal"></td>
+    <td data-label="备注"><textarea data-field="description" rows="2"></textarea></td>
+    <td data-label="产品图片"><button class="product-image-upload" type="button" data-choose-create-image>上传图片</button><span class="product-image-file">未选择图片</span><img class="product-create-preview" alt="新增产品图片预览" hidden></td>
+    <td data-label="操作"><button class="product-create-remove" type="button" data-remove-create-row aria-label="删除这一行">×</button></td>
+  </tr>`;
+}
+
+function productCreateRowElements() {
+  return [...elements.productCreateRows.querySelectorAll("[data-create-row]")];
+}
+
+function refreshProductCreateRows() {
+  const rows = productCreateRowElements();
+  rows.forEach((row, index) => { row.querySelector("[data-row-number]").textContent = index + 1; });
+  elements.productCreateRowCount.textContent = `${rows.length} 行`;
+  elements.productCreateSave.textContent = `保存 ${rows.length} 行`;
+}
+
+function addProductCreateRow(focus = false) {
+  const key = crypto.randomUUID();
+  elements.productCreateRows.insertAdjacentHTML("beforeend", productCreateRowMarkup(key));
+  refreshProductCreateRows();
+  const row = elements.productCreateRows.querySelector(`[data-create-row="${key}"]`);
+  if (focus) row.querySelector('[data-field="productCode"]').focus();
+  return row;
+}
+
+function closeProductCreate() {
+  elements.productCreateBackdrop.hidden = true;
+  document.body.classList.remove("modal-open");
+  for (const previewUrl of productCreatePreviewUrls.values()) URL.revokeObjectURL(previewUrl);
+  productCreatePreviewUrls.clear();
+  productCreateImages.clear();
+  pendingProductCreateImageRow = null;
+  productCreatePickerScroll = null;
+  elements.productCreateRows.innerHTML = "";
+}
+
+function openProductCreate(categoryId) {
+  const category = state.categories.find((item) => item.id === categoryId);
+  elements.productCreateForm.reset();
+  for (const previewUrl of productCreatePreviewUrls.values()) URL.revokeObjectURL(previewUrl);
+  productCreatePreviewUrls.clear();
+  productCreateImages.clear();
+  pendingProductCreateImageRow = null;
+  productCreatePickerScroll = null;
+  elements.productCreateImagePicker.value = "";
+  elements.productCreateRows.innerHTML = "";
+  elements.productCreateCategoryId.value = categoryId;
+  elements.productCreateCategoryTitle.textContent = category.title;
+  elements.productCreateStatus.textContent = "";
+  for (let index = 0; index < 3; index += 1) addProductCreateRow();
+  elements.productCreateBackdrop.hidden = false;
+  document.body.classList.add("modal-open");
+  elements.productCreateRows.querySelector('[data-field="productCode"]').focus();
+}
+
+async function createFrenchProductPreview(file) {
+  const bitmap = await createImageBitmap(file);
+  const canvas = document.createElement("canvas");
+  canvas.width = 128;
+  canvas.height = 128;
+  const context = canvas.getContext("2d");
+  context.fillStyle = "#ffffff";
+  context.fillRect(0, 0, 128, 128);
+  const scale = Math.min(128 / bitmap.width, 128 / bitmap.height);
+  const width = bitmap.width * scale;
+  const height = bitmap.height * scale;
+  context.filter = "blur(1.2px)";
+  context.drawImage(bitmap, (128 - width) / 2, (128 - height) / 2, width, height);
+  context.filter = "none";
+  context.font = '700 7px "Microsoft YaHei UI", Arial, sans-serif';
+  context.textAlign = "center";
+  context.textBaseline = "middle";
+  for (let y = -24; y < 168; y += 28) {
+    for (let x = -34; x < 174; x += 70) {
+      context.save();
+      context.translate(x, y);
+      context.rotate(-0.48);
+      context.lineWidth = 1;
+      context.strokeStyle = "rgba(0,0,0,.32)";
+      context.fillStyle = "rgba(255,255,255,.48)";
+      context.strokeText("SIDI ACHOUR  HIGHTAC", 0, 0);
+      context.fillText("SIDI ACHOUR  HIGHTAC", 0, 0);
+      context.restore();
+    }
+  }
+  bitmap.close();
+  const blob = await new Promise((resolve) => canvas.toBlob(resolve, "image/webp", .2));
+  return { blob, width: Math.round(width / scale), height: Math.round(height / scale) };
+}
+
+async function saveNewProduct(event) {
+  event.preventDefault();
+  elements.productCreateSave.disabled = true;
+  const formData = new FormData();
+  formData.set("categoryId", elements.productCreateCategoryId.value);
+  const rows = productCreateRowElements().map((row) => ({
+    key: row.dataset.createRow,
+    element: row,
+    values: Object.fromEntries(PRODUCT_CREATE_FIELDS.map((field) => [field, row.querySelector(`[data-field="${field}"]`).value.trim()])),
+    image: productCreateImages.get(row.dataset.createRow),
+  })).filter((row) => row.image || ["productCode", "nameZh", "nameFr", "compatibleModels", "specification", "unitPriceCny", "newPriceCny", "unitWeightKg", "description"].some((field) => row.values[field]));
+  if (!rows.length) throw new Error("请填写至少一行配件信息");
+  const payload = [];
+  for (let index = 0; index < rows.length; index += 1) {
+    const row = rows[index];
+    const item = { key: row.key, ...row.values };
+    if (row.image) {
+      elements.productCreateStatus.textContent = `正在处理图片 ${index + 1}/${rows.length}…`;
+      const preview = await createFrenchProductPreview(row.image);
+      item.imageWidth = preview.width;
+      item.imageHeight = preview.height;
+      formData.set(`image.${row.key}`, row.image);
+      formData.set(`frenchPreview.${row.key}`, preview.blob, `${row.key}.webp`);
+    }
+    payload.push(item);
+  }
+  formData.set("rows", JSON.stringify(payload));
+  elements.productCreateStatus.textContent = `正在保存 ${rows.length} 行…`;
+  const response = requireAdamSession(await fetch("/api/admin/products", {
+    method: "POST",
+    body: formData,
+  }));
+  const result = await response.json();
+  if (!response.ok) throw new Error(result.error || `新增产品失败：${response.status}`);
+  state.category = result.categoryId;
+  state.page = 1;
+  await Promise.all([loadCategories(), loadProducts()]);
+  elements.productCreateSave.disabled = false;
+  closeProductCreate();
+}
+
+function pasteProductCreateRows(event) {
+  const target = event.target.closest("[data-field]");
+  const pasted = event.clipboardData.getData("text/plain");
+  if (!target || (!pasted.includes("\t") && !/[\r\n]/u.test(pasted))) return;
+  event.preventDefault();
+  const matrix = pasted.replace(/\r\n?/gu, "\n").split("\n").filter((line, index, lines) => line || index < lines.length - 1).map((line) => line.split("\t"));
+  let rows = productCreateRowElements();
+  const startRow = rows.indexOf(target.closest("[data-create-row]"));
+  const startColumn = PRODUCT_CREATE_FIELDS.indexOf(target.dataset.field);
+  while (rows.length < startRow + matrix.length) {
+    addProductCreateRow();
+    rows = productCreateRowElements();
+  }
+  matrix.forEach((columns, rowOffset) => {
+    columns.forEach((value, columnOffset) => {
+      const field = PRODUCT_CREATE_FIELDS[startColumn + columnOffset];
+      if (field) rows[startRow + rowOffset].querySelector(`[data-field="${field}"]`).value = value.trim();
+    });
+  });
 }
 
 function productRow(product) {
@@ -274,8 +474,16 @@ function productRow(product) {
     ? `<td class="product-price dzd-price-column" data-card-label="${escapeHtml(t("priceDzd"))}">${priceDzd}${unit ? `<small>/${escapeHtml(unit)}</small>` : ""}</td>`
     : "";
   const newPriceCell = state.language === "zh"
-    ? `<td class="new-price-column" data-card-label="${escapeHtml(t("newPrice"))}"><input class="order-new-price" type="text" inputmode="decimal" autocomplete="off" value="${product.newPriceCny ?? ""}" data-order-new-price aria-label="${escapeHtml(`${t("newPrice")} CNY ${inputLabel}`)}"></td>`
+    ? `<td class="new-price-column" data-card-label="${escapeHtml(t("newPrice"))}">${state.isReadOnly
+      ? `<span class="order-readonly-value numeric-value">${product.newPriceCny === null ? "—" : formatCny(product.newPriceCny)}</span>`
+      : `<input class="order-new-price" type="text" inputmode="decimal" autocomplete="off" value="${product.newPriceCny ?? ""}" data-order-new-price aria-label="${escapeHtml(`${t("newPrice")} CNY ${inputLabel}`)}">`}</td>`
     : "";
+  const quantityCell = state.isReadOnly
+    ? `<td class="quantity-column" data-card-label="${escapeHtml(t("quantity"))}"><span class="order-readonly-value numeric-value">${formatNumber(product.orderedQuantity)}</span></td>`
+    : `<td class="quantity-column" data-card-label="${escapeHtml(t("quantity"))}"><input class="order-quantity" type="text" inputmode="decimal" autocomplete="off" value="${product.orderedQuantity || ""}" data-order-quantity aria-label="${escapeHtml(`${t("quantity")} ${inputLabel}`)}"></td>`;
+  const remarkCell = state.isReadOnly
+    ? `<td class="remark-column" data-card-label="${escapeHtml(t("remark"))}"><span class="order-readonly-value">${escapeHtml(product.remark || "—")}</span></td>`
+    : `<td class="remark-column" data-card-label="${escapeHtml(t("remark"))}"><input class="order-remark" type="text" value="${escapeHtml(product.remark)}" data-order-remark aria-label="${escapeHtml(`${t("remark")} ${inputLabel}`)}"></td>`;
   return `<tr data-record-id="${product.id}">
     <td class="product-image-cell">${image}</td>
     <td class="product-code" data-card-label="${escapeHtml(t("productCode"))}">${escapeHtml(productCode(product))}</td>
@@ -285,8 +493,8 @@ function productRow(product) {
     ${usdPriceCell}
     ${dzdPriceCell}
     ${newPriceCell}
-    <td class="quantity-column" data-card-label="${escapeHtml(t("quantity"))}"><input class="order-quantity" type="text" inputmode="decimal" autocomplete="off" value="${product.orderedQuantity || ""}" data-order-quantity aria-label="${escapeHtml(`${t("quantity")} ${inputLabel}`)}"></td>
-    <td class="remark-column" data-card-label="${escapeHtml(t("remark"))}"><input class="order-remark" type="text" value="${escapeHtml(product.remark)}" data-order-remark aria-label="${escapeHtml(`${t("remark")} ${inputLabel}`)}"></td>
+    ${quantityCell}
+    ${remarkCell}
   </tr>`;
 }
 
@@ -357,6 +565,7 @@ function updateLocalTotals(product, nextQuantity, nextPriceCny = product.newPric
 }
 
 function queueSave(product) {
+  if (state.isReadOnly) return;
   const revision = (state.editRevisions.get(product.id) ?? 0) + 1;
   state.editRevisions.set(product.id, revision);
   state.dirtyProducts.set(product.id, product);
@@ -609,6 +818,8 @@ function applyLanguageCopy() {
   document.querySelectorAll("[data-i18n]").forEach((node) => { node.textContent = t(node.dataset.i18n); });
   document.querySelectorAll("[data-i18n-aria-label]").forEach((node) => { node.setAttribute("aria-label", t(node.dataset.i18nAriaLabel)); });
   elements.adminActions.hidden = state.language !== "zh";
+  elements.readOnlyNotice.hidden = !state.isReadOnly;
+  if (state.isReadOnly) elements.accessControlButton.hidden = true;
   elements.catalogSearch.placeholder = t("searchPlaceholder");
   elements.sortProducts.querySelector('option[value="code"]').hidden = state.language === "fr";
   elements.declarationSearch.placeholder = t("licenceSearchPlaceholder");
@@ -650,7 +861,7 @@ function wireInteractions() {
   document.addEventListener("keydown", (event) => {
     const commandKey = event.ctrlKey || event.metaKey;
     const key = event.key.toLowerCase();
-    if (state.isAdam && commandKey && event.shiftKey && key === "g") {
+    if (state.isAdam && !state.isReadOnly && commandKey && event.shiftKey && key === "g") {
       event.preventDefault();
       event.stopPropagation();
       void openAccessControl();
@@ -717,6 +928,11 @@ function wireInteractions() {
     if (event.key === "Escape") closeExportMenus();
   });
   elements.categoryList.addEventListener("click", (event) => {
+    const addButton = event.target.closest("[data-add-product]");
+    if (addButton) {
+      openProductCreate(addButton.dataset.addProduct);
+      return;
+    }
     const button = event.target.closest("[data-category]");
     if (!button) return;
     state.category = button.dataset.category;
@@ -743,6 +959,7 @@ function wireInteractions() {
     void loadProducts();
   });
   elements.productTableBody.addEventListener("input", (event) => {
+    if (state.isReadOnly) return;
     const row = event.target.closest("[data-record-id]");
     if (!row) return;
     const product = state.products.find((item) => item.id === row.dataset.recordId);
@@ -750,6 +967,75 @@ function wireInteractions() {
     if (event.target.matches("[data-order-quantity]")) updateLocalTotals(product, Number(event.target.value.replace(",", ".") || 0));
     if (event.target.matches("[data-order-remark]")) product.remark = event.target.value;
     queueSave(product);
+  });
+  elements.productCreateAddRow.addEventListener("click", () => { addProductCreateRow(true); });
+  elements.productCreateRows.addEventListener("click", (event) => {
+    const chooseButton = event.target.closest("[data-choose-create-image]");
+    if (chooseButton) {
+      const row = chooseButton.closest("[data-create-row]");
+      const wrap = document.querySelector(".product-create-table-wrap");
+      pendingProductCreateImageRow = row.dataset.createRow;
+      productCreatePickerScroll = { left: wrap.scrollLeft, top: wrap.scrollTop };
+      elements.productCreateImagePicker.value = "";
+      elements.productCreateImagePicker.click();
+      return;
+    }
+    const removeButton = event.target.closest("[data-remove-create-row]");
+    if (!removeButton) return;
+    const row = removeButton.closest("[data-create-row]");
+    const previewUrl = productCreatePreviewUrls.get(row.dataset.createRow);
+    if (previewUrl) URL.revokeObjectURL(previewUrl);
+    productCreatePreviewUrls.delete(row.dataset.createRow);
+    productCreateImages.delete(row.dataset.createRow);
+    row.remove();
+    refreshProductCreateRows();
+  });
+  elements.productCreateImagePicker.addEventListener("change", () => {
+    const key = pendingProductCreateImageRow;
+    const image = elements.productCreateImagePicker.files[0];
+    const row = elements.productCreateRows.querySelector(`[data-create-row="${key}"]`);
+    const previousUrl = productCreatePreviewUrls.get(key);
+    if (previousUrl) URL.revokeObjectURL(previousUrl);
+    const previewUrl = image ? URL.createObjectURL(image) : null;
+    if (previewUrl) {
+      productCreatePreviewUrls.set(key, previewUrl);
+      productCreateImages.set(key, image);
+    } else {
+      productCreatePreviewUrls.delete(key);
+      productCreateImages.delete(key);
+    }
+    row.querySelector(".product-image-file").textContent = image ? image.name : "未选择图片";
+    const preview = row.querySelector(".product-create-preview");
+    preview.src = previewUrl ?? "";
+    preview.hidden = !image;
+    restoreProductCreatePickerScroll();
+    pendingProductCreateImageRow = null;
+    productCreatePickerScroll = null;
+  });
+  elements.productCreateImagePicker.addEventListener("cancel", () => {
+    restoreProductCreatePickerScroll();
+    pendingProductCreateImageRow = null;
+    productCreatePickerScroll = null;
+  });
+  window.addEventListener("focus", () => {
+    if (pendingProductCreateImageRow) setTimeout(restoreProductCreatePickerScroll, 0);
+  });
+  elements.productCreateRows.addEventListener("paste", pasteProductCreateRows);
+  elements.productCreateRows.addEventListener("keydown", (event) => {
+    const input = event.target.closest('input[data-field]:not([type="file"])');
+    if (!input || event.key !== "Enter") return;
+    event.preventDefault();
+    const rows = productCreateRowElements();
+    const rowIndex = rows.indexOf(input.closest("[data-create-row]"));
+    const nextRow = rows[rowIndex + 1] ?? addProductCreateRow();
+    nextRow.querySelector(`[data-field="${input.dataset.field}"]`).focus();
+  });
+  elements.productCreateClose.addEventListener("click", closeProductCreate);
+  elements.productCreateForm.addEventListener("submit", (event) => {
+    void saveNewProduct(event).catch((error) => {
+      elements.productCreateSave.disabled = false;
+      elements.productCreateStatus.textContent = error.message;
+    });
   });
   elements.declarationSearch.addEventListener("input", renderLicence);
   elements.declarationBody.addEventListener("click", (event) => {

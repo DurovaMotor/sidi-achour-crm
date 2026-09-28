@@ -133,6 +133,17 @@ const elements = {
   frenchSpecificationMode: document.querySelector("#frenchSpecificationMode"),
   saveAccessControlButton: document.querySelector("#saveAccessControlButton"),
   accessControlStatus: document.querySelector("#accessControlStatus"),
+  productCreateBackdrop: document.querySelector("#productCreateBackdrop"),
+  productCreateForm: document.querySelector("#productCreateForm"),
+  productCreateCategoryId: document.querySelector("#productCreateCategoryId"),
+  productCreateCategoryTitle: document.querySelector("#productCreateCategoryTitle"),
+  productCreateAddRow: document.querySelector("#productCreateAddRow"),
+  productCreateRowCount: document.querySelector("#productCreateRowCount"),
+  productCreateRows: document.querySelector("#productCreateRows"),
+  productCreateImagePicker: document.querySelector("#productCreateImagePicker"),
+  productCreateClose: document.querySelector("#productCreateClose"),
+  productCreateSave: document.querySelector("#productCreateSave"),
+  productCreateStatus: document.querySelector("#productCreateStatus"),
   catalogTab: document.querySelector("#catalogTab"), licenceTab: document.querySelector("#licenceTab"),
   catalogPanel: document.querySelector("#catalogPanel"), licencePanel: document.querySelector("#licencePanel"),
   categoryCount: document.querySelector("#categoryCount"), categoryList: document.querySelector("#categoryList"),
@@ -251,14 +262,197 @@ function scoreMarkup(category) {
 
 function renderCategories() {
   elements.categoryCount.textContent = state.categories.length;
-  elements.categoryList.innerHTML = `<button type="button" class="all-category ${state.category === "all" ? "active" : ""}" data-category="all"><span class="category-name">${t("allProducts")}</span></button>` +
-    state.categories.map((category) => `<button type="button" class="${state.category === category.id ? "active" : ""}" data-category="${category.id}"><span class="category-name">${escapeHtml(category.title)}</span><span class="category-score" data-score-category="${category.id}">${scoreMarkup(category)}</span></button>`).join("");
+  const canCreateProduct = state.isAdam && !state.isReadOnly;
+  elements.categoryList.innerHTML = `<button type="button" class="category-select all-category ${state.category === "all" ? "active" : ""}" data-category="all"><span class="category-name">${t("allProducts")}</span></button>` +
+    state.categories.map((category) => `<div class="category-item"><button type="button" class="category-select ${state.category === category.id ? "active" : ""}" data-category="${category.id}"><span class="category-name">${escapeHtml(category.title)}</span><span class="category-score" data-score-category="${category.id}">${scoreMarkup(category)}</span></button>${canCreateProduct ? `<button class="category-add" type="button" data-add-product="${category.id}" aria-label="在 ${escapeHtml(category.title)} 中新增产品"></button>` : ""}</div>`).join("");
 }
 
 function renderCategoryScore(categoryId) {
   const category = state.categories.find((item) => item.id === categoryId);
   const score = elements.categoryList.querySelector(`[data-score-category="${categoryId}"]`);
   if (score) score.innerHTML = scoreMarkup(category);
+}
+
+const PRODUCT_CREATE_FIELDS = [
+  "productCode", "nameZh", "nameFr", "compatibleModels", "specification",
+  "unitZh", "unitFr", "unitPriceCny", "newPriceCny", "unitWeightKg", "description",
+];
+const productCreatePreviewUrls = new Map();
+const productCreateImages = new Map();
+let pendingProductCreateImageRow = null;
+let productCreatePickerScroll = null;
+
+function restoreProductCreatePickerScroll() {
+  if (!productCreatePickerScroll) return;
+  const wrap = document.querySelector(".product-create-table-wrap");
+  wrap.scrollLeft = productCreatePickerScroll.left;
+  wrap.scrollTop = productCreatePickerScroll.top;
+}
+
+function productCreateRowMarkup(key) {
+  return `<tr data-create-row="${key}">
+    <td data-row-number></td>
+    <td data-label="产品编码"><input data-field="productCode" type="text"></td>
+    <td data-label="中文名称"><input data-field="nameZh" type="text"></td>
+    <td data-label="法语名称"><input data-field="nameFr" type="text"></td>
+    <td data-label="规格 / 适配车型"><textarea data-field="compatibleModels" rows="2"></textarea></td>
+    <td data-label="规格说明"><textarea data-field="specification" rows="2"></textarea></td>
+    <td data-label="中文单位"><input data-field="unitZh" type="text" value="个"></td>
+    <td data-label="法语单位"><input data-field="unitFr" type="text" value="pièce"></td>
+    <td data-label="原报价（CNY）"><input data-field="unitPriceCny" type="number" min="0" step="0.01" inputmode="decimal"></td>
+    <td data-label="新报价（CNY）"><input data-field="newPriceCny" type="number" min="0" step="0.01" inputmode="decimal"></td>
+    <td data-label="单件重量（kg）"><input data-field="unitWeightKg" type="number" min="0" step="0.001" inputmode="decimal"></td>
+    <td data-label="备注"><textarea data-field="description" rows="2"></textarea></td>
+    <td data-label="产品图片"><button class="product-image-upload" type="button" data-choose-create-image>上传图片</button><span class="product-image-file">未选择图片</span><img class="product-create-preview" alt="新增产品图片预览" hidden></td>
+    <td data-label="操作"><button class="product-create-remove" type="button" data-remove-create-row aria-label="删除这一行">×</button></td>
+  </tr>`;
+}
+
+function productCreateRowElements() {
+  return [...elements.productCreateRows.querySelectorAll("[data-create-row]")];
+}
+
+function refreshProductCreateRows() {
+  const rows = productCreateRowElements();
+  rows.forEach((row, index) => { row.querySelector("[data-row-number]").textContent = index + 1; });
+  elements.productCreateRowCount.textContent = `${rows.length} 行`;
+  elements.productCreateSave.textContent = `保存 ${rows.length} 行`;
+}
+
+function addProductCreateRow(focus = false) {
+  const key = crypto.randomUUID();
+  elements.productCreateRows.insertAdjacentHTML("beforeend", productCreateRowMarkup(key));
+  refreshProductCreateRows();
+  const row = elements.productCreateRows.querySelector(`[data-create-row="${key}"]`);
+  if (focus) row.querySelector('[data-field="productCode"]').focus();
+  return row;
+}
+
+function closeProductCreate() {
+  elements.productCreateBackdrop.hidden = true;
+  document.body.classList.remove("modal-open");
+  for (const previewUrl of productCreatePreviewUrls.values()) URL.revokeObjectURL(previewUrl);
+  productCreatePreviewUrls.clear();
+  productCreateImages.clear();
+  pendingProductCreateImageRow = null;
+  productCreatePickerScroll = null;
+  elements.productCreateRows.innerHTML = "";
+}
+
+function openProductCreate(categoryId) {
+  const category = state.categories.find((item) => item.id === categoryId);
+  elements.productCreateForm.reset();
+  for (const previewUrl of productCreatePreviewUrls.values()) URL.revokeObjectURL(previewUrl);
+  productCreatePreviewUrls.clear();
+  productCreateImages.clear();
+  pendingProductCreateImageRow = null;
+  productCreatePickerScroll = null;
+  elements.productCreateImagePicker.value = "";
+  elements.productCreateRows.innerHTML = "";
+  elements.productCreateCategoryId.value = categoryId;
+  elements.productCreateCategoryTitle.textContent = category.title;
+  elements.productCreateStatus.textContent = "";
+  for (let index = 0; index < 3; index += 1) addProductCreateRow();
+  elements.productCreateBackdrop.hidden = false;
+  document.body.classList.add("modal-open");
+  elements.productCreateRows.querySelector('[data-field="productCode"]').focus();
+}
+
+async function createFrenchProductPreview(file) {
+  const bitmap = await createImageBitmap(file);
+  const canvas = document.createElement("canvas");
+  canvas.width = 128;
+  canvas.height = 128;
+  const context = canvas.getContext("2d");
+  context.fillStyle = "#ffffff";
+  context.fillRect(0, 0, 128, 128);
+  const scale = Math.min(128 / bitmap.width, 128 / bitmap.height);
+  const width = bitmap.width * scale;
+  const height = bitmap.height * scale;
+  context.filter = "blur(1.2px)";
+  context.drawImage(bitmap, (128 - width) / 2, (128 - height) / 2, width, height);
+  context.filter = "none";
+  context.font = '700 7px "Microsoft YaHei UI", Arial, sans-serif';
+  context.textAlign = "center";
+  context.textBaseline = "middle";
+  for (let y = -24; y < 168; y += 28) {
+    for (let x = -34; x < 174; x += 70) {
+      context.save();
+      context.translate(x, y);
+      context.rotate(-0.48);
+      context.lineWidth = 1;
+      context.strokeStyle = "rgba(0,0,0,.32)";
+      context.fillStyle = "rgba(255,255,255,.48)";
+      context.strokeText("SIDI ACHOUR  HIGHTAC", 0, 0);
+      context.fillText("SIDI ACHOUR  HIGHTAC", 0, 0);
+      context.restore();
+    }
+  }
+  bitmap.close();
+  const blob = await new Promise((resolve) => canvas.toBlob(resolve, "image/webp", .2));
+  return { blob, width: Math.round(width / scale), height: Math.round(height / scale) };
+}
+
+async function saveNewProduct(event) {
+  event.preventDefault();
+  elements.productCreateSave.disabled = true;
+  const formData = new FormData();
+  formData.set("categoryId", elements.productCreateCategoryId.value);
+  const rows = productCreateRowElements().map((row) => ({
+    key: row.dataset.createRow,
+    element: row,
+    values: Object.fromEntries(PRODUCT_CREATE_FIELDS.map((field) => [field, row.querySelector(`[data-field="${field}"]`).value.trim()])),
+    image: productCreateImages.get(row.dataset.createRow),
+  })).filter((row) => row.image || ["productCode", "nameZh", "nameFr", "compatibleModels", "specification", "unitPriceCny", "newPriceCny", "unitWeightKg", "description"].some((field) => row.values[field]));
+  if (!rows.length) throw new Error("请填写至少一行配件信息");
+  const payload = [];
+  for (let index = 0; index < rows.length; index += 1) {
+    const row = rows[index];
+    const item = { key: row.key, ...row.values };
+    if (row.image) {
+      elements.productCreateStatus.textContent = `正在处理图片 ${index + 1}/${rows.length}…`;
+      const preview = await createFrenchProductPreview(row.image);
+      item.imageWidth = preview.width;
+      item.imageHeight = preview.height;
+      formData.set(`image.${row.key}`, row.image);
+      formData.set(`frenchPreview.${row.key}`, preview.blob, `${row.key}.webp`);
+    }
+    payload.push(item);
+  }
+  formData.set("rows", JSON.stringify(payload));
+  elements.productCreateStatus.textContent = `正在保存 ${rows.length} 行…`;
+  const response = requireAdamSession(await fetch("/api/admin/products", {
+    method: "POST",
+    body: formData,
+  }));
+  const result = await response.json();
+  if (!response.ok) throw new Error(result.error || `新增产品失败：${response.status}`);
+  state.category = result.categoryId;
+  state.page = 1;
+  await Promise.all([loadCategories(), loadProducts()]);
+  elements.productCreateSave.disabled = false;
+  closeProductCreate();
+}
+
+function pasteProductCreateRows(event) {
+  const target = event.target.closest("[data-field]");
+  const pasted = event.clipboardData.getData("text/plain");
+  if (!target || (!pasted.includes("\t") && !/[\r\n]/u.test(pasted))) return;
+  event.preventDefault();
+  const matrix = pasted.replace(/\r\n?/gu, "\n").split("\n").filter((line, index, lines) => line || index < lines.length - 1).map((line) => line.split("\t"));
+  let rows = productCreateRowElements();
+  const startRow = rows.indexOf(target.closest("[data-create-row]"));
+  const startColumn = PRODUCT_CREATE_FIELDS.indexOf(target.dataset.field);
+  while (rows.length < startRow + matrix.length) {
+    addProductCreateRow();
+    rows = productCreateRowElements();
+  }
+  matrix.forEach((columns, rowOffset) => {
+    columns.forEach((value, columnOffset) => {
+      const field = PRODUCT_CREATE_FIELDS[startColumn + columnOffset];
+      if (field) rows[startRow + rowOffset].querySelector(`[data-field="${field}"]`).value = value.trim();
+    });
+  });
 }
 
 function productRow(product) {
@@ -734,6 +928,11 @@ function wireInteractions() {
     if (event.key === "Escape") closeExportMenus();
   });
   elements.categoryList.addEventListener("click", (event) => {
+    const addButton = event.target.closest("[data-add-product]");
+    if (addButton) {
+      openProductCreate(addButton.dataset.addProduct);
+      return;
+    }
     const button = event.target.closest("[data-category]");
     if (!button) return;
     state.category = button.dataset.category;
@@ -768,6 +967,81 @@ function wireInteractions() {
     if (event.target.matches("[data-order-quantity]")) updateLocalTotals(product, Number(event.target.value.replace(",", ".") || 0));
     if (event.target.matches("[data-order-remark]")) product.remark = event.target.value;
     queueSave(product);
+  });
+  elements.productCreateAddRow.addEventListener("click", () => { addProductCreateRow(true); });
+  elements.productCreateRows.addEventListener("click", (event) => {
+    const chooseButton = event.target.closest("[data-choose-create-image]");
+    if (chooseButton) {
+      const row = chooseButton.closest("[data-create-row]");
+      const wrap = document.querySelector(".product-create-table-wrap");
+      pendingProductCreateImageRow = row.dataset.createRow;
+      productCreatePickerScroll = { left: wrap.scrollLeft, top: wrap.scrollTop };
+      elements.productCreateImagePicker.value = "";
+      elements.productCreateImagePicker.click();
+      return;
+    }
+    const removeButton = event.target.closest("[data-remove-create-row]");
+    if (!removeButton) return;
+    const row = removeButton.closest("[data-create-row]");
+    const previewUrl = productCreatePreviewUrls.get(row.dataset.createRow);
+    if (previewUrl) URL.revokeObjectURL(previewUrl);
+    productCreatePreviewUrls.delete(row.dataset.createRow);
+    productCreateImages.delete(row.dataset.createRow);
+    row.remove();
+    refreshProductCreateRows();
+  });
+  elements.productCreateImagePicker.addEventListener("change", () => {
+    const key = pendingProductCreateImageRow;
+    const image = elements.productCreateImagePicker.files[0];
+    if (!key || !image) {
+      restoreProductCreatePickerScroll();
+      pendingProductCreateImageRow = null;
+      productCreatePickerScroll = null;
+      return;
+    }
+    const row = elements.productCreateRows.querySelector(`[data-create-row="${key}"]`);
+    const previousUrl = productCreatePreviewUrls.get(key);
+    if (previousUrl) URL.revokeObjectURL(previousUrl);
+    const previewUrl = image ? URL.createObjectURL(image) : null;
+    if (previewUrl) {
+      productCreatePreviewUrls.set(key, previewUrl);
+      productCreateImages.set(key, image);
+    } else {
+      productCreatePreviewUrls.delete(key);
+      productCreateImages.delete(key);
+    }
+    row.querySelector(".product-image-file").textContent = image ? image.name : "未选择图片";
+    const preview = row.querySelector(".product-create-preview");
+    preview.src = previewUrl ?? "";
+    preview.hidden = !image;
+    restoreProductCreatePickerScroll();
+    pendingProductCreateImageRow = null;
+    productCreatePickerScroll = null;
+  });
+  elements.productCreateImagePicker.addEventListener("cancel", () => {
+    restoreProductCreatePickerScroll();
+    pendingProductCreateImageRow = null;
+    productCreatePickerScroll = null;
+  });
+  window.addEventListener("focus", () => {
+    if (pendingProductCreateImageRow) setTimeout(restoreProductCreatePickerScroll, 0);
+  });
+  elements.productCreateRows.addEventListener("paste", pasteProductCreateRows);
+  elements.productCreateRows.addEventListener("keydown", (event) => {
+    const input = event.target.closest('input[data-field]:not([type="file"])');
+    if (!input || event.key !== "Enter") return;
+    event.preventDefault();
+    const rows = productCreateRowElements();
+    const rowIndex = rows.indexOf(input.closest("[data-create-row]"));
+    const nextRow = rows[rowIndex + 1] ?? addProductCreateRow();
+    nextRow.querySelector(`[data-field="${input.dataset.field}"]`).focus();
+  });
+  elements.productCreateClose.addEventListener("click", closeProductCreate);
+  elements.productCreateForm.addEventListener("submit", (event) => {
+    void saveNewProduct(event).catch((error) => {
+      elements.productCreateSave.disabled = false;
+      elements.productCreateStatus.textContent = error.message;
+    });
   });
   elements.declarationSearch.addEventListener("input", renderLicence);
   elements.declarationBody.addEventListener("click", (event) => {

@@ -49,3 +49,25 @@ export async function decryptCatalogMedia(envelope, encodedKey, mediaKey, kind =
   const additionalData = new TextEncoder().encode(`sidi-catalog:v1:${kind}:${mediaKey}`);
   return crypto.subtle.decrypt({ name: "AES-GCM", iv, additionalData }, key, ciphertext);
 }
+
+export async function encryptCatalogMedia(plaintext, encodedKey, mediaKey, kind) {
+  const iv = crypto.getRandomValues(new Uint8Array(IV_BYTES));
+  const key = await crypto.subtle.importKey(
+    "raw",
+    decodeBase64Key(encodedKey),
+    { name: "AES-GCM" },
+    false,
+    ["encrypt"],
+  );
+  const additionalData = new TextEncoder().encode(`sidi-catalog:v1:${kind}:${mediaKey}`);
+  const ciphertext = new Uint8Array(await crypto.subtle.encrypt(
+    { name: "AES-GCM", iv, additionalData },
+    key,
+    plaintext,
+  ));
+  const envelope = new Uint8Array(MAGIC.byteLength + iv.byteLength + ciphertext.byteLength);
+  envelope.set(MAGIC, 0);
+  envelope.set(iv, MAGIC.byteLength);
+  envelope.set(ciphertext, MAGIC.byteLength + iv.byteLength);
+  return envelope;
+}

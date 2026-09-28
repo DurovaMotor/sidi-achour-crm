@@ -1,0 +1,10 @@
+{
+  "version": "v2026.09.24.070814.630-8172BC38",
+  "commitHash": "8172bc38e7b8474d9fb02799bd1ed0c5b9f3acdc",
+  "commitMessage": "Release v2026.09.24.070814.630-8172BC38",
+  "deploymentId": "0354309c-2990-4422-9572-6a4ff8fdca8d",
+  "url": "https://0354309c.sidi-achour-crm.pages.dev",
+  "environment": "production",
+  "productionBranch": "main",
+  "releasedAt": "2026-09-24T07:08:14.6307593+00:00"
+}

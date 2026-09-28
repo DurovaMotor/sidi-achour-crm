@@ -4,14 +4,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#000000">
-    <meta name="app-version" content="v2026.09.17.093454.679-E98E9C3D">
+    <meta name="app-version" content="v2026.09.24.073711.634-B95BB64B">
     <meta name="description" content="Sidi Achour 摩托车配件订单与进口额度管理页面。">
     <title>Sidi Achour | 产品目录</title>
     <link rel="icon" href="/media/brand/sidi-achour-logo.f8ca917c1cb1c72a.png" type="image/png">
     <link rel="preload" href="/media/brand/sidi-achour-logo.f8ca917c1cb1c72a.png" as="image" fetchpriority="high">
-    <link rel="stylesheet" href="/build/styles.9f2e901e902543bb.css">
+    <link rel="stylesheet" href="/build/styles.48189ad9ca014f17.css">
     <script src="/vendor/exceljs.7e49da68588e250d.min.js" defer></script>
-    <script src="/build/app.a1c6fa64abd546fa.js" defer></script>
+    <script src="/build/app.60f06619a02c48c9.js" defer></script>
   </head>
   <body aria-busy="true">
     <div class="splash-screen" id="splashScreen" role="status" aria-live="polite" aria-label="Sidi Achour 正在加载">
@@ -75,6 +75,39 @@
         <p id="accessControlStatus" role="status" aria-live="polite"></p>
       </form>
     </aside>
+
+    <div class="product-create-backdrop" id="productCreateBackdrop" hidden>
+      <section class="product-create-dialog" role="dialog" aria-modal="true" aria-labelledby="productCreateTitle">
+        <header class="product-create-head">
+          <span class="product-create-corner" aria-hidden="true"></span>
+          <div>
+            <p>新增分类配件</p>
+            <h2 id="productCreateTitle">新增配件</h2>
+            <span id="productCreateCategoryTitle"></span>
+          </div>
+        </header>
+        <form id="productCreateForm" enctype="multipart/form-data">
+          <input id="productCreateCategoryId" name="categoryId" type="hidden">
+          <input class="sr-only" id="productCreateImagePicker" type="file" accept="image/jpeg,image/png,image/webp" tabindex="-1">
+          <div class="product-create-toolbar">
+            <button id="productCreateAddRow" type="button">+ 新增一行</button>
+            <span>可从 Excel 复制多行后直接粘贴到任意单元格</span>
+            <strong id="productCreateRowCount">3 行</strong>
+          </div>
+          <div class="product-create-table-wrap">
+            <table class="product-create-table">
+              <thead><tr><th>序号</th><th>产品编码</th><th>中文名称</th><th>法语名称</th><th>规格 / 适配车型</th><th>规格说明</th><th>中文单位</th><th>法语单位</th><th>原报价</th><th>新报价</th><th>重量 kg</th><th>备注</th><th>图片</th><th>操作</th></tr></thead>
+              <tbody id="productCreateRows"></tbody>
+            </table>
+          </div>
+          <p class="product-create-status" id="productCreateStatus" role="status" aria-live="polite"></p>
+          <footer class="product-create-actions">
+            <button class="product-create-close" id="productCreateClose" type="button">关闭</button>
+            <button class="product-create-save" id="productCreateSave" type="submit">保存</button>
+          </footer>
+        </form>
+      </section>
+    </div>
 
     <main id="workspace">
       <section class="workspace-panel" id="catalogPanel" role="tabpanel" aria-labelledby="catalogTab">
@@ -171,6 +204,6 @@
         </div>
       </section>
     </main>
-    <footer class="release-footer"><span class="release-version" id="releaseVersion">v2026.09.17.093454.679-E98E9C3D</span></footer>
+    <footer class="release-footer"><span class="release-version" id="releaseVersion">v2026.09.24.073711.634-B95BB64B</span></footer>
   </body>
 </html>
