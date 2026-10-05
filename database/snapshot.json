@@ -5,21 +5,21 @@
     "id": "36a123f5-7509-41d8-a690-13be0ec02524",
     "binding": "DB"
   },
-  "exportedAt": "2026-09-28T09:36:14Z",
+  "exportedAt": "2026-10-05T08:43:14Z",
   "file": "sidi-achour-orders-production.sql",
-  "bytes": 3917310,
+  "bytes": 8355102,
   "counts": {
-    "tables": 46,
+    "tables": 45,
     "categories": 35,
-    "products": 638,
-    "categoryProducts": 638,
-    "productImages": 544,
-    "primaryOrderRows": 444,
+    "products": 662,
+    "categoryProducts": 662,
+    "productImages": 559,
+    "primaryOrderRows": 474,
     "priorityOrderRows": 30,
     "bicycleRows": 24,
     "adminUsers": 1,
     "accessRuleRows": 1,
-    "uploadedMediaChunks": 4
+    "uploadedMediaChunks": 34
   },
   "latestMigration": "0021_uploaded_catalog_media.sql"
 }
